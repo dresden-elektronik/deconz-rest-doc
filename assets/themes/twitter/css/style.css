@@ -67,12 +67,16 @@
 pre.headers {
   color: #333;
   text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-  background-color: #eee;
-  margin-bottom: 0px;
+  background-color: #f1f1f1;
+  margin-bottom: 0;
   padding-bottom: 0px;
-  border-bottom: 0px;
+  border-bottom-width: 0;
+  border-radius: 3px 3px 0 0;
+  -webkit-border-radius: 3px 3px 0 0;
 }
 
 pre.highlight {
   background-color: #fafafa;
+  border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
 }
