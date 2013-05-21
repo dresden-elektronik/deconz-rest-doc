@@ -1,0 +1,29 @@
+
+
+<div class="">
+<ul class="nav nav-list">
+  <li class="nav-header">Endpoints</li>
+{% for node in site.pages %}
+    {% if node.nav == 'endpoints' %}
+		{% if node.title != null %}
+			<li><a href="{{node.url}}">{{node.title}}</a>
+		  	{% if page.url == node.url %}
+		  	<ul>
+				{% for anchor in page.anchors %}
+				  	<li><a href="{{anchor.url}}">{{anchor.title}}</a></li>
+				{% endfor %}
+		  	</ul>
+			{% endif %}
+			
+			</li>
+		{% endif %}
+	{% endif %}
+{% endfor %}
+  <li class="nav-header">Misc</li>
+{% for node in site.pages %}
+	{% if node.nav == 'misc' %}
+		<li><a href="{{node.url}}">{{node.title}}</a></li>
+	{% endif %}
+{% endfor %}
+</ul>
+</div>
