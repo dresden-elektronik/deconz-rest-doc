@@ -1,46 +1,27 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: deCONZ REST API
+tagline: Documentation
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+{% include sitepanelnav %}
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+## Introduction
 
-## Update Author Attributes
+This documentation describes the deCONZ REST API, which is provided by the [deCONZ REST Plugin](#) that runs a lightweight HTTP server within the [deCONZ](http://www.dresden-elektronik.de/funktechnik/products/software/pc/deconz) application.
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+The REST API allows third party applications easy monitoring and control of a ZigBee network from local or remote operating clients.
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
+## Features
+For now the API provides follwoing capabilities:
 
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
+- Support for ZigBee Home Automation (HA) and ZigBee Light Link (ZLL) based lights
+- Add, remove and modify groups of lights
+- Control single lights or groups
+- Control colors and dimmlevel of lights (hue, saturation, brightness, CIE xyY, color temperature)
+- Smooth dimming
+- Add, remove and modify light scenes of a group
 
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
-
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
-
-## To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
-
-
+## Extensibility
+The [deCONZ REST Plugin](#) is a open source project available at GitHub and could therefore extended with further functionality, for example to support more devices.
