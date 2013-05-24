@@ -20,9 +20,14 @@ The configuration endpoint allows to retreive the current configuration of the g
 ------------------------------------------------------
 
 ## Get configuration<a name="getconfig">&nbsp;</a>
+
 	GET /api/<apikey>/config
 
 Returns the current gateway configuration.
+
+### Parameters
+
+None
 
 ### Response
 <pre class="headers">
@@ -35,7 +40,7 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 <pre class="highlight">
 <code>
 {
-	"name": "deCONZ GW",
+	"name": "deCONZ-RPi Gateway",
 	"ipaddress": "192.168.1.20",
 	"mac": "00:15:22:22:00:11:11:a3",
 	"linkbutton": false,
@@ -44,7 +49,7 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 }
 </code>
 </pre>
-#### Fields
+#### Response fields
 
 <table class="table table-bordered">
 	<thead>
@@ -84,18 +89,19 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 	</tbody>
 </table>
 
-#### Possible errors
+### Possible errors
 
-[403 Not Authorized](/errors#403)
+[403 Forbidden](/errors#403)
 
 ------------------------------------------------------
 
 ## Aquire API key<a name="aquireapikey">&nbsp;</a>
-Creates a new [API key](/authorization) which provides authorized access to the REST API.
 
 	POST /api
 
-#### Parameters
+Creates a new [API key](/authorization) which provides authorized access to the REST API.
+
+### Parameters
 
 <table class="table table-bordered">
 	<thead>
@@ -117,8 +123,7 @@ Creates a new [API key](/authorization) which provides authorized access to the 
 	</tbody>
 </table>
 
-### Request
-
+### Example request data
 	{
 		"username": "988112a4e198cc1211",
 		"devicetype": "my application"
@@ -137,7 +142,7 @@ HTTP/1.1 200 OK
 </code>
 </pre>
 
-#### Possible errors
+### Possible errors
 
 [400 Bad Request](/errors#400)
 
@@ -145,10 +150,122 @@ HTTP/1.1 200 OK
 
 ## Delete API key<a name="deleteapikey">&nbsp;</a>
 
+	DELETE /api/<apikey>/config/whitelist/<apikey2>
+
 Deletes a API key so it could no longer be used.
+
+### Parameters
+
+None
+
+### Possible errors
+
+[403 Forbidden](/errors#403)
+
+[404 Not Found](/errors#404)
 
 ------------------------------------------------------
 
 ## Get full state<a name="getfullstate">&nbsp;</a>
 
+	GET /api/<apikey>
+
 Returns the full state of the gateway including all its lights, groups, scenes and schedules.
+
+### Parameters
+
+None
+
+### Response
+
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+Etag: 203941fel3ds8ad61903224
+Last-Modified: Tue, 10 Nov 2012 21:16:04 GMT
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "config": {
+        "dhcp": true,
+        "gateway": "192.168.178.1",
+        "ipaddress": "192.168.192.237",
+        "linkbutton": true,
+        "mac": "E0:69:95:58:06:7F",
+        "name": "deCONZ Gateway",
+        "netmask": "255.255.255.0",
+        "portalservices": false,
+        "proxyaddress": "",
+        "proxyport": 0,
+        "swupdate": {
+            "notify": false,
+            "text": "",
+            "updatestate": 0,
+            "url": ""
+        },
+        "swversion": "01005215",
+        "utc": "2013-05-22T12:02:30",
+        "whitelist": {}
+    },
+    "groups": {
+        "32769": {
+            "action": {
+                "bri": 3945,
+                "colormode": "hs",
+                "ct": 500,
+                "effect": "none",
+                "hue": 0,
+                "on": true,
+                "sat": 17680,
+                "xy": [
+                    0.0610457,
+                    0.219979
+                ]
+            },
+            "etag": "893f60b611274d1803207298cf26b1e1",
+            "lights": [],
+            "name": "Demo",
+            "scenes": []
+        }
+    },
+    "lights": {},
+    "schedules": {}
+}
+</code>
+</pre>
+
+#### Response fields
+
+<table class="table table-bordered">
+	<thead>
+		<tr><th>Field</th><th>Type</th><th>Description</th></tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>config</td>
+			<td>Object</td>
+			<td>Configuration of the gateway.</td>
+		</tr>
+		<tr>
+			<td>groups</td>
+			<td>Object</td>
+			<td>All groups of the gateway.</td>
+		</tr>
+		<tr>
+			<td>lights</td>
+			<td>Object</td>
+			<td>All lights of the gateway.</td>
+		</tr>
+		<tr>
+			<td>schedules</td>
+			<td>Object</td>
+			<td>All schedules of the gateway.</td>
+		</tr>
+	</tbody>
+</table>
+
+### Possible errors
+
+[403 Forbidden](/errors#403)

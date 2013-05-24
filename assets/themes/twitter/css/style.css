@@ -80,3 +80,19 @@ pre.highlight {
   border-radius: 0 0 3px 3px;
   -webkit-border-radius: 0 0 3px 3px;
 }
+
+.api-method, .api-uri {
+  font-size: 1.2em;
+  display: inline-block;
+  padding: 0.3em 0.4em;
+}
+
+.api-method {
+  background-color: #a56634;
+  color: white;
+}
+
+.api-uri {
+  background-color: #3366ff;
+  color: white;
+}
