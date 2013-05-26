@@ -19,6 +19,7 @@ Error code | Description
 200        | OK
 201        | Created
 202        | Accepted
+400        | Bad Request
 403        | Not authorized
 404        | Ressource not found
 

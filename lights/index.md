@@ -310,18 +310,6 @@ Sets the state of a light.
       <td>optional</td>
     </tr>
     <tr>
-      <td>colormode</td>
-      <td>String</td>
-      <td>Set the current colormode of the light:
-        <ul>
-          <li>hs - hue and saturation</li>
-          <li>xy - CIE xy values</li>
-          <li>ct - color temperature</li>
-        </ul>
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
       <td>effect</td>
       <td>String</td>
       <td>Trigger a effect of the light:
@@ -329,6 +317,12 @@ Sets the state of a light.
           <li>none - no effect</li>
         </ul>
       </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>transitiontime</td>
+      <td>Number</td>
+      <td>Transitiontime in 1/10 seconds between two states.</td>
       <td>optional</td>
     </tr>
   </tbody>
