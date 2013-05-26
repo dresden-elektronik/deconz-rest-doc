@@ -5,8 +5,6 @@ tagline: Documentation
 ---
 {% include JB/setup %}
 
-{% include sitepanelnav %}
-
 ## Introduction
 
 This documentation describes the REST API, which is provided by the [deCONZ REST API Plugin](#) that runs a lightweight HTTP server within the [deCONZ](http://www.dresden-elektronik.de/funktechnik/products/software/pc/deconz) application.

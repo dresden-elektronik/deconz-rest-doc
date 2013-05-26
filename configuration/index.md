@@ -13,8 +13,6 @@ anchors:
     url: "#getfullstate"
 ---
 
-{% include sitepanelnav %}
-
 The configuration endpoint allows to retreive the current configuration of the gateway.
 
 ------------------------------------------------------

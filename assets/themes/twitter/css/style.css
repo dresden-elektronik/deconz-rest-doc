@@ -96,3 +96,7 @@ pre.highlight {
   background-color: #3366ff;
   color: white;
 }
+
+.affix {
+    top: 100px;
+}

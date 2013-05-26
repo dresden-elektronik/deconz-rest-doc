@@ -19,8 +19,6 @@ anchors:
     url: "#getnew"
 ---
 
-{% include sitepanelnav %}
-
 Monitor and control single lights.
 
 ------------------------------------------------------
