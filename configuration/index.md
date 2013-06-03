@@ -13,7 +13,7 @@ anchors:
     url: "#getfullstate"
 ---
 
-The configuration endpoint allows to retreive the current configuration of the gateway.
+The configuration endpoint allows to retreive and modify the current configuration of the gateway.
 
 ------------------------------------------------------
 

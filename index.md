@@ -17,9 +17,10 @@ For now the API provides following capabilities:
 - Support for ZigBee Home Automation (HA) and ZigBee Light Link (ZLL) based lights
 - Add, remove and modify groups of lights
 - Control single lights or groups
-- Control colors and dimmlevel of lights (hue, saturation, brightness, CIE xyY, color temperature)
+- Control colors and dimmlevels via hue, saturation, brightness, CIE xy color coordinates and color temperature
 - Smooth transitions of colors and dimming over time
-- Add, remove and modify individual light scenes of a group
+- Save and recall individual scenes for a group
+- Timers and recurring alarms
 
 ## Extensibility
 The [deCONZ REST API Plugin](#) is a open source project and available at GitHub. It could therefore be extended with further functionality, for example to support more devices.
