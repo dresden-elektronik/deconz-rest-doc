@@ -2,13 +2,13 @@
 
 <ul class="nav nav-list affix" data-spy="affix" data-offset-top="100">
   <li class="nav-header">General</li>
-  <li><a href="/">Introduction</a></li>
-  <li><a href="/discovery">Discover the gateway</a></li>
+  <li><a href="{{BASE_PATH}}/">Introduction</a></li>
+  <li><a href="{{BASE_PATH}}/discovery">Discover the gateway</a></li>
   <li class="nav-header">API Endpoints</li>
 {% for node in site.pages %}
     {% if node.nav == 'endpoints' %}
 		{% if node.title != null %}
-			<li><a href="{{node.url}}">{{node.title}}</a>
+			<li><a href="{{BASE_PATH}}{{node.url}}">{{node.title}}</a>
 		  	{% if page.url == node.url %}
 		  	<ul>
 				{% for anchor in page.anchors %}
@@ -24,7 +24,7 @@
   <li class="nav-header">Misc</li>
 {% for node in site.pages %}
 	{% if node.nav == 'misc' %}
-		<li><a href="{{node.url}}">{{node.title}}</a></li>
+		<li><a href="{{BASE_PATH}}{{node.url}}">{{node.title}}</a></li>
 	{% endif %}
 {% endfor %}
 </ul>
