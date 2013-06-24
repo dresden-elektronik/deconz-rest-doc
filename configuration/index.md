@@ -3,17 +3,76 @@ layout: page
 title: Configuration
 nav: endpoints
 anchors:
-  - title: Get configuration
-    url: "#getconfig"
   - title: Aquire API key
     url: "#aquireapikey"
+  - title: Get configuration
+    url: "#getconfig"
   - title: Delete API key
     url: "#deleteapikey"
   - title: Get full state
     url: "#getfullstate"
 ---
 
+{% include JB/setup %}
+
 The configuration endpoint allows to retreive and modify the current configuration of the gateway.
+
+------------------------------------------------------
+
+## Aquire API key<a name="aquireapikey">&nbsp;</a>
+
+	POST /api
+
+Creates a new [API key]({{BASE_PATH}}/authorization) which provides authorized access to the REST API.
+
+`Note` the request will only succeed if the gateway is unlocked or valid HTTP basic authentification credentials are provided in the HTTP request header ([see authorization]({{BASE_PATH}}/authorization)).
+
+### Parameters
+
+<table class="table table-bordered">
+	<thead>
+		<tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>devicetype</td>
+			<td>String (0..40 chars)</td>
+			<td>Name of the client application.</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>username</td>
+			<td>String (10..40 chars)</td>
+			<td>Will be used as username. If not specified a random key will be generated.</td>
+			<td>optional</td>
+		</tr>
+	</tbody>
+</table>
+
+### Example request data
+	{
+		"username": "988112a4e198cc1211",
+		"devicetype": "my application"
+	}
+
+### Response
+
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "username": "988112a4e198cc1211" } } ]
+</code>
+</pre>
+
+### Possible errors
+
+[400 Bad Request](/errors#400)
+
+[403 Forbidden](/errors#403)
 
 ------------------------------------------------------
 
@@ -90,59 +149,6 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 ### Possible errors
 
 [403 Forbidden](/errors#403)
-
-------------------------------------------------------
-
-## Aquire API key<a name="aquireapikey">&nbsp;</a>
-
-	POST /api
-
-Creates a new [API key](/authorization) which provides authorized access to the REST API.
-
-### Parameters
-
-<table class="table table-bordered">
-	<thead>
-		<tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>devicetype</td>
-			<td>String (0..40 chars)</td>
-			<td>Name of the client application.</td>
-			<td>required</td>
-		</tr>
-		<tr>
-			<td>username</td>
-			<td>String (10..40 chars)</td>
-			<td>Will be used as username. If not specified a random key will be generated.</td>
-			<td>optional</td>
-		</tr>
-	</tbody>
-</table>
-
-### Example request data
-	{
-		"username": "988112a4e198cc1211",
-		"devicetype": "my application"
-	}
-
-### Response
-
-<pre class="headers">
-<code>
-HTTP/1.1 200 OK
-</code>
-</pre>
-<pre class="highlight">
-<code>
-[ { "success": { "username": "988112a4e198cc1211" } } ]
-</code>
-</pre>
-
-### Possible errors
-
-[400 Bad Request](/errors#400)
 
 ------------------------------------------------------
 
