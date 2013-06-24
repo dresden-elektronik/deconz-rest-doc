@@ -7,7 +7,7 @@ tagline: Documentation
 
 ## Finding the gateway
 
-The gatway(s) in the local network could be discovered in various ways.
+The gateway(s) in the local network could be discovered in various ways.
 
 ### Discovery via internet
 
