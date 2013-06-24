@@ -40,7 +40,6 @@ None
 <code>
 HTTP/1.1 200 OK
 Etag: 203941fel3ds8ad61903224
-Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 </code>
 </pre>
 <pre class="highlight">
@@ -98,17 +97,16 @@ None
 <code>
 HTTP/1.1 200 OK
 Etag: 030cf8c1c0025420f3a0659afab251f5
-Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 </code>
 </pre>
 <pre class="highlight">
 <code>
 {
     "etag": "030cf8c1c0025420f3a0659afab251f5",
-    "name": "FLS-PP",
-    "modelid": "FLS-PP-00",
+    "name": "Desk Lamp",
+    "modelid": "FLS-PP-01",
     "pointsymbol": "none",
-    "swversion": "00076172",
+    "swversion": "14010400",
     "type": "Color Dimmable Light",
     "state": {
         "on": true,
@@ -119,14 +117,8 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
         "alert": "none",
         "colormode": "hs",
         "effect": "none",
-
-        "nhue": 0.330709,
         "reachable": true,
-
-        "xy": [
-            0.805343,
-            0.000612754
-        ]
+        "xy": [ 0.805343, 0.000612754 ]
     }
 }
 </code>
@@ -344,7 +336,6 @@ Sets the state of a light.
 <code>
 HTTP/1.1 200 OK
 Etag: 030cf8c1c0025420f3a0659afab251f5
-Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 </code>
 </pre>
 <pre class="highlight">
@@ -396,7 +387,6 @@ Sets attributes of a light which are not related to its state.
 <code>
 HTTP/1.1 200 OK
 Etag: 030cf8c1c0025420f3a0659afab251f5
-Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 </code>
 </pre>
 <pre class="highlight">

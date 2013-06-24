@@ -99,7 +99,6 @@ None
 <code>
 HTTP/1.1 200 OK
 Etag: 203941fel3ds8ad61903224
-Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 </code>
 </pre>
 <pre class="highlight">
@@ -157,7 +156,6 @@ None
 <code>
 HTTP/1.1 200 OK
 Etag: 0b32030b31ef30a4446c9adff6a6f9e5
-Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 </code>
 </pre>
 <pre class="highlight">
@@ -409,7 +407,6 @@ Sets the state of a group.
 <code>
 HTTP/1.1 200 OK
 Etag: 030cf8c1c0025420f3a0659afab251f5
-Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 </code>
 </pre>
 <pre class="highlight">
