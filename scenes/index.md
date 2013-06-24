@@ -11,11 +11,15 @@ anchors:
     url: "#getattr"
   - title: Set scene attributes
     url: "#setattr"
-  - title: Set scene state
-    url: "#setstate"
+  - title: Store scene
+    url: "#store"
+  - title: Recall scene
+    url: "#recall"
   - title: Delete scene
     url: "#delete"
 ---
+
+{% include JB/setup %}
 
 Scenes provide a easy and performant way to recall often used states to a group.
 
@@ -23,7 +27,7 @@ Scenes provide a easy and performant way to recall often used states to a group.
 
 ## Create scene<a name="create">&nbsp;</a>
 
-    POST /api/<apikey>/groups/<group_id>/scene
+    POST /api/<apikey>/groups/<group_id>/scenes
 
 Creates a new scene for a group.
 The actual state of each light will become the lights scene state.
@@ -40,7 +44,7 @@ The actual state of each light will become the lights scene state.
     <tr>
       <td>name</td>
       <td>String</td>
-      <td>The name of the new group</td>
+      <td>The name of the new scene</td>
       <td>required</td>
     </tr>
   </tbody>
@@ -70,12 +74,12 @@ HTTP/1.1 200 OK
     <tr>
       <td>id</td>
       <td>String</td>
-      <td>The unique identifier of the group.</td>
+      <td>The unique identifier of the scene.</td>
     </tr>
   </tbody>
 </table>
 
-`Note` creating a group with a name which already exists will not create a new group or fail. Such a call does only return the id of the existing group.
+`Note` creating a scene with a name which already exists will not create a new scene or fail. Such a call will only return the id of the existing scene and store the current state of all lights.
 
 ### Possible errors
 
@@ -83,13 +87,17 @@ HTTP/1.1 200 OK
 
 [403 Forbidden](/errors#403)
 
+[404 Not Found](/errors#404)
+
+[503 Service Unavailable](/errors#503)
+
 ------------------------------------------------------
 
-## Get all groups<a name="getall">&nbsp;</a>
+## Get all scenes<a name="getall">&nbsp;</a>
 
-    GET /api/<apikey>/groups
+    GET /api/<apikey>/groups/<group_id>/scenes
 
-Returns a list of all groups.
+Returns a list of all scenes of a group.
 
 ### Parameters
 
@@ -107,12 +115,10 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 <code>
 {
     "1": {
-        "etag": "ab5272cfe11339202929259af22252ae",
-        "name": "Living Room"
+        "name": "working"
     },
     "2": {
-        "etag": "030cf8c1c0025420f3a0659afab251f5",
-        "name": "Kitchen"
+        "name": "reading"
     }
 }
 </code>
@@ -127,12 +133,7 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
     <tr>
       <td>name</td>
       <td>String</td>
-      <td>Name of a group.</td>
-    </tr>
-    <tr>
-      <td>etag</td>
-      <td>String</td>
-      <td>HTTP <a href="../polling#etag">etag</a> which changes on any action to the group.</td>
+      <td>Name of the scene.</td>
     </tr>
   </tbody>
 </table>
@@ -141,13 +142,15 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 
 [403 Forbidden](/errors#403)
 
+[404 Not Found](/errors#404)
+
 ------------------------------------------------------
 
-## Get group attributes<a name="getattr">&nbsp;</a>
+## Get scene attributes<a name="getattr">&nbsp;</a>
 
-    GET /api/<apikey>/groups/<id>
+    GET /api/<apikey>/groups/<group_id>/scenes/<scene_id>
 
-Returns the full state of a group.
+Returns all attributes of a scene.
 
 ### Parameters
 
@@ -164,22 +167,7 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 <pre class="highlight">
 <code>
 {
-    "action": {
-        "bri": 0,
-        "ct": 500,
-        "effect": "none",
-        "hue": 0,
-        "on": false,
-        "sat": 0,
-        "xy": [ 0, 0 ]
-    },
-    "etag": "0b32030b31ef30a4446c9adff6a6f9e5",
-    "id": "32772",
-    "lights": [ "42" ],
-    "name": "Livingroom",
-    "scenes": [
-        { "id": "1", "name": "warmlight" }
-    ]
+    "name": "reading"
 }
 </code>
 </pre>
@@ -191,58 +179,9 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
   </thead>
   <tbody>
     <tr>
-      <td>etag</td>
-      <td>String</td>
-      <td>HTTP <a href="../polling#etag">etag</a> which changes on any action to the group.</td>
-    </tr>
-    <tr>
       <td>name</td>
       <td>String</td>
-      <td>Name of the group.</td>
-    </tr>
-    <tr>
-      <td>action</td>
-      <td>Object</td>
-      <td>The last action which was send to the group.</td>
-    </tr>
-    <tr>
-      <td>action.on</td>
-      <td>Bool</td>
-      <td>true if the group was turned on.</td>
-    </tr>
-    <tr>
-      <td>action.bri</td>
-      <td>Number (0..255)</td>
-      <td>Brightness of the group. Depending on the lights 0 might not mean visible "off" but minimum brightness.</td>
-    </tr>
-    <tr>
-      <td>action.hue</td>
-      <td>Number (0..65535)</td>
-      <td>The hue parameter in the HSV color model is between 0°-360° and is mapped to 0..65535 to get 16-bit resolution.</td>
-    </tr>
-    <tr>
-      <td>action.sat</td>
-      <td>Number (0..255)</td>
-      <td>Color saturation there 0 means no color at all and 255 is the greatest saturation of the color.</td>
-    </tr>
-    <tr>
-      <td>action.ct</td>
-      <td>Number (153..500)</td>
-      <td>Mired color temperature. (2000K - 6500K)</td>
-    </tr>
-    <tr>
-      <td>action.xy</td>
-      <td>Array</td>
-      <td>CIE xy color space coordinates as array [x, y] of real values (0..1).</td>
-    </tr>
-    <tr>
-      <td>action.effect</td>
-      <td>String</td>
-      <td>Dynamic effect:
-        <ul>
-          <li>none - no effect</li>
-        </ul>
-      </td>
+      <td>Name of the scene.</td>
     </tr>
   </tbody>
 </table>
@@ -255,11 +194,11 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 
 ------------------------------------------------------
 
-## Set group attributes<a name="setattr">&nbsp;</a>
+## Set scene attributes<a name="setattr">&nbsp;</a>
 
-    PUT /api/<apikey>/groups/<id>
+    PUT /api/<apikey>/groups/<group_id>/scenes/<scene_id>
 
-Sets attributes of a group which are not related to its state.
+Sets attributes of a scene.
 
 ### Parameters
 
@@ -271,13 +210,7 @@ Sets attributes of a group which are not related to its state.
     <tr>
       <td>name</td>
       <td>String</td>
-      <td>The name of the group</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>lights</td>
-      <td>Array</td>
-      <td>IDs of the lights which are members of the group.</td>
+      <td>Name of the scene.</td>
       <td>optional</td>
     </tr>
   </tbody>
@@ -285,124 +218,7 @@ Sets attributes of a group which are not related to its state.
 
 ### Example request data
     {
-        "name": "Living Room",
-        "lights": [ "1", "4" ]
-    }
-
-### Response
-<pre class="headers">
-<code>
-HTTP/1.1 200 OK
-</code>
-</pre>
-<pre class="highlight">
-<code>
-[
-    { "success": { "/groups/1/name": "Living Room" } },
-    { "success": { "/groups/1/lights": [ "1", "4" ] } }
-];
-</code>
-</pre>
-
-`Note` In order to add or remove lights to the group the lights must be powered on.
-
-### Possible errors
-
-[400 Bad Request](/errors#400)
-
-[403 Forbidden](/errors#403)
-
-[404 Not Found](/errors#404)
-
-------------------------------------------------------
-
-## Set group state<a name="setstate">&nbsp;</a>
-
-    PUT /api/<apikey>/lights/<id>/action
-
-Sets the state of a group.
-
-### Parameters
-
-<table class="table table-bordered">
-  <thead>
-    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>on</td>
-      <td>Bool</td>
-      <td>Set to true to turn the lights on, false to turn them off.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>bri</td>
-      <td>Number (0..255)</td>
-      <td>Set the brightness of the group. Depending on the lights 0 might not mean visible "off" but minimum brightness. If the lights are off and the value is greater 0 a on=true shall also be provided.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>hue</td>
-      <td>Number (0..65535)</td>
-      <td>Set the color hue of the group. The hue parameter in the HSV color model is between 0°-360° and is mapped to 0..65535 to get 16-bit resolution.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>sat</td>
-      <td>Number (0..255)</td>
-      <td>Set the color saturation of the group. There 0 means no color at all and 255 is the greatest saturation of the color.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>ct</td>
-      <td>Number (153..500)</td>
-      <td>Set the Mired color temperature of the group. (2000K - 6500K)</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>xy</td>
-      <td>Array</td>
-      <td>Set the CIE xy color space coordinates as array [x, y] of real values (0..1).</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>alert</td>
-      <td>String</td>
-      <td>Trigger a temporary alert effect:
-        <ul>
-          <li>none - lights are not performing a alert</li>
-          <li>select - lights are blinking a short time</li>
-          <li>lselect - lights are blinking a longer time</li>
-        </ul>
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>effect</td>
-      <td>String</td>
-      <td>Trigger a effect of the group:
-        <ul>
-          <li>none - no effect</li>
-        </ul>
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>transitiontime</td>
-      <td>Number</td>
-      <td>Transitiontime in 1/10 seconds between two states.</td>
-      <td>optional</td>
-    </tr>
-  </tbody>
-</table>
-
-### Example request data
-    {
-      "on": true,
-      "bri": 180,
-      "hue": 43680,
-      "sat": 255,
-      "transitiontime": 10
+      "name": "working"
     }
 
 ### Response
@@ -415,12 +231,7 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 </pre>
 <pre class="highlight">
 <code>
-[
-    { "success": { "/groups/1/action/on": true   }},
-    { "success": { "/groups/1/action/bri": 180   }},
-    { "success": { "/groups/1/action/hue": 43680 }},
-    { "success": { "/groups/1/action/sat": 255   }}
-]
+[ { "success": { "/groups/1/scenes/1/name": "working" } } ]
 </code>
 </pre>
 
@@ -434,11 +245,14 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 
 ------------------------------------------------------
 
-## Delete group<a name="delete">&nbsp;</a>
+## Store scene<a name="store">&nbsp;</a>
 
-    DELETE /api/<apikey>/groups/<id>
+    PUT /api/<apikey>/groups/<group_id>/scenes/<scene_id>/store
 
-Deletes a group.
+Stores the current group state in the scene.
+The actual state of each light in the group will become the lights scene state.
+
+`Note` Lights which are not reachable (turned off) won't be affected!
 
 ### Parameters
 
@@ -452,14 +266,133 @@ HTTP/1.1 200 OK
 </pre>
 <pre class="highlight">
 <code>
-[ { "success": { "id": "1" } } ]
+[ { "success": { "id": "3" } } ]
 </code>
 </pre>
+#### Response fields
 
-`Note` In order to delete the group and therefore remove all lights from the group the lights must be powered on.
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>The unique identifier of the scene.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Possible errors
+
+[400 Bad Request](/errors#400)
 
 [403 Forbidden](/errors#403)
 
 [404 Not Found](/errors#404)
+
+[503 Service Unavailable](/errors#503)
+
+------------------------------------------------------
+
+## Recall scene<a name="recall">&nbsp;</a>
+
+    PUT /api/<apikey>/groups/<group_id>/scenes/<scene_id>/recall
+
+Recalls a scene.
+The actual state of each light in the group will become the lights scene state stored in each light.
+
+`Note` Lights which are not reachable (turned off) won't be affected!
+
+`Note` In the current API version the state of the lights in the gateway will not be updated directly after recalling a scene. For performance reasons this will happen after some delay.
+
+### Parameters
+
+None
+
+### Response
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "id": "3" } } ]
+</code>
+</pre>
+#### Response fields
+
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>The unique identifier of the scene.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Possible errors
+
+[400 Bad Request](/errors#400)
+
+[403 Forbidden](/errors#403)
+
+[404 Not Found](/errors#404)
+
+[503 Service Unavailable](/errors#503)
+
+------------------------------------------------------
+
+## Delete scene<a name="delete">&nbsp;</a>
+
+    DELETE /api/<apikey>/groups/<group_id>/scenes/<scene_id>
+
+Deletes a scene.
+
+`Note` The scene will not be removed from lights which are not reachable (turned off)!
+
+### Parameters
+
+None
+
+### Response
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "id": "3" } } ]
+</code>
+</pre>
+#### Response fields
+
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>The unique identifier of the scene.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Possible errors
+
+[400 Bad Request](/errors#400)
+
+[403 Forbidden](/errors#403)
+
+[404 Not Found](/errors#404)
+
+[503 Service Unavailable](/errors#503)
