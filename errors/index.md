@@ -3,6 +3,7 @@ layout: page
 title: Error handling
 nav: misc
 ---
+{% include JB/setup %}
 
 ## HTTP status codes
 Errors might occur for various reasons. Robust applications shall be expect them and not assume that each API call will succeed.
@@ -18,6 +19,7 @@ As usual in REST APIs errors are returned as HTTP status codes. The documentatio
 		<tr><td>400</td><td>Bad request</td><td>The request was not formated as expected or missing parameters</td></tr>
 		<tr><td>403</td><td>Forbidden</td><td>The caller has no rights to access the requested URI</td></tr>
 		<tr><td>404</td><td>Ressource Not Found</td><td>The requested ressource (light, group, ...) was not found</td></tr>
+		<tr><td>503</td><td>Service Unavailable</td><td>The device is not connected to the network or too busy to handle further requests</td></tr>
 	</tbody>
 </table>
 
