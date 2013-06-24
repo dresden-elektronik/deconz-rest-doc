@@ -11,13 +11,15 @@ anchors:
     url: "#setstate"
   - title: Set light attributes
     url: "#setattr"
-  - title: Delete light
-    url: "#delete"
-  - title: Search lights
-    url: "#search"
-  - title: Get new lights
-    url: "#getnew"
+#  - title: Delete light
+#    url: "#delete"
+#  - title: Search lights
+#    url: "#search"
+#  - title: Get new lights
+#    url: "#getnew"
 ---
+
+{% include JB/setup %}
 
 Monitor and control single lights.
 
