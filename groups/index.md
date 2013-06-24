@@ -17,6 +17,8 @@ anchors:
     url: "#delete"
 ---
 
+{% include JB/setup %}
+
 Groups are useful to control many lights at once and do also provide the base to use scenes.
 
 ------------------------------------------------------
@@ -297,7 +299,7 @@ HTTP/1.1 200 OK
 [
     { "success": { "/groups/1/name": "Living Room" } },
     { "success": { "/groups/1/lights": [ "1", "4" ] } }
-];
+]
 </code>
 </pre>
 
