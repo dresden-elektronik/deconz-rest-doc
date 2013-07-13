@@ -9,6 +9,7 @@ tagline: Documentation
 
 The gateway(s) in the local network could be discovered in various ways.
 
+------------------------------------------------------
 ### Discovery via internet
 
 	GET https://dresden-light.appspot.com/discover
@@ -21,10 +22,11 @@ If both the gateway and the application have access to the internet, discovery v
 <pre class="highlight">
 <code>
 	[{
-		"internal_ip": "192.168.192.237",
-	 	"internal_port": "80",
-	 	"mac": "E0:69:78:58:22:A4:32:CE",
-	 	"name": "deCONZ Rpi"
+		"id": "E0:69:78:58:22:A4:32:CE",
+		"internalipaddress": "192.168.192.34",
+	 	"internalport": "8080",
+	 	"macaddress": "E0:69:78:58:22:A4:32:CE",
+	 	"name": "RaspBee GW"
  	}]
 </code>
 </pre>
@@ -34,6 +36,7 @@ If both the gateway and the application have access to the internet, discovery v
 By visiting [http://www.dresden-elektronik.de/discover](http://www.dresden-elektronik.de/discover) a list of all gateways in the local network will be displayed.
 This is done by only using jQuery, Ajax and internet discovery.
 
+------------------------------------------------------
 ### Discovery via UPnP
 
 Another method to find the gateway is UPnP discovery via UDP sockets.
@@ -41,3 +44,22 @@ Another method to find the gateway is UPnP discovery via UDP sockets.
 The main advantage over internet discovery is that no internet is needed at all.
 
 `Note` The discovery might not work as expected if in the local network beside the main router also bridges are used, which might prevent UDP broadcasts to reach the whole network.
+
+------------------------------------------------------
+### Discovery via nmap
+
+[Nmap](http://www.nmap.org) is a open source commandline network scanner which is available for all major platforms. Since the gateway runs a SSH deamon at port 22 it's easy to find it in the local network.
+
+	$ nmap -p 22 -T5 -n -min-parallelism 100 --open 192.168.192.0/24
+
+`Note` Replace the `192.168.192.0/24` with your subnetwork for example `192.168.0.0/24`.
+
+#### Result
+
+	Starting Nmap 6.25 ( http://nmap.org ) at 2013-07-01 13:04 CEST
+	Nmap scan report for 192.168.192.34
+	Host is up (0.00081s latency).
+	PORT   STATE SERVICE
+	22/tcp open  ssh
+
+

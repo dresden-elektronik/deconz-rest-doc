@@ -2,6 +2,7 @@
 layout: page
 title: Configuration
 nav: endpoints
+order: 1
 anchors:
   - title: Aquire API key
     url: "#aquireapikey"
@@ -90,19 +91,18 @@ None
 <pre class="headers">
 <code>
 HTTP/1.1 200 OK
-Etag: 203941fel3ds8ad61903224
-Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
+ETag: "203941fel3ds8ad61903224"
 </code>
 </pre>
 <pre class="highlight">
 <code>
 {
-	"name": "deCONZ-RPi Gateway",
+	"name": "RaspBee GW",
 	"ipaddress": "192.168.1.20",
 	"mac": "00:15:22:22:00:11:11:a3",
 	"linkbutton": false,
 	"utc": "2013-05-10T09:01:23",
-	"swversion": "0114"
+	"swversion": "1.12.3"
 }
 </code>
 </pre>
@@ -131,7 +131,7 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 		<tr>
 			<td>linkbutton</td>
 			<td>Bool</td>
-			<td>true if the linkbutton was pressed.</td>
+			<td>true if the gateway is unlocked.</td>
 		</tr>
 		<tr>
 			<td>utc</td>
@@ -147,6 +147,8 @@ Last-Modified: Tue, 15 Nov 2012 10:12:00 GMT
 </table>
 
 ### Possible errors
+
+[304 Not Modified](/errors#304)
 
 [403 Forbidden](/errors#403)
 
@@ -185,8 +187,7 @@ None
 <pre class="headers">
 <code>
 HTTP/1.1 200 OK
-Etag: 203941fel3ds8ad61903224
-Last-Modified: Tue, 10 Nov 2012 21:16:04 GMT
+ETag: "203941fel3ds8ad61903224"
 </code>
 </pre>
 <pre class="highlight">
@@ -198,7 +199,7 @@ Last-Modified: Tue, 10 Nov 2012 21:16:04 GMT
         "ipaddress": "192.168.192.237",
         "linkbutton": true,
         "mac": "E0:69:95:58:06:7F",
-        "name": "deCONZ Gateway",
+        "name": "RaspBee GW",
         "netmask": "255.255.255.0",
         "portalservices": false,
         "proxyaddress": "",
@@ -209,12 +210,12 @@ Last-Modified: Tue, 10 Nov 2012 21:16:04 GMT
             "updatestate": 0,
             "url": ""
         },
-        "swversion": "01005215",
+        "swversion": "1.12.3",
         "utc": "2013-05-22T12:02:30",
         "whitelist": {}
     },
     "groups": {
-        "32769": {
+        "1": {
             "action": {
                 "bri": 3945,
                 "colormode": "hs",
@@ -223,14 +224,11 @@ Last-Modified: Tue, 10 Nov 2012 21:16:04 GMT
                 "hue": 0,
                 "on": true,
                 "sat": 17680,
-                "xy": [
-                    0.0610457,
-                    0.219979
-                ]
+                "xy": [0.0610457, 0.219979]
             },
             "etag": "893f60b611274d1803207298cf26b1e1",
             "lights": [],
-            "name": "Demo",
+            "name": "Office",
             "scenes": []
         }
     },
@@ -271,5 +269,7 @@ Last-Modified: Tue, 10 Nov 2012 21:16:04 GMT
 </table>
 
 ### Possible errors
+
+[304 Not Modified](/errors#304)
 
 [403 Forbidden](/errors#403)

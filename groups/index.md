@@ -2,6 +2,7 @@
 layout: page
 title: Groups
 nav: endpoints
+order: 3
 anchors:
   - title: Create group
     url: "#create"
@@ -56,7 +57,7 @@ HTTP/1.1 200 OK
 </pre>
 <pre class="highlight">
 <code>
-[ { "success": { "id": "3" } } ];
+[ { "success": { "id": "3" } } ]
 </code>
 </pre>
 #### Response fields
@@ -98,7 +99,6 @@ None
 <pre class="headers">
 <code>
 HTTP/1.1 200 OK
-Etag: 203941fel3ds8ad61903224
 </code>
 </pre>
 <pre class="highlight">
@@ -155,7 +155,7 @@ None
 <pre class="headers">
 <code>
 HTTP/1.1 200 OK
-Etag: 0b32030b31ef30a4446c9adff6a6f9e5
+ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
 </code>
 </pre>
 <pre class="highlight">
@@ -246,6 +246,8 @@ Etag: 0b32030b31ef30a4446c9adff6a6f9e5
 
 ### Possible errors
 
+[304 Not Modified](/errors#304)
+
 [403 Forbidden](/errors#403)
 
 [404 Not Found](/errors#404)
@@ -290,6 +292,7 @@ Sets attributes of a group which are not related to its state.
 <pre class="headers">
 <code>
 HTTP/1.1 200 OK
+ETag: "000bf36b51ef3324446c98hdf6a6ace6"
 </code>
 </pre>
 <pre class="highlight">
@@ -310,6 +313,8 @@ HTTP/1.1 200 OK
 [403 Forbidden](/errors#403)
 
 [404 Not Found](/errors#404)
+
+[503 Service Unavailable](/errors#503)
 
 ------------------------------------------------------
 
@@ -406,7 +411,7 @@ Sets the state of a group.
 <pre class="headers">
 <code>
 HTTP/1.1 200 OK
-Etag: 030cf8c1c0025420f3a0659afab251f5
+ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
 </pre>
 <pre class="highlight">
@@ -427,6 +432,8 @@ Etag: 030cf8c1c0025420f3a0659afab251f5
 [403 Forbidden](/errors#403)
 
 [404 Not Found](/errors#404)
+
+[503 Service Unavailable](/errors#503)
 
 ------------------------------------------------------
 
@@ -459,3 +466,5 @@ HTTP/1.1 200 OK
 [403 Forbidden](/errors#403)
 
 [404 Not Found](/errors#404)
+
+[503 Service Unavailable](/errors#503)

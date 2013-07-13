@@ -2,6 +2,7 @@
 layout: page
 title: Scenes
 nav: endpoints
+order: 4
 anchors:
   - title: Create scene
     url: "#create"

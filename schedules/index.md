@@ -2,6 +2,7 @@
 layout: page
 title: Schedules
 nav: endpoints
+order: 5
 anchors:
   - title: Create schedule
     url: "#create"

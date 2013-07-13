@@ -2,6 +2,7 @@
 layout: page
 title: Lights
 nav: endpoints
+order: 2
 anchors:
   - title: Get all lights
     url: "#getall"
@@ -39,7 +40,6 @@ None
 <pre class="headers">
 <code>
 HTTP/1.1 200 OK
-Etag: 203941fel3ds8ad61903224
 </code>
 </pre>
 <pre class="highlight">
@@ -96,7 +96,7 @@ None
 <pre class="headers">
 <code>
 HTTP/1.1 200 OK
-Etag: 030cf8c1c0025420f3a0659afab251f5
+ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
 </pre>
 <pre class="highlight">
@@ -105,7 +105,7 @@ Etag: 030cf8c1c0025420f3a0659afab251f5
     "etag": "030cf8c1c0025420f3a0659afab251f5",
     "name": "Desk Lamp",
     "modelid": "FLS-PP-01",
-    "pointsymbol": "none",
+    "pointsymbol": {},
     "swversion": "14010400",
     "type": "Color Dimmable Light",
     "state": {
@@ -147,8 +147,8 @@ Etag: 030cf8c1c0025420f3a0659afab251f5
     </tr>
     <tr>
       <td>pointsymbol</td>
-      <td>String</td>
-      <td>Not used in the current version and always set to <em>none</em>.</td>
+      <td>Object</td>
+      <td>Not used in the current version.</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -235,6 +235,8 @@ Etag: 030cf8c1c0025420f3a0659afab251f5
 </table>
 
 ### Possible errors
+
+[304 Not Modified](/errors#304)
 
 [403 Forbidden](/errors#403)
 
@@ -335,7 +337,7 @@ Sets the state of a light.
 <pre class="headers">
 <code>
 HTTP/1.1 200 OK
-Etag: 030cf8c1c0025420f3a0659afab251f5
+ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
 </pre>
 <pre class="highlight">
@@ -350,6 +352,8 @@ Etag: 030cf8c1c0025420f3a0659afab251f5
 </pre>
 
 ### Possible errors
+
+[400 Bad Request](/errors#400)
 
 [403 Forbidden](/errors#403)
 
@@ -386,7 +390,7 @@ Sets attributes of a light which are not related to its state.
 <pre class="headers">
 <code>
 HTTP/1.1 200 OK
-Etag: 030cf8c1c0025420f3a0659afab251f5
+ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
 </pre>
 <pre class="highlight">
@@ -396,6 +400,8 @@ Etag: 030cf8c1c0025420f3a0659afab251f5
 </pre>
 
 ### Possible errors
+
+[400 Bad Request](/errors#400)
 
 [403 Forbidden](/errors#403)
 
