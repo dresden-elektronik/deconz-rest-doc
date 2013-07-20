@@ -23,4 +23,4 @@ For now the API provides following capabilities:
 - Trigger timed commands
 
 ## Extensibility
-The [deCONZ REST API Plugin](http://github.com/dresden-elektronik/deconz-rest-plugin) is a open source project and available at GitHub. It could therefore be extended with further functionality, for example to support more devices.
+The [deCONZ REST API Plugin](http://github.com/dresden-elektronik/deconz-rest-plugin) is a open source project licensed under the BSD license and available at GitHub. It could therefore be extended with further functionality, for example to support more devices.
