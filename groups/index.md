@@ -20,7 +20,7 @@ anchors:
 
 {% include JB/setup %}
 
-Groups are useful to control many lights at once and do also provide the base to use scenes.
+Groups are useful to control many lights at once and provide the base to use scenes.
 
 ------------------------------------------------------
 
@@ -75,7 +75,7 @@ HTTP/1.1 200 OK
   </tbody>
 </table>
 
-`Note` creating a group with a name which already exists will not create a new group or fail. Such a call does only return the id of the existing group.
+`Note` Creating a group with a name which already exists will not create a new group or fail. Such a call does only return the id of the existing group.
 
 ### Possible errors
 
@@ -352,7 +352,7 @@ Sets the state of a group.
     <tr>
       <td>sat</td>
       <td>Number (0..255)</td>
-      <td>Set the color saturation of the group. There 0 means no color at all and 255 is the greatest saturation of the color.</td>
+      <td>Set the color saturation of the group. There 0 means no color at all and 255 is the highest saturation of the color.</td>
       <td>optional</td>
     </tr>
     <tr>
@@ -372,7 +372,7 @@ Sets the state of a group.
       <td>String</td>
       <td>Trigger a temporary alert effect:
         <ul>
-          <li>none - lights are not performing a alert</li>
+          <li>none - lights are not performing an alert</li>
           <li>select - lights are blinking a short time</li>
           <li>lselect - lights are blinking a longer time</li>
         </ul>
@@ -392,7 +392,7 @@ Sets the state of a group.
     <tr>
       <td>transitiontime</td>
       <td>Number</td>
-      <td>Transitiontime in 1/10 seconds between two states.</td>
+      <td>Transition time in 1/10 seconds between two states.</td>
       <td>optional</td>
     </tr>
   </tbody>

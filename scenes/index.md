@@ -22,7 +22,7 @@ anchors:
 
 {% include JB/setup %}
 
-Scenes provide a easy and performant way to recall often used states to a group.
+Scenes provide an easy and performant way to recall often used states to a group.
 
 ------------------------------------------------------
 
@@ -80,7 +80,7 @@ HTTP/1.1 200 OK
   </tbody>
 </table>
 
-`Note` creating a scene with a name which already exists will not create a new scene or fail. Such a call will only return the id of the existing scene and store the current state of all lights.
+`Note` Creating a scene with a name which already exists will not create a new scene or fail. Such a call will only return the id of the existing scene and store the current state of all lights.
 
 ### Possible errors
 

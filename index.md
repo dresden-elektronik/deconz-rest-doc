@@ -7,7 +7,7 @@ tagline: Documentation
 
 ## Introduction
 
-This documentation describes the REST API, which is provided by [dresden elektroniks](http://www.dresden-elektronik.de?L=1) [deCONZ REST API Plugin](#) that runs a lightweight HTTP server within the [deCONZ](http://www.dresden-elektronik.de/funktechnik/products/software/pc/deconz?L=1) application.
+This documentation describes the REST API, which is provided by the [deCONZ REST API Plugin](http://github.com/dresden-elektronik/deconz-rest-plugin) from [dresden elektronik](http://www.dresden-elektronik.de?L=1) that runs a lightweight HTTP server within the [deCONZ](http://www.dresden-elektronik.de/funktechnik/products/software/pc/deconz?L=1) application.
 
 The REST API allows third party applications easy monitoring and control of a ZigBee network from local or remote operating clients.
 
@@ -23,4 +23,4 @@ For now the API provides following capabilities:
 - Trigger timed commands
 
 ## Extensibility
-The [deCONZ REST API Plugin](#) is a open source project and available at GitHub. It could therefore be extended with further functionality, for example to support more devices.
+The [deCONZ REST API Plugin](http://github.com/dresden-elektronik/deconz-rest-plugin) is a open source project and available at GitHub. It could therefore be extended with further functionality, for example to support more devices.

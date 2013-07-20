@@ -7,7 +7,7 @@ tagline: Documentation
 
 ## Finding the gateway
 
-The gateway(s) in the local network could be discovered in various ways.
+The gateway(s) in the local network can be discovered in various ways.
 
 ------------------------------------------------------
 ### Discovery via internet
@@ -41,14 +41,14 @@ This is done by only using jQuery, Ajax and internet discovery.
 
 Another method to find the gateway is UPnP discovery via UDP sockets.
 
-The main advantage over internet discovery is that no internet is needed at all.
+The main advantage compared to the internet discovery is that no internet is needed at all.
 
 `Note` The discovery might not work as expected if in the local network beside the main router also bridges are used, which might prevent UDP broadcasts to reach the whole network.
 
 ------------------------------------------------------
 ### Discovery via nmap
 
-[Nmap](http://www.nmap.org) is a open source commandline network scanner which is available for all major platforms. Since the gateway runs a SSH deamon at port 22 it's easy to find it in the local network.
+[Nmap](http://www.nmap.org) is an open source command-line network scanner which is available for all major platforms. Since the gateway runs a SSH deamon at port 22 it is easy to find it in the local network.
 
 	$ nmap -p 22 -T5 -n -min-parallelism 100 --open 192.168.192.0/24
 

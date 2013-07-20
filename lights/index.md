@@ -143,7 +143,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>A identifier unique to the product.</td>
+      <td>An identifier unique to the product.</td>
     </tr>
     <tr>
       <td>pointsymbol</td>
@@ -200,7 +200,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>String</td>
       <td>Temporary alert effect. Following values are possible:
         <ul>
-          <li>none - light is not performing a alert</li>
+          <li>none - light is not performing an alert</li>
           <li>select - light is blinking a short time</li>
           <li>lselect - light is blinking a longer time</li>
         </ul>
@@ -209,7 +209,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td>state.colormode</td>
       <td>String</td>
-      <td>The current colormode of the light:
+      <td>The current color mode of the light:
         <ul>
           <li>hs - hue and saturation</li>
           <li>xy - CIE xy values</li>
@@ -298,7 +298,7 @@ Sets the state of a light.
       <td>String</td>
       <td>Trigger a temporary alert effect:
         <ul>
-          <li>none - light is not performing a alert</li>
+          <li>none - light is not performing an alert</li>
           <li>select - light is blinking a short time</li>
           <li>lselect - light is blinking a longer time</li>
         </ul>
@@ -308,7 +308,7 @@ Sets the state of a light.
     <tr>
       <td>effect</td>
       <td>String</td>
-      <td>Trigger a effect of the light:
+      <td>Trigger an effect of the light:
         <ul>
           <li>none - no effect</li>
         </ul>
@@ -318,7 +318,7 @@ Sets the state of a light.
     <tr>
       <td>transitiontime</td>
       <td>Number</td>
-      <td>Transitiontime in 1/10 seconds between two states.</td>
+      <td>Transition time in 1/10 seconds between two states.</td>
       <td>optional</td>
     </tr>
   </tbody>

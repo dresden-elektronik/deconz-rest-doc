@@ -8,17 +8,17 @@ tagline: Documentation
 ## Introduction
 
 REST stands for Representational State Transfer and sets the ground for various modern web based APIs.
-The main idea behind REST is that everything is a ressource and has a state.
+The main idea behind REST is that everything is a resource and has a state.
 
-Ressources are represented by a URLs like:
+Resources are represented by URLs like:
 
 - `/lights` - a collection of lights
 - `/lights/1` - a single light
 - `/lights/1/state` - the current state of a light
 
-### API Endpoints
+### API endpoints
 
-All ressources are provided by so called endpoints. The API endpoint documentaion can be found in the menu on the left side.
+All resources are provided by so called endpoints. The API endpoint documentation can be found in the menu on the left side.
 
 Currently the following endpoints are available.
 
@@ -55,7 +55,7 @@ More endpoints and functionality will be added in future.
 ------------------------------------------------------
 ## Methods
 
-Ressources can be queried and modified with standard HTTP methods. Where GET, PUT, POST and DELETE are only a subset of all possible methods, they are by far the most used ones.
+Resources can be queried and modified with standard HTTP methods. Where GET, PUT, POST and DELETE are only a subset of all possible methods, they are by far the most used ones.
 
 <table class="table table-bordered">
 	<thead><tr><th>Method</th><th>Description</th></tr></thead>
@@ -70,11 +70,11 @@ Ressources can be queried and modified with standard HTTP methods. Where GET, PU
 ------------------------------------------------------
 ## JSON
 
-The contents of ressources are often expressed in Javascript Object Notation better known as JSON. That's not a requirement of REST itself, in fact some APIs also use XML but JSON is by far more popular due its simplicity.
+The contents of ressources are often expressed in Javascript Object Notation better known as JSON. That's not a requirement of REST itself, in fact some APIs also use XML but JSON is by far more popular due to its simplicity.
 
-The JSON format is a very simple but powerful notation to express structured objects and lists. The following example covers anything what can be expressed with JSON.
+The JSON format is a very simple but powerful notation to express structured objects and lists. The following example covers everything that can be expressed with JSON.
 
-### Example Object
+### Example object
 
 	{
 		"a_string": "this is a string",
@@ -87,35 +87,35 @@ The JSON format is a very simple but powerful notation to express structured obj
 	}
 
  - Strings are always double quoted `"like this"`
- - keys and values are seperated through a colon `:` and keys are always strings like `"key"`
+ - Keys and values are separated by a colon `:` and keys are always strings like `"key"`
  - Objects `{ }` and lists `[ ]` might be empty and can be nested
  - Numbers can be integers `1` or fractional `0.5`
 
-Thats all about JSON.
+That's all about JSON.
 
 ------------------------------------------------------
 ### URLs and the API key
 
 When reading the API endpoint documentation URLs will look like `/api/<apikey>/lights`.
 
-The first thing to note here is the `/api` prefix which seperates the API interface from the HTML5 web application which is reachable through the document root `/`.
+The `/api` prefix separates the API interface from the HTML5 web application which is reachable through the document root `/`.
 
-Further nearly any API requests requires a so called **API key** which is a _mandatory_ part of request URLs.
+Nearly every API request requires a so called **API key** which is a _mandatory_ part of request URLs.
 
-The API key has the single purpose to restrict access to the gateway. Remember the gateway is reachable through the whole local network and without the API key requirement anbody could control the lights.
+The API key has the only purpose to restrict access to the gateway. Remember the gateway is reachable through the whole local network and without the API key requirement anybody could control the lights.
 
-That said all clients need to [aquire API key]({{BASE_PATH}}/configuration#aquireapikey) through the configuration endpoint.
+Nevertheless all clients need to [acquire API key]({{BASE_PATH}}/configuration#aquireapikey) by means of the configuration endpoint.
 
 ------------------------------------------------------
 ### Benefits
 
- - clients might access the API local or remote via network
- - access from any desktop and mobile platform
- - access from any programming language
- - all popular programming languages provide helper classes and functions to work with RESTful APIs
- - the format of requests and responses is human readable
- - learning and using REST APIs is pretty straight forward
+ - Clients might access the API local or remote via network
+ - Access from any desktop and mobile platform
+ - Access from any programming language
+ - All popular programming languages provide helper classes and functions to work with RESTful APIs
+ - The format of requests and responses is human readable
+ - Learning and using REST APIs is pretty straight forward
 
 ------------------------------------------------------
 ## What's next
-Now you know the basics about REST it's time to move on to the [Getting Started]({{BASE_PATH}}/getting_started) section which explains step by step how to aquire a API key and do some basic control of the lights.
+Now you know the basics about REST. It's time to move on to the [Getting Started]({{BASE_PATH}}/getting_started) section which explains step by step how to acquire an API key and do some basic control of the lights.
