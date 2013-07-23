@@ -7,9 +7,14 @@ tagline: Documentation
 
 ## Introduction
 
-This documentation describes the REST API, which is provided by the [deCONZ REST API Plugin](http://github.com/dresden-elektronik/deconz-rest-plugin) from [dresden elektronik](http://www.dresden-elektronik.de?L=1) that runs a lightweight HTTP server within the [deCONZ](http://www.dresden-elektronik.de/funktechnik/products/software/pc/deconz?L=1) application.
+This documentation describes the REST API, which is provided by the [deCONZ REST API Plugin](http://github.com/dresden-elektronik/deconz-rest-plugin) from [dresden elektronik](http://www.dresden-elektronik.de?L=1) that runs a lightweight HTTP server within the [deCONZ](http://www.dresden-elektronik.de/funktechnik/products/software/pc/deconz?L=1) application on the Raspberry Pi.
 
 The REST API allows third party applications easy monitoring and control of a ZigBee network from local or remote operating clients.
+
+One of the following devices is needed to get ZigBee support on the Raspberry Pi.
+
+* [RaspBee](http://www.dresden-elektronik.de/funktechnik/solutions/wireless-light-control/raspbee?L=1) ZigBee shield for Raspberry Pi
+* [deRFusb23E0X](http://www.dresden-elektronik.de/funktechnik/products/usb-radio-sticks/derfusb/?L=1) USB radio stick
 
 ## Features
 For now the API provides following capabilities:
@@ -17,7 +22,7 @@ For now the API provides following capabilities:
 - Support for ZigBee Home Automation (HA) and ZigBee Light Link (ZLL) based lights
 - Add, remove and modify groups of lights
 - Control single lights or groups
-- Control colors and dimmlevels via hue, saturation, brightness, CIE xy color coordinates and color temperature
+- Control colors and dimmlevels via hue, saturation, brightness, CIE xy color coordinates
 - Smooth transitions of colors and dimming over time
 - Save and recall individual scenes for a group
 - Trigger timed commands
