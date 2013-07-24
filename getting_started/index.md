@@ -41,7 +41,7 @@ This could be achieved by doing a `GET` request to `https://dresden-light.appspo
 The response body shows that the gateway has the IP address _192.168.192.32_ and the API
 is reachable through port _8080_.
 
-`Note` If the above request doesn't work, there are serval other ways to find the gateway IP address as described in the [Discovery]({{BASE_PATH}}/discovery) section.
+`Note` If the above request doesn't work, there are several other ways to find the gateway IP address as described in the [Discovery]({{BASE_PATH}}/discovery) section.
 
 ------------------------------------------------------
 ## Acquire an API key
