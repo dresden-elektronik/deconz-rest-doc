@@ -47,6 +47,10 @@ Currently the following endpoints are available.
 			<td><a href="{{BASE_PATH}}/schedules">/schedules</a></td>
 			<td>Interface for timed commands.</td>
 		</tr>
+		<tr>
+			<td><a href="{{BASE_PATH}}/touchlink">/touchlink</a></td>
+			<td>Interface for touchlink commands.</td>
+		</tr>
 	</tbody>
 </table>
 
