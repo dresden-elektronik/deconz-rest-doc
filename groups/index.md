@@ -269,7 +269,7 @@ Sets attributes of a group which are not related to its state.
   <tbody>
     <tr>
       <td>name</td>
-      <td>String</td>
+      <td>String (0..32)</td>
       <td>The name of the group</td>
       <td>optional</td>
     </tr>

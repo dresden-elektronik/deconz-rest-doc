@@ -26,6 +26,7 @@ For now the API provides following capabilities:
 - Smooth transitions of colors and dimming over time
 - Save and recall individual scenes for a group
 - Trigger timed commands
+- Reset ZLL lights to factory new state
 
 ## Extensibility
 The [deCONZ REST API Plugin](http://github.com/dresden-elektronik/deconz-rest-plugin) is a open source project licensed under the BSD license and available at GitHub. It could therefore be extended with further functionality, for example to support more devices.
