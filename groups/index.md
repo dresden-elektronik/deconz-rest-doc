@@ -320,7 +320,7 @@ ETag: "000bf36b51ef3324446c98hdf6a6ace6"
 
 ## Set group state<a name="setstate">&nbsp;</a>
 
-    PUT /api/<apikey>/lights/<id>/action
+    PUT /api/<apikey>/groups/<id>/action
 
 Sets the state of a group.
 
