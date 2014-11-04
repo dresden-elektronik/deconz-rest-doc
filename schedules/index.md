@@ -301,7 +301,7 @@ Etag: 030cf8c1c0025420f3a0659afab251f5
 
 ## Delete schedule<a name="delete">&nbsp;</a>
 
-    DELETE /api/<apikey>/schedule/<id>
+    DELETE /api/<apikey>/schedules/<id>
 
 Deletes a schedule.
 
