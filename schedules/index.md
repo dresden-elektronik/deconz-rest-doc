@@ -166,7 +166,7 @@ Etag: 203941fel3ds8ad61903224
 
 ## Get schedule attributes<a name="getattr">&nbsp;</a>
 
-    GET /api/<apikey>/schedule/<id>
+    GET /api/<apikey>/schedules/<id>
 
 Returns all attributes of a schedule.
 
