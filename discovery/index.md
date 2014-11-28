@@ -10,6 +10,7 @@ tagline: Documentation
 The gateway(s) in the local network can be discovered in various ways.
 
 ------------------------------------------------------
+
 ### Discovery via internet
 
 	GET https://dresden-light.appspot.com/discover
@@ -37,6 +38,7 @@ By visiting [http://www.dresden-elektronik.de/discover](http://www.dresden-elekt
 This is done by only using jQuery, Ajax and internet discovery.
 
 ------------------------------------------------------
+
 ### Discovery via UPnP
 
 Another method to find the gateway is UPnP discovery via UDP sockets.
@@ -46,6 +48,7 @@ The main advantage compared to the internet discovery is that no internet is nee
 `Note` The discovery might not work as expected if in the local network beside the main router also bridges are used, which might prevent UDP broadcasts to reach the whole network.
 
 ------------------------------------------------------
+
 ### Discovery via nmap
 
 [Nmap](http://www.nmap.org) is an open source command-line network scanner which is available for all major platforms. Since the gateway runs a SSH deamon at port 22 it is easy to find it in the local network.

@@ -56,6 +56,7 @@ HTTP/1.1 200 OK
 }
 </code>
 </pre>
+
 #### Response fields
 
 <table class="table table-bordered">
@@ -123,6 +124,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 }
 </code>
 </pre>
+
 #### Response fields
 
 <table class="table table-bordered">

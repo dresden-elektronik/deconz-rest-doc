@@ -19,6 +19,7 @@ This section describes the first steps needed in order to use the API.
 If you are new to REST APIs please read the [About REST]({{BASE_PATH}}/rest) section first.
 
 ------------------------------------------------------
+
 ## Requirements
 
 The only tool needed in this section is a browser with a **REST client add-on** to access the API. This document doesn't cover the API access through a programming language since everybody may have its favorite language.
@@ -30,6 +31,7 @@ In the following steps *Postman* for Chrome from the [Google Webstore](https://c
 For Firefox the [REST Client](https://addons.mozilla.org/de/firefox/addon/restclient) is another popular client.
 
 ------------------------------------------------------
+
 ## Find your gateway
 
 As first step the gateway IP address and port must be found.
@@ -44,6 +46,7 @@ is reachable through port _8080_.
 `Note` If the above request doesn't work, there are several other ways to find the gateway IP address as described in the [Discovery]({{BASE_PATH}}/discovery) section.
 
 ------------------------------------------------------
+
 ## Acquire an API key
 
 Any client that wants to access the API must provide a valid API key otherwise the access will fail.
@@ -84,6 +87,7 @@ This time the request succeded with <span class="label">STATUS</span> 200 OK.
 In the response body the new API key is in the field `username`, from now on this key will be used in further API requests.
 
 ------------------------------------------------------
+
 ## Get a list of all lights
 
 With the API key from the last section it is now possible to access the full API.
@@ -101,6 +105,7 @@ In the response 3 lights where returned. There are serval things to note here.
  `Note` Ids are strings and even if they contain numbers **never** expect them to be "1", "2", "3", ... if the user removes light "2" the list will become "1", "3".
 
 ------------------------------------------------------
+
 ## Get the details of a light
 
 To get the detail of a light do a `GET` request to `/api/<apikey>/lights/<id>` as follows.
@@ -116,6 +121,7 @@ To turn a light on/off do a `PUT` request to `/api/<apikey>/lights/<id>/state` a
 In the request body set the `on` value to _true_ or _false_ to turn the light on and off. 
 
 ------------------------------------------------------
+
 ## Dim the light with transition time
 
 Dimming is done the same way as sending on/off by using the `bri` parameter; additionally specify a transition time in 1/10 seconds.
@@ -125,6 +131,7 @@ The following example dims the light in 5 seconds down.
 <img src="img/5_dimm_light.png" alt="dimm light"/>
 
 ------------------------------------------------------
+
 ## What's next
 
 To do some more advanced things with this API please refer to the _API endpoints_ documentation on the left side menu.

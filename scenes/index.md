@@ -65,6 +65,7 @@ HTTP/1.1 200 OK
 [ { "success": { "id": "3" } } ];
 </code>
 </pre>
+
 #### Response fields
 
 <table class="table table-bordered">
@@ -123,6 +124,7 @@ Etag: 203941fel3ds8ad61903224
 }
 </code>
 </pre>
+
 #### Response fields
 
 <table class="table table-bordered">
@@ -170,6 +172,7 @@ Etag: 0b32030b31ef30a4446c9adff6a6f9e5
 }
 </code>
 </pre>
+
 #### Response fields
 
 <table class="table table-bordered">
@@ -267,6 +270,7 @@ HTTP/1.1 200 OK
 [ { "success": { "id": "3" } } ]
 </code>
 </pre>
+
 #### Response fields
 
 <table class="table table-bordered">
@@ -320,6 +324,7 @@ HTTP/1.1 200 OK
 [ { "success": { "id": "3" } } ]
 </code>
 </pre>
+
 #### Response fields
 
 <table class="table table-bordered">
@@ -370,6 +375,7 @@ HTTP/1.1 200 OK
 [ { "success": { "id": "3" } } ]
 </code>
 </pre>
+
 #### Response fields
 
 <table class="table table-bordered">

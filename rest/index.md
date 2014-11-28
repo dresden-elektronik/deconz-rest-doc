@@ -57,6 +57,7 @@ Currently the following endpoints are available.
 More endpoints and functionality will be added in future.
 
 ------------------------------------------------------
+
 ## Methods
 
 Resources can be queried and modified with standard HTTP methods. Where GET, PUT, POST and DELETE are only a subset of all possible methods, they are by far the most used ones.
@@ -72,6 +73,7 @@ Resources can be queried and modified with standard HTTP methods. Where GET, PUT
 </table>
 
 ------------------------------------------------------
+
 ## JSON
 
 The contents of ressources are often expressed in Javascript Object Notation better known as JSON. That's not a requirement of REST itself, in fact some APIs also use XML but JSON is by far more popular due to its simplicity.
@@ -98,6 +100,7 @@ The JSON format is a very simple but powerful notation to express structured obj
 That's all about JSON.
 
 ------------------------------------------------------
+
 ### URLs and the API key
 
 When reading the API endpoint documentation URLs will look like `/api/<apikey>/lights`.
@@ -111,6 +114,7 @@ The API key has the only purpose to restrict access to the gateway. Remember the
 Nevertheless all clients need to [acquire API key]({{BASE_PATH}}/configuration#aquireapikey) by means of the configuration endpoint.
 
 ------------------------------------------------------
+
 ### Benefits
 
  - Clients might access the API local or remote via network
@@ -121,5 +125,6 @@ Nevertheless all clients need to [acquire API key]({{BASE_PATH}}/configuration#a
  - Learning and using REST APIs is pretty straight forward
 
 ------------------------------------------------------
+
 ## What's next
 Now you know the basics about REST. It's time to move on to the [Getting Started]({{BASE_PATH}}/getting_started) section which explains step by step how to acquire an API key and do some basic control of the lights.
