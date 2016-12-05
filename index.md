@@ -11,20 +11,19 @@ This documentation describes the REST API, which is provided by the [deCONZ REST
 
 The REST API allows third party applications easy monitoring and control of a ZigBee network from local or remote operating clients.
 
-One of the following devices is needed to get ZigBee support on the Raspberry Pi.
+One of the following devices is needed to get ZigBee support on the Raspberry Pi or PC.
 
 * [RaspBee](http://www.dresden-elektronik.de/funktechnik/solutions/wireless-light-control/raspbee?L=1) ZigBee shield for Raspberry Pi
-* [deRFusb23E0X](http://www.dresden-elektronik.de/funktechnik/products/usb-radio-sticks/derfusb/?L=1) USB radio stick
+* [ConBee](https://www.dresden-elektronik.de/funktechnik/solutions/wireless-light-control/conbee/?L=1) USB radio stick for PC or Raspberry Pi
 
 ## Features
-For now the API provides following capabilities:
-
 - Support for ZigBee Home Automation (HA) and ZigBee Light Link (ZLL) based lights
 - Add, remove and modify groups of lights
 - Control single lights or groups
 - Control colors and dimmlevels via hue, saturation, brightness, CIE xy color coordinates
 - Smooth transitions of colors and dimming over time
 - Save and recall individual scenes for a group
+- Create rules to automate light control
 - Trigger timed commands
 - Reset ZLL lights to factory new state
 

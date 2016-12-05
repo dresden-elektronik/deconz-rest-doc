@@ -18,6 +18,7 @@ As usual in REST APIs errors are returned as HTTP status codes. The documentatio
 		<tr><td>202</td><td>Accepted</td><td>Request will be processed but isn't finished yet</td></tr>
 		<tr><td>304</td><td>Not Modified</td><td>Is returned if the request had the If-None-Match header and the ETag on the resource was the same.</td></tr>
 		<tr><td>400</td><td>Bad request</td><td>The request was not formated as expected or missing parameters</td></tr>
+		<tr><td>401</td><td>Unauthorized</td><td>Authorization failed</td></tr>
 		<tr><td>403</td><td>Forbidden</td><td>The caller has no rights to access the requested URI</td></tr>
 		<tr><td>404</td><td>Resource Not Found</td><td>The requested resource (light, group, ...) was not found</td></tr>
 		<tr><td>503</td><td>Service Unavailable</td><td>The device is not connected to the network or too busy to handle further requests</td></tr>

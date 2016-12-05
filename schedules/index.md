@@ -2,7 +2,7 @@
 layout: page
 title: Schedules
 nav: endpoints
-order: 5
+order: 6
 anchors:
   - title: Create schedule
     url: "#create"
@@ -54,9 +54,48 @@ Creates a new schedule.
       <td>required</td>
     </tr>
     <tr>
+      <td>command.address</td>
+      <td>String</td>
+      <td>The address of a light or group ressource</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>command.method</td>
+      <td>String</td>
+      <td>must be "PUT"</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>command.body</td>
+      <td>Object</td>
+      <td>The state that the light or group will activate when the schedule triggers</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>String ("enabled"|"disabled")</td>
+      <td>Whether the schedule is enabled or disabled. Default is enabled.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>autodelete</td>
+      <td>Bool</td>
+      <td>If true the schedule will be deleted after triggered. Else it will be disabled. Default is true.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
       <td>time</td>
       <td>String</td>
-      <td>Time when the schedule shall trigger in UTC ISO 8601:2004 format. The time must be in the future.</td>
+      <td>Time when the schedule shall trigger in UTC ISO 8601:2004 format.
+        <ul>
+          <li>specific date: "yyyy-MM-ddThh:mm:ss"</li>
+          <li>repeated days: "W[0..127]/Thh:mm:ss"</li>
+          <li>timer: "PThh:mm:ss"</li>
+          <li>recurring timer: "R[0..99]/PThh:mm:ss"</li>
+        </ul>
+        Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.<br />
+The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.
+      </td>
       <td>required</td>
     </tr>
   </tbody>
@@ -103,7 +142,6 @@ HTTP/1.1 200 OK
   </tbody>
 </table>
 
-`Note` creating a scene with a name which already exists will not create a new scene or fail. Such a call will only return the id of the existing scene and store the current state of all lights.
 
 ### Possible errors
 
@@ -134,10 +172,30 @@ Etag: 203941fel3ds8ad61903224
 <code>
 {
     "1": {
-        "name": "turn all off"
+        "autodelete": false,
+        "command": {
+            "address": "/api/8918fbad2100nag17ca1/groups/2/action",
+            "method": "PUT",
+            "body": { "on": false }
+        },
+        "description": "Turns all lights off",
+        "etag": "4e100d1c4e3497154a77bc0865c89030",
+        "name": "turn all off",
+        "status": "enabled",
+        "time": "2013-07-30T20:10:00"
     },
     "2": {
-        "name": "morning alarm"
+        "autodelete": false,
+        "command": {
+            "address": "/api/AD4F14F244/groups/4/scenes/1/recall"
+            "body": {}
+            "method": "PUT"
+        },
+        "description": "",
+        "etag": "4e100d1c4e3497154a77bc0865c89030",
+        "name": "call scene",
+        "status": "enabled",
+        "time": "W120/T10:00:00"
     }
 }
 </code>
@@ -145,18 +203,7 @@ Etag: 203941fel3ds8ad61903224
 
 #### Response fields
 
-<table class="table table-bordered">
-  <thead>
-    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of the schedule.</td>
-    </tr>
-  </tbody>
-</table>
+The full schedule object as in [Get schedule attributs](#getattr).
 
 ### Possible errors
 
@@ -184,13 +231,16 @@ Etag: 0b32030b31ef30a4446c9adff6a6f9e5
 <pre class="highlight">
 <code>
     {
-        "name": "turn all off",
-        "description": "Turns all lights off",
+        "autodelete": false,
         "command": {
             "address": "/api/8918fbad2100nag17ca1/groups/2/action",
             "method": "PUT",
             "body": { "on": false }
         },
+        "description": "Turns all lights off",
+        "etag": "4e100d1c4e3497154a77bc0865c89030",
+        "name": "turn all off",
+        "status": "enabled",
         "time": "2013-07-30T20:10:00"
     }
 </code>
@@ -203,10 +253,33 @@ Etag: 0b32030b31ef30a4446c9adff6a6f9e5
     <tr><th>Field</th><th>Type</th><th>Description</th></tr>
   </thead>
   <tbody>
+   <tr>
+      <td>autodelete</td>
+      <td>Bool</td>
+      <td>If set to true the schedule will be deleted after trigger. Else it will be disabled.</td>
+    </tr> 
     <tr>
-      <td>name</td>
+      <td>command</td>
+      <td>Object</td>
+      <td>The command to execute when the schedule triggers.</td>
+    </tr>
+    <tr>
+      <td>command.address</td>
       <td>String</td>
-      <td>Name of the schedule.</td>
+      <td>The address of a light or group ressource</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>command.method</td>
+      <td>String</td>
+      <td>must be "PUT"</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>command.body</td>
+      <td>Object</td>
+      <td>The state that the light or group will activate when the schedule triggers</td>
+      <td>required</td>
     </tr>
     <tr>
       <td>description</td>
@@ -214,14 +287,33 @@ Etag: 0b32030b31ef30a4446c9adff6a6f9e5
       <td>The description of the schedule.</td>
     </tr>
     <tr>
-      <td>command</td>
-      <td>Object</td>
-      <td>The command to execute when the schedule triggers.</td>
+      <td>etag</td>
+      <td>String</td>
+      <td>The <a href="../polling#etag">etag</a> of the schedule.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the schedule.</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>The status of the schedule (enabled or disabled).</td>
     </tr>
     <tr>
       <td>time</td>
       <td>String</td>
-      <td>Time when the schedule shall trigger in UTC ISO 8601:2004 format.</td>
+      <td>Time when the schedule shall trigger in UTC ISO 8601:2004 format.
+        <ul>
+          <li>specific date: "yyyy-MM-ddThh:mm:ss"</li>
+          <li>repeated days: "W[0..127]/Thh:mm:ss"</li>
+          <li>timer: "PThh:mm:ss"</li>
+          <li>recurring timer: "R[0..99]/PThh:mm:ss"</li>
+        </ul>
+        Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.<br />
+        The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.
+      </td>
     </tr>
   </tbody>
 </table>
@@ -263,13 +355,52 @@ Sets attributes of a schedule.
       <td>command</td>
       <td>Object</td>
       <td>The command to execute when the schedule triggers.</td>
-      <td>required</td>
+      <td>optional</td>
+    </tr>
+        <tr>
+      <td>command.address</td>
+      <td>String</td>
+      <td>The address of a light or group ressource</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>command.method</td>
+      <td>String</td>
+      <td>must be "PUT"</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>command.body</td>
+      <td>Object</td>
+      <td>The state that the light or group will activate when the schedule triggers</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>String ("enabled"|"disabled")</td>
+      <td>Whether the schedule is enabled or disabled. Default is enabled.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>autodelete</td>
+      <td>Bool</td>
+      <td>If true the schedule will be deleted after triggered. Else it will be disabled. Default is true.</td>
+      <td>optional</td>
     </tr>
     <tr>
       <td>time</td>
       <td>String</td>
-      <td>Time when the schedule shall trigger in UTC ISO 8601:2004 format. The time must be in the future.</td>
-      <td>required</td>
+      <td>Time when the schedule shall trigger in UTC ISO 8601:2004 format. The time must be in the future.
+        <ul>
+          <li>specific date: "yyyy-MM-ddThh:mm:ss"</li>
+          <li>repeated days: "W[0..127]/Thh:mm:ss"</li>
+          <li>timer: "PThh:mm:ss"</li>
+          <li>recurring timer: "R[0..99]/PThh:mm:ss"</li>
+        </ul>
+        Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.<br />
+        The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.
+      </td>
+      <td>optional</td>
     </tr>
   </tbody>
 </table>

@@ -12,6 +12,22 @@ anchors:
     url: "#deleteapikey"
   - title: Get full state
     url: "#getfullstate"
+  - title: Modify configuration
+    url: "#modifyconfiguration"
+  - title: Update software
+    url: "#updatesoftware"
+  - title: Update firmware
+    url: "#updatefirmware"
+#  - title: Export gateway configuration
+    url: "#export"
+#  - title: Import gateway configuration
+    url: "#import"
+  - title: Reset gateway
+    url: "#reset"
+  - title: Change password
+    url: "#changepw"
+  - title: Reset password
+    url: "#resetpw"
 ---
 
 {% include JB/setup %}
@@ -71,9 +87,27 @@ HTTP/1.1 200 OK
 
 ### Possible errors
 
-[400 Bad Request](/errors#400)
+[400 Bad Request](/errors)
 
-[403 Forbidden](/errors#403)
+[403 Forbidden](/errors)
+
+------------------------------------------------------
+
+## Delete API key<a name="deleteapikey">&nbsp;</a>
+
+    DELETE /api/<apikey>/config/whitelist/<apikey2>
+
+Deletes an API key so it can no longer be used.
+
+### Parameters
+
+None
+
+### Possible errors
+
+[403 Forbidden](/errors)
+
+[404 Not Found](/errors)
 
 ------------------------------------------------------
 
@@ -97,12 +131,33 @@ ETag: "203941fel3ds8ad61903224"
 <pre class="highlight">
 <code>
 {
-    "name": "RaspBee GW",
-    "ipaddress": "192.168.1.20",
-    "mac": "00:15:22:22:00:11:11:a3",
+    "apiversion": "1.0.0",
+    "dhcp": true,
+    "gateway": "192.168.80.1",
+    "ipaddress": "192.168.80.142",
     "linkbutton": false,
-    "utc": "2013-05-10T09:01:23",
-    "swversion": "1.12.3"
+    "localtime": "2016-06-29T14:00:40",
+    "mac": "74:46:a0:9e:92:c7",
+    "name": "deCONZ-GW",
+    "netmask": "255.255.255.0",
+    "networkopenduration": 60,
+    "panid": 56889,
+    "portalservices": false,
+    "proxyaddress": "",
+    "proxyport": 0,
+    "swupdate": {
+        "notify": false,
+        "text": "",
+        "updatestate": 0,
+        "url": "",
+    },
+    "swversion": "20405",
+    "timeformat": "12h",
+    "timezone": "Europe/Berlin",
+    "utc": "2016-06-29T12:00:40",
+    "uuid": "a65d80a1-975a-4598-8d5a-2547bc18d63b",
+    "whitelist": {},
+    "zigbeechannel": 20
 }
 </code>
 </pre>
@@ -115,14 +170,34 @@ ETag: "203941fel3ds8ad61903224"
     </thead>
     <tbody>
         <tr>
-            <td>name</td>
+            <td>apiversion</td>
             <td>String</td>
-            <td>Name of the gateway.</td>
+            <td>The version of the deCONZ Rest API</td>
+        </tr>
+        <tr>
+            <td>dhcp</td>
+            <td>Bool</td>
+            <td>Whether the IP address of the bridge is obtained with DHCP.</td>
+        </tr>
+        <tr>
+            <td>gateway</td>
+            <td>String</td>
+            <td>IPv4 address of the gateway.</td>
         </tr>
         <tr>
             <td>ipaddress</td>
             <td>String</td>
             <td>IPv4 address of the gateway.</td>
+        </tr>
+         <tr>
+            <td>linkbutton</td>
+            <td>Bool</td>
+            <td>true if the gateway is unlocked.</td>
+        </tr>
+         <tr>
+            <td>localtime</td>
+            <td>String</td>
+            <td>The localtime of the gateway</td>
         </tr>
         <tr>
             <td>mac</td>
@@ -130,9 +205,59 @@ ETag: "203941fel3ds8ad61903224"
             <td>MAC address of the gateway.</td>
         </tr>
         <tr>
-            <td>linkbutton</td>
+            <td>name</td>
+            <td>String</td>
+            <td>Name of the gateway.</td>
+        </tr>
+        <tr>
+            <td>netmask</td>
+            <td>String</td>
+            <td>Network mask of the gateway.</td>
+        </tr>
+        <tr>
+            <td>networkopenduration</td>
+            <td>Number (0..65535)</td>
+            <td>Can be used to store the permitjoin (see Modify configuration) value permanently.</td>
+        </tr>
+        <tr>
+            <td>panid</td>
+            <td>Number (0..65535)</td>
+            <td>The ZigBee pan ID of the gateway.</td>
+        </tr>
+        <tr>
+            <td>portalservices</td>
             <td>Bool</td>
-            <td>true if the gateway is unlocked.</td>
+            <td>This indicates whether the bridge is registered to synchronize data with a portal account.</td>
+        </tr>
+        <tr>
+            <td>proxyaddress</td>
+            <td>String</td>
+            <td>Not supported</td>
+        </tr>
+        <tr>
+            <td>proxyport</td>
+            <td>Number</td>
+            <td>Not supported</td>
+        </tr>
+        <tr>
+            <td>softwareupdate</td>
+            <td>Object</td>
+            <td>Contains information related to software updates.</td>
+        </tr>
+        <tr>
+            <td>swversion</td>
+            <td>String</td>
+            <td>The software version of the gateway.</td>
+        </tr>
+        <tr>
+            <td>timeformat</td>
+            <td>String</td>
+            <td>Stores a value of the timeformat that can be used by other applications. "12h" or "24h"</td>
+        </tr>
+        <tr>
+            <td>timezone</td>
+            <td>String</td>
+            <td>Timezone used by the gateway (only available on Raspberry Pi Gateway). "None" if not further specified.</td>
         </tr>
         <tr>
             <td>utc</td>
@@ -140,36 +265,29 @@ ETag: "203941fel3ds8ad61903224"
             <td>Current UTC time of the gateway in ISO 8601 format.</td>
         </tr>
         <tr>
-            <td>swversion</td>
+            <td>uuid</td>
             <td>String</td>
-            <td>API version as string.</td>
+            <td>UPNP Unique Id of the gateway</td>
         </tr>
+        <tr>
+            <td>whitelist</td>
+            <td>Object</td>
+            <td>An array of whitelisted api keys.</td>
+        </tr>
+        <tr>
+            <td>zigbeechannel</td>
+            <td>Number</td>
+            <td>The current wireless frequency channel used by the Gateway. Supported channels: 11, 15, 20, 25.</td>
+        </tr>
+        
     </tbody>
 </table>
 
 ### Possible errors
 
-[304 Not Modified](/errors#304)
+[304 Not Modified](/errors)
 
-[403 Forbidden](/errors#403)
-
-------------------------------------------------------
-
-## Delete API key<a name="deleteapikey">&nbsp;</a>
-
-    DELETE /api/<apikey>/config/whitelist/<apikey2>
-
-Deletes an API key so it can no longer be used.
-
-### Parameters
-
-None
-
-### Possible errors
-
-[403 Forbidden](/errors#403)
-
-[404 Not Found](/errors#404)
+[403 Forbidden](/errors)
 
 ------------------------------------------------------
 
@@ -227,10 +345,19 @@ ETag: "203941fel3ds8ad61903224"
                 "sat": 17680,
                 "xy": [0.0610457, 0.219979]
             },
+            "devicemembership": [],
             "etag": "893f60b611274d1803207298cf26b1e1",
+            "hidden": false,
             "lights": [ "1" ],
+            "lightsequence": [ "1" ],
+            "multideviceids": [],
             "name": "Office",
-            "scenes": []
+            "scenes": [ 
+                "0": {
+                    "id": "1",
+                    "name": "blue moon"
+                }
+           ]
         }
     },
     "lights": {
@@ -255,8 +382,41 @@ ETag: "203941fel3ds8ad61903224"
             }
         }
     },
-    "schedules": {}
-}
+    "schedules": {
+        "1": {
+            "autodelete": false
+            "command": {
+            "address": "/api/AD4F14F244/groups/2/scenes/1/recall"
+            "body": {}
+            "method": "PUT"
+            }
+            "etag": "3dea322b33d34a9134e5632706448f8f"
+            "name": "Good Morning"
+            "status": "enabled"
+            "time": "W124/T05:00:00"
+        }
+    },
+    "sensors": {
+        1: {
+            "config": {
+                "on": true
+                "reachable": false
+            }
+            "etag": "01252de8b14f62a234a4680827cf1609"
+            "manufacturername": "dresden elektronik"
+            "mode": 2
+            "modelid": "Lighting Switch"
+            "name": "Lighting Switch 1"
+            "state": {
+                "lastupdated": "2016-06-29T13:16:41"
+            }
+            "swversion": "1.0"
+            "type": "ZHASwitch"
+            "uniqueid": "0x00212effff00a6bc"
+            }
+        }
+	"rules": {}
+    }
 </code>
 </pre>
 
@@ -282,6 +442,11 @@ ETag: "203941fel3ds8ad61903224"
             <td>Object</td>
             <td>All lights of the gateway.</td>
         </tr>
+		 <tr>
+            <td>rules (as from deconz version > 2.04.12)</td>
+            <td>Object</td>
+            <td>All rules of the gateway.</td>
+        </tr>
         <tr>
             <td>schedules</td>
             <td>Object</td>
@@ -292,6 +457,387 @@ ETag: "203941fel3ds8ad61903224"
 
 ### Possible errors
 
-[304 Not Modified](/errors#304)
+[304 Not Modified](/errors)
 
-[403 Forbidden](/errors#403)
+[403 Forbidden](/errors)
+
+------------------------------------------------------
+
+## Modify configuration<a name="modifyconfiguration">&nbsp;</a>
+
+    PUT /api/<apikey>/config
+
+Modify configuration parameters.
+
+### Parameters
+
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>name</td>
+            <td>String (0..16 chars)</td>
+            <td>Name of the gateway.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>rfconnected</td>
+            <td>Bool</td>
+            <td>Set connected state of the gateway.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>updatechannel</td>
+            <td>String</td>
+            <td>Set update channel ("stable"|"alpha"|"beta").</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>permitjoin</td>
+            <td>Number (0..255)</td>
+            <td>Open the network so that other zigbee devices can join. 0 = network closed, 255 = network open, 1..254 = time in seconds the network remains open. The value will decrement automatically.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>groupdelay</td>
+            <td>Number (0..5000)</td>
+            <td>Time between two group commands in milliseconds.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>otauactive</td>
+            <td>Bool</td>
+            <td>Set OTAU active or inactive.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>discovery</td>
+            <td>Bool</td>
+            <td>Set gateway discovery over the internet active or inactive.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>unlock</td>
+            <td>Number (0..600)</td>
+            <td>Unlock the gateway so that apps can register themselves to the gateway (time in seconds).</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>zigbeechannel</td>
+            <td>Number (11|15|20|25)</td>
+            <td>Set the zigbeechannel of the gateway. Notify other ZigBee devices also to change their channel.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>timezone</td>
+            <td>String</td>
+            <td>Set the timezone of the gateway (only on Raspberry Pi). Format: tzdatabase e.g. “Europe/Berlin” https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>utc</td>
+            <td>String</td>
+            <td>Set the UTC time of the gateway (only on Raspbery Pi) in ISO 8601 format (yyyy-MM-ddTHH:mm:ss).</td>
+            <td>optional</td>
+        </tr>
+		<tr>
+            <td>timeformat</td>
+            <td>String ("12h"|"24h")</td>
+            <td>Can be used to store the timeformat permanently.</td>
+            <td>optional</td>
+        </tr>
+    </tbody>
+</table>
+
+### Example request data
+
+<pre class="headers">
+<code>
+{
+  "zigbeechannel": 25
+}
+</code>
+</pre>
+
+### Response
+
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "203941fel3ds8ad61903224"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[
+  { 
+    "success": {"/config/zigbeechannel": 25 }
+  }
+]
+</code>
+</pre>
+
+### Possible errors
+
+[400 Bad Request](/errors)
+
+------------------------------------------------------
+
+## Update software<a name="updatesoftware">&nbsp;</a>
+
+    POST /api/<apikey>/config/update
+
+Returns the newest software version available. Starts the update if available (only on raspberry pi).
+
+### Response
+
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/update": "2.04.05"
+  }
+}
+</code>
+</pre>
+
+------------------------------------------------------
+
+## Update firmware<a name="updatefirmware">&nbsp;</a>
+
+    POST /api/<apikey>/config/updatefirmware
+
+Starts the update firmware process if newer firmware is available.
+
+### Response
+
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/updatefirmware": "26050500"
+  }
+}
+</code>
+</pre>
+
+### Possible errors
+
+[503 Service Unavailable](/errors)
+
+<!--
+
+## Export gateway configuration<a name="export">&nbsp;</a>
+
+    POST /api/<apikey>/config/export
+
+Exports the current gateway network settings and database. An archive with the name deCONZ.tar.gz will be created in the deCONZ data directory. It can be downloaded via the hyperlink http://\<gateway_ip>/deCONZ.tar.gz
+
+When downloaded the file will be renamed to raspbee_gateway_config_yyyy-MM-dd.dat
+
+### Response
+
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/export": "success"
+  }
+}
+</code>
+</pre>
+
+### Possible errors
+
+[503 Service Unavailable](/errors)
+
+------------------------------------------------------
+
+## Import gateway configuration<a name="import">&nbsp;</a>
+
+    POST /api/<apikey>/config/import
+
+Imports a raspbee_gateway_config_yyyy-MM-dd.dat file and apply the stored settings. The file can be renamed but must keep the ending .dat. The file must be uploaded to the gateway beforehand.
+
+For fileupload you can use
+    
+    POST /api/fileupload 
+
+### Response
+
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/import": "success"
+  }
+}
+</code>
+</pre>
+
+### Possible errors
+
+[503 Service Unavailable](/errors)
+
+-->
+
+------------------------------------------------------
+
+## Reset gateway<a name="reset">&nbsp;</a>
+
+    POST /api/<apikey>/config/reset
+
+Reset the gateway network settings to factory new and/or delete the deCONZ database (config, lights, scenes, groups, schedules, devices, rules).
+    
+### Parameters
+
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>resetGW</td>
+            <td>Bool</td>
+            <td>Set the network settings of the gateway to factory new.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>deleteDB</td>
+            <td>Bool</td>
+            <td>Delete the Database.</td>
+            <td>optional</td>
+        </tr>
+    </tbody>
+</table>
+
+At least one parameter is required!
+
+### Response
+
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/reset": "success"
+  }
+}
+</code>
+</pre>
+
+### Possible errors
+
+[400 Bad Request](/errors)
+
+[503 Service Unavailable](/errors)
+
+------------------------------------------------------
+
+## Change password<a name="changepw">&nbsp;</a>
+
+    PUT /api/<apikey>/config/password
+
+Change the Password of the Gateway. The parameter must be a Base64 encoded combination of "\<username>:\<password>".
+    
+### Parameters
+
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>username</td>
+            <td>String</td>
+            <td>The user name (currently only “delight” is supported).</td>
+            <td>required</td>
+        </tr>
+        <tr>
+            <td>oldhash</td>
+            <td>String</td>
+            <td>The Base64 encoded combination of “username:old password”.</td>
+            <td>required</td>
+        </tr>
+        <tr>
+            <td>newhash</td>
+            <td>String</td>
+            <td>The Base64 encoded combination of “username:new password”.</td>
+            <td>required</td>
+        </tr>
+    </tbody>
+</table>
+
+### Response
+
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/password": "changed"
+  }
+}
+</code>
+</pre>
+
+### Possible errors
+
+[400 Bad Request](/errors)
+
+[401 Unauthorized](/errors)
+
+------------------------------------------------------
+
+## Reset password<a name="resetpw">&nbsp;</a>
+
+    DELETE /api/<apikey>/config/password
+
+Resets the username and password to default (“delight”,”delight”). Only possible within 10 minutes after gateway start.
+
+### Response
+
+<pre class="headers">
+  <code>
+    HTTP/1.1 200 OK
+  </code>
+</pre>
+<pre class="highlight">
+  <code>
+    {}
+  </code>
+</pre>
+
+### Possible errors
+
+[403 Forbidden](/errors)

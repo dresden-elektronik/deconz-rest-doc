@@ -51,9 +51,11 @@ is reachable through port _8080_.
 
 Any client that wants to access the API must provide a valid API key otherwise the access will fail.
 
-To acquire an API key send a `POST` request to `/api` as follows.
+To acquire an API key send a `POST` request to `/api` as follows. Use the IP address and the port of your gateway that you got during discovery.
 
 `Note` The request must contain a JSON object with the required field _devicetype_.
+
+`Note` In some Rest clients it is mandatory to put 'http://' in front of the IP address of the gateway.
 
 <img src="img/1_aquire_apikey_fail.png" alt="aquire api key failed"/>
 

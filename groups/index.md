@@ -2,7 +2,7 @@
 layout: page
 title: Groups
 nav: endpoints
-order: 3
+order: 2
 anchors:
   - title: Create group
     url: "#create"
@@ -106,11 +106,15 @@ HTTP/1.1 200 OK
 <code>
 {
     "1": {
+        "devicemembership": [],
         "etag": "ab5272cfe11339202929259af22252ae",
+        "hidden" : false,
         "name": "Living Room"
     },
     "2": {
+        "devicemembership": ["3"],
         "etag": "030cf8c1c0025420f3a0659afab251f5",
+        "hidden" : false,
         "name": "Kitchen"
     }
 }
@@ -125,6 +129,11 @@ HTTP/1.1 200 OK
   </thead>
   <tbody>
     <tr>
+      <td>devicemembership</td>
+      <td>Array</td>
+      <td>If this group was created by a device (switch or sensor) this list contains the device ids.</td>
+    </tr>
+    <tr>
       <td>name</td>
       <td>String</td>
       <td>Name of a group.</td>
@@ -133,6 +142,11 @@ HTTP/1.1 200 OK
       <td>etag</td>
       <td>String</td>
       <td>HTTP <a href="../polling#etag">etag</a> which changes on any action to the group.</td>
+    </tr>
+	<tr>
+      <td>hidden</td>
+      <td>Bool</td>
+      <td>Indicates if this group is hidden.</td>
     </tr>
   </tbody>
 </table>
@@ -172,13 +186,18 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
         "sat": 0,
         "xy": [ 0, 0 ]
     },
+    "devicemembership": [],
     "etag": "0b32030b31ef30a4446c9adff6a6f9e5",
+    "hidden": false,
     "id": "32772",
-    "lights": [ "42" ],
+    "lights": [ "3","42","43" ],
+    "lightsequence": [ "42","43","3" ],
+    "multideviceids": ["2"],
     "name": "Livingroom",
     "scenes": [
         { "id": "1", "name": "warmlight" }
-    ]
+    ],
+    "state": 0
 }
 </code>
 </pre>
@@ -190,16 +209,6 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
     <tr><th>Field</th><th>Type</th><th>Description</th></tr>
   </thead>
   <tbody>
-    <tr>
-      <td>etag</td>
-      <td>String</td>
-      <td>HTTP <a href="../polling#etag">etag</a> which changes on any action to the group.</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of the group.</td>
-    </tr>
     <tr>
       <td>action</td>
       <td>Object</td>
@@ -241,8 +250,59 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
       <td>Dynamic effect:
         <ul>
           <li>none - no effect</li>
+          <li>colorloop</li>
         </ul>
       </td>
+    </tr>
+    <tr>
+      <td>devicemembership</td>
+      <td>Array</td>
+      <td>A list of device ids (sensors) if this group was created by a device.</td>
+    </tr>
+    <tr>
+      <td>etag</td>
+      <td>String</td>
+      <td>HTTP <a href="../polling#etag">etag</a> which changes on any action to the group.</td>
+    </tr>
+    <tr>
+      <td>hidden</td>
+      <td>Bool</td>
+      <td>Indicates the hidden status of the group. Has no effect at the gateway but apps can uses this to hide groups.</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>The id of the group.</td>
+    </tr>
+    <tr>
+      <td>lights</td>
+      <td>Array</td>
+      <td>A list of all light ids of this group. Sequence is defined by the gateway.</td>
+    </tr>
+    <tr>
+      <td>lightsequence</td>
+      <td>Array</td>
+      <td>A list of light ids of this group that can be sorted by the user. Need not to contain all light ids of this group.</td>
+    </tr>
+    <tr>
+      <td>mulitdeviceids</td>
+      <td>Array</td>
+      <td>A list of light ids of this group that are subsequent ids from multidvices with multiple endpoints like the FLS-PP.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the group.</td>
+    </tr>
+    <tr>
+      <td>scenes</td>
+      <td>Array</td>
+      <td>A list of scenes of the group.</td>
+    </tr>
+    <tr>
+      <td>state</td>
+      <td>Number</td>
+      <td>Deprecated - will be removed in future.</td>
     </tr>
   </tbody>
 </table>
@@ -280,6 +340,24 @@ Sets attributes of a group which are not related to its state.
       <td>lights</td>
       <td>Array</td>
       <td>IDs of the lights which are members of the group.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>hidden</td>
+      <td>Bool</td>
+      <td>Indicates the hidden status of the group. Has no effect at the gateway but apps can uses this to hide groups.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>lightsequence</td>
+      <td>Array</td>
+      <td>Specify a sorted list of light ids that can be used in apps.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>mulitdeviceids</td>
+      <td>Array</td>
+      <td>Append the subsequential light ids of multidevices like the FLS-PP if the app should handle that light differently.</td>
       <td>optional</td>
     </tr>
   </tbody>
@@ -385,11 +463,18 @@ Sets the state of a group.
     <tr>
       <td>effect</td>
       <td>String</td>
-      <td>Trigger a effect of the group:
+      <td>Trigger an effect of the group:
         <ul>
           <li>none - no effect</li>
+          <li>colorloop - the lights of the group will cycle continously through all colors with the speed specified by colorloopspeed</li>
         </ul>
       </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>colorloopspeed</td>
+      <td>Number (1..255)</td>
+      <td>Specifies the speed of a colorloop. 1 = very fast, 255 = very slow (default: 15). This parameter only has an effect when it is called together with effect colorloop.</td>
       <td>optional</td>
     </tr>
     <tr>
