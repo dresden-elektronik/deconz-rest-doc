@@ -71,7 +71,7 @@ The reason why the request failed is that the gateway was not unlocked. This mec
 
 As described in the section [Authorization]({{BASE_PATH}}/authorization) unlock the gateway as follows:
 
- - In a new browser tab open the the webapp
+ - In a new browser tab open the webapp
  - Click on `Menu/Settings` from the top menu
  - Click on the <a class="btn btn-primary btn-small" href="#">Unlock Gateway</a> button
 
