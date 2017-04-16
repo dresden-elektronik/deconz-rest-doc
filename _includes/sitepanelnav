@@ -8,7 +8,7 @@
   <li><a href="{{BASE_PATH}}/discovery">Find the gateway</a></li>
   <li class="nav-header">API Endpoints</li>
 
-{% for weight in (1..10) %}
+{% for weight in (1..15) %}
 	{% for node in site.pages %}
 		{% if node.order == weight %}
 			{% if node.nav == 'endpoints' %}

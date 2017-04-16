@@ -2,7 +2,7 @@
 layout: page
 title: Touchlink
 nav: endpoints
-order: 8
+order: 9
 anchors:
   - title: Scan for devices
     url: "#scan"

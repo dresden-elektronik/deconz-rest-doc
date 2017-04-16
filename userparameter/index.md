@@ -1,34 +1,33 @@
 ---
 layout: page
-title: Userparameter
-nav: endpoints
+title: User parameter
+nav: endpoints-hidden
 order: 8
 anchors:
-  - title: Add userparameter
+  - title: Add user parameter
     url: "#add"
-  - title: Modify userparameter
+  - title: Modify user parameter
     url: "#modify"
-  - title: Get all userparameter
+  - title: Get all user parameter
     url: "#getall"
-  - title: Get userparameter
+  - title: Get user parameter
     url: "#get"
-  - title: Delete userparameter
+  - title: Delete user parameter
     url: "#delete"
-	
 ---
 
 {% include JB/setup %}
 
-Provides the opportunity to save your own parameter as a key vaule pair.
-The value is simple text and don't need to be in json format.
+Provides the ability to store arbitrary data as a key value pair.
+Value data is stored treated text and therefore any conversion to other data types must be accomblished in the application.
 
 ------------------------------------------------------
 
-## Add userparameter<a name="add">&nbsp;</a>
+## Add user parameter<a name="add">&nbsp;</a>
 
     POST /api/<apikey>/userparameter/<key>
 
-Modifies an existing userparameter. The Key is specified in the address. Returns an error if the key already exists. 
+Creates a new user parameter. The Key is specified in the address. Returns an error if the key already exists. 
 
 ### Parameters
 
@@ -41,14 +40,24 @@ Modifies an existing userparameter. The Key is specified in the address. Returns
       <td>value</td>
       <td>String</td>
       <td>The value corresponding to the key</td>
+      <td>required</td>
     </tr>
   </tbody>
 </table>
 
-### Example request data
-    {
-	    "This is an example value."
-    }
+### Example request
+<pre class="headers">
+<code>
+POST /api/12345/userparameter/myparam
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "This is an example value."
+}
+</code>
+</pre>
 
 ### Response
 <pre class="headers">
@@ -60,7 +69,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 <pre class="highlight">
 <code>
 [
-    { "success": { "/config/userparameter : updated <key>  }}
+    { "success": { "/config/userparameter : added new myparam  }}
 ]
 </code>
 </pre>
@@ -71,16 +80,13 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 
 [403 Forbidden](/errors#403)
 
-[404 Not Found](/errors#404)
-
-
 ------------------------------------------------------
 
-## Modify userparameter<a name="modify">&nbsp;</a>
+## Modify user parameter<a name="modify">&nbsp;</a>
 
     PUT /api/<apikey>/userparameter/<key>
 
-Modifies an existing userparameter. The Key is specified in the address. Overwrites the key if it already exists.
+Modifies an existing user parameter. The Key is specified in the address. Overwrites the key if it already exists.
 
 ### Parameters
 
@@ -93,14 +99,25 @@ Modifies an existing userparameter. The Key is specified in the address. Overwri
       <td>value</td>
       <td>String</td>
       <td>The value corresponding to the key</td>
+      <td>required</td>
     </tr>
   </tbody>
 </table>
 
 ### Example request data
-    {
-	    1,2,3,4
-    }
+<pre class="headers">
+<code>
+PUT /api/12345/userparameter/numbers
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    1,2,3,4
+}
+</code>
+</pre>
+
 	
 ### Response
 <pre class="headers">
@@ -127,11 +144,11 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 
 ------------------------------------------------------
 
-## Get all userparameter<a name="getall">&nbsp;</a>
+## Get all user parameters<a name="getall">&nbsp;</a>
 
     GET /api/<apikey>/userparameter
 
-Returns a list of all userparameter keys
+Returns a list of all user parameter keys
 
 ### Parameters
 
@@ -173,7 +190,7 @@ HTTP/1.1 200 OK
 
 ------------------------------------------------------
 
-## Get userparameter<a name="get">&nbsp;</a>
+## Get user parameter<a name="get">&nbsp;</a>
 
     GET /api/<apikey>/userparameter/<key>
 
@@ -226,11 +243,11 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 
 ------------------------------------------------------
 
-## Delete userparameter<a name="delete">&nbsp;</a>
+## Delete user parameter<a name="delete">&nbsp;</a>
 
     DELETE /api/<apikey>/userparameter/<key>
 
-Removes a userparameter from the gatewaay.
+Removes a user parameter from the gatewaay.
 
 ### Parameters
 
