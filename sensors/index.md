@@ -383,7 +383,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 
 ## Update sensor<a name="update">&nbsp;</a>
 
-    PUT /api/<apikey>/rules/<id>/
+    PUT /api/<apikey>/sensors/<id>
 
 Update a sensor with the specified parameters.
 
