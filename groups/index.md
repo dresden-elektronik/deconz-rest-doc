@@ -419,6 +419,12 @@ Sets the state of a group.
       <td>optional</td>
     </tr>
     <tr>
+      <td>toggle</td>
+      <td>Bool</td>
+      <td>Set to true toggles the lights of that group from on to off or vice versa, false has no effect. **Notice:** This setting supersedes the `on` parameter!</td>
+      <td>optional</td>
+    </tr>
+    <tr>
       <td>bri</td>
       <td>Number (0..255)</td>
       <td>Set the brightness of the group. Depending on the lights 0 might not mean visible "off" but minimum brightness. If the lights are off and the value is greater 0 a on=true shall also be provided.</td>
