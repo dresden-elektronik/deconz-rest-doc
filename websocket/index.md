@@ -137,6 +137,61 @@ New apps should use `xy` instead.
 }
 ```
 
+##### Sensor name change example
+```json
+{
+    "e": "changed",
+    "id": "10",
+    "name": "Pulse 2",
+    "r": "sensors",
+    "t": "event",
+    "uniqueid": "00:0d:6f:00:10:65:8a:6e-01-1000"
+}
+```
+
+##### Sensor added example
+```json
+{
+    "e": "added",
+    "id": "10",
+    "r": "sensors",
+    "sensor": {
+        "config": {
+            "battery": null,
+            "on": true,
+            "reachable": true
+        },
+        "ep": 1,
+        "etag": "7088b28f8a8a2c786e6e48d95c547fa4",
+        "id": "10",
+        "manufacturername": "icasa",
+        "mode": 1,
+        "modelid": "ICZB-KPD12",
+        "name": "ICZB-KPD12 10",
+        "state": {
+            "buttonevent": null,
+            "lastupdated": "none"
+        },
+        "type": "ZHASwitch",
+        "uniqueid": "00:0d:6f:00:10:65:8a:6e-01-1000"
+    },
+    "t": "event",
+    "uniqueid": "00:0d:6f:00:10:65:8a:6e-01-1000"
+}
+```
+
+##### Scene Recall example
+```json
+{
+    "e": "scene-called",
+    "gid": "0",
+    "r": "scenes",
+    "scid": "2",
+    "t": "event"
+}
+```
+
+
 #### Message fields
 
 <table class="table table-bordered">
@@ -155,18 +210,6 @@ New apps should use `xy` instead.
             </td>
         </tr>
         <tr>
-            <td>`r`</td>
-            <td>String</td>
-            <td>
-                The **resource type** to which the message belongs:
-                <ul>
-                    <li>`groups` - the `id` field refers to a group resource;</li>
-                    <li>`lights` - the `id` field refers to a light resource;</li>
-                    <li>`sensors` - the `id` field refers to a sensor resource.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
             <td>`e`</td>
             <td>String</td>
             <td>
@@ -175,19 +218,45 @@ New apps should use `xy` instead.
                     <li>`added` - resource has been added;</li>
                     <li>`changed` - resource attributes have changed;</li>
                     <li>`deleted` - resource has been deleted.</li>
+                    <li>`scene-called` - a scene has been recalled.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>`r`</td>
+            <td>String</td>
+            <td>
+                The **resource type** to which the message belongs:
+                <ul>
+                    <li>`groups` - message relates to a group resource;</li>
+                    <li>`lights` - message relates to a light resource;</li>
+                    <li>`scenes` - message relates to a scene under a group resource;</li>
+                    <li>`sensors` - message relates to a sensor resource.</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td>`id`</td>
             <td>String</td>
-            <td>The id of the resource to which the message belongs, e.g. `5` for `/sensors/5`.</td>
+            <td>The id of the resource to which the message relates, e.g. `5` for `/sensors/5`.<br>Not for `scene-called` events.</td>
         </tr>
         <tr>
             <td>`uniqueid`</td>
             <td>String</td>
-            <td>The `uniqueid` of the resource to which the message belongs, e.g. `00:0d:6f:00:10:65:8a:6e-01-1000`.<br>
+            <td>The `uniqueid` of the resource to which the message relates, e.g. `00:0d:6f:00:10:65:8a:6e-01-1000`.<br>
             Only for light and sensor resources.</td>
+        </tr>
+        <tr>
+            <td>`gid`</td>
+            <td>String</td>
+            <td>The group id of the resource to which the message relates.<br>
+            Only for `scene-called` events.</td>
+        </tr>
+        <tr>
+            <td>`scid`</td>
+            <td>String</td>
+            <td>The scene id of the resource to which the message relates.<br>
+            Only for `scene-called` events.</td>
         </tr>
         <tr>
             <td>`config`</td>
@@ -211,7 +280,24 @@ New apps should use `xy` instead.
                 Only for `changed` events.
             </td>
         </tr>
+        <tr>
+            <td>`group`</td>
+            <td>Map</td>
+            <td>The full group resource.<br>Only for `added` events of a group resource.</td>
+        </tr>
+        <tr>
+            <td>`light`</td>
+            <td>Map</td>
+            <td>The full light resource.<br>Only for `added` events of a light resource.</td>
+        </tr>
+        <tr>
+            <td>`sensor`</td>
+            <td>Map</td>
+            <td>The full sensor resource.<br>Only for `added` events of a sensor resource.</td>
+        </tr>
     </tbody>
 </table>
 
 Note that only one of `config`, `name`, or `state` will be present per `changed` event.
+
+Note that the Websocket functionality is still under development.  Notably `added` and `deleted` notifications might not be issued under all circumstances.
