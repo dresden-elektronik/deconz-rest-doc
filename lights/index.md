@@ -154,6 +154,26 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
   </thead>
   <tbody>
     <tr>
+      <td>ctmax</td>
+      <td>Number</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ctmin</td>
+      <td>Number</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>String</td>
+      <td>Last time the device announced itself to the network.</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>String</td>
+      <td>Last time the device has transmitted any data.</td>
+    </tr>
+    <tr>
       <td>etag</td>
       <td>String</td>
       <td>HTTP <a href="../polling#etag">etag</a> which changes on any action to the light.</td>
@@ -207,6 +227,14 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>state.bri</td>
       <td>Number (0..255)</td>
       <td>Brightness of the light. Depending on the light type 0 might not mean visible "off" but minimum brightness.</td>
+    </tr>
+    <tr>
+      <td>state.effect</td>
+      <td>Number (0..7)</td>
+      <td>Run special scenes (if supported).</td>
+        <ul>
+          <li>Introduced with deCONZ version 2.0.78</li>
+        </ul>
     </tr>
     <tr>
       <td>state.hue</td>
