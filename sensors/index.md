@@ -329,10 +329,11 @@ Creates a new sensor.
     </tr>
     <tr>
       <td></td>
-      <td>windowopen</td>
+      <td>windowopen
         <ul>
             <li>Introduced with deCONZ version 2.0.79</li>
         </ul>
+      </td>
       <td>String</td>
     </tr>
     <tr>
