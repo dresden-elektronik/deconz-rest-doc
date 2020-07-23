@@ -221,20 +221,21 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td>state.on</td>
       <td>Bool</td>
-      <td>true if the light is on.</td>
+      <td>true if the light is on. Deprecated for usage with window covering devices.</td>
     </tr>
     <tr>
       <td>state.bri</td>
       <td>Number (0..255)</td>
-      <td>Brightness of the light. Depending on the light type 0 might not mean visible "off" but minimum brightness.</td>
+      <td>Brightness of the light. Depending on the light type 0 might not mean visible "off" but minimum brightness. Deprecated for usage with window covering devices.</td>
     </tr>
     <tr>
       <td>state.effect</td>
       <td>Number (0..7)</td>
-      <td>Run special scenes (if supported).</td>
+      <td>Run special scenes (if supported).
         <ul>
           <li>Introduced with deCONZ version 2.0.78</li>
         </ul>
+      </td>
     </tr>
     <tr>
       <td>state.hue</td>
@@ -242,14 +243,34 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>Color hue of the light. The hue parameter in the HSV color model is between 0Â°-360Â° and is mapped to 0..65535 to get 16-bit resolution.</td>
     </tr>
     <tr>
+      <td>state.lift</td>
+      <td>Number (0..100)</td>
+      <td>Represents "percentage closed" for window covering devices, so 0% is fully open and 100% is fully closed.</td>
+    </tr>
+    <tr>
+      <td>state.open</td>
+      <td>Bool</td>
+      <td>Represents the state for window covering devices, so "false" is fully closed and "true" is open with a lift percentage above 0%.</td>
+    </tr>
+    <tr>
       <td>state.sat</td>
       <td>Number (0..255)</td>
-      <td>Color saturation of the light. There 0 means no color at all and 255 is the greatest saturation of the color.</td>
+      <td>Color saturation of the light. There 0 means no color at all and 255 is the greatest saturation of the color. Deprecated for usage with window covering devices.</td>
+    </tr>
+    <tr>
+      <td>state.speed</td>
+      <td>Number (0..6)</td>
+      <td>Represents the speed for fan control devices.</td>
     </tr>
     <tr>
       <td>state.ct</td>
       <td>Number (153..500)</td>
       <td>Mired color temperature of the light. (2000K - 6500K)</td>
+    </tr>
+    <tr>
+      <td>state.tilt</td>
+      <td>Number (0..100)</td>
+      <td>Represents "tilt percentage" for window covering devices supporting tilt state.</td>
     </tr>
     <tr>
       <td>state.xy</td>
@@ -264,6 +285,13 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
           <li>none - light is not performing an alert</li>
           <li>select - light is blinking a short time</li>
           <li>lselect - light is blinking a longer time</li>
+        </ul>
+        For "warning device" where a siren can be triggered independently, the following values are possible:
+        <ul>
+          <li>none - Disengage audio signal</li>
+          <li>select - Audio signal for 1 second</li>
+          <li>lselect - Audio signal over a longer time</li>
+          <li>blink - Visual signal over a longer time</li>
         </ul>
       </td>
     </tr>
@@ -333,7 +361,19 @@ Sets the state of a light.
     <tr>
       <td>bri</td>
       <td>Number (0..255)</td>
-      <td>Set the brightness of the light. Depending on the light type 0 might not mean visible "off" but minimum brightness. If the light is off and the value is greater 0 a on=true shall also be provided.</td>
+      <td>Set the brightness of the light. Depending on the light type 0 might not mean visible "off" but minimum brightness. If the light is off and the value is greater 0 a on=true shall also be provided. Deprecated for usage with window covering devices.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>bri_inc</td>
+      <td>Number (-254..254)</td>
+      <td>Increments or decrements the value of the brightness. bri_inc is ignored if the bri attribute is provided. Any ongoing bri transition is stopped. Deprecated for usage with window covering devices.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>ct_inc</td>
+      <td>Number (-254..254)</td>
+      <td>Increments or decrements the value of the color temperature. ct_inc is ignored if the ct attribute is provided. Any ongoing ct transition is stopped. Deprecated for usage with window covering devices.</td>
       <td>optional</td>
     </tr>
     <tr>
@@ -345,13 +385,43 @@ Sets the state of a light.
     <tr>
       <td>sat</td>
       <td>Number (0..255)</td>
-      <td>Set the color saturation of the light. There 0 means no color at all and 255 is the greatest saturation of the color.</td>
+      <td>Set the color saturation of the light. There 0 means no color at all and 255 is the greatest saturation of the color. Deprecated for usage with window covering devices.</td>
       <td>optional</td>
     </tr>
     <tr>
       <td>ct</td>
       <td>Number (153..500)</td>
       <td>Set the Mired color temperature of the light. (2000K - 6500K)</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>lift</td>
+      <td>Number (0..100)</td>
+      <td>Sends a "Go To Lift Percentage" command for window covering devices. 0% is fully open and 100% is fully closed.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>open</td>
+      <td>Bool</td>
+      <td>Sends an "open" or "close" command for window covering devices, so "false" is fully closed and "true" fully open.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>speed</td>
+      <td>Number (0..6)</td>
+      <td>Sets the speed for fan control devices.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>stop</td>
+      <td>Bool</td>
+      <td>When set to true, send a "stop" command to window covering devices.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>tilt</td>
+      <td>Number (0..100)</td>
+      <td>Represents "tilt percentage" for window covering devices supporting tilt state.</td>
       <td>optional</td>
     </tr>
     <tr>
@@ -363,11 +433,18 @@ Sets the state of a light.
     <tr>
       <td>alert</td>
       <td>String</td>
-      <td>Trigger a temporary alert effect:
+      <td>Temporary alert effect. Following values are possible:
         <ul>
           <li>none - light is not performing an alert</li>
           <li>select - light is blinking a short time</li>
           <li>lselect - light is blinking a longer time</li>
+        </ul>
+        For "warning device" where a siren can be triggered independently, the following values are possible:
+        <ul>
+          <li>none - Disengage audio signal</li>
+          <li>select - Audio signal for 1 second</li>
+          <li>lselect - Audio signal over a longer time</li>
+          <li>blink - Visual signal over a longer time</li>
         </ul>
       </td>
       <td>optional</td>
