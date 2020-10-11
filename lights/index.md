@@ -154,6 +154,11 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
   </thead>
   <tbody>
     <tr>
+      <td>colorcapabilities</td>
+      <td>Number</td>
+      <td>The color capabilities as reported by the light.</td>
+    </tr>
+    <tr>
       <td>ctmax</td>
       <td>Number</td>
       <td></td>
@@ -202,6 +207,11 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>pointsymbol</td>
       <td>Object</td>
       <td>Not used in the current version.</td>
+    </tr>
+    <tr>
+      <td>powerup</td>
+      <td>Number</td>
+      <td>SETTABLE. Brightness to set after power on (limited to DE devices).</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -289,6 +299,11 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       </td>
     </tr>
     <tr>
+      <td>state.speed</td>
+      <td>Number (0..6)</td>
+      <td>SETTABLE. Sets the speed of fans/ventilators.</td>
+    </tr>
+    <tr>
       <td>state.reachable</td>
       <td>Bool</td>
       <td>true if the light is reachable and accepts commands.</td>
@@ -325,42 +340,6 @@ Sets the state of a light.
   </thead>
   <tbody>
     <tr>
-      <td>on</td>
-      <td>Bool</td>
-      <td>Set to true to turn the light on, false to turn it off.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>bri</td>
-      <td>Number (0..255)</td>
-      <td>Set the brightness of the light. Depending on the light type 0 might not mean visible "off" but minimum brightness. If the light is off and the value is greater 0 a on=true shall also be provided.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>hue</td>
-      <td>Number (0..65535)</td>
-      <td>Set the color hue of the light. The hue parameter in the HSV color model is between 0Â°-360Â° and is mapped to 0..65535 to get 16-bit resolution.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>sat</td>
-      <td>Number (0..255)</td>
-      <td>Set the color saturation of the light. There 0 means no color at all and 255 is the greatest saturation of the color.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>ct</td>
-      <td>Number (153..500)</td>
-      <td>Set the Mired color temperature of the light. (2000K - 6500K)</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>xy</td>
-      <td>Array</td>
-      <td>Set the CIE xy color space coordinates as array [x, y] of real values (0..1).</td>
-      <td>optional</td>
-    </tr>
-    <tr>
       <td>alert</td>
       <td>String</td>
       <td>Trigger a temporary alert effect:
@@ -370,6 +349,24 @@ Sets the state of a light.
           <li>lselect - light is blinking a longer time</li>
         </ul>
       </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>bri</td>
+      <td>Number (0..255)</td>
+      <td>Set the brightness of the light. Depending on the light type 0 might not mean visible "off" but minimum brightness. If the light is off and the value is greater 0 a on=true shall also be provided.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>colorloopspeed</td>
+      <td>Number (1..255)</td>
+      <td>Specifies the speed of a colorloop. 1 = very fast, 255 = very slow (default: 15). This parameter only has an effect when it is called together with effect colorloop.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>ct</td>
+      <td>Number (153..500)</td>
+      <td>Set the Mired color temperature of the light. (2000K - 6500K)</td>
       <td>optional</td>
     </tr>
     <tr>
@@ -384,15 +381,33 @@ Sets the state of a light.
       <td>optional</td>
     </tr>
     <tr>
-      <td>colorloopspeed</td>
-      <td>Number (1..255)</td>
-      <td>Specifies the speed of a colorloop. 1 = very fast, 255 = very slow (default: 15). This parameter only has an effect when it is called together with effect colorloop.</td>
+      <td>hue</td>
+      <td>Number (0..65535)</td>
+      <td>Set the color hue of the light. The hue parameter in the HSV color model is between 0Â°-360Â° and is mapped to 0..65535 to get 16-bit resolution.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>Set to true to turn the light on, false to turn it off.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>sat</td>
+      <td>Number (0..255)</td>
+      <td>Set the color saturation of the light. There 0 means no color at all and 255 is the greatest saturation of the color.</td>
       <td>optional</td>
     </tr>
     <tr>
       <td>transitiontime</td>
       <td>Number</td>
       <td>Transition time in 1/10 seconds between two states.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>xy</td>
+      <td>Array</td>
+      <td>Set the CIE xy color space coordinates as array [x, y] of real values (0..1).</td>
       <td>optional</td>
     </tr>
   </tbody>
