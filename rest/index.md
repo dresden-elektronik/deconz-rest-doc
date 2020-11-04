@@ -65,10 +65,10 @@ Resources can be queried and modified with standard HTTP methods. Where GET, PUT
 <table class="table table-bordered">
 	<thead><tr><th>Method</th><th>Description</th></tr></thead>
 	<tbody>
-		<tr><td>GET</td><td>Query the content of a Resource.</td></tr>
-		<tr><td>PUT</td><td>Modifies a <strong>existing</strong> Resource.</td></tr>
-		<tr><td>POST</td><td>Creates a <strong>new</strong> Resource which did not exist before.</td></tr>
-		<tr><td>DELETE</td><td>Deletes a Resource.</td></tr>
+		<tr><td>GET</td><td>Query the content of a resource.</td></tr>
+		<tr><td>PUT</td><td>Modifies a <strong>existing</strong> resource.</td></tr>
+		<tr><td>POST</td><td>Creates a <strong>new</strong> resource which did not exist before.</td></tr>
+		<tr><td>DELETE</td><td>Deletes a resource.</td></tr>
 	</tbody>
 </table>
 
@@ -76,7 +76,7 @@ Resources can be queried and modified with standard HTTP methods. Where GET, PUT
 
 ## JSON
 
-The contents of Resources are often expressed in Javascript Object Notation better known as JSON. That's not a requirement of REST itself, in fact some APIs also use XML but JSON is by far more popular due to its simplicity.
+The contents of resources are often expressed in Javascript Object Notation better known as JSON. That's not a requirement of REST itself, in fact some APIs also use XML but JSON is by far more popular due to its simplicity.
 
 The JSON format is a very simple but powerful notation to express structured objects and lists. The following example covers everything that can be expressed with JSON.
 
