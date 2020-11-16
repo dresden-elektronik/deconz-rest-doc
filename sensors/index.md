@@ -103,6 +103,24 @@ Creates a new sensor.
   </thead>
   <tbody>
     <tr>
+      <td>ZHAAirQuality</td>
+      <td>airquality
+        <ul>
+            <li>Introduced with deCONZ version 2.6.0-beta</li>
+        </ul>
+      </td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>airqualityppb
+        <ul>
+            <li>Introduced with deCONZ version 2.6.0-beta</li>
+        </ul>
+      </td>
+      <td>Number</td>
+    </tr>
+    <tr>
       <td>ZHAAlarm</td>
       <td>alarm</td>
       <td>Bool</td>
@@ -345,10 +363,28 @@ Creates a new sensor.
       <td></td>
       <td>fanmode
         <ul>
-            <li>Introduced with deCONZ version 2.05.85</li>
+            <li>Introduced with deCONZ version 2.6.0-beta</li>
         </ul>
       </td>
       <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>floortemperature
+        <ul>
+            <li>Introduced with deCONZ version 2.05.85</li>
+        </ul>
+      </td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>heating
+        <ul>
+            <li>Introduced with deCONZ version 2.05.85</li>
+        </ul>
+      </td>
+      <td>Bool</td>
     </tr>
     <tr>
       <td></td>
@@ -774,11 +810,11 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>optional</td>
     </tr>
     <tr>
-      <td>coolingsetpoint</td>
+      <td>coolsetpoint</td>
       <td>Number (700..3500)</td>
       <td>Set the desired cooling temperature for thermostats.
         <ul>
-          <li>Introduced with deCONZ version 2.05.85</li>
+          <li>Introduced with deCONZ version 2.6.0-beta</li>
         </ul>
       </td>
       <td>optional</td>
@@ -806,7 +842,7 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>String</td>
       <td>Sets the mode of the fan (exposed for thermostats supporting it).<br><u>Generally supported values are:</u> <b>off, low, medium, high, on, auto, smart</b><br>(Supported modes are device dependent)
         <ul>
-          <li>Introduced with deCONZ version 2.05.85</li>
+          <li>Introduced with deCONZ version 2.6.0-beta</li>
         </ul>
       </td>
       <td>optional</td>
@@ -818,7 +854,7 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>Display only</td>
     </tr>
     <tr>
-      <td>heatingsetpoint</td>
+      <td>heatsetpoint</td>
       <td>Number (500..3200)</td>
       <td>Set the desired heating temperature for thermostats/TRVs.</td>
       <td>optional</td>
@@ -863,14 +899,12 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>NOT SETTABLE and exclusively for predefined daylight sensor. Longitude of the set location/timezone.</td>
       <td>Display only</td>
     </tr>
-    
     <tr>
       <td>mode</td>
       <td>String</td>
       <td>Sets the current operating mode of a thermostat.<br><u>Generally supported values are:</u> <b>off, auto, cool, heat, emergency heating, precooling, fan only, dry, sleep</b><br>(Supported modes are device dependent)<br><br>For ubisys S1/S2, operation mode of the switch.<br><u>Supported values are:</u> <b>momentary, rocker</b></td>
       <td>optional</td>
     </tr>
-    
     <tr>
       <td>mountingmode</td>
       <td>Bool</td>
@@ -939,7 +973,6 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>For Xiaomi vibration sensors, only following 3 values apply: low: 21, medium: 11, high: 1</td>
       <td>optional</td>
     </tr>
-    
     <tr>
       <td>sunriseoffset</td>
       <td>Number (-120..120)</td>
@@ -952,12 +985,31 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>NOT SETTABLE and exclusively for predefined daylight sensor. Sunset offset value for location/timezone in minutes.</td>
       <td>Display only</td>
     </tr>
-    
+    <tr>
+      <td>swingmode</td>
+      <td>String</td>
+      <td>Sets the AC louvers position (exposed for thermostats supporting it).<br><u>Generally supported values are:</u> <b>fully closed, fully open, quarter open, half open, three quarters open</b>
+        <ul>
+          <li>Introduced with deCONZ version 2.6.0-beta</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
     <tr>
       <td>temperature</td>
       <td>Number (-27315..32767)</td>
       <td>NOT SETTABLE. Reported temperature values by Xiaomi devices which are no temperature measuring devices (presumably device temperature).</td>
       <td>Display only</td>
+    </tr>
+    <tr>
+      <td>temperaturemeasurement</td>
+      <td>String</td>
+      <td>Sets the mode of operation for Elko Super TR thermostat.<br><u>Generally supported values are:</u> <b>air sensor, floor sensor, floor protection</b>
+        <ul>
+          <li>Introduced with deCONZ version 2.05.85</li>
+        </ul>
+      </td>
+      <td>optional</td>
     </tr>
     <tr>
       <td>tholddark</td>
