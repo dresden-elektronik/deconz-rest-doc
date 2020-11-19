@@ -1,0 +1,71 @@
+.icon.icon-home::before {
+    display: none;
+}
+
+/* side nav brand color */
+.wy-side-nav-search {
+	background-color: #343131;
+}
+
+/* inline code */
+.rst-content code {
+	color: #c14;
+}
+
+/* Tables */
+
+table {
+    font-size: 0.9rem;
+    width: unset !important;
+    /*
+    */
+    border-collapse: separate !important;
+    border-spacing: 0;
+    border: 1px solid #a9a9a9;
+    border-radius: 2px;
+    caption-side: bottom;
+    margin: 2rem 0;
+}
+
+table caption {
+    margin-top: 0.5rem;
+    opacity: 0.75;
+}
+
+thead {
+    font-size: 0.9rem; /* slightly smaller */
+}
+
+tr th,
+tr td {
+	border: unset !important; /* reset theme style */
+    padding: 0.5rem 1rem;
+    text-align: start;
+}
+
+/*
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+*/
+
+table tr th:not(:last-child) {
+    border-right: 1px solid #dcdcdc !important;
+}
+table tr td:not(:last-child) {
+    border-right: 1px solid #dcdcdc !important;
+}
+
+table tr:not(:last-child) td,
+table thead tr td {
+    border-bottom: 1px solid #dcdcdc !important;
+}
+
+table tr:not(:last-child) th,
+table thead tr th {
+    border-bottom: 1px solid #a9a9a9 !important;
+}

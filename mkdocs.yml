@@ -1,0 +1,32 @@
+site_name: deCONZ REST-API
+theme:
+  name: readthedocs
+  custom_dir: custom_theme/
+repo_url: https://github.com/dresden-elektronik/deconz-rest-doc
+markdown_extensions:
+    - admonition
+    - smarty
+    - toc:
+        permalink: True
+extra_css:
+  - css/extra.css
+nav:
+    - General:
+      - Introduction: index.md
+      - about_rest/index.md
+      - 'Getting Started': getting_started/index.md
+    - 'API Endpoints':
+      - endpoints/configuration/index.md
+      - endpoints/groups/index.md
+      - endpoints/lights/index.md
+      - endpoints/rules/index.md
+      - endpoints/scenes/index.md
+      - endpoints/schedules/index.md
+      - endpoints/sensors/index.md
+      - endpoints/touchlink/index.md
+      - endpoints/websocket/index.md
+    - Misc:
+      - misc/discovery/index.md
+      - misc/authorization/index.md
+      - misc/errors/index.md
+      - misc/polling/index.md
