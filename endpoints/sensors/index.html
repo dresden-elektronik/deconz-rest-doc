@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Sensors - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Sensors";
+    var mkdocs_page_input_path = "endpoints/sensors/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about_rest/">About REST</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../lights/">Lights</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../rules/">Rules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../schedules/">Schedules</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Sensors</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#create-sensor">Create sensor&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#supported-sensor-types-and-their-states">Supported sensor types and their states</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-all-sensors">Get all Sensors&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_1">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_1">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_1">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-sensor">Get sensor&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_2">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_2">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_2">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#update-sensor">Update sensor&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data_1">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_3">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_3">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#change-sensor-config">Change sensor config&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data_2">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_4">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_4">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#change-sensor-state">Change sensor state&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_5">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data_3">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_5">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_5">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#delete-sensor">Delete sensor&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_6">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_6">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_6">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../websocket/">Websocket</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Endpoints &raquo;</li>
+        
+      
+    
+    <li>Sensors</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/endpoints/sensors/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="sensors">Sensors<a class="headerlink" href="#sensors" title="Permanent link">&para;</a></h1>
+<p>Sensors can be used to measure environment parameters like temperature or to emit events like a button press from a switch. With a coressponding rule they can control lights and groups.</p>
+<h2 id="create-sensor">Create sensor<a name="create">&nbsp;</a><a class="headerlink" href="#create-sensor" title="Permanent link">&para;</a></h2>
+<pre><code>POST /api/&lt;apikey&gt;/sensors
+</code></pre>
+<p>Creates a new sensor.</p>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>The name of the sensor.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>The model identifier of the sensor.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>The software version of the sensor.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>The type of the sensor, see <a href="#sensor-types-and-states">Sensor types and states</a>.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>The unique id of the sensor. Should be the MAC address of the device.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>The manufacturer name of the sensor.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>state</td>
+      <td>Object</td>
+      <td>The state of the sensor, see <a href="#sensor-types-and-states">Sensor types and states</a>.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>config</td>
+      <td>Object</td>
+      <td>The config of the sensor.
+        <ul>
+          <li>on - Bool - default: true</li>
+          <li>reachable - Bool - default: true</li>
+          <li>battery - Number (0&ndash;100)</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="sensor-types-and-states">&nbsp;</a></p>
+<h3 id="supported-sensor-types-and-their-states">Supported sensor types and their states<a class="headerlink" href="#supported-sensor-types-and-their-states" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Sensor type</th><th>Supported state</th><th>Type</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ZHAAirQuality</td>
+      <td>airquality
+        <ul>
+            <li>Introduced with deCONZ version 2.6.0-beta</li>
+        </ul>
+      </td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>airqualityppb
+        <ul>
+            <li>Introduced with deCONZ version 2.6.0-beta</li>
+        </ul>
+      </td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td>ZHAAlarm</td>
+      <td>alarm</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lowbattery</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tampered</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>ZHACarbonMonoxide</td>
+      <td>carbonmonoxide</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lowbattery</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tampered</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>ZHAConsumption</td>
+      <td>consumption</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>power</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td>ZHAFire</td>
+      <td>fire</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lowbattery</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tampered</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>ZHAHumidity</td>
+      <td>humidity</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td>ZHALightLevel</td>
+      <td>lux</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lightlevel</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>dark</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>daylight</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>ZHAOpenClose</td>
+      <td>open</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td>ZHAPower</td>
+      <td>current</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>power</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>voltage</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td>ZHAPresence</td>
+      <td>presence</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td>ZHASwitch</td>
+      <td>buttonevent</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>gesture</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>eventduration</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>x</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>y</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>angle</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td>ZHAPressure</td>
+      <td>pressure</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td>ZHATemperature</td>
+      <td>temperature</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td>ZHATime</td>
+      <td>lastset</td>
+      <td>Time</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>Time</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>localtime</td>
+      <td>Time</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>utc</td>
+      <td>Time</td>
+    </tr>
+    <tr>
+      <td>ZHAThermostat</td>
+      <td>on</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>errorcode
+        <ul>
+            <li>Introduced with deCONZ version 2.05.81</li>
+        </ul>
+      </td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>fanmode
+        <ul>
+            <li>Introduced with deCONZ version 2.6.0-beta</li>
+        </ul>
+      </td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>floortemperature
+        <ul>
+            <li>Introduced with deCONZ version 2.05.85</li>
+        </ul>
+      </td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>heating
+        <ul>
+            <li>Introduced with deCONZ version 2.05.85</li>
+        </ul>
+      </td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>mountingmodeactive
+        <ul>
+            <li>Introduced with deCONZ version 2.05.81</li>
+        </ul>
+      </td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>temperature</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>valve</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>windowopen
+        <ul>
+            <li>Introduced with deCONZ version 2.05.79</li>
+        </ul>
+      </td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td>ZHAVibration</td>
+      <td>vibration</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>orientation_x</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>orientation_y</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>orientation_z</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tiltangle</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>vibrationstrength</td>
+      <td>Number</td>
+    </tr>
+    <tr>
+      <td>ZHAWater</td>
+      <td>water</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lastupdated</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lowbattery</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tampered</td>
+      <td>Bool</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data">Example request data<a class="headerlink" href="#example-request-data" title="Permanent link">&para;</a></h3>
+<pre class="highlight">
+<code>    
+{
+    "config": {
+        "on": true
+        "reachable": true
+    }
+    "manufacturername": "Me"
+    "modelid": "T1000"
+    "name": "My Switch"
+    "swversion": "1.0"
+    "type": "CLIPSwitch"
+    "uniqueid": "0x001fee00000008bb"
+}
+</code>
+</pre>
+
+<h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "id": "1" } } ];
+</code>
+</pre>
+
+<h4 id="response-fields">Response fields<a class="headerlink" href="#response-fields" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>The unique identifier of the new sensor.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="possible-errors">Possible errors<a class="headerlink" href="#possible-errors" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="get-all-sensors">Get all Sensors<a name="getall">&nbsp;</a><a class="headerlink" href="#get-all-sensors" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/sensors
+</code></pre>
+<p>Returns a list of all sensors. If there are no sensors in the system an empty object {} is returned.</p>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "1": {
+        "config": {
+            "on": true,
+            "reachable": true
+        },
+        "ep": 1,
+        "etag": "61eaee2477fc3d5c27932fefeef638bd",
+        "manufacturername": "dresden elektronik",
+        "modelid": "Lighting Switch",
+        "name": "Lighting Switch 1",
+        "state": {
+            "lastupdated": "2016-07-06T09:39:53"
+        },
+        "swversion": "1.0",
+        "type": "ZHASwitch",
+        "uniqueid": "0x00212effff00a6bc"
+    }
+    "2": {
+        "config": {
+            "on": true,
+            "reachable": true
+        },
+        "ep": 2,
+        "etag": "61eaee2477fc3d5c27932fefeef638bd",
+        "manufacturername": "dresden elektronik",
+        "modelid": "Lighting Switch",
+        "name": "Lighting Switch 2",
+        "state": {
+            "lastupdated": "2016-07-06T09:39:53"
+        },
+        "swversion": "1.0",
+        "type": "ZHASwitch",
+        "uniqueid": "0x00212effff00a6bc"
+    }
+}
+</code>
+</pre>
+
+<h4 id="response-fields_1">Response fields<a class="headerlink" href="#response-fields_1" title="Permanent link">&para;</a></h4>
+<p>The whole sensor object as descripted in <a href="#getsensor">Get sensor</a>.</p>
+<h3 id="possible-errors_1">Possible errors<a class="headerlink" href="#possible-errors_1" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="get-sensor">Get sensor<a name="getsensor">&nbsp;</a><a class="headerlink" href="#get-sensor" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/sensors/&lt;id&gt;
+</code></pre>
+<p>Returns the sensor with the specified id.</p>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "config": {
+        "on": true,
+        "reachable": true
+    },
+    "ep": 1,
+    "etag": "61eaee2477fc3d5c27932fefeef638bd",
+    "manufacturername": "dresden elektronik",
+    "mode": 2,
+    "modelid": "Lighting Switch",
+    "name": "Lighting Switch 1",
+    "state": {
+        "lastupdated": "2016-07-06T09:39:53"
+    },
+    "swversion": "1.0",
+    "type": "ZHASwitch",
+    "uniqueid": "0x00212effff00a6bc"
+}
+</code>
+</pre>
+
+<h4 id="response-fields_2">Response fields<a class="headerlink" href="#response-fields_2" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>config</td>
+      <td>Object</td>
+      <td>The config of the sensor. Refer to <a href="#changeconfig">Change sensor config</a> for further details.</td>
+    </tr>
+    <tr>
+      <td>ep</td>
+      <td>Number</td>
+      <td>The Endpoint of the sensor.</td>
+    </tr>
+    <tr>
+      <td>etag</td>
+      <td>String</td>
+      <td>HTTP <a href="../../misc/polling#etag">etag</a> which changes whenever the sensor changes.</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>The manufacturer name of the sensor.</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>The model id of the sensor.</td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>Number (1|2|3)</td>
+      <td>The mode of the sensor (only available for dresden elektroink Lighting Switch).
+        <ul>
+          <li>1 = Scenes mode</li>
+          <li>2 = Two groups mode</li>
+          <li>3 = Color temperature mode</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>The name of the sensor.</td>
+    </tr>
+    <tr>
+      <td>state</td>
+      <td>Object</td>
+      <td>The state of the sensor.</td>
+    </tr>
+    <tr>
+      <td>state.lastupdated</td>
+      <td>String</td>
+      <td>Timestamp when the sensor was last updated.</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Software version of the sensor.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>The type of the sensor.</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>The unique identifiers including the MAC address of the sensor.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="possible-errors_2">Possible errors<a class="headerlink" href="#possible-errors_2" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+<hr />
+<h2 id="update-sensor">Update sensor<a name="update">&nbsp;</a><a class="headerlink" href="#update-sensor" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/sensors/&lt;id&gt;
+</code></pre>
+<p>Update a sensor with the specified parameters.</p>
+<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>The name of the sensor.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>Number (1|2|3)</td>
+      <td>Only availabe for dresden elektronik Lighting Switch. Set the mode of the switch.
+        <ul>
+          <li>1 = Scenes mode</li>
+          <li>2 = Two groups mode</li>
+          <li>3 = Color temperature mode</li>
+        </ul></td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data_1">Example request data<a class="headerlink" href="#example-request-data_1" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  "name": "a nice name"
+}
+</code></pre>
+<h3 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+    { "success": { "/sensors/1/name": "a nice name" } }
+</code>
+</pre>
+
+<h3 id="possible-errors_3">Possible errors<a class="headerlink" href="#possible-errors_3" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="change-sensor-config">Change sensor config<a name="changeconfig">&nbsp;</a><a class="headerlink" href="#change-sensor-config" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/sensors/&lt;id&gt;/config
+</code></pre>
+<p>Update a sensor config with the specified parameters.<br>
+Sensors expose certain configuration parameters depending on their defined or known capabilities. To get an overview on which parameters are available for a particular device, get the sensor state of either all <a href="#getall">Get all sensors</a> or a single sensor <a href="#getsensor">Get sensor</a>.</p>
+<h3 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>battery</td>
+      <td>Number (1&ndash;100)</td>
+      <td>The current battery state in percent, only for battery powered devices.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>configured</td>
+      <td>Bool</td>
+      <td>NOT SETTABLE and exclusively for predefined daylight sensor. Determines if the sensor has been configured.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>coolsetpoint</td>
+      <td>Number (700&ndash;3500)</td>
+      <td>Set the desired cooling temperature for thermostats.
+        <ul>
+          <li>Introduced with deCONZ version 2.6.0-beta</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>delay</td>
+      <td>Number (0&ndash;65535)</td>
+      <td></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>displayflipped</td>
+      <td>Bool</td>
+      <td>Flip the display for TRVs supporting it.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>duration</td>
+      <td>Number (0&ndash;65535)</td>
+      <td>For ZHAPrensence sensors: time in seconds presence state is set to false again.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>fanmode</td>
+      <td>String</td>
+      <td>Sets the mode of the fan (exposed for thermostats supporting it).<br><u>Generally supported values are:</u> <b>off, low, medium, high, on, auto, smart</b><br>(Supported modes are device dependent)
+        <ul>
+          <li>Introduced with deCONZ version 2.6.0-beta</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>groups</td>
+      <td>Number</td>
+      <td>NOT SETTABLE. Displays the groups associated with the sensor.</td>
+      <td>Display only</td>
+    </tr>
+    <tr>
+      <td>heatsetpoint</td>
+      <td>Number (500&ndash;3200)</td>
+      <td>Set the desired heating temperature for thermostats/TRVs.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>hostflags</td>
+      <td></td>
+      <td></td>
+      <td>Display only</td>
+    </tr>
+    <tr>
+      <td>lat</td>
+      <td>Number</td>
+      <td>NOT SETTABLE and exclusively for predefined daylight sensor. Latitude of the set location/timezone.</td>
+      <td>Display only</td>
+    </tr>
+    <tr>
+      <td>ledindication</td>
+      <td>Bool</td>
+      <td></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>localtime</td>
+      <td></td>
+      <td></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>locked</td>
+      <td>Bool</td>
+      <td>Child lock active/inactive for thermostats/TRVs supporting it.
+        <ul>
+          <li>Introduced with deCONZ version 2.05.81</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>long</td>
+      <td>Number</td>
+      <td>NOT SETTABLE and exclusively for predefined daylight sensor. Longitude of the set location/timezone.</td>
+      <td>Display only</td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>String</td>
+      <td>Sets the current operating mode of a thermostat.<br><u>Generally supported values are:</u> <b>off, auto, cool, heat, emergency heating, precooling, fan only, dry, sleep</b><br>(Supported modes are device dependent)<br><br>For ubisys S1/S2, operation mode of the switch.<br><u>Supported values are:</u> <b>momentary, rocker</b></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>mountingmode</td>
+      <td>Bool</td>
+      <td>Sets a TRV into mounting mode if supported (valve fully open position).
+        <ul>
+          <li>Introduced with deCONZ version 2.05.81</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>The on/off status of the sensor.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>offset</td>
+      <td>Number (-32768&ndash;32767)</td>
+      <td>Adds a signed offset value to measured temperature and humidity state values. Values send by the REST API are already amended by the offset.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>pending</td>
+      <td>Number</td>
+      <td>NOT SETTABLE. Bitmap of outstanding configuration tasks for a device. A value of "[]" indicates no outstanding tasks.</td>
+      <td>Display only</td>
+    </tr>
+    <tr>
+      <td>preset</td>
+      <td>String</td>
+      <td>Sets the current operating mode for Tuya thermostats.<br><u>Generally supported values are:</u> <b>holiday, auto, manual, comfort, eco, boost, complex</b><br>(Supported modes are device dependent)
+        <ul>
+          <li>Introduced with deCONZ version 2.05.83</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>The reachable status of the sensor.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>schedule</td>
+      <td></td>
+      <td></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>scheduleon</td>
+      <td></td>
+      <td></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>sensitivity</td>
+      <td>Number</td>
+      <td></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>sensitivitymax</td>
+      <td>Number</td>
+      <td>For Xiaomi vibration sensors, only following 3 values apply: low: 21, medium: 11, high: 1</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>sunriseoffset</td>
+      <td>Number (-120&ndash;120)</td>
+      <td>NOT SETTABLE and exclusively for predefined daylight sensor. Sunrise offset value for location/timezone in minutes.</td>
+      <td>Display only</td>
+    </tr>
+    <tr>
+      <td>sunsetoffset</td>
+      <td>Number (-120&ndash;120)</td>
+      <td>NOT SETTABLE and exclusively for predefined daylight sensor. Sunset offset value for location/timezone in minutes.</td>
+      <td>Display only</td>
+    </tr>
+    <tr>
+      <td>swingmode</td>
+      <td>String</td>
+      <td>Sets the AC louvers position (exposed for thermostats supporting it).<br><u>Generally supported values are:</u> <b>fully closed, fully open, quarter open, half open, three quarters open</b>
+        <ul>
+          <li>Introduced with deCONZ version 2.6.0-beta</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>temperature</td>
+      <td>Number (-27315&ndash;32767)</td>
+      <td>NOT SETTABLE. Reported temperature values by Xiaomi devices which are no temperature measuring devices (presumably device temperature).</td>
+      <td>Display only</td>
+    </tr>
+    <tr>
+      <td>temperaturemeasurement</td>
+      <td>String</td>
+      <td>Sets the mode of operation for Elko Super TR thermostat.<br><u>Generally supported values are:</u> <b>air sensor, floor sensor, floor protection</b>
+        <ul>
+          <li>Introduced with deCONZ version 2.05.85</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>tholddark</td>
+      <td>Number (0&ndash;65534)</td>
+      <td></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>tholdoffset</td>
+      <td>Number (1&ndash;65534)</td>
+      <td></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>usertest</td>
+      <td>Bool</td>
+      <td></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>windowcoveringtype</td>
+      <td>Number (0&ndash;9)</td>
+      <td>Sets the covering type and starts calibration for ubisys J1.<br><u>Supported values are:</u><br><b>0</b> (Roller Shade),<br><b>1</b> (Roller Shade two motors),<br><b>2</b> (Roller Shade exterior),<br><b>3</b> (Roller Shade two motors ext),<br><b>4</b> (Drapery),<br><b>5</b> (Awning),<br><b>6</b> (Shutter),<br><b>7</b> (Tilt Blind Lift only),<br><b>8</b> (Tilt Blind lift & tilt),<br><b>9</b> (Projector Screen)</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>windowopen_set</td>
+      <td>Bool</td>
+      <td>Sets if window open detection shall be active/inactive for Tuya thermostats.<br>(Support is device dependent)
+        <ul>
+          <li>Introduced with deCONZ version 2.05.83</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data_2">Example request data<a class="headerlink" href="#example-request-data_2" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  "on": false,
+  "reachable: false
+}
+</code></pre>
+<h3 id="response_4">Response<a class="headerlink" href="#response_4" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+    { 
+      "success": { "/sensors/1/config/on": false } 
+      "success": { "/sensors/1/config/reachable": false }
+    }
+</code>
+</pre>
+
+<h3 id="possible-errors_4">Possible errors<a class="headerlink" href="#possible-errors_4" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="change-sensor-state">Change sensor state<a name="changestate">&nbsp;</a><a class="headerlink" href="#change-sensor-state" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/sensors/&lt;id&gt;/state
+</code></pre>
+<p>Update a sensor state with the specified parameters.</p>
+<h3 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h3>
+<p>Allowed sensor types and its states:</p>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Sensor type</th><th>Allowed state</th><th>type</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CLIPSwitch</td>
+      <td>buttonevent</td>
+      <td>Number</td>
+    </tr>
+     <tr>
+      <td>CLIPOpenClose</td>
+      <td>open</td>
+      <td>Bool</td>
+    </tr>
+     <tr>
+      <td>CLIPPresence</td>
+      <td>presence</td>
+      <td>Bool</td>
+    </tr>
+     <tr>
+      <td>CLIPTemperature</td>
+      <td>temperature</td>
+      <td>Number</td>
+    </tr>
+     <tr>
+      <td>CLIPGenericFlag</td>
+      <td>flag</td>
+      <td>Bool</td>
+    </tr>
+     <tr>
+      <td>CLIPGenericStatus</td>
+      <td>status</td>
+      <td>Number</td>
+    </tr>
+     <tr>
+      <td>CLIPHumidity</td>
+      <td>humidity</td>
+      <td>Number</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data_3">Example request data<a class="headerlink" href="#example-request-data_3" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  "flag": false
+}
+</code></pre>
+<h3 id="response_5">Response<a class="headerlink" href="#response_5" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+    {
+      "success": { "/sensors/1/state/flag": false }
+    }
+</code>
+</pre>
+
+<h3 id="possible-errors_5">Possible errors<a class="headerlink" href="#possible-errors_5" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="delete-sensor">Delete sensor<a name="delete">&nbsp;</a><a class="headerlink" href="#delete-sensor" title="Permanent link">&para;</a></h2>
+<pre><code>DELETE /api/&lt;apikey&gt;/sensors/&lt;id&gt;
+</code></pre>
+<p>Delete a sensor.</p>
+<h3 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>reset</td>
+      <td>Bool</td>
+      <td>If this parameter is omitted, it will implicitly be set to false and the sensor is marked as deleted in the database. If set to true, deCONZ is trying to reset the whole physical device by issuing a leave request. It is required that the device is awake (able to receive commands) or supports this type of request respectively and on success, the device is deleted as a node and reset to factory defaults.</td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="response_6">Response<a class="headerlink" href="#response_6" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[{ "success": "1"}]
+</code>
+</pre>
+
+<h3 id="possible-errors_6">Possible errors<a class="headerlink" href="#possible-errors_6" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../touchlink/" class="btn btn-neutral float-right" title="Touchlink">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../schedules/" class="btn btn-neutral" title="Schedules"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../schedules/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../touchlink/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

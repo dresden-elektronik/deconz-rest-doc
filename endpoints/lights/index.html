@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Lights - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Lights";
+    var mkdocs_page_input_path = "endpoints/lights/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about_rest/">About REST</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Lights</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#get-all-lights">Get all lights&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-light-state">Get light state&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_1">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_1">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_1">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#set-light-state">Set light state&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_2">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_2">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#set-light-attributes">Set light attributes&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data_1">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_3">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_3">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#delete-light">Delete light&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_4">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_4">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#remove-all-groups">Remove all groups&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#response_5">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_5">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#remove-all-scenes">Remove all scenes&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#response_6">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_6">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../rules/">Rules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../schedules/">Schedules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../websocket/">Websocket</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Endpoints &raquo;</li>
+        
+      
+    
+    <li>Lights</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/endpoints/lights/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lights">Lights<a class="headerlink" href="#lights" title="Permanent link">&para;</a></h1>
+<p>Monitor and control single lights.</p>
+<h2 id="get-all-lights">Get all lights<a name="getall">&nbsp;</a><a class="headerlink" href="#get-all-lights" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/lights
+</code></pre>
+<p>Returns a list of all lights.</p>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "1": {
+        "etag": "026bcfe544ad76c7534e5ca8ed39047c"
+        "hascolor": true
+        "manufacturer": "dresden elektronik"
+        "modelid": "FLS-PP3"
+        "name": "Light 1"
+        "pointsymbol": {}
+        "state": {
+            "alert": "none"
+            "bri": 111
+            "colormode": "ct"
+            "ct": 307
+            "effect": "none"
+            "hue": 7998
+            "on": false
+            "reachable": true
+            "sat": 172
+            "xy": [ 0.421253, 0.39921 ]
+        }
+        "swversion": "020C.201000A0"
+        "type": "Extended color light"
+        "uniqueid": "00:21:2E:FF:FF:00:73:9F-0A"
+    }
+
+    "2": {
+        "etag": "026bcfe544ad76c7534e5ca8ed39047c"
+        "hascolor": false
+        "manufacturer": "dresden elektronik"
+        "modelid": "FLS-PP3 White"
+        "name": "Light 2"
+        "pointsymbol": {}
+        "state": {
+            "alert": "none"
+            "bri": 1
+            "effect": "none"
+            "on": false
+            "reachable": true
+        }
+        "swversion": "020C.201000A0"
+        "type": "Dimmable light"
+        "uniqueid": "00:21:2E:FF:FF:00:73:9F-0B"
+    }
+}
+</code>
+</pre>
+
+<h4 id="response-fields">Response fields<a class="headerlink" href="#response-fields" title="Permanent link">&para;</a></h4>
+<p>The whole light object as descripted in <a href="#getstate">Get light state</a>.</p>
+<h3 id="possible-errors">Possible errors<a class="headerlink" href="#possible-errors" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="get-light-state">Get light state<a name="getstate">&nbsp;</a><a class="headerlink" href="#get-light-state" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/lights/&lt;id&gt;
+</code></pre>
+<p>Returns the full state of a light.</p>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+        "etag": "026bcfe544ad76c7534e5ca8ed39047c"
+        "hascolor": true
+        "manufacturer": "dresden elektronik"
+        "modelid": "FLS-PP3"
+        "name": "Light 1"
+        "pointsymbol": {}
+        "state": {
+            "alert": "none"
+            "bri": 111
+            "colormode": "ct"
+            "ct": 307
+            "effect": "none"
+            "hue": 7998
+            "on": false
+            "reachable": true
+            "sat": 172
+            "xy": [ 0.421253, 0.39921 ]
+        }
+        "swversion": "020C.201000A0"
+        "type": "Extended color light"
+        "uniqueid": "00:21:2E:FF:FF:00:73:9F-0A"
+    }
+</code>
+</pre>
+
+<h4 id="response-fields_1">Response fields<a class="headerlink" href="#response-fields_1" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>colorcapabilities</td>
+      <td>Number</td>
+      <td>The color capabilities as reported by the light.</td>
+    </tr>
+    <tr>
+      <td>ctmax</td>
+      <td>Number</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ctmin</td>
+      <td>Number</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>String</td>
+      <td>Last time the device announced itself to the network.</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>String</td>
+      <td>Last time the device has transmitted any data.</td>
+    </tr>
+    <tr>
+      <td>etag</td>
+      <td>String</td>
+      <td>HTTP <a href="../../misc/polling#etag">etag</a> which changes on any action to the light.</td>
+    </tr>
+    <tr>
+      <td>hascolor</td>
+      <td>bool</td>
+      <td>Indicates if the light can change color. Deprecated - use state instead: if light has no color colormode, hue and xy will not be shown.</td>
+    </tr>
+    <tr>
+      <td>manufacturer</td>
+      <td>String</td>
+      <td>The manufacturer of the light device.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of a light.</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>An identifier unique to the product.</td>
+    </tr>
+    <tr>
+      <td>pointsymbol</td>
+      <td>Object</td>
+      <td>Not used in the current version.</td>
+    </tr>
+    <tr>
+      <td>powerup</td>
+      <td>Number</td>
+      <td>SETTABLE. Brightness to set after power on (limited to DE devices).</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>Human readable type of the light.</td>
+    </tr>
+    <tr>
+      <td>state</td>
+      <td>Object</td>
+      <td>The current state of the light.</td>
+    </tr>
+    <tr>
+      <td>state.on</td>
+      <td>Bool</td>
+      <td>true if the light is on.</td>
+    </tr>
+    <tr>
+      <td>state.bri</td>
+      <td>Number (0&ndash;255)</td>
+      <td>Brightness of the light. Depending on the light type 0 might not mean visible "off" but minimum brightness.</td>
+    </tr>
+    <tr>
+      <td>state.effect</td>
+      <td>Number (0&ndash;7)</td>
+      <td>Run special scenes (if supported).</td>
+    </tr>
+    <tr>
+      <td>state.hue</td>
+      <td>Number (0&ndash;65535)</td>
+      <td>Color hue of the light. The hue parameter in the HSV color model is between 0°&ndash;360° and is mapped to 0&ndash;65535 to get 16-bit resolution.</td>
+    </tr>
+    <tr>
+      <td>state.sat</td>
+      <td>Number (0&ndash;255)</td>
+      <td>Color saturation of the light. There 0 means no color at all and 255 is the greatest saturation of the color.</td>
+    </tr>
+    <tr>
+      <td>state.ct</td>
+      <td>Number (153&ndash;500)</td>
+      <td>Mired color temperature of the light. (2000K&ndash;6500K)</td>
+    </tr>
+    <tr>
+      <td>state.xy</td>
+      <td>Array</td>
+      <td>CIE xy color space coordinates as array [x, y] of real values (0&ndash;1).</td>
+    </tr>
+    <tr>
+      <td>state.alert</td>
+      <td>String</td>
+      <td>Temporary alert effect. Following values are possible:
+        <ul>
+          <li>none - light is not performing an alert</li>
+          <li>select - light is blinking a short time</li>
+          <li>lselect - light is blinking a longer time</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>state.colormode</td>
+      <td>String</td>
+      <td>The current color mode of the light:
+        <ul>
+          <li>hs - hue and saturation</li>
+          <li>xy - CIE xy values</li>
+          <li>ct - color temperature</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>state.effect</td>
+      <td>String</td>
+      <td>Effect of the light:
+        <ul>
+          <li>none - no effect</li>
+          <li>colorloop</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>state.speed</td>
+      <td>Number (0&ndash;6)</td>
+      <td>SETTABLE. Sets the speed of fans/ventilators.</td>
+    </tr>
+    <tr>
+      <td>state.reachable</td>
+      <td>Bool</td>
+      <td>true if the light is reachable and accepts commands.</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>The unique id of the light. It consists of the MAC address of the light followed by a dash and an unique endpoint identifier in the range 01 to FF.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="possible-errors_1">Possible errors<a class="headerlink" href="#possible-errors_1" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#304">304 Not Modified</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+<hr />
+<h2 id="set-light-state">Set light state<a name="setstate">&nbsp;</a><a class="headerlink" href="#set-light-state" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/lights/&lt;id&gt;/state
+</code></pre>
+<p>Sets the state of a light.</p>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>alert</td>
+      <td>String</td>
+      <td>Trigger a temporary alert effect:
+        <ul>
+          <li>none - light is not performing an alert</li>
+          <li>select - light is blinking a short time</li>
+          <li>lselect - light is blinking a longer time</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>bri</td>
+      <td>Number (0&ndash;255)</td>
+      <td>Set the brightness of the light. Depending on the light type 0 might not mean visible "off" but minimum brightness. If the light is off and the value is greater 0 a on=true shall also be provided.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>colorloopspeed</td>
+      <td>Number (1&ndash;255)</td>
+      <td>Specifies the speed of a colorloop. 1 = very fast, 255 = very slow (default: 15). This parameter only has an effect when it is called together with effect colorloop.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>ct</td>
+      <td>Number (153&ndash;500)</td>
+      <td>Set the Mired color temperature of the light. (2000K&ndash;6500K)</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>effect</td>
+      <td>String</td>
+      <td>Trigger an effect of the light:
+        <ul>
+          <li>none - no effect</li>
+          <li>colorloop - the light will cycle continously through all colors with the speed specified by colorloopspeed</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>hue</td>
+      <td>Number (0&ndash;65535)</td>
+      <td>Set the color hue of the light. The hue parameter in the HSV color model is between 0°&ndash;360° and is mapped to 0&ndash;65535 to get 16-bit resolution.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>Set to true to turn the light on, false to turn it off.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>sat</td>
+      <td>Number (0&ndash;255)</td>
+      <td>Set the color saturation of the light. There 0 means no color at all and 255 is the greatest saturation of the color.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>transitiontime</td>
+      <td>Number</td>
+      <td>Transition time in 1/10 seconds between two states.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>xy</td>
+      <td>Array</td>
+      <td>Set the CIE xy color space coordinates as array [x, y] of real values (0&ndash;1).</td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data">Example request data<a class="headerlink" href="#example-request-data" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  "on": true,
+  "bri": 180,
+  "hue": 43680,
+  "sat": 255,
+  "transitiontime": 10
+}
+</code></pre>
+<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[
+    { "success": { "/lights/1/state/on": true   }},
+    { "success": { "/lights/1/state/bri": 180   }},
+    { "success": { "/lights/1/state/hue": 43680 }},
+    { "success": { "/lights/1/state/sat": 255   }}
+]
+</code>
+</pre>
+
+<h3 id="possible-errors_2">Possible errors<a class="headerlink" href="#possible-errors_2" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+<hr />
+<h2 id="set-light-attributes">Set light attributes<a name="setattr">&nbsp;</a><a class="headerlink" href="#set-light-attributes" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/lights/&lt;id&gt;
+</code></pre>
+<p>Sets attributes of a light which are not related to its state.</p>
+<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>String (0&ndash;32)</td>
+      <td>Set the name of the light.</td>
+      <td>required</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data_1">Example request data<a class="headerlink" href="#example-request-data_1" title="Permanent link">&para;</a></h3>
+<pre><code>{ "name": "Living Room 1" }
+</code></pre>
+<h3 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[{ "success": { "/lights/1/name": "Living Room 1"}}]
+</code>
+</pre>
+
+<h3 id="possible-errors_3">Possible errors<a class="headerlink" href="#possible-errors_3" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+<hr />
+<h2 id="delete-light">Delete light<a name="deletelight">&nbsp;</a><a class="headerlink" href="#delete-light" title="Permanent link">&para;</a></h2>
+<pre><code>DELETE /api/&lt;apikey&gt;/lights/&lt;id&gt;
+</code></pre>
+<p>Removes the light from the gateway. It will not be shown in any REST-API call. Also deletes all groups and scenes on the light device.</p>
+<h3 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>reset</td>
+      <td>Bool</td>
+      <td>If true sends a network leave command to the light device (may not supported by each manufacturer).</td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="response_4">Response<a class="headerlink" href="#response_4" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[{ "success": { "id": "1"}}]
+</code>
+</pre>
+
+<h3 id="possible-errors_4">Possible errors<a class="headerlink" href="#possible-errors_4" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+<hr />
+<h2 id="remove-all-groups">Remove all groups<a name="removegroups">&nbsp;</a><a class="headerlink" href="#remove-all-groups" title="Permanent link">&para;</a></h2>
+<pre><code>DELETE /api/&lt;apikey&gt;/lights/&lt;id&gt;/groups
+</code></pre>
+<p>Remove the light from all groups it is a member of.</p>
+<h3 id="response_5">Response<a class="headerlink" href="#response_5" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[{ "success": { "id": "1"}}]
+</code>
+</pre>
+
+<h3 id="possible-errors_5">Possible errors<a class="headerlink" href="#possible-errors_5" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+<hr />
+<h2 id="remove-all-scenes">Remove all scenes<a name="removescenes">&nbsp;</a><a class="headerlink" href="#remove-all-scenes" title="Permanent link">&para;</a></h2>
+<pre><code>DELETE /api/&lt;apikey&gt;/lights/&lt;id&gt;/scenes
+</code></pre>
+<p>Remove the light from all scenes it is a member of.</p>
+<h3 id="response_6">Response<a class="headerlink" href="#response_6" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[{ "success": { "id": "1"}}]
+</code>
+</pre>
+
+<h3 id="possible-errors_6">Possible errors<a class="headerlink" href="#possible-errors_6" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rules/" class="btn btn-neutral float-right" title="Rules">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../groups/" class="btn btn-neutral" title="Groups"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../groups/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../rules/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

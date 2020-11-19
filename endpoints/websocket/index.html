@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Websocket - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Websocket";
+    var mkdocs_page_input_path = "endpoints/websocket/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about_rest/">About REST</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../lights/">Lights</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../rules/">Rules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../schedules/">Schedules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Websocket</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#websocket-configuration">Websocket Configuration&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#open-connection">Open Connection&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#javascript-example">Javascript example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#message-format">Message Format&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#light-state-change-example">Light state change example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#group-state-change-example">Group state change example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sensor-button-event-example">Sensor button event example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sensor-name-change-example">Sensor name change example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sensor-added-example">Sensor added example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#scene-recall-example">Scene Recall example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#message-fields">Message fields</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Endpoints &raquo;</li>
+        
+      
+    
+    <li>Websocket</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/endpoints/websocket/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="websocket">Websocket<a class="headerlink" href="#websocket" title="Permanent link">&para;</a></h1>
+<p>The embedded Websocket server provides push notifications to applications which require real-time feedback from devices like lights, groups, switches, and sensors.</p>
+<p>Since deCONZ version 2.04.40.</p>
+<h2 id="websocket-configuration">Websocket Configuration<a name="port">&nbsp;</a><a class="headerlink" href="#websocket-configuration" title="Permanent link">&para;</a></h2>
+<p>The Websocket server is started on an unused proxy friendly port which, depending on the system, is either 443, 8080, 8088, 20877, or any other unused random port.</p>
+<p>The Websocket server can be configured to include all <code>state</code> or <code>config</code> attributes in the message, or only the changed attributes.</p>
+<p>The Websocket used port and setting are listed in the configuration API endpoint:</p>
+<pre><code>GET /api/&lt;apikey&gt;/config
+</code></pre>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    ...
+    "websocketnotifyall": true,
+    "websocketport": 8088,
+    ...
+}
+</code>
+</pre>
+
+<h3 id="possible-errors">Possible errors<a class="headerlink" href="#possible-errors" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#503">503 Service Unavailable</a></p>
+<hr />
+<h2 id="open-connection">Open Connection<a name="connection">&nbsp;</a><a class="headerlink" href="#open-connection" title="Permanent link">&para;</a></h2>
+<p>How to establish a connection to a Websocket server depends on the underlying programming environment.</p>
+<h3 id="javascript-example">Javascript example<a class="headerlink" href="#javascript-example" title="Permanent link">&para;</a></h3>
+<p>The following example demonstrates how to establish a connection with Javascript in a browser or NodeJS implementation.</p>
+<pre><code class="language-javascript">const WebSocket = require('ws');
+
+const host = '192.168.1.202';
+const port = 8088;
+
+const ws = new WebSocket('ws://' + host + ':' + port);
+
+ws.onmessage = function(msg) {
+    console.log(JSON.parse(msg.data));
+}
+</code></pre>
+<hr />
+<h2 id="message-format">Message Format<a name="format">&nbsp;</a><a class="headerlink" href="#message-format" title="Permanent link">&para;</a></h2>
+<p>Messages received over a Websocket connection contain data in JSON format.</p>
+<h5 id="light-state-change-example">Light state change example<a class="headerlink" href="#light-state-change-example" title="Permanent link">&para;</a></h5>
+<pre><code class="language-json">{
+    &quot;e&quot;: &quot;changed&quot;,
+    &quot;id&quot;: &quot;1&quot;,
+    &quot;r&quot;: &quot;lights&quot;,
+    &quot;state&quot;: {
+        &quot;bri&quot;: 1,
+        &quot;on&quot;: true,
+        &quot;x&quot;: 65279,
+        &quot;xy&quot;: [
+            0.9961,
+            0.9961
+        ],
+        &quot;y&quot;: 65279
+    },
+    &quot;t&quot;: &quot;event&quot;,
+    &quot;uniqueid&quot;: &quot;00:0b:57:ff:fe:9a:46:ab-01&quot;
+}
+</code></pre>
+<p>Note that <code>x</code> and <code>y</code> are included in the <code>state</code> for backwards compatibility.
+New apps should use <code>xy</code> instead.</p>
+<h5 id="group-state-change-example">Group state change example<a class="headerlink" href="#group-state-change-example" title="Permanent link">&para;</a></h5>
+<pre><code class="language-json">{
+    &quot;e&quot;: &quot;changed&quot;,
+    &quot;id&quot;: &quot;1&quot;,
+    &quot;r&quot;: &quot;groups&quot;,
+    &quot;state&quot;: {
+        &quot;all_on&quot;: true,
+        &quot;any_on&quot;: true
+    },
+    &quot;t&quot;: &quot;event&quot;
+}
+
+</code></pre>
+<h5 id="sensor-button-event-example">Sensor button event example<a class="headerlink" href="#sensor-button-event-example" title="Permanent link">&para;</a></h5>
+<pre><code class="language-json">{
+    &quot;e&quot;: &quot;changed&quot;,
+    &quot;id&quot;: &quot;5&quot;,
+    &quot;r&quot;: &quot;sensors&quot;,
+    &quot;state&quot;: {
+        &quot;buttonevent&quot;: 2002,
+        &quot;lastupdated&quot;: &quot;2019-03-15T20:16:30&quot;
+    },
+    &quot;t&quot;: &quot;event&quot;,
+    &quot;uniqueid&quot;: &quot;00:0d:6f:00:10:65:8a:6e-01-1000&quot;
+}
+</code></pre>
+<h5 id="sensor-name-change-example">Sensor name change example<a class="headerlink" href="#sensor-name-change-example" title="Permanent link">&para;</a></h5>
+<pre><code class="language-json">{
+    &quot;e&quot;: &quot;changed&quot;,
+    &quot;id&quot;: &quot;10&quot;,
+    &quot;name&quot;: &quot;Pulse 2&quot;,
+    &quot;r&quot;: &quot;sensors&quot;,
+    &quot;t&quot;: &quot;event&quot;,
+    &quot;uniqueid&quot;: &quot;00:0d:6f:00:10:65:8a:6e-01-1000&quot;
+}
+</code></pre>
+<h5 id="sensor-added-example">Sensor added example<a class="headerlink" href="#sensor-added-example" title="Permanent link">&para;</a></h5>
+<pre><code class="language-json">{
+    &quot;e&quot;: &quot;added&quot;,
+    &quot;id&quot;: &quot;10&quot;,
+    &quot;r&quot;: &quot;sensors&quot;,
+    &quot;sensor&quot;: {
+        &quot;config&quot;: {
+            &quot;battery&quot;: null,
+            &quot;on&quot;: true,
+            &quot;reachable&quot;: true
+        },
+        &quot;ep&quot;: 1,
+        &quot;etag&quot;: &quot;7088b28f8a8a2c786e6e48d95c547fa4&quot;,
+        &quot;id&quot;: &quot;10&quot;,
+        &quot;manufacturername&quot;: &quot;icasa&quot;,
+        &quot;mode&quot;: 1,
+        &quot;modelid&quot;: &quot;ICZB-KPD12&quot;,
+        &quot;name&quot;: &quot;ICZB-KPD12 10&quot;,
+        &quot;state&quot;: {
+            &quot;buttonevent&quot;: null,
+            &quot;lastupdated&quot;: &quot;none&quot;
+        },
+        &quot;type&quot;: &quot;ZHASwitch&quot;,
+        &quot;uniqueid&quot;: &quot;00:0d:6f:00:10:65:8a:6e-01-1000&quot;
+    },
+    &quot;t&quot;: &quot;event&quot;,
+    &quot;uniqueid&quot;: &quot;00:0d:6f:00:10:65:8a:6e-01-1000&quot;
+}
+</code></pre>
+<h5 id="scene-recall-example">Scene Recall example<a class="headerlink" href="#scene-recall-example" title="Permanent link">&para;</a></h5>
+<pre><code class="language-json">{
+    &quot;e&quot;: &quot;scene-called&quot;,
+    &quot;gid&quot;: &quot;0&quot;,
+    &quot;r&quot;: &quot;scenes&quot;,
+    &quot;scid&quot;: &quot;2&quot;,
+    &quot;t&quot;: &quot;event&quot;
+}
+</code></pre>
+<h4 id="message-fields">Message fields<a class="headerlink" href="#message-fields" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+    <tr>
+            <td>t</td>
+            <td>String</td>
+            <td>
+                The type of the message:
+                <ul>
+                    <li>event - the message holds an event.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>String</td>
+            <td>
+                The event type of the message:
+                <ul>
+                    <li>added - resource has been added;</li>
+                    <li>changed - resource attributes have changed;</li>
+                    <li>deleted - resource has been deleted.</li>
+                    <li>scene-called - a scene has been recalled.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>`r`</td>
+            <td>String</td>
+            <td>
+                The resource type to which the message belongs:
+                <ul>
+                    <li>groups - message relates to a group resource;</li>
+                    <li>lights - message relates to a light resource;</li>
+                    <li>scenes - message relates to a scene under a group resource;</li>
+                    <li>sensors - message relates to a sensor resource.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>String</td>
+            <td>The id of the resource to which the message relates, e.g. 5 for /sensors/5.<br>Not for <code>scene-called</code> events.</td>
+        </tr>
+        <tr>
+            <td>uniqueid</td>
+            <td>String</td>
+            <td>The uniqueid of the resource to which the message relates, e.g. <code>00:0d:6f:00:10:65:8a:6e-01-1000</code>.<br>
+            Only for light and sensor resources.</td>
+        </tr>
+        <tr>
+            <td>gid</td>
+            <td>String</td>
+            <td>The group id of the resource to which the message relates.<br>
+            Only for <code>scene-called</code> events.</td>
+        </tr>
+        <tr>
+            <td>scid</td>
+            <td>String</td>
+            <td>The scene id of the resource to which the message relates.<br>
+            Only for <code>scene-called</code> events.</td>
+        </tr>
+        <tr>
+            <td>config</td>
+            <td>Map</td>
+            <td>
+                Depending on the <code>websocketnotifyall</code> setting: a map containing all or only the changed <code>config</code> attributes of a sensor resource.<br>
+                Only for <code>changed</code> events.
+            </td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>String</td>
+            <td>The (new) name of a resource.<br>
+            Only for <code>changed</code> events.</td>
+        </tr>
+        <tr>
+            <td>state</td>
+            <td>Map</td>
+            <td>
+                Depending on the <code>websocketnotifyall</code> setting: a map containing all or only the changed <code>state</code> attributes of a group, light, or sensor resource.<br>
+                Only for <code>changed</code> events.
+            </td>
+        </tr>
+        <tr>
+            <td>group</td>
+            <td>Map</td>
+            <td>The full group resource.<br>Only for <code>added</code> events of a group resource.</td>
+        </tr>
+        <tr>
+            <td>light</td>
+            <td>Map</td>
+            <td>The full light resource.<br>Only for <code>added</code> events of a light resource.</td>
+        </tr>
+        <tr>
+            <td>`sensor`</td>
+            <td>Map</td>
+            <td>The full sensor resource.<br>Only for <code>added</code> events of a sensor resource.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Note that only one of <code>config</code>, <code>name</code>, or <code>state</code> will be present per <code>changed</code> event.</p>
+<p>Note that the Websocket functionality is still under development.  Notably <code>added</code> and <code>deleted</code> notifications might not be issued under all circumstances.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../misc/discovery/" class="btn btn-neutral float-right" title="Discovery">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../touchlink/" class="btn btn-neutral" title="Touchlink"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../touchlink/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../misc/discovery/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

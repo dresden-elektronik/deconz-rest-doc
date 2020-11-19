@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>About REST - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "About REST";
+    var mkdocs_page_input_path = "about_rest/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">About REST</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#api-endpoints">API endpoints</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#json">JSON</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#urls-and-the-api-key">URLs and the API key</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#whats-next">What's next</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/configuration/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/lights/">Lights</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/rules/">Rules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/schedules/">Schedules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/sensors/">Sensors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/websocket/">Websocket</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>General &raquo;</li>
+        
+      
+    
+    <li>About REST</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/about_rest/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="about-rest">About REST<a class="headerlink" href="#about-rest" title="Permanent link">&para;</a></h1>
+<p>REST stands for Representational State Transfer and sets the ground for various modern web based APIs.
+The main idea behind REST is that everything is a resource and has a state.</p>
+<p>Resources are represented by URLs like:</p>
+<ul>
+<li><code>/lights</code> - a collection of lights</li>
+<li><code>/lights/1</code> - a single light</li>
+<li><code>/lights/1/state</code> - the current state of a light</li>
+</ul>
+<h2 id="api-endpoints">API endpoints<a class="headerlink" href="#api-endpoints" title="Permanent link">&para;</a></h2>
+<p>All resources are provided by so called endpoints. The API endpoint documentation can be found in the menu on the left side.</p>
+<p>Currently the following endpoints are available.</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../endpoints/configuration">/config</a></td>
+<td>Query and modify the gateway configuration.</td>
+</tr>
+<tr>
+<td><a href="../endpoints/lights">/lights</a></td>
+<td>Query and control lights.</td>
+</tr>
+<tr>
+<td><a href="../endpoints/sensors">/sensors</a></td>
+<td>Query and control sensors.</td>
+</tr>
+<tr>
+<td><a href="../endpoints/groups">/groups</a></td>
+<td>Setup groups and scenes with lights and control them.</td>
+</tr>
+<tr>
+<td><a href="../endpoints/scenes">/scenes</a></td>
+<td>Setup and control scenes of a group.</td>
+</tr>
+<tr>
+<td><a href="../endpoints/schedules">/schedules</a></td>
+<td>Created time based schedules.</td>
+</tr>
+<tr>
+<td><a href="../endpoints/touchlink">/touchlink</a></td>
+<td>Execute Zigbee Light Link touchlink commands.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p>Resources can be queried and modified with standard HTTP methods. Where GET, PUT, POST and DELETE are only a subset of all possible methods, they are by far the most used ones.</p>
+<table class="table table-bordered">
+    <thead><tr><th>Method</th><th>Description</th></tr></thead>
+    <tbody>
+        <tr><td>GET</td><td>Query the content of a resource.</td></tr>
+        <tr><td>PUT</td><td>Modifies a <strong>existing</strong> resource.</td></tr>
+        <tr><td>POST</td><td>Creates a <strong>new</strong> resource which did not exist before.</td></tr>
+        <tr><td>DELETE</td><td>Deletes a resource.</td></tr>
+    </tbody>
+</table>
+
+<hr />
+<h2 id="json">JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
+<p>The contents of resources are often expressed in Javascript Object Notation better known as JSON. That&rsquo;s not a requirement of REST itself, in fact some APIs also use XML but JSON is by far more popular due to its simplicity.</p>
+<p>The JSON format is a very simple but powerful notation to express structured objects and lists. The following example covers everything that can be expressed with JSON.</p>
+<p><strong>Example object</strong></p>
+<pre><code>{
+    "a_string": "this is a string",
+    "a_number": 5,
+    "a_list": [ 1, 2.0, 3, 4 ],
+    "a_mixed_list": [ 2, {}, "name", 6, [ 1, 2 ,3 ] ],
+    "a_nested_object": {
+         "foo": "bar"
+        }
+}
+</code></pre>
+<ul>
+<li>Strings are always double quoted <code>"like this"</code></li>
+<li>Keys and values are separated by a colon <code>:</code> and keys are always strings like <code>"key"</code></li>
+<li>Objects <code>{ }</code> and lists <code>[ ]</code> might be empty and can be nested</li>
+<li>Numbers can be integers <code>1</code> or fractional <code>0.5</code></li>
+</ul>
+<p>That&rsquo;s all about JSON.</p>
+<hr />
+<h2 id="urls-and-the-api-key">URLs and the API key<a class="headerlink" href="#urls-and-the-api-key" title="Permanent link">&para;</a></h2>
+<p>When reading the API endpoint documentation URLs will look like <code>/api/&lt;apikey&gt;/lights</code>.</p>
+<p>The <code>/api</code> prefix separates the API interface from the HTML5 web application which is reachable through the document root <code>/</code>.</p>
+<p>Nearly every API request requires a so called <strong>API key</strong> which is a <em>mandatory</em> part of request URLs.</p>
+<p>The API key has the only purpose to restrict access to the gateway. Remember the gateway is reachable through the whole local network and without the API key requirement anybody could control the lights.</p>
+<p>Nevertheless all clients need to <a href="../endpoints/configuration#aquireapikey">acquire API key</a> by means of the configuration endpoint.</p>
+<hr />
+<h2 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Clients might access the API local or remote via network</li>
+<li>Access from any desktop and mobile platform</li>
+<li>Access from any programming language</li>
+<li>All popular programming languages provide helper classes and functions to work with RESTful APIs</li>
+<li>The format of requests and responses is human readable</li>
+<li>Learning and using REST APIs is pretty straight forward</li>
+</ul>
+<hr />
+<h2 id="whats-next">What&rsquo;s next<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<p>Now you know the basics about REST. It&rsquo;s time to move on to the <a href="../getting_started">Getting Started</a> section which explains step by step how to acquire an API key and do some basic control of the lights.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../getting_started/" class="btn btn-neutral float-right" title="Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../getting_started/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

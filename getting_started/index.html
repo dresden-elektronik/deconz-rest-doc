@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Getting Started - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Getting Started";
+    var mkdocs_page_input_path = "getting_started/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../about_rest/">About REST</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Getting Started</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#rest-api-client">REST-API client</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#find-your-gateway">Find your gateway</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#acquire-an-api-key">Acquire an API key</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#unlock-the-gateway">Unlock the gateway</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#second-attempt">Second attempt</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-a-list-of-all-lights">Get a list of all lights</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-the-details-of-a-light">Get the details of a light</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#turn-light-onoff">Turn light on/off</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dim-the-light-with-transition-time">Dim the light with transition time</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#whats-next">What's next</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/configuration/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/lights/">Lights</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/rules/">Rules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/schedules/">Schedules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/sensors/">Sensors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../endpoints/websocket/">Websocket</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>General &raquo;</li>
+        
+      
+    
+    <li>Getting Started</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/getting_started/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <style>
+    img {
+        max-width: inherit;
+        border: 1px solid #ccc;
+        margin: 1em 0;
+    }
+</style>
+
+<h1 id="getting-started">Getting started<a name="gettingstarted">&nbsp;</a><a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<p>This section describes the first steps needed in order to use the API.
+If you are new to REST APIs please read the <a href="../about_rest">About REST</a> section first.</p>
+<hr />
+<h2 id="rest-api-client">REST-API client<a class="headerlink" href="#rest-api-client" title="Permanent link">&para;</a></h2>
+<p>The only tool needed in this section is a browser with a <strong>REST-API client add-on</strong> to access the API. This document doesn&rsquo;t cover the API access through a programming language since everybody may have its favorite language.</p>
+<p>There are various free clients available; please pick one for your favourite browser in the browser add-on section.</p>
+<p>In the following steps <em>Postman</em> for Chrome from the <a href="https://chrome.google.com/webstore/search/rest%20client">Google Webstore</a> will be used.
+For Firefox the <a href="https://addons.mozilla.org/de/firefox/addon/restclient">REST Client</a> is another popular client.</p>
+<hr />
+<h2 id="find-your-gateway">Find your gateway<a class="headerlink" href="#find-your-gateway" title="Permanent link">&para;</a></h2>
+<p>As first step the gateway IP address and port must be found.</p>
+<p>This could be achieved by doing a <code>GET</code> request to <a href="https://phoscon.de/discover">https://phoscon.de/discover</a>.</p>
+<p><img src="img/0_discover_api.png" alt="discover the gateway"/></p>
+<p>The response body shows that the gateway has the IP address <em>192.168.192.32</em> and the API
+is reachable through port <em>8080</em>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If the above request doesn&rsquo;t work, there are several other ways to find the gateway IP address as described in <a href="../misc/discovery">Discovery</a>.</p>
+</div>
+<hr />
+<h2 id="acquire-an-api-key">Acquire an API key<a class="headerlink" href="#acquire-an-api-key" title="Permanent link">&para;</a></h2>
+<p>Any client that wants to access the API must provide a valid API key otherwise the access will fail.</p>
+<p>To acquire an API key send a POST request to <code>/api</code> as follows. Use the IP address and the port of your gateway that you got during discovery.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The request must contain a JSON object with the required field <em>devicetype</em>.</p>
+<p>In some Rest clients it is mandatory to put &lsquo;http://&rsquo; in front of the IP address of the gateway.</p>
+</div>
+<p><img src="img/1_aquire_apikey_fail.png" alt="aquire api key failed"/></p>
+<p>&hellip; something went wrong!</p>
+<p>The returned HTTP status is <strong>403 Forbidden</strong>. The response body provides further information about the raised error in the JSON object.</p>
+<h4 id="unlock-the-gateway">Unlock the gateway<a class="headerlink" href="#unlock-the-gateway" title="Permanent link">&para;</a></h4>
+<p>The reason why the request failed is that the gateway was not unlocked. This mechanism is needed to prevent anybody from access to the gateway without being permitted to do so.</p>
+<p>As described in the section <a href="../misc/authorization">Authorization</a> unlock the gateway as follows:</p>
+<ul>
+<li>In a new browser tab open the webapp</li>
+<li>Click on <code>Menu/Settings</code> from the top menu</li>
+<li>Click on the <strong>Unlock Gateway</strong> button</li>
+</ul>
+<p>Now the gateway is unlocked for <em>60 seconds</em>.</p>
+<h4 id="second-attempt">Second attempt<a class="headerlink" href="#second-attempt" title="Permanent link">&para;</a></h4>
+<p>Within 60 seconds after unlocking the gateway, go back to the REST client and repeat the acquire API key request as before. (just click on <em>Send</em> again)</p>
+<p><img src="img/1_aquire_apikey_ok.png" alt="aquire api key success"/></p>
+<p>This time the request succeded with HTTP status 200 OK.</p>
+<p>In the response body the new API key is in the field <code>username</code>. From now on this API key will be used in further API requests.</p>
+<hr />
+<h2 id="get-a-list-of-all-lights">Get a list of all lights<a class="headerlink" href="#get-a-list-of-all-lights" title="Permanent link">&para;</a></h2>
+<p>With the API key from the last section it is now possible to access the full API.</p>
+<p>To get a list of all available lights run a <code>GET</code> request to <code>/api/&lt;apikey&gt;/lights</code> as follows.</p>
+<p><img src="img/2_get_all_lights.png" alt="get all lights"/></p>
+<p>In the response 3 lights where returned. There are serval things to note here.</p>
+<ul>
+<li>The response contains not a list like <code>[ ]</code> of lights but a object <code>{ }</code> with key/value pairs</li>
+<li>Each light can be accessed by its id <code>"17"</code></li>
+<li>The light id is a key in the response object and the related value is a further object</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ids are strings and even if they contain numbers <strong>never</strong> expect them to be &ldquo;1&rdquo;, &ldquo;2&rdquo;, &ldquo;3&rdquo;, &hellip; if the user removes light &ldquo;2&rdquo; the list will become &ldquo;1&rdquo;, &ldquo;3&rdquo;.</p>
+</div>
+<hr />
+<h2 id="get-the-details-of-a-light">Get the details of a light<a class="headerlink" href="#get-the-details-of-a-light" title="Permanent link">&para;</a></h2>
+<p>To get the detail of a light do a <code>GET</code> request to <code>/api/&lt;apikey&gt;/lights/&lt;id&gt;</code> as follows.</p>
+<p><img src="img/3_get_light_details.png" alt="get light details"/></p>
+<h2 id="turn-light-onoff">Turn light on/off<a class="headerlink" href="#turn-light-onoff" title="Permanent link">&para;</a></h2>
+<p>To turn a light on/off do a <code>PUT</code> request to <code>/api/&lt;apikey&gt;/lights/&lt;id&gt;/state</code> as follows.</p>
+<p><img src="img/4_turn_light_on.png" alt="turn light on/off"/></p>
+<p>In the request body set the <code>on</code> value to <em>true</em> or <em>false</em> to turn the light on and off. </p>
+<hr />
+<h2 id="dim-the-light-with-transition-time">Dim the light with transition time<a class="headerlink" href="#dim-the-light-with-transition-time" title="Permanent link">&para;</a></h2>
+<p>Dimming is done the same way as sending on/off by using the <code>bri</code> parameter; additionally specify a transition time in 1/10 seconds.</p>
+<p>The following example dims the light in 5 seconds down.</p>
+<p><img src="img/5_dimm_light.png" alt="dimm light"/></p>
+<hr />
+<h2 id="whats-next">What&rsquo;s next<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<p>To do some more advanced things with this API please refer to the <a href="../about_rest#api-endpoints">API Endpoints</a> documentation on the left side menu.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../endpoints/configuration/" class="btn btn-neutral float-right" title="Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../about_rest/" class="btn btn-neutral" title="About REST"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../about_rest/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../endpoints/configuration/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

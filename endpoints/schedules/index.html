@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Schedules - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Schedules";
+    var mkdocs_page_input_path = "endpoints/schedules/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about_rest/">About REST</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../lights/">Lights</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../rules/">Rules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Schedules</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#create-schedule">Create schedule&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-all-schedules">Get all schedules&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_1">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_1">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_1">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-schedule-attributes">Get schedule attributes&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_2">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_2">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_2">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#set-schedule-attributes">Set schedule attributes &nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data_1">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_3">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_3">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#delete-schedule">Delete schedule&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_4">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_3">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_4">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../websocket/">Websocket</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Endpoints &raquo;</li>
+        
+      
+    
+    <li>Schedules</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/endpoints/schedules/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="schedules">Schedules<a class="headerlink" href="#schedules" title="Permanent link">&para;</a></h1>
+<p>Schedules provide the ability to trigger timed commands to groups or lights.</p>
+<h2 id="create-schedule">Create schedule<a name="create">&nbsp;</a><a class="headerlink" href="#create-schedule" title="Permanent link">&para;</a></h2>
+<pre><code>POST /api/&lt;apikey&gt;/schedules
+</code></pre>
+<p>Creates a new schedule.</p>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>The name of the new schedule. If the name already exists a number will be appended.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>String</td>
+      <td>The description of the schedule.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>command</td>
+      <td>Object</td>
+      <td>The command to execute when the schedule triggers.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>command.address</td>
+      <td>String</td>
+      <td>The address of a light or group ressource</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>command.method</td>
+      <td>String</td>
+      <td>Must be "PUT".</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>command.body</td>
+      <td>Object</td>
+      <td>The state that the light or group will activate when the schedule triggers</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>Whether the schedule is "enabled" or "disabled". Default is "enabled".</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>autodelete</td>
+      <td>Bool</td>
+      <td>If true the schedule will be deleted after triggered. Else it will be disabled. Default is true.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td>String</td>
+      <td>Time when the schedule shall trigger in UTC ISO 8601:2004 format.
+        <ul>
+          <li>specific date: "yyyy-MM-ddThh:mm:ss"</li>
+          <li>repeated days: "W[0&ndash;127]/Thh:mm:ss"</li>
+          <li>timer: "PThh:mm:ss"</li>
+          <li>recurring timer: "R[0&ndash;99]/PThh:mm:ss"</li>
+        </ul>
+        Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.<br />
+The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.
+      </td>
+      <td>required</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data">Example request data<a class="headerlink" href="#example-request-data" title="Permanent link">&para;</a></h3>
+<pre><code>{
+    "name": "blue moon",
+    "description": "Turns all lights blue",
+    "command": {
+        "address": "/api/8918fbad2100nag17ca1/groups/5/action",
+        "method": "PUT",
+        "body": { "on": true, "hue": 43000, "sat": 255 }
+    },
+    "time": "2013-07-29T09:30:00"
+}
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The address in the command object must contain a valid API key.</p>
+</div>
+<h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "id": "3" } } ];
+</code>
+</pre>
+
+<h4 id="response-fields">Response fields<a class="headerlink" href="#response-fields" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>The unique identifier of the new schedule.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="possible-errors">Possible errors<a class="headerlink" href="#possible-errors" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="get-all-schedules">Get all schedules<a name="getall">&nbsp;</a><a class="headerlink" href="#get-all-schedules" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/schedules
+</code></pre>
+<p>Returns a list of all schedules.</p>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+Etag: 203941fel3ds8ad61903224
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "1": {
+        "autodelete": false,
+        "command": {
+            "address": "/api/8918fbad2100nag17ca1/groups/2/action",
+            "method": "PUT",
+            "body": { "on": false }
+        },
+        "description": "Turns all lights off",
+        "etag": "4e100d1c4e3497154a77bc0865c89030",
+        "name": "turn all off",
+        "status": "enabled",
+        "time": "2013-07-30T20:10:00"
+    },
+    "2": {
+        "autodelete": false,
+        "command": {
+            "address": "/api/AD4F14F244/groups/4/scenes/1/recall"
+            "body": {}
+            "method": "PUT"
+        },
+        "description": "",
+        "etag": "4e100d1c4e3497154a77bc0865c89030",
+        "name": "call scene",
+        "status": "enabled",
+        "time": "W120/T10:00:00"
+    }
+}
+</code>
+</pre>
+
+<h4 id="response-fields_1">Response fields<a class="headerlink" href="#response-fields_1" title="Permanent link">&para;</a></h4>
+<p>The full schedule object as in <a href="#getattr">Get schedule attributs</a>.</p>
+<h3 id="possible-errors_1">Possible errors<a class="headerlink" href="#possible-errors_1" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="get-schedule-attributes">Get schedule attributes<a name="getattr">&nbsp;</a><a class="headerlink" href="#get-schedule-attributes" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/schedules/&lt;id&gt;
+</code></pre>
+<p>Returns all attributes of a schedule.</p>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+Etag: 0b32030b31ef30a4446c9adff6a6f9e5
+</code>
+</pre>
+<pre class="highlight">
+<code>
+    {
+        "autodelete": false,
+        "command": {
+            "address": "/api/8918fbad2100nag17ca1/groups/2/action",
+            "method": "PUT",
+            "body": { "on": false }
+        },
+        "description": "Turns all lights off",
+        "etag": "4e100d1c4e3497154a77bc0865c89030",
+        "name": "turn all off",
+        "status": "enabled",
+        "time": "2013-07-30T20:10:00"
+    }
+</code>
+</pre>
+
+<h4 id="response-fields_2">Response fields<a class="headerlink" href="#response-fields_2" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+   <tr>
+      <td>autodelete</td>
+      <td>Bool</td>
+      <td>If set to true the schedule will be deleted after trigger. Else it will be disabled.</td>
+    </tr> 
+    <tr>
+      <td>command</td>
+      <td>Object</td>
+      <td>The command to execute when the schedule triggers.</td>
+    </tr>
+    <tr>
+      <td>command.address</td>
+      <td>String</td>
+      <td>The address of a light or group ressource</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>command.method</td>
+      <td>String</td>
+      <td>Must be "PUT".</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>command.body</td>
+      <td>Object</td>
+      <td>The state that the light or group will activate when the schedule triggers</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>String</td>
+      <td>The description of the schedule.</td>
+    </tr>
+    <tr>
+      <td>etag</td>
+      <td>String</td>
+      <td>The <a href="../../misc/polling#etag">etag</a> of the schedule.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the schedule.</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>The status of the schedule, "enabled" or "disabled".</td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td>String</td>
+      <td>Time when the schedule shall trigger in UTC ISO 8601:2004 format.
+        <ul>
+          <li>specific date: "yyyy-MM-ddThh:mm:ss"</li>
+          <li>repeated days: "W[0&ndash;127]/Thh:mm:ss"</li>
+          <li>timer: "PThh:mm:ss"</li>
+          <li>recurring timer: "R[0&ndash;99]/PThh:mm:ss"</li>
+        </ul>
+        Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.<br />
+        The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="possible-errors_2">Possible errors<a class="headerlink" href="#possible-errors_2" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+<hr />
+<h2 id="set-schedule-attributes">Set schedule attributes <a name="setattr">&nbsp;</a><a class="headerlink" href="#set-schedule-attributes" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/schedules/&lt;id&gt;
+</code></pre>
+<p>Sets attributes of a schedule.</p>
+<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>The name of the new schedule. If the name already exists a number will be appended.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>String</td>
+      <td>The description of the schedule.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>command</td>
+      <td>Object</td>
+      <td>The command to execute when the schedule triggers.</td>
+      <td>optional</td>
+    </tr>
+        <tr>
+      <td>command.address</td>
+      <td>String</td>
+      <td>The address of a light or group ressource</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>command.method</td>
+      <td>String</td>
+      <td>Must be "PUT".</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>command.body</td>
+      <td>Object</td>
+      <td>The state that the light or group will activate when the schedule triggers</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>Whether the schedule is "enabled" or "disabled". Default is "enabled".</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>autodelete</td>
+      <td>Bool</td>
+      <td>If true the schedule will be deleted after triggered. Else it will be disabled. Default is true.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td>String</td>
+      <td>Time when the schedule shall trigger in UTC ISO 8601:2004 format. The time must be in the future.
+        <ul>
+          <li>specific date: "yyyy-MM-ddThh:mm:ss"</li>
+          <li>repeated days: "W[0&ndash;127]/Thh:mm:ss"</li>
+          <li>timer: "PThh:mm:ss"</li>
+          <li>recurring timer: "R[0&ndash;99]/PThh:mm:ss"</li>
+        </ul>
+        Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.<br />
+        The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.
+      </td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data_1">Example request data<a class="headerlink" href="#example-request-data_1" title="Permanent link">&para;</a></h3>
+<pre><code>{
+    "name": "working"
+}
+</code></pre>
+<h3 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+Etag: 030cf8c1c0025420f3a0659afab251f5
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "/schedules/1/name": "working" } } ]
+</code>
+</pre>
+
+<h3 id="possible-errors_3">Possible errors<a class="headerlink" href="#possible-errors_3" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+<hr />
+<h2 id="delete-schedule">Delete schedule<a name="delete">&nbsp;</a><a class="headerlink" href="#delete-schedule" title="Permanent link">&para;</a></h2>
+<pre><code>DELETE /api/&lt;apikey&gt;/schedules/&lt;id&gt;
+</code></pre>
+<p>Deletes a schedule.</p>
+<h3 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_4">Response<a class="headerlink" href="#response_4" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "id": "3" } } ]
+</code>
+</pre>
+
+<h4 id="response-fields_3">Response fields<a class="headerlink" href="#response-fields_3" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>The unique identifier of the schedule.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="possible-errors_4">Possible errors<a class="headerlink" href="#possible-errors_4" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../sensors/" class="btn btn-neutral float-right" title="Sensors">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../scenes/" class="btn btn-neutral" title="Scenes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../scenes/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../sensors/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

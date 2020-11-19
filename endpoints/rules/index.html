@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Rules - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Rules";
+    var mkdocs_page_input_path = "endpoints/rules/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about_rest/">About REST</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../lights/">Lights</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Rules</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#create-rule">Create rule&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-all-rules">Get all Rules&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_1">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_1">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_1">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-rule">Get rule&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_2">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_2">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_2">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#update-rule">Update rule&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data_1">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_3">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_3">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#delete-rule">Delete rule&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_4">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_4">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../schedules/">Schedules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../websocket/">Websocket</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Endpoints &raquo;</li>
+        
+      
+    
+    <li>Rules</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/endpoints/rules/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="rules">Rules<a class="headerlink" href="#rules" title="Permanent link">&para;</a></h1>
+<p>Rules provide the ability to trigger actions of lights or groups when a specific sensor condition is met.</p>
+<h2 id="create-rule">Create rule<a name="create">&nbsp;</a><a class="headerlink" href="#create-rule" title="Permanent link">&para;</a></h2>
+<pre><code>POST /api/&lt;apikey&gt;/rules
+</code></pre>
+<p>Creates a new rule.</p>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>actions</td>
+      <td>Array (1&ndash;8)</td>
+      <td>An array of actions that will happen when the rule triggers.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>action.address</td>
+      <td>String</td>
+      <td>path to a light, group or scene resource</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>action.body</td>
+      <td>Object</td>
+      <td>Parameters that will be send to the resource formated as JSON.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>action.method</td>
+      <td>String</td>
+      <td>Can be PUT, POST or DELETE.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>conditions</td>
+      <td>Array(condition) (1&ndash;8)</td>
+      <td>The conditions that must be met to trigger a rule.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>condition.address</td>
+      <td>String</td>
+      <td>path to a sensor resource and the related state</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>condition.operator</td>
+      <td>String</td>
+      <td><b>eq</b>, <b>gt</b>, <b>lt</b>, <b>dx</b> (equals, greater than, lower than, on change).</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>condition.value</td>
+      <td>String</td>
+      <td>The value the operator is compared with. Will be casted automatically to the corresponding data type.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>The name of the rule.</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>periodic</td>
+      <td>Number</td>
+      <td>Specifies if the rule should trigger periodically. 0 = trigger on event; >0 = time in ms the rule will be triggered periodically. Default is 0.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>The status of the rule, either "enabled" or "disabled". Default is "enabled".</td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data">Example request data<a class="headerlink" href="#example-request-data" title="Permanent link">&para;</a></h3>
+<pre class="highlight">
+<code>
+{
+    "actions": [
+        {
+            "address": "/groups/0/action",
+            "body": {
+                "on": true
+            },
+            "method": "BIND"
+        }
+    ],
+    "conditions": [
+        {
+            "address": "/sensors/1/state/buttonevent",
+            "operator": "eq",
+            "value": "1"
+        }
+    ],
+    "name": "Switch button 1 all lights On/Off"
+}
+</code>
+</pre>
+
+<p>This will create a binding between a switch and the On/Off Cluster of all Lights of the group 0.</p>
+<h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "id": "1" } } ];
+</code>
+</pre>
+
+<h4 id="response-fields">Response fields<a class="headerlink" href="#response-fields" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>The unique identifier of the new rule.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="possible-errors">Possible errors<a class="headerlink" href="#possible-errors" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="get-all-rules">Get all Rules<a name="getall">&nbsp;</a><a class="headerlink" href="#get-all-rules" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/rules
+</code></pre>
+<p>Returns a list of all rules. If there are no rules in the system then an empty object {} will be returned.</p>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "1": {
+        "actions": [
+            {
+                "address": "/lights/1/state",
+                "body": {
+                    "on": true
+                },
+                "method": "BIND"
+            }
+        ],
+        "conditions": [
+            {
+                "address": "/sensors/2/state/buttonevent",
+                "operator": "eq",
+                "value": "4"
+            }
+        ],
+        "created": "2016-07-04T14:17:12",
+        "etag": "9bd1fcc627001458ea88c8742e61c692",
+        "lasttriggered": "none",
+        "name": "Sensor: 2 EP:4 On/Off",
+        "owner": "AD4F14F244",
+        "periodic": 0,
+        "status": "enabled",
+        "timestriggered": 0
+    },
+    "2": {
+        "actions": [
+            {
+                "address": "/groups/0/action",
+                "body": {
+                    "on": false
+                },
+                "method": "PUT"
+            }
+        ],
+        "conditions": [
+            {
+                "address": "/sensors/5/state/buttonevent",
+                "operator": "eq",
+                "value": "34"
+            },
+            {
+                "address": "/sensors/5/state/lastupdated",
+                "operator": "dx"
+            }
+        ],
+        "created": "2016-07-05T13:36:52",
+        "etag": "0fb118418fa77116052f74fb129a648b",
+        "lasttriggered": "none",
+        "name": "0x0000000000402483[Rule1]",
+        "owner": "AD4F14F244",
+        "periodic": 0,
+        "status": "enabled",
+        "timestriggered": 0
+    }
+}
+</code>
+</pre>
+
+<h4 id="response-fields_1">Response fields<a class="headerlink" href="#response-fields_1" title="Permanent link">&para;</a></h4>
+<p>The whole rule object as descripted in <a href="#getrule">Get rule</a>.</p>
+<h3 id="possible-errors_1">Possible errors<a class="headerlink" href="#possible-errors_1" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="get-rule">Get rule<a name="getrule">&nbsp;</a><a class="headerlink" href="#get-rule" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/rules/&lt;id&gt;
+</code></pre>
+<p>Returns the rule with the specified id.</p>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "actions": [
+        {
+            "address": "/lights/1/state",
+            "body": {
+                "on": true
+            },
+            "method": "BIND"
+        }
+    ],
+    "conditions": [
+        {
+            "address": "/sensors/2/state/buttonevent",
+            "operator": "eq",
+            "value": "4"
+        }
+    ],
+    "created": "2016-07-04T14:17:12",
+    "etag": "9bd1fcc627001458ea88c8742e61c692",
+    "lasttriggered": "none",
+    "name": "Sensor: 2 EP:4 On/Off",
+    "owner": "AD4F14F244",
+    "periodic": 0,
+    "status": "enabled",
+    "timestriggered": 0
+}
+</code>
+</pre>
+
+<h4 id="response-fields_2">Response fields<a class="headerlink" href="#response-fields_2" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>actions</td>
+      <td>Array</td>
+      <td>An array of actions that will happen when the rule triggers.</td>
+    </tr>
+    <tr>
+      <td>action.address</td>
+      <td>String</td>
+      <td>path to a light, group or scene resource</td>
+    </tr>
+    <tr>
+      <td>action.body</td>
+      <td>Object</td>
+      <td>Parameters that will be send to the resource formated as JSON.</td>
+    </tr>
+    <tr>
+      <td>action.method</td>
+      <td>String</td>
+      <td>Can be PUT, POST or DELETE.</td>
+    </tr>
+    <tr>
+      <td>conditions</td>
+      <td>Array</td>
+      <td>The conditions that must be met to trigger a rule.</td>
+    </tr>
+    <tr>
+      <td>condition.address</td>
+      <td>String</td>
+      <td>path to a sensor resource</td>
+    </tr>
+    <tr>
+      <td>condition.operator</td>
+      <td>String</td>
+      <td>eq, gt, lt, dx (equals, greater than, lower than, on change).</td>
+    </tr>
+    <tr>
+      <td>condition.value</td>
+      <td>String</td>
+      <td>The value the operator is compared with. Will be casted automatically to the corresponding data type.</td>
+    </tr>
+    <tr>
+      <td>created</td>
+      <td>String</td>
+      <td>Timestamp when the rule was created.</td>
+    </tr>
+    <tr>
+      <td>etag</td>
+      <td>String</td>
+      <td>HTTP <a href="../../misc/polling#etag">etag</a> which changes whenever the rule is changed.</td>
+    </tr>
+    <tr>
+      <td>lasttriggered</td>
+      <td>String</td>
+      <td>Timestamp when the rule was last triggered.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>The name of the rule.</td>
+    </tr>
+    <tr>
+      <td>owner</td>
+      <td>String</td>
+      <td>The owner of the rule.</td>
+    </tr>
+    <tr>
+      <td>periodic</td>
+      <td>Number</td>
+      <td>Specifies if the rule should trigger periodically. 0 = trigger on event; >0 = time in ms the rule will be triggered periodically.</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>The status of the rule, either "enabled" or "disabled".</td>
+    </tr>
+    <tr>
+      <td>timestriggered</td>
+      <td>Number</td>
+      <td>Times the rule was triggered.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="possible-errors_2">Possible errors<a class="headerlink" href="#possible-errors_2" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+<hr />
+<h2 id="update-rule">Update rule<a name="update">&nbsp;</a><a class="headerlink" href="#update-rule" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/rules/&lt;id&gt;/
+</code></pre>
+<p>Update a rule with the specified parameters.</p>
+<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>actions</td>
+      <td>Array (1&ndash;8)</td>
+      <td>An array of actions that will happen when the rule triggers.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>conditions</td>
+      <td>Array (1&ndash;8)</td>
+      <td>The conditions that must be met to trigger a rule.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>The name of the rule.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>periodic</td>
+      <td>Number</td>
+      <td>Specifies if the rule should trigger periodically. 0 = trigger on event; >0 = time in ms the rule will be triggered periodically. Default is 0.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>The status of the rule, either "enabled" or "disabled", the default is "enabled".</td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data_1">Example request data<a class="headerlink" href="#example-request-data_1" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  "actions": [
+        {
+            "address": "/lights/1/state",
+            "body": {
+                "bri": 1
+            },
+            "method": "BIND"
+        }
+    ]
+}
+</code></pre>
+<h3 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[
+    {   
+        "success": { "/rules/1/actions": 
+            {
+                "address": "/lights/1/state",
+                "body": {
+                    "bri": 1
+                },
+                "method": "BIND"
+            }
+        } 
+    }
+]
+</code>
+</pre>
+
+<h3 id="possible-errors_3">Possible errors<a class="headerlink" href="#possible-errors_3" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="delete-rule">Delete rule<a name="delete">&nbsp;</a><a class="headerlink" href="#delete-rule" title="Permanent link">&para;</a></h2>
+<pre><code>DELETE /api/&lt;apikey&gt;/ruless/&lt;id&gt;
+</code></pre>
+<p>Delete a rule.</p>
+<h3 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_4">Response<a class="headerlink" href="#response_4" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[{ "success": "1"}]
+</code>
+</pre>
+
+<h3 id="possible-errors_4">Possible errors<a class="headerlink" href="#possible-errors_4" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../scenes/" class="btn btn-neutral float-right" title="Scenes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../lights/" class="btn btn-neutral" title="Lights"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../lights/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../scenes/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

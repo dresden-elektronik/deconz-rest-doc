@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Configuration - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Configuration";
+    var mkdocs_page_input_path = "endpoints/configuration/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about_rest/">About REST</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Configuration</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#acquire-api-key">Acquire API key&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#delete-api-key">Delete API key&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_1">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-configuration">Get configuration&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_1">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_2">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-full-state">Get full state&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_2">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_1">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_3">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modify-configuration">Modify configuration&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data_1">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_3">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_4">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#update-software">Update software&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#response_4">Response</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#update-firmware">Update firmware&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#response_5">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_5">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reset-gateway">Reset gateway&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_5">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_6">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_6">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#change-password">Change password&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_6">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_7">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_7">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reset-password">Reset password&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#response_8">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_8">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../lights/">Lights</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../rules/">Rules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../schedules/">Schedules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../websocket/">Websocket</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Endpoints &raquo;</li>
+        
+      
+    
+    <li>Configuration</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/endpoints/configuration/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
+<p>This endpoint allows to retreive and modify the current configuration of the gateway.</p>
+<h2 id="acquire-api-key">Acquire API key<a name="aquireapikey">&nbsp;</a><a class="headerlink" href="#acquire-api-key" title="Permanent link">&para;</a></h2>
+<pre><code>POST /api
+</code></pre>
+<p>Creates a new <a href="../../misc/authorization">API key</a> which provides authorized access to the REST-API.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The request will only succeed if the gateway is unlocked or valid HTTP basic authentification credentials are provided in the HTTP request header see <a href="../../misc/authorization">authorization</a>.</p>
+</div>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>devicetype</td>
+            <td>String (0&ndash;40 chars)</td>
+            <td>Name of the client application.</td>
+            <td>required</td>
+        </tr>
+        <tr>
+            <td>username</td>
+            <td>String (10&ndash;40 chars)</td>
+            <td>Will be used as username. If not specified a random key will be generated.</td>
+            <td>optional</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="example-request-data">Example request data<a class="headerlink" href="#example-request-data" title="Permanent link">&para;</a></h3>
+<pre><code>{
+    "username": "988112a4e198cc1211",
+    "devicetype": "my application"
+}
+</code></pre>
+<h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "username": "988112a4e198cc1211" } } ]
+</code>
+</pre>
+
+<h3 id="possible-errors">Possible errors<a class="headerlink" href="#possible-errors" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors">400 Bad Request</a></p>
+<p><a href="../../misc/errors">403 Forbidden</a></p>
+<hr />
+<h2 id="delete-api-key">Delete API key<a name="deleteapikey">&nbsp;</a><a class="headerlink" href="#delete-api-key" title="Permanent link">&para;</a></h2>
+<pre><code>DELETE /api/&lt;apikey&gt;/config/whitelist/&lt;apikey2&gt;
+</code></pre>
+<p>Deletes an API key so it can no longer be used.</p>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="possible-errors_1">Possible errors<a class="headerlink" href="#possible-errors_1" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors">403 Forbidden</a></p>
+<p><a href="../../misc/errors">404 Not Found</a></p>
+<hr />
+<h2 id="get-configuration">Get configuration<a name="getconfig">&nbsp;</a><a class="headerlink" href="#get-configuration" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/config
+</code></pre>
+<p>Returns the current gateway configuration.</p>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "203941fel3ds8ad61903224"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "apiversion": "1.0.0",
+    "dhcp": true,
+    "gateway": "192.168.80.1",
+    "ipaddress": "192.168.80.142",
+    "linkbutton": false,
+    "localtime": "2016-06-29T14:00:40",
+    "mac": "74:46:a0:9e:92:c7",
+    "name": "deCONZ-GW",
+    "netmask": "255.255.255.0",
+    "networkopenduration": 60,
+    "panid": 56889,
+    "portalservices": false,
+    "proxyaddress": "",
+    "proxyport": 0,
+    "swupdate": {
+        "notify": false,
+        "text": "",
+        "updatestate": 0,
+        "url": "",
+    },
+    "swversion": "20405",
+    "timeformat": "12h",
+    "timezone": "Europe/Berlin",
+    "utc": "2016-06-29T12:00:40",
+    "uuid": "a65d80a1-975a-4598-8d5a-2547bc18d63b",
+    "whitelist": {},
+    "zigbeechannel": 20
+}
+</code>
+</pre>
+
+<h4 id="response-fields">Response fields<a class="headerlink" href="#response-fields" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>apiversion</td>
+            <td>String</td>
+            <td>The version of the deCONZ Rest API</td>
+        </tr>
+        <tr>
+            <td>dhcp</td>
+            <td>Bool</td>
+            <td>Whether the IP address of the bridge is obtained with DHCP.</td>
+        </tr>
+        <tr>
+            <td>gateway</td>
+            <td>String</td>
+            <td>IPv4 address of the gateway.</td>
+        </tr>
+        <tr>
+            <td>ipaddress</td>
+            <td>String</td>
+            <td>IPv4 address of the gateway.</td>
+        </tr>
+         <tr>
+            <td>linkbutton</td>
+            <td>Bool</td>
+            <td>true if the gateway is unlocked.</td>
+        </tr>
+         <tr>
+            <td>localtime</td>
+            <td>String</td>
+            <td>The localtime of the gateway</td>
+        </tr>
+        <tr>
+            <td>mac</td>
+            <td>String</td>
+            <td>MAC address of the gateway.</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>String</td>
+            <td>Name of the gateway.</td>
+        </tr>
+        <tr>
+            <td>netmask</td>
+            <td>String</td>
+            <td>Network mask of the gateway.</td>
+        </tr>
+        <tr>
+            <td>networkopenduration</td>
+            <td>Number (0&ndash;65535)</td>
+            <td>Can be used to store the permitjoin (see Modify configuration) value permanently.</td>
+        </tr>
+        <tr>
+            <td>panid</td>
+            <td>Number (0&ndash;65535)</td>
+            <td>The ZigBee pan ID of the gateway.</td>
+        </tr>
+        <tr>
+            <td>portalservices</td>
+            <td>Bool</td>
+            <td>This indicates whether the bridge is registered to synchronize data with a portal account.</td>
+        </tr>
+        <tr>
+            <td>proxyaddress</td>
+            <td>String</td>
+            <td>Not supported</td>
+        </tr>
+        <tr>
+            <td>proxyport</td>
+            <td>Number</td>
+            <td>Not supported</td>
+        </tr>
+        <tr>
+            <td>softwareupdate</td>
+            <td>Object</td>
+            <td>Contains information related to software updates.</td>
+        </tr>
+        <tr>
+            <td>swversion</td>
+            <td>String</td>
+            <td>The software version of the gateway.</td>
+        </tr>
+        <tr>
+            <td>timeformat</td>
+            <td>String</td>
+            <td>Stores a value of the timeformat that can be used by other applications. "12h" or "24h"</td>
+        </tr>
+        <tr>
+            <td>timezone</td>
+            <td>String</td>
+            <td>Timezone used by the gateway (only on Raspberry Pi). "None" if not further specified.</td>
+        </tr>
+        <tr>
+            <td>utc</td>
+            <td>String</td>
+            <td>Current UTC time of the gateway in ISO 8601 format.</td>
+        </tr>
+        <tr>
+            <td>uuid</td>
+            <td>String</td>
+            <td>UPNP Unique Id of the gateway</td>
+        </tr>
+        <tr>
+            <td>whitelist</td>
+            <td>Object</td>
+            <td>An array of whitelisted api keys.</td>
+        </tr>
+        <tr>
+            <td>zigbeechannel</td>
+            <td>Number</td>
+            <td>The current wireless frequency channel used by the Gateway. Supported channels: 11, 15, 20, 25.</td>
+        </tr>        
+    </tbody>
+</table>
+
+<h3 id="possible-errors_2">Possible errors<a class="headerlink" href="#possible-errors_2" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors">304 Not Modified</a></p>
+<p><a href="../../misc/errors">403 Forbidden</a></p>
+<hr />
+<h2 id="get-full-state">Get full state<a name="getfullstate">&nbsp;</a><a class="headerlink" href="#get-full-state" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;
+</code></pre>
+<p>Returns the full state of the gateway including all its lights, groups, scenes and schedules.</p>
+<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "203941fel3ds8ad61903224"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "config": {
+        "dhcp": true,
+        "gateway": "192.168.178.1",
+        "ipaddress": "192.168.192.237",
+        "linkbutton": true,
+        "mac": "E0:69:95:58:06:7F",
+        "name": "RaspBee GW",
+        "netmask": "255.255.255.0",
+        "portalservices": false,
+        "proxyaddress": "",
+        "proxyport": 0,
+        "swupdate": {
+            "notify": false,
+            "text": "",
+            "updatestate": 0,
+            "url": ""
+        },
+        "swversion": "1.12.3",
+        "utc": "2013-05-22T12:02:30",
+        "whitelist": {}
+    },
+    "groups": {
+        "1": {
+            "action": {
+                "bri": 3945,
+                "colormode": "hs",
+                "ct": 500,
+                "effect": "none",
+                "hue": 0,
+                "on": true,
+                "sat": 17680,
+                "xy": [0.0610457, 0.219979]
+            },
+            "devicemembership": [],
+            "etag": "893f60b611274d1803207298cf26b1e1",
+            "hidden": false,
+            "lights": [ "1" ],
+            "lightsequence": [ "1" ],
+            "multideviceids": [],
+            "name": "Office",
+            "scenes": [ 
+                "0": {
+                    "id": "1",
+                    "name": "blue moon"
+                }
+           ]
+        }
+    },
+    "lights": {
+        "1": {
+            "etag": "030cf8c1c0025420f3a0659afab251f5",
+            "name": "Desk Lamp",
+            "modelid": "FLS-PP-01",
+            "pointsymbol": {},
+            "swversion": "14010400",
+            "type": "Color Dimmable Light",
+            "state": {
+                "on": true,
+                "bri": 190,
+                "hue": 21672,
+                "sat": 254,
+                "ct": 500,
+                "alert": "none",
+                "colormode": "hs",
+                "effect": "none",
+                "reachable": true,
+                "xy": [ 0.805343, 0.000612754 ]
+            }
+        }
+    },
+    "schedules": {
+        "1": {
+            "autodelete": false
+            "command": {
+            "address": "/api/AD4F14F244/groups/2/scenes/1/recall"
+            "body": {}
+            "method": "PUT"
+            }
+            "etag": "3dea322b33d34a9134e5632706448f8f"
+            "name": "Good Morning"
+            "status": "enabled"
+            "time": "W124/T05:00:00"
+        }
+    },
+    "sensors": {
+        1: {
+            "config": {
+                "on": true
+                "reachable": false
+            }
+            "etag": "01252de8b14f62a234a4680827cf1609"
+            "manufacturername": "dresden elektronik"
+            "mode": 2
+            "modelid": "Lighting Switch"
+            "name": "Lighting Switch 1"
+            "state": {
+                "lastupdated": "2016-06-29T13:16:41"
+            }
+            "swversion": "1.0"
+            "type": "ZHASwitch"
+            "uniqueid": "0x00212effff00a6bc"
+            }
+        }
+    "rules": {}
+    }
+</code>
+</pre>
+
+<h4 id="response-fields_1">Response fields<a class="headerlink" href="#response-fields_1" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>config</td>
+            <td>Object</td>
+            <td>Configuration of the gateway.</td>
+        </tr>
+        <tr>
+            <td>groups</td>
+            <td>Object</td>
+            <td>All groups of the gateway.</td>
+        </tr>
+        <tr>
+            <td>lights</td>
+            <td>Object</td>
+            <td>All lights of the gateway.</td>
+        </tr>
+         <tr>
+            <td>rules (as from deconz version > 2.04.12)</td>
+            <td>Object</td>
+            <td>All rules of the gateway.</td>
+        </tr>
+        <tr>
+            <td>schedules</td>
+            <td>Object</td>
+            <td>All schedules of the gateway.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="possible-errors_3">Possible errors<a class="headerlink" href="#possible-errors_3" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors">304 Not Modified</a></p>
+<p><a href="../../misc/errors">403 Forbidden</a></p>
+<hr />
+<h2 id="modify-configuration">Modify configuration<a name="modifyconfiguration">&nbsp;</a><a class="headerlink" href="#modify-configuration" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/config
+</code></pre>
+<p>Modify configuration parameters.</p>
+<h3 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>name</td>
+            <td>String (0&ndash;16 chars)</td>
+            <td>Name of the gateway.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>rfconnected</td>
+            <td>Bool</td>
+            <td>Set connected state of the gateway.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>updatechannel</td>
+            <td>String</td>
+            <td>Set update channel ("stable"|"alpha"|"beta").</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>permitjoin</td>
+            <td>Number (0&ndash;255)</td>
+            <td>Open the network so that other zigbee devices can join. 0 = network closed, 255 = network open, 1&ndash;254 = time in seconds the network remains open. The value will decrement automatically.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>groupdelay</td>
+            <td>Number (0&ndash;5000)</td>
+            <td>Time between two group commands in milliseconds.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>otauactive</td>
+            <td>Bool</td>
+            <td>Set OTAU active or inactive.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>discovery</td>
+            <td>Bool</td>
+            <td>Set gateway discovery over the internet active or inactive.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>unlock</td>
+            <td>Number (0&ndash;600)</td>
+            <td>Unlock the gateway so that apps can register themselves to the gateway (time in seconds).</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>zigbeechannel</td>
+            <td>Number (11|15|20|25)</td>
+            <td>Set the zigbeechannel of the gateway. Notify other ZigBee devices also to change their channel.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>timezone</td>
+            <td>String</td>
+            <td>Set the timezone of the gateway (only on Raspberry Pi).
+                Format: tzdatabase e.g. “Europe/Berlin”
+                <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia:ListOfTimeZones</a></td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>utc</td>
+            <td>String</td>
+            <td>Set the UTC time of the gateway (only on Raspbery Pi) in ISO 8601 format (yyyy-MM-ddTHH:mm:ss).</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>timeformat</td>
+            <td>String</td>
+            <td>Can be used to store the timeformat permanently. It can be either "12h" or "24h".</td>
+            <td>optional</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="example-request-data_1">Example request data<a class="headerlink" href="#example-request-data_1" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+{
+  "zigbeechannel": 25
+}
+</code>
+</pre>
+
+<h3 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+ETag: "203941fel3ds8ad61903224"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[
+  { 
+    "success": {"/config/zigbeechannel": 25 }
+  }
+]
+</code>
+</pre>
+
+<h3 id="possible-errors_4">Possible errors<a class="headerlink" href="#possible-errors_4" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors">400 Bad Request</a></p>
+<hr />
+<h2 id="update-software">Update software<a name="updatesoftware">&nbsp;</a><a class="headerlink" href="#update-software" title="Permanent link">&para;</a></h2>
+<pre><code>POST /api/&lt;apikey&gt;/config/update
+</code></pre>
+<p>Returns the newest software version available. Starts the update if available (only on Raspberry Pi).</p>
+<h3 id="response_4">Response<a class="headerlink" href="#response_4" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/update": "2.04.05"
+  }
+}
+</code>
+</pre>
+
+<hr />
+<h2 id="update-firmware">Update firmware<a name="updatefirmware">&nbsp;</a><a class="headerlink" href="#update-firmware" title="Permanent link">&para;</a></h2>
+<pre><code>POST /api/&lt;apikey&gt;/config/updatefirmware
+</code></pre>
+<p>Starts the update firmware process if newer version is available.</p>
+<h3 id="response_5">Response<a class="headerlink" href="#response_5" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/updatefirmware": "26050500"
+  }
+}
+</code>
+</pre>
+
+<h3 id="possible-errors_5">Possible errors<a class="headerlink" href="#possible-errors_5" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors">503 Service Unavailable</a></p>
+<!--
+
+## Export gateway configuration<a name="export">&nbsp;</a>
+
+    POST /api/<apikey>/config/export
+
+Exports the current gateway network settings and database. An archive with the name deCONZ.tar.gz will be created in the deCONZ data directory. It can be downloaded via the hyperlink http://\<gateway_ip>/deCONZ.tar.gz
+
+When downloaded the file will be renamed to raspbee_gateway_config_yyyy-MM-dd.dat
+
+### Response
+
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/export": "success"
+  }
+}
+</code>
+</pre>
+
+### Possible errors
+
+[503 Service Unavailable](../../misc/errors)
+
+------------------------------------------------------
+
+## Import gateway configuration<a name="import">&nbsp;</a>
+
+    POST /api/<apikey>/config/import
+
+Imports a raspbee_gateway_config_yyyy-MM-dd.dat file and apply the stored settings. The file can be renamed but must keep the ending .dat. The file must be uploaded to the gateway beforehand.
+
+For fileupload you can use
+
+    POST /api/fileupload 
+
+### Response
+
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/import": "success"
+  }
+}
+</code>
+</pre>
+
+### Possible errors
+
+[503 Service Unavailable](../../misc/errors)
+
+-->
+
+<hr />
+<h2 id="reset-gateway">Reset gateway<a name="reset">&nbsp;</a><a class="headerlink" href="#reset-gateway" title="Permanent link">&para;</a></h2>
+<pre><code>POST /api/&lt;apikey&gt;/config/reset
+</code></pre>
+<p>Reset the gateway network settings to factory new and/or delete the deCONZ database (config, lights, scenes, groups, schedules, devices, rules).</p>
+<h3 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>resetGW</td>
+            <td>Bool</td>
+            <td>Set the network settings of the gateway to factory new.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>deleteDB</td>
+            <td>Bool</td>
+            <td>Delete the Database.</td>
+            <td>optional</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>At least one parameter is required!</p>
+<h3 id="response_6">Response<a class="headerlink" href="#response_6" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/reset": "success"
+  }
+}
+</code>
+</pre>
+
+<h3 id="possible-errors_6">Possible errors<a class="headerlink" href="#possible-errors_6" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors">400 Bad Request</a></p>
+<p><a href="../../misc/errors">503 Service Unavailable</a></p>
+<hr />
+<h2 id="change-password">Change password<a name="changepw">&nbsp;</a><a class="headerlink" href="#change-password" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/config/password
+</code></pre>
+<p>Change the Password of the Gateway. The parameter must be a Base64 encoded string of <code>&lt;username&gt;:&lt;password&gt;</code>.</p>
+<h3 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>username</td>
+            <td>String</td>
+            <td>The user name (currently only “delight” is supported).</td>
+            <td>required</td>
+        </tr>
+        <tr>
+            <td>oldhash</td>
+            <td>String</td>
+            <td>The Base64 encoded combination of “username:old password”.</td>
+            <td>required</td>
+        </tr>
+        <tr>
+            <td>newhash</td>
+            <td>String</td>
+            <td>The Base64 encoded combination of “username:new password”.</td>
+            <td>required</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="response_7">Response<a class="headerlink" href="#response_7" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code>
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "success": { 
+    "/config/password": "changed"
+  }
+}
+</code>
+</pre>
+
+<h3 id="possible-errors_7">Possible errors<a class="headerlink" href="#possible-errors_7" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors">400 Bad Request</a></p>
+<p><a href="../../misc/errors">401 Unauthorized</a></p>
+<hr />
+<h2 id="reset-password">Reset password<a name="resetpw">&nbsp;</a><a class="headerlink" href="#reset-password" title="Permanent link">&para;</a></h2>
+<pre><code>DELETE /api/&lt;apikey&gt;/config/password
+</code></pre>
+<p>Resets the username and password to default username = “delight” and password = &ldquo;delight”. The request can only succeed within 10 minutes after gateway start.</p>
+<h3 id="response_8">Response<a class="headerlink" href="#response_8" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+  <code>
+    HTTP/1.1 200 OK
+  </code>
+</pre>
+<pre class="highlight">
+  <code>
+    {}
+  </code>
+</pre>
+
+<h3 id="possible-errors_8">Possible errors<a class="headerlink" href="#possible-errors_8" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors">403 Forbidden</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../groups/" class="btn btn-neutral float-right" title="Groups">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../getting_started/" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../getting_started/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../groups/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
