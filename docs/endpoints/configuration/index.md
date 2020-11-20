@@ -113,6 +113,7 @@ ETag: "203941fel3ds8ad61903224"
     "linkbutton": false,
     "localtime": "2020-06-29T14:00:40",
     "mac": "74:46:a0:9e:92:c7",
+    "modelid": "deCONZ",
     "name": "deCONZ-GW",
     "netmask": "255.255.255.0",
     "networkopenduration": 60,
@@ -197,6 +198,11 @@ ETag: "203941fel3ds8ad61903224"
             <td>mac</td>
             <td>String</td>
             <td>MAC address of the gateway.</td>
+        </tr>
+        <tr>
+            <td>modelid</td>
+            <td>String</td>
+            <td>Fixed string "deCONZ".</td>
         </tr>
         <tr>
             <td>name</td>
