@@ -349,7 +349,7 @@ ETag: "203941fel3ds8ad61903224"
             "url": ""
         },
         "swversion": "1.12.3",
-        "utc": "2013-05-22T12:02:30",
+        "UTC": "2013-05-22T12:02:30",
         "whitelist": {}
     },
     "groups": {
@@ -570,9 +570,9 @@ Modify configuration parameters.
             <td>optional</td>
         </tr>
         <tr>
-            <td>utc</td>
+            <td>utc | UTC</td>
             <td>String</td>
-            <td>Set the UTC time of the gateway (only on Raspbery Pi) in ISO 8601 format (yyyy-MM-ddTHH:mm:ss).</td>
+            <td>Set the UTC time of the gateway (only on Raspbery Pi) in ISO 8601 format (yyyy-MM-ddTHH:mm:ss). For historical reasons both "utc" and "UTC" are supported as key.</td>
             <td>optional</td>
         </tr>
 		<tr>
