@@ -132,6 +132,8 @@ ETag: "203941fel3ds8ad61903224"
     "timezone": "Europe/Berlin",
     "UTC": "2020-06-29T12:00:40",
     "uuid": "a65d80a1-975a-4598-8d5a-2547bc18d63b",
+    "websocketnotifyall": true,
+    "websocketport": 23765,
     "whitelist": {},
     "zigbeechannel": 20
 }
@@ -266,9 +268,19 @@ ETag: "203941fel3ds8ad61903224"
             <td>UPNP Unique Id of the gateway</td>
         </tr>
         <tr>
+            <td>websocketnotifyall</td>
+            <td>Bool</td>
+            <td>When true all state changes will be signalled through the Websocket connection (default true).</td>
+        </tr>
+        <tr>
+            <td>websocketport</td>
+            <td>Number</td>
+            <td>Port of the Websocket server.</td>
+        </tr>
+        <tr>
             <td>whitelist</td>
             <td>Object</td>
-            <td>An array of whitelisted api keys.</td>
+            <td>An array of whitelisted API keys.</td>
         </tr>
         <tr>
             <td>zigbeechannel</td>
