@@ -127,7 +127,7 @@ ETag: "203941fel3ds8ad61903224"
         "updatestate": 0,
         "url": "",
     },
-    "swversion": "20405",
+    "swversion": "2.6.0",
     "timeformat": "12h",
     "timezone": "Europe/Berlin",
     "UTC": "2020-06-29T12:00:40",
