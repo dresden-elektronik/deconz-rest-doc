@@ -107,6 +107,7 @@ ETag: "203941fel3ds8ad61903224"
     "bridgeid": "00212EFFFF00C5FB",
     "devicename": "ConBee II",
     "dhcp": true,
+    "fwversion": "0x26660700",
     "gateway": "192.168.80.1",
     "ipaddress": "192.168.80.142",
     "linkbutton": false,
@@ -166,6 +167,11 @@ ETag: "203941fel3ds8ad61903224"
             <td>dhcp</td>
             <td>Bool</td>
             <td>Whether the IP address of the bridge is obtained with DHCP.</td>
+        </tr>
+        <tr>
+            <td>fwversion</td>
+            <td>String</td>
+            <td>The current Zigbee firmware version.</td>
         </tr>
         <tr>
             <td>gateway</td>
