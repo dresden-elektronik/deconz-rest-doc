@@ -104,6 +104,7 @@ ETag: "203941fel3ds8ad61903224"
 <code>
 {
     "apiversion": "1.16.0",
+    "bridgeid": "00212EFFFF00C5FB",
     "dhcp": true,
     "gateway": "192.168.80.1",
     "ipaddress": "192.168.80.142",
@@ -145,6 +146,11 @@ ETag: "203941fel3ds8ad61903224"
             <td>apiversion</td>
             <td>String</td>
             <td>The version of the deCONZ Rest API</td>
+        </tr>
+        <tr>
+            <td>bridgeid</td>
+            <td>String</td>
+            <td>The unique identifier for the gateway.</td>
         </tr>
         <tr>
             <td>dhcp</td>
