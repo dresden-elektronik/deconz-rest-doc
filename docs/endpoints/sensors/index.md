@@ -462,17 +462,17 @@ Creates a new sensor.
 ### Example request data
 
 <pre class="highlight">
-<code>    
+<code>
 {
     "config": {
-        "on": true
+        "on": true,
         "reachable": true
-    }
-    "manufacturername": "Me"
-    "modelid": "T1000"
-    "name": "My Switch"
-    "swversion": "1.0"
-    "type": "CLIPSwitch"
+    },
+    "manufacturername": "Me",
+    "modelid": "T1000",
+    "name": "My Switch",
+    "swversion": "1.0",
+    "type": "CLIPSwitch",
     "uniqueid": "0x001fee00000008bb"
 }
 </code>
@@ -480,13 +480,13 @@ Creates a new sensor.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
 <pre class="highlight">
 <code>
-[ { "success": { "id": "1" } } ];
+[ { "success": { "id": "1" } } ]
 </code>
 </pre>
 
@@ -526,7 +526,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -549,7 +549,8 @@ HTTP/1.1 200 OK
         "swversion": "1.0",
         "type": "ZHASwitch",
         "uniqueid": "0x00212effff00a6bc"
-    }
+    },
+
     "2": {
         "config": {
             "on": true,
@@ -593,7 +594,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
@@ -746,7 +747,7 @@ Update a sensor with the specified parameters.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
@@ -1034,20 +1035,20 @@ Sensors expose certain configuration parameters depending on their defined or kn
 
     {
       "on": false,
-      "reachable: false
+      "reachable": false
     }
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
 </pre>
 <pre class="highlight">
 <code>
-    { 
-      "success": { "/sensors/1/config/on": false } 
+    {
+      "success": { "/sensors/1/config/on": false },
       "success": { "/sensors/1/config/reachable": false }
     }
 </code>
@@ -1122,7 +1123,7 @@ Allowed sensor types and its states:
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
@@ -1167,14 +1168,14 @@ Delete a sensor.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
 </pre>
 <pre class="highlight">
 <code>
-[{ "success": "1"}]
+[ { "success": "1" } ]
 </code>
 </pre>
 

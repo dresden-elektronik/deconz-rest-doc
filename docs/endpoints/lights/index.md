@@ -19,7 +19,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -27,45 +27,45 @@ HTTP/1.1 200 OK
 <code>
 {
     "1": {
-        "etag": "026bcfe544ad76c7534e5ca8ed39047c"
-        "hascolor": true
-        "manufacturer": "dresden elektronik"
-        "modelid": "FLS-PP3"
-        "name": "Light 1"
-        "pointsymbol": {}
+        "etag": "026bcfe544ad76c7534e5ca8ed39047c",
+        "hascolor": true,
+        "manufacturer": "dresden elektronik",
+        "modelid": "FLS-PP3",
+        "name": "Light 1",
+        "pointsymbol": {},
         "state": {
-            "alert": "none"
-            "bri": 111
-            "colormode": "ct"
-            "ct": 307
-            "effect": "none"
-            "hue": 7998
-            "on": false
-            "reachable": true
-            "sat": 172
+            "alert": "none",
+            "bri": 111,
+            "colormode": "ct",
+            "ct": 307,
+            "effect": "none",
+            "hue": 7998,
+            "on": false,
+            "reachable": true,
+            "sat": 172,
             "xy": [ 0.421253, 0.39921 ]
-        }
-        "swversion": "020C.201000A0"
-        "type": "Extended color light"
+        },
+        "swversion": "020C.201000A0",
+        "type": "Extended color light",
         "uniqueid": "00:21:2E:FF:FF:00:73:9F-0A"
-    }
-    
+    },
+
     "2": {
-        "etag": "026bcfe544ad76c7534e5ca8ed39047c"
-        "hascolor": false
-        "manufacturer": "dresden elektronik"
-        "modelid": "FLS-PP3 White"
-        "name": "Light 2"
-        "pointsymbol": {}
+        "etag": "026bcfe544ad76c7534e5ca8ed39047c",
+        "hascolor": false,
+        "manufacturer": "dresden elektronik",
+        "modelid": "FLS-PP3 White",
+        "name": "Light 2",
+        "pointsymbol": {},
         "state": {
-            "alert": "none"
-            "bri": 1
-            "effect": "none"
-            "on": false
+            "alert": "none",
+            "bri": 1,
+            "effect": "none",
+            "on": false,
             "reachable": true
-        }
-        "swversion": "020C.201000A0"
-        "type": "Dimmable light"
+        },
+        "swversion": "020C.201000A0",
+        "type": "Dimmable light",
         "uniqueid": "00:21:2E:FF:FF:00:73:9F-0B"
     }
 }
@@ -94,7 +94,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
@@ -102,26 +102,26 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 <pre class="highlight">
 <code>
 {
-        "etag": "026bcfe544ad76c7534e5ca8ed39047c"
-        "hascolor": true
-        "manufacturer": "dresden elektronik"
-        "modelid": "FLS-PP3"
-        "name": "Light 1"
-        "pointsymbol": {}
+        "etag": "026bcfe544ad76c7534e5ca8ed39047c",
+        "hascolor": true,
+        "manufacturer": "dresden elektronik",
+        "modelid": "FLS-PP3",
+        "name": "Light 1",
+        "pointsymbol": {},
         "state": {
-            "alert": "none"
-            "bri": 111
-            "colormode": "ct"
-            "ct": 307
-            "effect": "none"
-            "hue": 7998
-            "on": false
-            "reachable": true
-            "sat": 172
+            "alert": "none",
+            "bri": 111,
+            "colormode": "ct",
+            "ct": 307,
+            "effect": "none",
+            "hue": 7998,
+            "on": false,
+            "reachable": true,
+            "sat": 172,
             "xy": [ 0.421253, 0.39921 ]
-        }
-        "swversion": "020C.201000A0"
-        "type": "Extended color light"
+        },
+        "swversion": "020C.201000A0",
+        "type": "Extended color light",
         "uniqueid": "00:21:2E:FF:FF:00:73:9F-0A"
     }
 </code>
@@ -402,7 +402,7 @@ Sets the state of a light.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
@@ -455,7 +455,7 @@ Sets attributes of a light which are not related to its state.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
@@ -500,7 +500,7 @@ Removes the light from the gateway. It will not be shown in any REST-API call. A
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
@@ -527,7 +527,7 @@ Remove the light from all groups it is a member of.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
@@ -552,7 +552,7 @@ Remove the light from all scenes it is a member of.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>

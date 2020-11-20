@@ -34,13 +34,13 @@ The actual state of each light will become the lights scene state.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
 <pre class="highlight">
 <code>
-[ { "success": { "id": "3" } } ];
+[ { "success": { "id": "3" } } ]
 </code>
 </pre>
 
@@ -86,7 +86,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 Etag: 203941fel3ds8ad61903224
 </code>
@@ -146,7 +146,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 Etag: 0b32030b31ef30a4446c9adff6a6f9e5
 </code>
@@ -154,17 +154,17 @@ Etag: 0b32030b31ef30a4446c9adff6a6f9e5
 <pre class="highlight">
 <code>
 {
-    lights": [
+    "lights": [
         {
-            "bri": 111
-            "id": "3"
-            "on": false
-            "transitiontime": 0
-            "x": 27499
+            "bri": 111,
+            "id": "3",
+            "on": false,
+            "transitiontime": 0,
+            "x": 27499,
             "y": 26060
         }
     ],
-    "name": "reading"
+    "name": "reading",
     "state": 0
 }
 </code>
@@ -278,7 +278,7 @@ Sets attributes of a scene.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 Etag: 030cf8c1c0025420f3a0659afab251f5
 </code>
@@ -312,7 +312,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -365,7 +365,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -413,9 +413,9 @@ Modifies the state of a light of the scene.
 
 ### Example request data
     {
-        "bri": 111
-        "on": true
-        "transitiontime": 10
+        "bri": 111,
+        "on": true,
+        "transitiontime": 10,
         "xy": [ 0.44, 0.98 ]
     }
 
@@ -455,7 +455,7 @@ Modifies the state of a light of the scene.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -490,7 +490,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>

@@ -22,7 +22,7 @@ None
 ### Response
 
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -47,7 +47,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -123,7 +123,7 @@ None
 ### Response
 
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -154,7 +154,7 @@ None
 ### Response
 
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>

@@ -118,13 +118,13 @@ This will create a binding between a switch and the On/Off Cluster of all Lights
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
 <pre class="highlight">
 <code>
-[ { "success": { "id": "1" } } ];
+[ { "success": { "id": "1" } } ]
 </code>
 </pre>
 
@@ -164,7 +164,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -253,7 +253,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
@@ -449,7 +449,7 @@ Update a rule with the specified parameters.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
@@ -457,8 +457,8 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 <pre class="highlight">
 <code>
 [
-    {   
-        "success": { "/rules/1/actions": 
+    {
+        "success": { "/rules/1/actions":
             {
                 "address": "/lights/1/state",
                 "body": {
@@ -466,7 +466,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
                 },
                 "method": "BIND"
             }
-        } 
+        }
     }
 ]
 </code>
@@ -492,7 +492,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>

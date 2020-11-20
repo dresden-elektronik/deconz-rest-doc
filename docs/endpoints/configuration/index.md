@@ -47,7 +47,7 @@ Creates a new [API key](../../misc/authorization) which provides authorized acce
 ### Response
 
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -95,7 +95,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "203941fel3ds8ad61903224"
 </code>
@@ -250,7 +250,7 @@ ETag: "203941fel3ds8ad61903224"
             <td>zigbeechannel</td>
             <td>Number</td>
             <td>The current wireless frequency channel used by the Gateway. Supported channels: 11, 15, 20, 25.</td>
-        </tr>        
+        </tr>
     </tbody>
 </table>
 
@@ -275,7 +275,7 @@ None
 ### Response
 
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "203941fel3ds8ad61903224"
 </code>
@@ -537,7 +537,7 @@ Modify configuration parameters.
 ### Response
 
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "203941fel3ds8ad61903224"
 </code>
@@ -567,7 +567,7 @@ Returns the newest software version available. Starts the update if available (o
 ### Response
 
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -592,14 +592,14 @@ Starts the update firmware process if newer version is available.
 ### Response
 
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
 <pre class="highlight">
 <code>
 {
-  "success": { 
+  "success": {
     "/config/updatefirmware": "26050500"
   }
 }
@@ -683,7 +683,7 @@ HTTP/1.1 200 OK
     POST /api/<apikey>/config/reset
 
 Reset the gateway network settings to factory new and/or delete the deCONZ database (config, lights, scenes, groups, schedules, devices, rules).
-    
+
 ### Parameters
 
 <table class="table table-bordered">
@@ -711,7 +711,7 @@ At least one parameter is required!
 ### Response
 
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -738,7 +738,7 @@ HTTP/1.1 200 OK
     PUT /api/<apikey>/config/password
 
 Change the Password of the Gateway. The parameter must be a Base64 encoded string of `<username>:<password>`.
-    
+
 ### Parameters
 
 <table class="table table-bordered">
@@ -770,14 +770,14 @@ Change the Password of the Gateway. The parameter must be a Base64 encoded strin
 ### Response
 
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
 <pre class="highlight">
 <code>
 {
-  "success": { 
+  "success": {
     "/config/password": "changed"
   }
 }
@@ -801,7 +801,7 @@ Resets the username and password to default username = “delight” and passwor
 ### Response
 
 <pre class="headers">
-  <code>
+  <code class="no-highlight">
     HTTP/1.1 200 OK
   </code>
 </pre>

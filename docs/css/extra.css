@@ -12,6 +12,27 @@
 	color: #c14;
 }
 
+/* REST headers / response */
+pre.headers {
+    margin-bottom: 0;
+    padding-left: 1rem;
+    border: 1px solid #dcdcdc;
+    background-color: #f4f4f4;
+}
+
+pre.headers + pre {
+    margin-top: 0;
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    background-color: #f7f7f7;
+}
+
+pre.headers code, pre.headers + pre code {
+    background: none;
+    border: none;
+}
+
 /* Tables */
 
 table {

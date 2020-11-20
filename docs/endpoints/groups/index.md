@@ -35,7 +35,7 @@ Creates a new empty group.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -83,7 +83,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -154,7 +154,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
 </code>
@@ -356,7 +356,7 @@ Sets attributes of a group which are not related to its state.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "000bf36b51ef3324446c98hdf6a6ace6"
 </code>
@@ -489,7 +489,7 @@ Sets the state of a group.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 ETag: "030cf8c1c0025420f3a0659afab251f5"
 </code>
@@ -529,7 +529,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>

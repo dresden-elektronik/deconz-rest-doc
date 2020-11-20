@@ -103,7 +103,7 @@ The number after R of recurring timer determine the number of repetitions of the
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
@@ -149,7 +149,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 Etag: 203941fel3ds8ad61903224
 </code>
@@ -173,8 +173,8 @@ Etag: 203941fel3ds8ad61903224
     "2": {
         "autodelete": false,
         "command": {
-            "address": "/api/AD4F14F244/groups/4/scenes/1/recall"
-            "body": {}
+            "address": "/api/AD4F14F244/groups/4/scenes/1/recall",
+            "body": {},
             "method": "PUT"
         },
         "description": "",
@@ -209,7 +209,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 Etag: 0b32030b31ef30a4446c9adff6a6f9e5
 </code>
@@ -398,7 +398,7 @@ Sets attributes of a schedule.
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 Etag: 030cf8c1c0025420f3a0659afab251f5
 </code>
@@ -431,7 +431,7 @@ None
 
 ### Response
 <pre class="headers">
-<code>
+<code class="no-highlight">
 HTTP/1.1 200 OK
 </code>
 </pre>
