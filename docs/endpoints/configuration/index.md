@@ -201,8 +201,8 @@ ETag: "203941fel3ds8ad61903224"
         </tr>
         <tr>
             <td>networkopenduration</td>
-            <td>Number (0&ndash;65535)</td>
-            <td>Can be used to store the permitjoin (see Modify configuration) value permanently.</td>
+            <td>Number (1&ndash;65535)</td>
+            <td>The duration in seconds used by lights and sensors search, see <a href="#modifyconfiguration">Modify configuration</a>.</td>
         </tr>
         <tr>
             <td>ntp</td>
@@ -505,6 +505,12 @@ Modify configuration parameters.
             <td>discovery</td>
             <td>Bool</td>
             <td>Set gateway discovery over the internet active or inactive.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>networkopenduration</td>
+            <td>Number (1&ndash;65535)</td>
+            <td>Sets the lights and sensors search duration in seconds.</td>
             <td>optional</td>
         </tr>
         <tr>
