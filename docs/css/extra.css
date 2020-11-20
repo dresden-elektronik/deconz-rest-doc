@@ -12,6 +12,29 @@
 	color: #c14;
 }
 
+/* since version note */
+[data-since] {
+    /*
+    display: grid;
+    */
+}
+
+
+[data-since]::after {
+    /*
+        border: 1px solid #d0d0d0;
+        border-radius: 3px;
+        background-color: #f0f0f0;
+        font-style: normal;
+    */
+    margin-top: 1rem;
+    padding: 0.5rem 0.5;
+    color: #696;
+    display: block;
+    content: "Added in " attr(data-since);
+
+}
+
 /* REST headers / response */
 pre.headers {
     margin-bottom: 0;
@@ -64,6 +87,10 @@ tr td {
     text-align: start;
 }
 
+td p {
+    font-size: 0.9rem; /* same as plain td */
+    margin-bottom: 0.5rem;
+}
 /*
 table tr:last-child td:first-child {
     border-bottom-left-radius: 10px;

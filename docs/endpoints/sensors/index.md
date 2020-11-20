@@ -86,19 +86,13 @@ Creates a new sensor.
   <tbody>
     <tr>
       <td>ZHAAirQuality</td>
-      <td>airquality
-        <ul>
-            <li>Introduced with deCONZ version 2.6.0-beta</li>
-        </ul>
+      <td data-since="v2.6.0-beta">airquality
       </td>
       <td>String</td>
     </tr>
     <tr>
       <td></td>
-      <td>airqualityppb
-        <ul>
-            <li>Introduced with deCONZ version 2.6.0-beta</li>
-        </ul>
+      <td data-since="v2.6.0-beta">airqualityppb
       </td>
       <td>Number</td>
     </tr>
@@ -334,37 +328,25 @@ Creates a new sensor.
     </tr>
     <tr>
       <td></td>
-      <td>errorcode
-        <ul>
-            <li>Introduced with deCONZ version 2.05.81</li>
-        </ul>
+      <td data-since="v2.5.81">errorcode
       </td>
       <td>Bool</td>
     </tr>
     <tr>
       <td></td>
-      <td>fanmode
-        <ul>
-            <li>Introduced with deCONZ version 2.6.0-beta</li>
-        </ul>
+      <td data-since="v2.6.0-beta">fanmode
       </td>
       <td>String</td>
     </tr>
     <tr>
       <td></td>
-      <td>floortemperature
-        <ul>
-            <li>Introduced with deCONZ version 2.05.85</li>
-        </ul>
+      <td data-since="v2.5.85">floortemperature
       </td>
       <td>Number</td>
     </tr>
     <tr>
       <td></td>
-      <td>heating
-        <ul>
-            <li>Introduced with deCONZ version 2.05.85</li>
-        </ul>
+      <td data-since="v2.5.85">heating
       </td>
       <td>Bool</td>
     </tr>
@@ -375,10 +357,7 @@ Creates a new sensor.
     </tr>
     <tr>
       <td></td>
-      <td>mountingmodeactive
-        <ul>
-            <li>Introduced with deCONZ version 2.05.81</li>
-        </ul>
+      <td data-since="v2.5.81">mountingmodeactive
       </td>
       <td>Bool</td>
     </tr>
@@ -394,10 +373,7 @@ Creates a new sensor.
     </tr>
     <tr>
       <td></td>
-      <td>windowopen
-        <ul>
-            <li>Introduced with deCONZ version 2.05.79</li>
-        </ul>
+      <td data-since="v2.5.79">windowopen
       </td>
       <td>String</td>
     </tr>
@@ -795,10 +771,7 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>coolsetpoint</td>
       <td>Number (700&ndash;3500)</td>
-      <td>Set the desired cooling temperature for thermostats.
-        <ul>
-          <li>Introduced with deCONZ version 2.6.0-beta</li>
-        </ul>
+      <td data-since="v2.6.0-beta">Set the desired cooling temperature for thermostats.
       </td>
       <td>optional</td>
     </tr>
@@ -869,10 +842,7 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>locked</td>
       <td>Bool</td>
-      <td>Child lock active/inactive for thermostats/TRVs supporting it.
-        <ul>
-          <li>Introduced with deCONZ version 2.05.81</li>
-        </ul>
+      <td data-since="v2.5.81">Child lock active/inactive for thermostats/TRVs supporting it.
       </td>
       <td>optional</td>
     </tr>
@@ -891,10 +861,7 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>mountingmode</td>
       <td>Bool</td>
-      <td>Sets a TRV into mounting mode if supported (valve fully open position).
-        <ul>
-          <li>Introduced with deCONZ version 2.05.81</li>
-        </ul>
+      <td data-since="v2.5.81">Sets a TRV into mounting mode if supported (valve fully open position).
       </td>
       <td>optional</td>
     </tr>
@@ -919,10 +886,7 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>preset</td>
       <td>String</td>
-      <td>Sets the current operating mode for Tuya thermostats.<br><u>Generally supported values are:</u> <b>holiday, auto, manual, comfort, eco, boost, complex</b><br>(Supported modes are device dependent)
-        <ul>
-          <li>Introduced with deCONZ version 2.05.83</li>
-        </ul>
+      <td data-since="v2.5.83">Sets the current operating mode for Tuya thermostats.<br><u>Generally supported values are:</u> <b>holiday, auto, manual, comfort, eco, boost, complex</b><br>(Supported modes are device dependent)
       </td>
       <td>optional</td>
     </tr>
@@ -1021,10 +985,9 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>windowopen_set</td>
       <td>Bool</td>
-      <td>Sets if window open detection shall be active/inactive for Tuya thermostats.<br>(Support is device dependent)
-        <ul>
-          <li>Introduced with deCONZ version 2.05.83</li>
-        </ul>
+      <td data-since="v2.5.83">
+        <p>Sets if window open detection shall be active or inactive for Tuya thermostats.</p>
+        <p>(Support is device dependent)</p>
       </td>
       <td>optional</td>
     </tr>
