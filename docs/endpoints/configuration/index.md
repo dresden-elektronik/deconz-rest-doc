@@ -105,6 +105,7 @@ ETag: "203941fel3ds8ad61903224"
 {
     "apiversion": "1.16.0",
     "bridgeid": "00212EFFFF00C5FB",
+    "devicename": "ConBee II",
     "dhcp": true,
     "gateway": "192.168.80.1",
     "ipaddress": "192.168.80.142",
@@ -151,6 +152,11 @@ ETag: "203941fel3ds8ad61903224"
             <td>bridgeid</td>
             <td>String</td>
             <td>The unique identifier for the gateway.</td>
+        </tr>
+        <tr>
+            <td>devicename</td>
+            <td>String</td>
+            <td>The product name of the gateway. Valid values are "ConBee", "RaspBee", "ConBee II" and "RaspBee II".</td>
         </tr>
         <tr>
             <td>dhcp</td>
