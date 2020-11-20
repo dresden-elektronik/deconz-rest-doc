@@ -311,31 +311,37 @@ ETag: "203941fel3ds8ad61903224"
 <pre class="highlight">
 <code>
 {
-    "apiversion": "1.0.0",
+    "apiversion": "1.16.0",
+    "bridgeid": "00212EFFFF00C5FB",
+    "devicename": "ConBee II",
     "dhcp": true,
     "gateway": "192.168.80.1",
     "ipaddress": "192.168.80.142",
     "linkbutton": false,
-    "localtime": "2016-06-29T14:00:40",
+    "localtime": "2020-06-29T14:00:40",
     "mac": "74:46:a0:9e:92:c7",
     "name": "deCONZ-GW",
     "netmask": "255.255.255.0",
     "networkopenduration": 60,
+    "ntp": "synced",
     "panid": 56889,
     "portalservices": false,
     "proxyaddress": "",
     "proxyport": 0,
+    "rfconnected": true,
     "swupdate": {
         "notify": false,
         "text": "",
         "updatestate": 0,
         "url": "",
     },
-    "swversion": "20405",
+    "swversion": "2.6.0",
     "timeformat": "12h",
     "timezone": "Europe/Berlin",
-    "utc": "2016-06-29T12:00:40",
+    "UTC": "2020-06-29T12:00:40",
     "uuid": "a65d80a1-975a-4598-8d5a-2547bc18d63b",
+    "websocketnotifyall": true,
+    "websocketport": 23765,
     "whitelist": {},
     "zigbeechannel": 20
 }
@@ -352,6 +358,16 @@ ETag: "203941fel3ds8ad61903224"
             <td>apiversion</td>
             <td>String</td>
             <td>The version of the deCONZ Rest API</td>
+        </tr>
+        <tr>
+            <td>bridgeid</td>
+            <td>String</td>
+            <td>The unique identifier for the gateway.</td>
+        </tr>
+        <tr>
+            <td>devicename</td>
+            <td>String</td>
+            <td>The product name of the gateway. Valid values are "ConBee", "RaspBee", "ConBee II" and "RaspBee II".</td>
         </tr>
         <tr>
             <td>dhcp</td>
@@ -395,8 +411,13 @@ ETag: "203941fel3ds8ad61903224"
         </tr>
         <tr>
             <td>networkopenduration</td>
-            <td>Number (0&ndash;65535)</td>
-            <td>Can be used to store the permitjoin (see Modify configuration) value permanently.</td>
+            <td>Number (1&ndash;65535)</td>
+            <td>The duration in seconds used by lights and sensors search, see <a href="#modifyconfiguration">Modify configuration</a>.</td>
+        </tr>
+        <tr>
+            <td>ntp</td>
+            <td>String</td>
+            <td>Only for gateways running on Linux. Tells if the NTP time is "synced" or "unsynced".</td>
         </tr>
         <tr>
             <td>panid</td>
@@ -419,6 +440,11 @@ ETag: "203941fel3ds8ad61903224"
             <td>Not supported</td>
         </tr>
         <tr>
+            <td>rfconnected</td>
+            <td>Bool</td>
+            <td>Is true when the deCONZ is connected with the firmware and the Zigbee network is up.</td>
+        </tr>
+        <tr>
             <td>softwareupdate</td>
             <td>Object</td>
             <td>Contains information related to software updates.</td>
@@ -439,7 +465,7 @@ ETag: "203941fel3ds8ad61903224"
             <td>Timezone used by the gateway (only on Raspberry Pi). "None" if not further specified.</td>
         </tr>
         <tr>
-            <td>utc</td>
+            <td>UTC</td>
             <td>String</td>
             <td>Current UTC time of the gateway in ISO 8601 format.</td>
         </tr>
@@ -449,9 +475,19 @@ ETag: "203941fel3ds8ad61903224"
             <td>UPNP Unique Id of the gateway</td>
         </tr>
         <tr>
+            <td>websocketnotifyall</td>
+            <td>Bool</td>
+            <td>When true all state changes will be signalled through the Websocket connection (default true).</td>
+        </tr>
+        <tr>
+            <td>websocketport</td>
+            <td>Number</td>
+            <td>Port of the Websocket server.</td>
+        </tr>
+        <tr>
             <td>whitelist</td>
             <td>Object</td>
-            <td>An array of whitelisted api keys.</td>
+            <td>An array of whitelisted API keys.</td>
         </tr>
         <tr>
             <td>zigbeechannel</td>
@@ -677,6 +713,18 @@ ETag: "203941fel3ds8ad61903224"
             <td>discovery</td>
             <td>Bool</td>
             <td>Set gateway discovery over the internet active or inactive.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>networkopenduration</td>
+            <td>Number (1&ndash;65535)</td>
+            <td>Sets the lights and sensors search duration in seconds.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>rfconnected</td>
+            <td>Bool</td>
+            <td>Set to true to bring the Zigbee network up and false to bring it down. This has the same effect as using the Join and Leave buttons in deCONZ.</td>
             <td>optional</td>
         </tr>
         <tr>
