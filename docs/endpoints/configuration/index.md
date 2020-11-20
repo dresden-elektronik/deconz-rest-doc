@@ -110,7 +110,7 @@ ETag: "203941fel3ds8ad61903224"
     "gateway": "192.168.80.1",
     "ipaddress": "192.168.80.142",
     "linkbutton": false,
-    "localtime": "2016-06-29T14:00:40",
+    "localtime": "2020-06-29T14:00:40",
     "mac": "74:46:a0:9e:92:c7",
     "name": "deCONZ-GW",
     "netmask": "255.255.255.0",
