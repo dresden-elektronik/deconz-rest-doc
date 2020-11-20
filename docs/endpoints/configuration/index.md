@@ -115,6 +115,7 @@ ETag: "203941fel3ds8ad61903224"
     "name": "deCONZ-GW",
     "netmask": "255.255.255.0",
     "networkopenduration": 60,
+    "ntp": "synced",
     "panid": 56889,
     "portalservices": false,
     "proxyaddress": "",
@@ -202,6 +203,11 @@ ETag: "203941fel3ds8ad61903224"
             <td>networkopenduration</td>
             <td>Number (0&ndash;65535)</td>
             <td>Can be used to store the permitjoin (see Modify configuration) value permanently.</td>
+        </tr>
+        <tr>
+            <td>ntp</td>
+            <td>String</td>
+            <td>Only for gateways running on Linux. Tells if the NTP time is "synced" or "unsynced".</td>
         </tr>
         <tr>
             <td>panid</td>
