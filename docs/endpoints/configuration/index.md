@@ -103,7 +103,7 @@ ETag: "203941fel3ds8ad61903224"
 <pre class="highlight">
 <code>
 {
-    "apiversion": "1.0.0",
+    "apiversion": "1.16.0",
     "dhcp": true,
     "gateway": "192.168.80.1",
     "ipaddress": "192.168.80.142",
