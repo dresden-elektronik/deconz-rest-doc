@@ -126,7 +126,7 @@ ETag: "203941fel3ds8ad61903224"
     "swversion": "20405",
     "timeformat": "12h",
     "timezone": "Europe/Berlin",
-    "utc": "2016-06-29T12:00:40",
+    "UTC": "2020-06-29T12:00:40",
     "uuid": "a65d80a1-975a-4598-8d5a-2547bc18d63b",
     "whitelist": {},
     "zigbeechannel": 20
@@ -232,7 +232,7 @@ ETag: "203941fel3ds8ad61903224"
             <td>Timezone used by the gateway (only on Raspberry Pi). "None" if not further specified.</td>
         </tr>
         <tr>
-            <td>utc</td>
+            <td>UTC</td>
             <td>String</td>
             <td>Current UTC time of the gateway in ISO 8601 format.</td>
         </tr>
