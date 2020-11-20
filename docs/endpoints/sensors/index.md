@@ -473,7 +473,7 @@ Creates a new sensor.
     "name": "My Switch",
     "swversion": "1.0",
     "type": "CLIPSwitch",
-    "uniqueid": "0x001fee00000008bb"
+    "uniqueid": "00:1f:ee:00:00:00:08:bb-01-1000"
 }
 </code>
 </pre>
@@ -548,7 +548,7 @@ HTTP/1.1 200 OK
         },
         "swversion": "1.0",
         "type": "ZHASwitch",
-        "uniqueid": "0x00212effff00a6bc"
+        "uniqueid": "00:21:2e:ff:ff:00:a6:bc-01-1000"
     },
 
     "2": {
@@ -566,7 +566,7 @@ HTTP/1.1 200 OK
         },
         "swversion": "1.0",
         "type": "ZHASwitch",
-        "uniqueid": "0x00212effff00a6bc"
+        "uniqueid": "00:21:2e:ff:ff:00:a6:bc-02-1000"
     }
 }
 </code>
@@ -617,7 +617,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     },
     "swversion": "1.0",
     "type": "ZHASwitch",
-    "uniqueid": "0x00212effff00a6bc"
+    "uniqueid": "00:21:2e:ff:ff:00:a6:bc-01-1000"
 }
 </code>
 </pre>
