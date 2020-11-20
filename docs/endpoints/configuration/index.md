@@ -120,6 +120,7 @@ ETag: "203941fel3ds8ad61903224"
     "portalservices": false,
     "proxyaddress": "",
     "proxyport": 0,
+    "rfconnected": true,
     "swupdate": {
         "notify": false,
         "text": "",
@@ -228,6 +229,11 @@ ETag: "203941fel3ds8ad61903224"
             <td>proxyport</td>
             <td>Number</td>
             <td>Not supported</td>
+        </tr>
+        <tr>
+            <td>rfconnected</td>
+            <td>Bool</td>
+            <td>Is true when the deCONZ is connected with the firmware and the Zigbee network is up.</td>
         </tr>
         <tr>
             <td>softwareupdate</td>
@@ -511,6 +517,12 @@ Modify configuration parameters.
             <td>networkopenduration</td>
             <td>Number (1&ndash;65535)</td>
             <td>Sets the lights and sensors search duration in seconds.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>rfconnected</td>
+            <td>Bool</td>
+            <td>Set to true to bring the Zigbee network up and false to bring it down. This has the same effect as using the Join and Leave buttons in deCONZ.</td>
             <td>optional</td>
         </tr>
         <tr>
