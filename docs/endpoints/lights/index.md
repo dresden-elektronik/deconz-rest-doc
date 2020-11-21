@@ -250,32 +250,35 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td>state.alert</td>
       <td>String</td>
-      <td>Temporary alert effect. Following values are possible:
-        <ul>
-          <li>none - light is not performing an alert</li>
-          <li>select - light is blinking a short time</li>
-          <li>lselect - light is blinking a longer time</li>
+      <td>
+        <p>Temporary alert effect.</p>
+        <ul class="value-list">
+          <li>"none" &mdash; light is not performing an alert</li>
+          <li>"select" &mdash; light is blinking a short time</li>
+          <li>"lselect" &mdash; light is blinking a longer time</li>
         </ul>
       </td>
     </tr>
     <tr>
       <td>state.colormode</td>
       <td>String</td>
-      <td>The current color mode of the light:
-        <ul>
-          <li>hs - hue and saturation</li>
-          <li>xy - CIE xy values</li>
-          <li>ct - color temperature</li>
+      <td>
+        <p>The current color mode of the light:</p>
+        <ul class="value-list">
+          <li>"hs" &mdash; hue and saturation</li>
+          <li>"xy" &mdash; CIE xy values</li>
+          <li>"ct" &mdash; color temperature</li>
         </ul>
       </td>
     </tr>
     <tr>
       <td>state.effect</td>
       <td>String</td>
-      <td>Effect of the light:
-        <ul>
-          <li>none - no effect</li>
-          <li>colorloop</li>
+      <td>
+        <p>Effect of the light:</p>
+        <ul class="value-list">
+          <li>"none" &mdash; no effect</li>
+          <li>"colorloop" &mdash; cycle through hue values 0&ndash;360</li>
         </ul>
       </td>
     </tr>
@@ -323,11 +326,12 @@ Sets the state of a light.
     <tr>
       <td>alert</td>
       <td>String</td>
-      <td>Trigger a temporary alert effect:
-        <ul>
-          <li>none - light is not performing an alert</li>
-          <li>select - light is blinking a short time</li>
-          <li>lselect - light is blinking a longer time</li>
+      <td>
+        <p>Trigger a temporary alert effect:</p>
+        <ul class="value-list">
+          <li>"none" &mdash; light is not performing an alert</li>
+          <li>"select" &mdash; light is blinking a short time</li>
+          <li>"lselect" &mdash; light is blinking a longer time</li>
         </ul>
       </td>
       <td>optional</td>
@@ -341,22 +345,33 @@ Sets the state of a light.
     <tr>
       <td>colorloopspeed</td>
       <td>Number (1&ndash;255)</td>
-      <td>Specifies the speed of a colorloop. 1 = very fast, 255 = very slow (default: 15). This parameter only has an effect when it is called together with effect colorloop.</td>
+      <td>
+        <p>Specifies the speed of a colorloop (default: 15).</p>
+        <ul class="value-list">
+          <li>1 = very fast</li>
+          <li>255 = very slow</li>
+        </ul>
+        <p>This parameter only has an effect when it is called together with effect colorloop.</p>
+      </td>
       <td>optional</td>
     </tr>
     <tr>
       <td>ct</td>
-      <td>Number (153&ndash;500)</td>
-      <td>Set the Mired color temperature of the light. (2000K&ndash;6500K)</td>
+      <td>Number (ctmin&ndash;ctmax)</td>
+      <td>
+        Set the Mired color temperature of the light.</br>
+        Where Mired is 1000000 / color temperature (in kelvins).
+      </td>
       <td>optional</td>
     </tr>
     <tr>
       <td>effect</td>
       <td>String</td>
-      <td>Trigger an effect of the light:
-        <ul>
-          <li>none - no effect</li>
-          <li>colorloop - the light will cycle continously through all colors with the speed specified by colorloopspeed</li>
+      <td>
+        <p>Trigger an effect of the light:</p>
+        <ul class="value-list">
+          <li>"none" &mdash; no effect</li>
+          <li>"colorloop" &mdash; the light will cycle continously through all colors with the speed specified by colorloopspeed</li>
         </ul>
       </td>
       <td>optional</td>
