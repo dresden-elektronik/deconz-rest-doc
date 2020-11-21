@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Button Maps - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Button Maps";
+    var mkdocs_page_input_path = "endpoints/sensors/button_maps.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../about_rest/">About REST</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../getting_started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../../configuration/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lights/">Lights</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../rules/">Rules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../schedules/">Schedules</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Sensors</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Sensors</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Button Maps</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#dresden-elektronik-lighting-switch">dresden elektronik Lighting Switch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dresden-elektronik-scene-switch">dresden elektronik Scene Switch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gira-jung-switches-and-remotes">GIRA / JUNG Switches and remotes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ikea-tradfri-onoff-switch">IKEA TRÅDFRI on/off switch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ikea-tradfri-openclose-remote">IKEA TRÅDFRI open/close remote</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ikea-tradfri-round-5-button-remote">IKEA TRÅDFRI round 5 button remote</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#osram-lightify-switch-mini">OSRAM Lightify Switch Mini</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#osram-lightify-4-button-remote-1">OSRAM Lightify 4 button remote (1)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#osram-lightify-4-button-remote-2">OSRAM Lightify 4 button remote (2)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ikea-tradfri-dimmer">IKEA TRÅDFRI dimmer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ikea-tradfri-motion-sensor">IKEA TRÅDFRI motion sensor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ikea-symfonisk-remote">IKEA SYMFONISK remote</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#busch-jaeger-switches">Busch-Jaeger Switches</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#trust-zyct-202-remote">Trust ZYCT-202 remote</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xiaomi-wxkg11lm-remote">Xiaomi WXKG11LM remote</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xiaomi-wxkg01lm-remote">Xiaomi WXKG01LM remote</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xiaomi-vibration-sensor">Xiaomi Vibration sensor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ubisys-universal-dimmer-d1-and-power-switch-s1">Ubisys Universal dimmer D1 and power switch S1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ubisys-control-unit-c4">Ubisys Control unit C4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ubisys-power-switch-s2">Ubisys Power switch S2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lutron-lzl4bwhl-remote">Lutron LZL4BWHL remote</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lutron-z3-1brl-remote">Lutron Z3-1BRL remote</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#innr-rc-110-remote">Innr RC 110 remote</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#icasa-iczb-kpd1-remote">iCasa ICZB-KPD1 remote</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#icasa-remotes">iCasa Remotes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#samjin-remote">Samjin Remote</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../websocket/">Websocket</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Sensors &raquo;</li>
+        
+      
+        
+          <li>API Endpoints &raquo;</li>
+        
+      
+    
+    <li>Button Maps</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/endpoints/sensors/button_maps.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="button-maps">Button Maps<a class="headerlink" href="#button-maps" title="Permanent link">&para;</a></h1>
+<p>This page was auto generated from <a href="https://raw.githubusercontent.com/manup/deconz-rest-plugin/button_maps/button_maps.json">button_maps.json</a></p>
+<p>The following sections enumerate supported values for <code>state.buttonevent</code> for sensors of type ZHASwitch.</p>
+<h2 id="dresden-elektronik-lighting-switch">dresden elektronik Lighting Switch<a class="headerlink" href="#dresden-elektronik-lighting-switch" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"Lighting Switch"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Dimm up</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Dimm stop</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Dimm down</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Dimm stop</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Dimm up</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Dimm stop</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Dimm down</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Dimm stop</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Dimm up</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Dimm stop</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Dimm down</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Dimm stop</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Recall scene 1</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Recall scene 4</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Dimm up</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Dimm stop</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Dimm down</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Dimm stop</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Color temperature move up</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Color temperature move down</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Color temperature move up hold</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Color temperature move down hold</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Color temperature move up stop</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Color temperature move down stop</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dresden-elektronik-scene-switch">dresden elektronik Scene Switch<a class="headerlink" href="#dresden-elektronik-scene-switch" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"Scene Switch"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Dimm up</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Dimm up stop</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Dimm down</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Dimm down stop</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Recall scene 1</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Recall scene 2</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Recall scene 3</td>
+</tr>
+<tr>
+<td>6002</td>
+<td>Recall scene 4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gira-jung-switches-and-remotes">GIRA / JUNG Switches and remotes<a class="headerlink" href="#gira-jung-switches-and-remotes" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"HS_4f_GJ_1"</li>
+<li>"WS_4f_J_1"</li>
+<li>"WS_3f_G_1"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Off with effect</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Dimm up</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Dimm up stop</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Dimm down</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Dimm down stop</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Recall scene 0</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Recall scene 1</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Recall scene 2</td>
+</tr>
+<tr>
+<td>6002</td>
+<td>Recall scene 3</td>
+</tr>
+<tr>
+<td>7002</td>
+<td>Recall scene 4</td>
+</tr>
+<tr>
+<td>8002</td>
+<td>Recall scene 5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ikea-tradfri-onoff-switch">IKEA TRÅDFRI on/off switch<a class="headerlink" href="#ikea-tradfri-onoff-switch" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"TRADFRI on/off switch"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Move down</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ikea-tradfri-openclose-remote">IKEA TRÅDFRI open/close remote<a class="headerlink" href="#ikea-tradfri-openclose-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"TRADFRI open/close remote"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Close</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ikea-tradfri-round-5-button-remote">IKEA TRÅDFRI round 5 button remote<a class="headerlink" href="#ikea-tradfri-round-5-button-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"TRADFRI remote control"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Setup 10s</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Step up (with on/off)</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Step down</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Move down</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Step ct colder</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Move ct colder</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Stop ct colder</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Step ct warmer</td>
+</tr>
+<tr>
+<td>5001</td>
+<td>Move ct warmer</td>
+</tr>
+<tr>
+<td>5003</td>
+<td>Stop ct warmer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="osram-lightify-switch-mini">OSRAM Lightify Switch Mini<a class="headerlink" href="#osram-lightify-switch-mini" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"Lightify Switch Mini"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Up short press</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Up long press</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Up long release</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>0 short press</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>0 long press</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>0 long release</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Down short press</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Down long press</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Down long release</td>
+</tr>
+</tbody>
+</table>
+<h2 id="osram-lightify-4-button-remote-1">OSRAM Lightify 4 button remote (1)<a class="headerlink" href="#osram-lightify-4-button-remote-1" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"Switch 4x EU-LIGHTIFY"</li>
+<li>"Switch 4x-LIGHTIFY"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>UL short press</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>UL long press</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>UL long release</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>UR short press</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>UR long press</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>UR long release</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>LL short press</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>LL long press</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>LL long release</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>LR short press</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>LR long press</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>LR long release</td>
+</tr>
+</tbody>
+</table>
+<h2 id="osram-lightify-4-button-remote-2">OSRAM Lightify 4 button remote (2)<a class="headerlink" href="#osram-lightify-4-button-remote-2" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"Switch-LIGHTIFY"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>UL short press</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>UL long press</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>UL long release</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>UR short press</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>UR long press</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>UR long release</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>LL short press</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>LL long press</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>LL long release</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>LR short press</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>LR long press</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>LR long release</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ikea-tradfri-dimmer">IKEA TRÅDFRI dimmer<a class="headerlink" href="#ikea-tradfri-dimmer" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"TRADFRI wireless dimmer"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Move to level 255 (with on/off)</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Move down</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Move to level 0 (with on/off)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ikea-tradfri-motion-sensor">IKEA TRÅDFRI motion sensor<a class="headerlink" href="#ikea-tradfri-motion-sensor" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"TRADFRI motion sensor"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>On with timed off</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ikea-symfonisk-remote">IKEA SYMFONISK remote<a class="headerlink" href="#ikea-symfonisk-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"SYMFONISK"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Step Up</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>Step Down</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Step Up</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>Step Down</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Move Up</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Move Up</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Move Down</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Move Down</td>
+</tr>
+</tbody>
+</table>
+<h2 id="busch-jaeger-switches">Busch-Jaeger Switches<a class="headerlink" href="#busch-jaeger-switches" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"RB01"</li>
+<li>"RM01"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Step down</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Step up (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Step down</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Recall scene 3</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Step up (with on/off)</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Recall scene 4</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>5001</td>
+<td>Step down</td>
+</tr>
+<tr>
+<td>5003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Recall scene 5</td>
+</tr>
+<tr>
+<td>6002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>6001</td>
+<td>Step up (with on/off)</td>
+</tr>
+<tr>
+<td>6003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>6002</td>
+<td>Recall scene 6</td>
+</tr>
+<tr>
+<td>7002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>7001</td>
+<td>Step down</td>
+</tr>
+<tr>
+<td>7003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>7002</td>
+<td>Recall scene 7</td>
+</tr>
+<tr>
+<td>8002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>8001</td>
+<td>Step up (with on/off)</td>
+</tr>
+<tr>
+<td>8003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>8002</td>
+<td>Recall scene 8</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Step down</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Step up (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Step down</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Step up (with on/off)</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>5001</td>
+<td>Step down</td>
+</tr>
+<tr>
+<td>5003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>6002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>6001</td>
+<td>Step up (with on/off)</td>
+</tr>
+<tr>
+<td>6003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>7002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>7001</td>
+<td>Step down</td>
+</tr>
+<tr>
+<td>7003</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>8002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>8001</td>
+<td>Step up (with on/off)</td>
+</tr>
+<tr>
+<td>8003</td>
+<td>Stop</td>
+</tr>
+</tbody>
+</table>
+<h2 id="trust-zyct-202-remote">Trust ZYCT-202 remote<a class="headerlink" href="#trust-zyct-202-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"ZYCT-202"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Dimm up</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Dimm up stop</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Dimm down</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Dimm down stop</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Off</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xiaomi-wxkg11lm-remote">Xiaomi WXKG11LM remote<a class="headerlink" href="#xiaomi-wxkg11lm-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"lumi.sensor_switch.aq2"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Normal press</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Double press</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>Triple press</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>Quad press</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xiaomi-wxkg01lm-remote">Xiaomi WXKG01LM remote<a class="headerlink" href="#xiaomi-wxkg01lm-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"lumi.sensor_switch"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000</td>
+<td>Normal press</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Normal release</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Long release</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Double press</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>Triple press</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>Quad press</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Many press</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xiaomi-vibration-sensor">Xiaomi Vibration sensor<a class="headerlink" href="#xiaomi-vibration-sensor" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"lumi.vibration"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1007</td>
+<td>Shake</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Tilt</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>Drop</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ubisys-universal-dimmer-d1-and-power-switch-s1">Ubisys Universal dimmer D1 and power switch S1<a class="headerlink" href="#ubisys-universal-dimmer-d1-and-power-switch-s1" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"D1"</li>
+<li>"S1"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ubisys-control-unit-c4">Ubisys Control unit C4<a class="headerlink" href="#ubisys-control-unit-c4" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"C4"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ubisys-power-switch-s2">Ubisys Power switch S2<a class="headerlink" href="#ubisys-power-switch-s2" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"S2"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lutron-lzl4bwhl-remote">Lutron LZL4BWHL remote<a class="headerlink" href="#lutron-lzl4bwhl-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"LZL4BWHL"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>on</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>dimm up</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>dimm up release</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>dimm down</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>dimm down release</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>off</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lutron-z3-1brl-remote">Lutron Z3-1BRL remote<a class="headerlink" href="#lutron-z3-1brl-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"Z3-1BRL"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>DimUp</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>DimDown</td>
+</tr>
+</tbody>
+</table>
+<h2 id="innr-rc-110-remote">Innr RC 110 remote<a class="headerlink" href="#innr-rc-110-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"RC 110"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>OnOff</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>OnOff</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>DimUp</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>DimUp</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>DimUp</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>DimDown</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>DimDown</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>DimDown</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6002</td>
+<td>3</td>
+</tr>
+<tr>
+<td>7002</td>
+<td>4</td>
+</tr>
+<tr>
+<td>8002</td>
+<td>5</td>
+</tr>
+<tr>
+<td>9002</td>
+<td>6</td>
+</tr>
+<tr>
+<td>10002</td>
+<td>OnOff 1</td>
+</tr>
+<tr>
+<td>10002</td>
+<td>OnOff 1</td>
+</tr>
+<tr>
+<td>11001</td>
+<td>DimUp 1</td>
+</tr>
+<tr>
+<td>11002</td>
+<td>DimUp 1</td>
+</tr>
+<tr>
+<td>11003</td>
+<td>DimUp 1</td>
+</tr>
+<tr>
+<td>12001</td>
+<td>DimDown 1</td>
+</tr>
+<tr>
+<td>12002</td>
+<td>DimDown 1</td>
+</tr>
+<tr>
+<td>12003</td>
+<td>DimDown 1</td>
+</tr>
+<tr>
+<td>13002</td>
+<td>OnOff 2</td>
+</tr>
+<tr>
+<td>13002</td>
+<td>OnOff 2</td>
+</tr>
+<tr>
+<td>14001</td>
+<td>DimUp 2</td>
+</tr>
+<tr>
+<td>14002</td>
+<td>DimUp 2</td>
+</tr>
+<tr>
+<td>14003</td>
+<td>DimUp 2</td>
+</tr>
+<tr>
+<td>15001</td>
+<td>DimDown 2</td>
+</tr>
+<tr>
+<td>15002</td>
+<td>DimDown 2</td>
+</tr>
+<tr>
+<td>15003</td>
+<td>DimDown 2</td>
+</tr>
+<tr>
+<td>16002</td>
+<td>OnOff 3</td>
+</tr>
+<tr>
+<td>16002</td>
+<td>OnOff 3</td>
+</tr>
+<tr>
+<td>17001</td>
+<td>DimUp 3</td>
+</tr>
+<tr>
+<td>17002</td>
+<td>DimUp 3</td>
+</tr>
+<tr>
+<td>17003</td>
+<td>DimUp 3</td>
+</tr>
+<tr>
+<td>18001</td>
+<td>DimDown 3</td>
+</tr>
+<tr>
+<td>18002</td>
+<td>DimDown 3</td>
+</tr>
+<tr>
+<td>18003</td>
+<td>DimDown 3</td>
+</tr>
+<tr>
+<td>19002</td>
+<td>OnOff 4</td>
+</tr>
+<tr>
+<td>19002</td>
+<td>OnOff 4</td>
+</tr>
+<tr>
+<td>20001</td>
+<td>DimUp 4</td>
+</tr>
+<tr>
+<td>20002</td>
+<td>DimUp 4</td>
+</tr>
+<tr>
+<td>20003</td>
+<td>DimUp 4</td>
+</tr>
+<tr>
+<td>21001</td>
+<td>DimDown 4</td>
+</tr>
+<tr>
+<td>21002</td>
+<td>DimDown 4</td>
+</tr>
+<tr>
+<td>21003</td>
+<td>DimDown 4</td>
+</tr>
+<tr>
+<td>22002</td>
+<td>OnOff 5</td>
+</tr>
+<tr>
+<td>22002</td>
+<td>OnOff 5</td>
+</tr>
+<tr>
+<td>23001</td>
+<td>DimUp 5</td>
+</tr>
+<tr>
+<td>23002</td>
+<td>DimUp 5</td>
+</tr>
+<tr>
+<td>23003</td>
+<td>DimUp 5</td>
+</tr>
+<tr>
+<td>24001</td>
+<td>DimDown 5</td>
+</tr>
+<tr>
+<td>24002</td>
+<td>DimDown 5</td>
+</tr>
+<tr>
+<td>24003</td>
+<td>DimDown 5</td>
+</tr>
+<tr>
+<td>25002</td>
+<td>OnOff 6</td>
+</tr>
+<tr>
+<td>25002</td>
+<td>OnOff 6</td>
+</tr>
+<tr>
+<td>26001</td>
+<td>DimUp 6</td>
+</tr>
+<tr>
+<td>26002</td>
+<td>DimUp 6</td>
+</tr>
+<tr>
+<td>26003</td>
+<td>DimUp 6</td>
+</tr>
+<tr>
+<td>27001</td>
+<td>DimDown 6</td>
+</tr>
+<tr>
+<td>27002</td>
+<td>DimDown 6</td>
+</tr>
+<tr>
+<td>27003</td>
+<td>DimDown 6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="icasa-iczb-kpd1-remote">iCasa ICZB-KPD1 remote<a class="headerlink" href="#icasa-iczb-kpd1-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"ICZB-KPD1"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Recall scene 1</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Store scene 1</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Recall scene 2</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Store scene 2</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Recall scene 3</td>
+</tr>
+<tr>
+<td>5003</td>
+<td>Store scene 3</td>
+</tr>
+<tr>
+<td>6002</td>
+<td>Recall scene 4</td>
+</tr>
+<tr>
+<td>6003</td>
+<td>Store scene 4</td>
+</tr>
+<tr>
+<td>7002</td>
+<td>Recall scene 5</td>
+</tr>
+<tr>
+<td>7003</td>
+<td>Store scene 5</td>
+</tr>
+<tr>
+<td>8002</td>
+<td>Recall scene 6</td>
+</tr>
+<tr>
+<td>8003</td>
+<td>Store scene 6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="icasa-remotes">iCasa Remotes<a class="headerlink" href="#icasa-remotes" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"ICZB-RM"</li>
+<li>"ZGRC-KEY-012"</li>
+<li>"ZGRC-KEY-013"</li>
+<li>"RGBgenie ZB-5001"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>9002</td>
+<td>Recall scene 1</td>
+</tr>
+<tr>
+<td>10002</td>
+<td>Recall scene 2</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>5001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>5003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>6002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>6001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>6003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>7002</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>7001</td>
+<td>Move down (with on/off)</td>
+</tr>
+<tr>
+<td>7003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+<tr>
+<td>8002</td>
+<td>On</td>
+</tr>
+<tr>
+<td>8001</td>
+<td>Move up (with on/off)</td>
+</tr>
+<tr>
+<td>8003</td>
+<td>Stop_ (with on/off)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="samjin-remote">Samjin Remote<a class="headerlink" href="#samjin-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"button"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Single press</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Double press</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Hold</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../touchlink/" class="btn btn-neutral float-right" title="Touchlink">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="Sensors"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../touchlink/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
