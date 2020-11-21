@@ -142,12 +142,12 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td>ctmax</td>
       <td>Number</td>
-      <td></td>
+      <td>The maximum mired color temperature value a device supports.</td>
     </tr>
     <tr>
       <td>ctmin</td>
       <td>Number</td>
-      <td></td>
+      <td>The minimum mired color temperature value a device supports.</td>
     </tr>
     <tr>
       <td>lastannounced</td>
@@ -236,8 +236,11 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     </tr>
     <tr>
       <td>state.ct</td>
-      <td>Number (153&ndash;500)</td>
-      <td>Mired color temperature of the light. (2000K&ndash;6500K)</td>
+      <td>Number (ctmin&ndash;ctmax)</td>
+      <td>
+        Mired color temperature of the light.</br>
+        Where Mired is 1000000 / color temperature (in kelvins).
+      </td>
     </tr>
     <tr>
       <td>state.xy</td>
