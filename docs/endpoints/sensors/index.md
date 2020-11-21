@@ -64,11 +64,12 @@ Creates a new sensor.
     <tr>
       <td>config</td>
       <td>Object</td>
-      <td>The config of the sensor.
-        <ul>
-          <li>on - Bool - default: true</li>
-          <li>reachable - Bool - default: true</li>
-          <li>battery - Number (0&ndash;100)</li>
+      <td>
+        <p>The config of the sensor.</p>
+        <ul class="value-list">
+          <li>on &mdash; Bool (default: true)</li>
+          <li>reachable &mdash; Bool (default: true)</li>
+          <li>battery &mdash; Number (0&ndash;100)</li>
         </ul>
       </td>
       <td>optional</td>
@@ -633,12 +634,14 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td>mode</td>
       <td>Number (1|2|3)</td>
-      <td>The mode of the sensor (only available for dresden elektroink Lighting Switch).
-        <ul>
+      <td>
+        <p>The mode of the sensor.</p>
+        <ul class="value-list">
           <li>1 = Scenes mode</li>
           <li>2 = Two groups mode</li>
           <li>3 = Color temperature mode</li>
         </ul>
+        (only available for dresden elektronik Lighting Switch)
       </td>
     </tr>
     <tr>
@@ -704,8 +707,9 @@ Update a sensor with the specified parameters.
     <tr>
       <td>mode</td>
       <td>Number (1|2|3)</td>
-      <td>Only availabe for dresden elektronik Lighting Switch. Set the mode of the switch.
-        <ul>
+      <td>
+        <p>Only availabe for dresden elektronik Lighting Switch. Set the mode of the switch.</p>
+        <ul class="value-list">
           <li>1 = Scenes mode</li>
           <li>2 = Two groups mode</li>
           <li>3 = Color temperature mode</li>
@@ -778,7 +782,9 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>delay</td>
       <td>Number (0&ndash;65535)</td>
-      <td></td>
+      <td>
+        <mark>todo: describe</mark>
+      </td>
       <td>optional</td>
     </tr>
     <tr>
@@ -796,10 +802,20 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>fanmode</td>
       <td>String</td>
-      <td>Sets the mode of the fan (exposed for thermostats supporting it).<br><u>Generally supported values are:</u> <b>off, low, medium, high, on, auto, smart</b><br>(Supported modes are device dependent)
-        <ul>
-          <li>Introduced with deCONZ version 2.6.0-beta</li>
+      <td data-since="v2.6.0-beta">
+        <p>Sets the mode of the fan.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"off"</li>
+          <li>"low"</li>
+          <li>"medium"</li>
+          <li>"high"</li>
+          <li>"on"</li>
+          <li>"auto"</li>
+          <li>"smart"</li>
         </ul>
+
+        Note modes are device dependent and only exposed for devices supporting it.
       </td>
       <td>optional</td>
     </tr>
@@ -818,7 +834,7 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>hostflags</td>
       <td></td>
-      <td></td>
+      <td><mark>todo: describe</mark></td>
       <td>Display only</td>
     </tr>
     <tr>
@@ -830,13 +846,13 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>ledindication</td>
       <td>Bool</td>
-      <td></td>
+      <td><mark>todo: describe</mark></td>
       <td>optional</td>
     </tr>
     <tr>
       <td>localtime</td>
       <td></td>
-      <td></td>
+      <td><mark>todo: describe</mark></td>
       <td>optional</td>
     </tr>
     <tr>
@@ -855,7 +871,31 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>mode</td>
       <td>String</td>
-      <td>Sets the current operating mode of a thermostat.<br><u>Generally supported values are:</u> <b>off, auto, cool, heat, emergency heating, precooling, fan only, dry, sleep</b><br>(Supported modes are device dependent)<br><br>For ubisys S1/S2, operation mode of the switch.<br><u>Supported values are:</u> <b>momentary, rocker</b></td>
+      <td>
+        <p>Sets the current operating mode of a thermostat.<p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"off"</li>
+          <li>"auto"</li>
+          <li>"cool"</li>
+          <li>"heat"</li>
+          <li>"emergency heating"</li>
+          <li>"precooling"</li>
+          <li>"fan only"</li>
+          <li>"dry"</li>
+          <li>"sleep"</li>
+        </ul>
+        <p>(Supported modes are device dependent)</p>
+
+        <hr/>
+
+        <p>For ubisys S1/S2, operation mode of the switch.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"momentary"</li>
+          <li>"rocker"</li>
+        </ul>
+      </td>
       <td>optional</td>
     </tr>
     <tr>
@@ -874,7 +914,7 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>offset</td>
       <td>Number (-32768&ndash;32767)</td>
-      <td>Adds a signed offset value to measured temperature and humidity state values. Values send by the REST API are already amended by the offset.</td>
+      <td>Adds a signed offset value to measured temperature and humidity state values. Values send by the REST-API are already amended by the offset.</td>
       <td>optional</td>
     </tr>
     <tr>
@@ -886,7 +926,19 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>preset</td>
       <td>String</td>
-      <td data-since="v2.5.83">Sets the current operating mode for Tuya thermostats.<br><u>Generally supported values are:</u> <b>holiday, auto, manual, comfort, eco, boost, complex</b><br>(Supported modes are device dependent)
+      <td data-since="v2.5.83">
+        <p>Sets the current operating mode for Tuya thermostats.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"holiday"</li>
+          <li>"auto"
+          <li>"manual"</li>
+          <li>"comfort"</li>
+          <li>"eco"</li>
+          <li>"boost"</li>
+          <li>"complex"</li>
+        </ul>
+        <p>(Supported modes are device dependent)</p>
       </td>
       <td>optional</td>
     </tr>
@@ -898,26 +950,36 @@ Sensors expose certain configuration parameters depending on their defined or kn
     </tr>
     <tr>
       <td>schedule</td>
-      <td></td>
-      <td></td>
+      <td>Array</td>
+      <td>
+        <p>A thermostat schedule.</p>
+        <mark>todo: describe</mark>
+     </td>
       <td>optional</td>
     </tr>
     <tr>
       <td>scheduleon</td>
-      <td></td>
-      <td></td>
+      <td>Bool</td>
+      <td>true when a thermostat schedule is enabled.</td>
       <td>optional</td>
     </tr>
     <tr>
       <td>sensitivity</td>
       <td>Number</td>
-      <td></td>
+      <td><mark>todo: describe</mark></td>
       <td>optional</td>
     </tr>
     <tr>
       <td>sensitivitymax</td>
       <td>Number</td>
-      <td>For Xiaomi vibration sensors, only following 3 values apply: low: 21, medium: 11, high: 1</td>
+      <td>
+        <p>For Xiaomi vibration sensors, only following 3 values apply:</p>
+        <ul class="value-list">
+           <li>21 = low</li>
+           <li>11 = medium</li>
+           <li>&nbsp;&nbsp;1 = high</li>
+        </ul>
+      </td>
       <td>optional</td>
     </tr>
     <tr>
@@ -935,25 +997,39 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>swingmode</td>
       <td>String</td>
-      <td>Sets the AC louvers position (exposed for thermostats supporting it).<br><u>Generally supported values are:</u> <b>fully closed, fully open, quarter open, half open, three quarters open</b>
-        <ul>
-          <li>Introduced with deCONZ version 2.6.0-beta</li>
+      <td data-since="v2.6.0-beta">
+        <p>Sets the AC louvers position.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"fully closed"</li>
+          <li>"fully open"</li>
+          <li>"quarter open"</li>
+          <li>"half open"</li>
+          <li>"three quarters open"</li>
         </ul>
+        (exposed for thermostats supporting it)
       </td>
       <td>optional</td>
     </tr>
     <tr>
       <td>temperature</td>
       <td>Number (-27315&ndash;32767)</td>
-      <td>NOT SETTABLE. Reported temperature values by Xiaomi devices which are no temperature measuring devices (presumably device temperature).</td>
+      <td>
+        <p>NOT SETTABLE. Reported temperature values by Xiaomi devices which are no temperature measuring devices.</p>
+        <p>(presumably device temperature).</p>
+      </td>
       <td>Display only</td>
     </tr>
     <tr>
       <td>temperaturemeasurement</td>
       <td>String</td>
-      <td>Sets the mode of operation for Elko Super TR thermostat.<br><u>Generally supported values are:</u> <b>air sensor, floor sensor, floor protection</b>
-        <ul>
-          <li>Introduced with deCONZ version 2.05.85</li>
+      <td data-since="v2.5.85">
+        <p>Sets the mode of operation for Elko Super TR thermostat.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"air sensor"</li>
+          <li>"floor sensor"</li>
+          <li>"floor protection"</li>
         </ul>
       </td>
       <td>optional</td>
@@ -961,25 +1037,40 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>tholddark</td>
       <td>Number (0&ndash;65534)</td>
-      <td></td>
+      <td><mark>todo: describe</mark></td>
       <td>optional</td>
     </tr>
     <tr>
       <td>tholdoffset</td>
       <td>Number (1&ndash;65534)</td>
-      <td></td>
+      <td><mark>todo: describe</mark></td>
       <td>optional</td>
     </tr>
     <tr>
       <td>usertest</td>
       <td>Bool</td>
-      <td></td>
+      <td><mark>todo: describe</mark></td>
       <td>optional</td>
     </tr>
     <tr>
       <td>windowcoveringtype</td>
       <td>Number (0&ndash;9)</td>
-      <td>Sets the covering type and starts calibration for ubisys J1.<br><u>Supported values are:</u><br><b>0</b> (Roller Shade),<br><b>1</b> (Roller Shade two motors),<br><b>2</b> (Roller Shade exterior),<br><b>3</b> (Roller Shade two motors ext),<br><b>4</b> (Drapery),<br><b>5</b> (Awning),<br><b>6</b> (Shutter),<br><b>7</b> (Tilt Blind Lift only),<br><b>8</b> (Tilt Blind lift & tilt),<br><b>9</b> (Projector Screen)</td>
+      <td>
+        <p>Sets the covering type and starts calibration for ubisys J1.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>0 = Roller Shade</li>
+          <li>1 = Roller Shade two motors</li>
+          <li>2 = Roller Shade exterior</li>
+          <li>3 = Roller Shade two motors ext</li>
+          <li>4 = Drapery</li>
+          <li>5 = Awning</li>
+          <li>6 = Shutter</li>
+          <li>7 = Tilt Blind Lift only</li>
+          <li>8 = Tilt Blind lift & tilt</li>
+          <li>9 = Projector Screen
+        </ul>
+      </td>
       <td>optional</td>
     </tr>
     <tr>

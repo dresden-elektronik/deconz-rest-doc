@@ -35,6 +35,26 @@
 
 }
 
+/* value lists in attribute descriptions */
+ul.value-list {
+    /*margin-top: 1rem;*/
+}
+
+ul.value-list li {
+    margin-left: 1em !important;
+    line-height: 1.4em;
+    list-style: none !important;
+}
+
+/* general yellow mark item */
+mark {
+    font-style: normal;
+    font-weight: normal;
+    padding: 2px 0.25rem;
+    color: #444;
+    background-color: #fff498;
+}
+
 /* REST headers / response */
 pre.headers {
     margin-bottom: 0;

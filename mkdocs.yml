@@ -5,6 +5,7 @@ theme:
 repo_url: https://github.com/dresden-elektronik/deconz-rest-doc
 markdown_extensions:
     - admonition
+    - attr_list
     - smarty
     - toc:
         permalink: True
