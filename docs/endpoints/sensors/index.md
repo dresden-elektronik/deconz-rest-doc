@@ -10,7 +10,7 @@ Sensors can be used to measure environment parameters like temperature or to emi
 
     POST /api/<apikey>/sensors
 
-Creates a new sensor.
+Creates a new CLIP sensor.
 
 ### Parameters
 
@@ -763,52 +763,12 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 
 Update a sensor state with the specified parameters.
 
+!!! note
+    Changing the sensor state is only allowed for CLIP sensors.
+
 ### Parameters
 
-Allowed sensor types and its states:
-
-<table class="table table-bordered">
-  <thead>
-    <tr><th>Sensor type</th><th>Allowed state</th><th>type</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CLIPSwitch</td>
-      <td>buttonevent</td>
-      <td>Number</td>
-    </tr>
-     <tr>
-      <td>CLIPOpenClose</td>
-      <td>open</td>
-      <td>Bool</td>
-    </tr>
-     <tr>
-      <td>CLIPPresence</td>
-      <td>presence</td>
-      <td>Bool</td>
-    </tr>
-     <tr>
-      <td>CLIPTemperature</td>
-      <td>temperature</td>
-      <td>Number</td>
-    </tr>
-     <tr>
-      <td>CLIPGenericFlag</td>
-      <td>flag</td>
-      <td>Bool</td>
-    </tr>
-     <tr>
-      <td>CLIPGenericStatus</td>
-      <td>status</td>
-      <td>Number</td>
-    </tr>
-     <tr>
-      <td>CLIPHumidity</td>
-      <td>humidity</td>
-      <td>Number</td>
-    </tr>
-  </tbody>
-</table>
+Allowed parameters are listed in <a href="#clip-sensor-types-and-states">CLIP sensors</a>.
 
 ### Example request data
 
@@ -884,6 +844,56 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 
 <a name="sensor-types-and-states">&nbsp;</a>
 ## Supported sensor types and states
+
+<a name="clip-sensor-types-and-states">&nbsp;</a>
+### CLIP sensors
+
+These are virtual sensors without a real device behind it. CLIP sensors can be created, modified and used in rules.
+
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Sensor type</th><th>Allowed state</th><th>type</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CLIPSwitch</td>
+      <td>buttonevent</td>
+      <td>Number</td>
+    </tr>
+     <tr>
+      <td>CLIPOpenClose</td>
+      <td>open</td>
+      <td>Bool</td>
+    </tr>
+     <tr>
+      <td>CLIPPresence</td>
+      <td>presence</td>
+      <td>Bool</td>
+    </tr>
+     <tr>
+      <td>CLIPTemperature</td>
+      <td>temperature</td>
+      <td>Number</td>
+    </tr>
+     <tr>
+      <td>CLIPGenericFlag</td>
+      <td>flag</td>
+      <td>Bool</td>
+    </tr>
+     <tr>
+      <td>CLIPGenericStatus</td>
+      <td>status</td>
+      <td>Number</td>
+    </tr>
+     <tr>
+      <td>CLIPHumidity</td>
+      <td>humidity</td>
+      <td>Number</td>
+    </tr>
+  </tbody>
+</table>
+
+### Device sensors
 
 <table class="table table-bordered">
   <thead>
