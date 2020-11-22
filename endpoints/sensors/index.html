@@ -164,6 +164,12 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#supported-sensor-types-and-states">Supported sensor types and states</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#clip-sensors">CLIP sensors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#device-sensors">Device sensors</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -229,7 +235,7 @@
 <h2 id="create-sensor">Create sensor<a name="create">&nbsp;</a><a class="headerlink" href="#create-sensor" title="Permanent link">&para;</a></h2>
 <pre><code>POST /api/&lt;apikey&gt;/sensors
 </code></pre>
-<p>Creates a new sensor.</p>
+<p>Creates a new CLIP sensor.</p>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <table class="table table-bordered">
   <thead>
@@ -937,51 +943,12 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 <pre><code>PUT /api/&lt;apikey&gt;/sensors/&lt;id&gt;/state
 </code></pre>
 <p>Update a sensor state with the specified parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changing the sensor state is only allowed for CLIP sensors.</p>
+</div>
 <h3 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h3>
-<p>Allowed sensor types and its states:</p>
-<table class="table table-bordered">
-  <thead>
-    <tr><th>Sensor type</th><th>Allowed state</th><th>type</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CLIPSwitch</td>
-      <td>buttonevent</td>
-      <td>Number</td>
-    </tr>
-     <tr>
-      <td>CLIPOpenClose</td>
-      <td>open</td>
-      <td>Bool</td>
-    </tr>
-     <tr>
-      <td>CLIPPresence</td>
-      <td>presence</td>
-      <td>Bool</td>
-    </tr>
-     <tr>
-      <td>CLIPTemperature</td>
-      <td>temperature</td>
-      <td>Number</td>
-    </tr>
-     <tr>
-      <td>CLIPGenericFlag</td>
-      <td>flag</td>
-      <td>Bool</td>
-    </tr>
-     <tr>
-      <td>CLIPGenericStatus</td>
-      <td>status</td>
-      <td>Number</td>
-    </tr>
-     <tr>
-      <td>CLIPHumidity</td>
-      <td>humidity</td>
-      <td>Number</td>
-    </tr>
-  </tbody>
-</table>
-
+<p>Allowed parameters are listed in <a href="#clip-sensor-types-and-states">CLIP sensors</a>.</p>
 <h3 id="example-request-data_3">Example request data<a class="headerlink" href="#example-request-data_3" title="Permanent link">&para;</a></h3>
 <pre><code>{
   "flag": false
@@ -1044,6 +1011,148 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 <p><a href="../../misc/errors#404">404 Not Found</a></p>
 <p><a name="sensor-types-and-states">&nbsp;</a></p>
 <h2 id="supported-sensor-types-and-states">Supported sensor types and states<a class="headerlink" href="#supported-sensor-types-and-states" title="Permanent link">&para;</a></h2>
+<p><a name="clip-sensor-types-and-states">&nbsp;</a></p>
+<h3 id="clip-sensors">CLIP sensors<a class="headerlink" href="#clip-sensors" title="Permanent link">&para;</a></h3>
+<p>These are virtual sensors without a real device behind it. CLIP sensors can be created, modified and used in rules.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Sensor type</th><th>Allowed state</th><th>Type</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CLIPAlarm</td>
+      <td>alarm</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>CLIPBattery</td>
+      <td>battery</td>
+      <td>Number (uint8)</td>
+    </tr>
+    <tr>
+      <td>CLIPCarbonMonoxide</td>
+      <td>carbonmonoxide</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>CLIPConsumption</td>
+      <td>consumption</td>
+      <td>Number (uint64)</td>
+    </tr>
+    <tr>
+      <td>CLIPFire</td>
+      <td>fire</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>CLIPGenericFlag</td>
+      <td>flag</td>
+      <td>Bool</td>
+    </tr>
+     <tr>
+      <td>CLIPGenericStatus</td>
+      <td>status</td>
+      <td>Int32</td>
+    </tr>
+    <tr>
+      <td>CLIPHumidity</td>
+      <td>humidity</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td>CLIPLightLevel</td>
+      <td>lightlevel</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lux</td>
+      <td>Uint32</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>dark</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>daylight</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tholddark</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tholddarkoffset</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td>CLIPOpenClose</td>
+      <td>open</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>CLIPPower</td>
+      <td>power</td>
+      <td>Int16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>voltage</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>current</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td>CLIPPresence</td>
+      <td>presence</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>duration</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td>CLIPPressure</td>
+      <td>pressure</td>
+      <td>Int16</td>
+    </tr>
+    <tr>
+      <td>CLIPSwitch</td>
+      <td>buttonevent</td>
+      <td>Uint32</td>
+    </tr>
+    <tr>
+      <td>CLIPTemperature</td>
+      <td>temperature</td>
+      <td>Int16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>offset</td>
+      <td>Int16</td>
+    </tr>
+    <tr>
+      <td>CLIPVibration</td>
+      <td>vibration</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>CLIPWater</td>
+      <td>water</td>
+      <td>Bool</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="device-sensors">Device sensors<a class="headerlink" href="#device-sensors" title="Permanent link">&para;</a></h3>
 <table class="table table-bordered">
   <thead>
     <tr><th>Sensor type</th><th>Supported state</th><th>Type</th></tr>
