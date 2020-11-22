@@ -407,12 +407,7 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>The current battery state in percent, only for battery powered devices.</td>
       <td>optional</td>
     </tr>
-    <tr>
-      <td>configured</td>
-      <td>Bool</td>
-      <td>NOT SETTABLE and exclusively for predefined daylight sensor. Determines if the sensor has been configured.</td>
-      <td>optional</td>
-    </tr>
+
     <tr>
       <td>coolsetpoint</td>
       <td>Number (700&ndash;3500)</td>
@@ -437,7 +432,7 @@ Sensors expose certain configuration parameters depending on their defined or kn
     <tr>
       <td>duration</td>
       <td>Number (0&ndash;65535)</td>
-      <td>For ZHAPrensence sensors: time in seconds presence state is set to false again.</td>
+      <td>For ZHAPresence sensors: timeout in seconds presence state is set to false again.</td>
       <td>optional</td>
     </tr>
     <tr>
@@ -850,9 +845,11 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 
 These are virtual sensors without a real device behind it. CLIP sensors can be created, modified and used in rules.
 
+#### Supported state attributes
+
 <table class="table table-bordered">
   <thead>
-    <tr><th>Sensor type</th><th>Allowed state</th><th>Type</th></tr>
+    <tr><th>Sensor type</th><th>State attribute</th><th>Type</th></tr>
   </thead>
   <tbody>
     <tr>
@@ -971,11 +968,6 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>Int16</td>
     </tr>
     <tr>
-      <td></td>
-      <td>offset</td>
-      <td>Int16</td>
-    </tr>
-    <tr>
       <td>CLIPVibration</td>
       <td>vibration</td>
       <td>Bool</td>
@@ -988,11 +980,32 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
   </tbody>
 </table>
 
+#### Supported config attributes
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Sensor type</th><th>Config attribute</th><th>Type</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CLIPHumidity</td>
+      <td>offset</td>
+      <td>Int16</td>
+    </tr>
+    <tr>
+      <td>CLIPTemperature</td>
+      <td>offset</td>
+      <td>Int16</td>
+    </tr>
+  </tbody>
+</table>
+
 ### Device sensors
+
+#### Supported state attributes
 
 <table class="table table-bordered">
   <thead>
-    <tr><th>Sensor type</th><th>Supported state</th><th>Type</th></tr>
+    <tr><th>Sensor type</th><th>State attribute</th><th>Type</th></tr>
   </thead>
   <tbody>
     <tr>
@@ -1346,6 +1359,29 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td></td>
       <td>tampered</td>
       <td>Bool</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Supported config attributes
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Sensor type</th><th>Config attribute</th><th>Type</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ZHAAirQuality</td>
+      <td data-since="v2.6.0-beta">airquality</td>
+      <td>String</td>
+      <td></td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>Daylight</td>
+      <td>configured</td>
+      <td>Bool</td>
+      <td>True if the daylight sensor is configured with coordinates.</td>
+      <td>Read only</td>
     </tr>
   </tbody>
 </table>
