@@ -852,30 +852,35 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
 
 <table class="table table-bordered">
   <thead>
-    <tr><th>Sensor type</th><th>Allowed state</th><th>type</th></tr>
+    <tr><th>Sensor type</th><th>Allowed state</th><th>Type</th></tr>
   </thead>
   <tbody>
     <tr>
-      <td>CLIPSwitch</td>
-      <td>buttonevent</td>
-      <td>Number</td>
-    </tr>
-     <tr>
-      <td>CLIPOpenClose</td>
-      <td>open</td>
+      <td>CLIPAlarm</td>
+      <td>alarm</td>
       <td>Bool</td>
     </tr>
-     <tr>
-      <td>CLIPPresence</td>
-      <td>presence</td>
+    <tr>
+      <td>CLIPBattery</td>
+      <td>battery</td>
+      <td>Number (uint8)</td>
+    </tr>
+    <tr>
+      <td>CLIPCarbonMonoxide</td>
+      <td>carbonmonoxide</td>
       <td>Bool</td>
     </tr>
-     <tr>
-      <td>CLIPTemperature</td>
-      <td>temperature</td>
-      <td>Number</td>
+    <tr>
+      <td>CLIPConsumption</td>
+      <td>consumption</td>
+      <td>Number (uint64)</td>
     </tr>
-     <tr>
+    <tr>
+      <td>CLIPFire</td>
+      <td>fire</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
       <td>CLIPGenericFlag</td>
       <td>flag</td>
       <td>Bool</td>
@@ -883,12 +888,102 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
      <tr>
       <td>CLIPGenericStatus</td>
       <td>status</td>
-      <td>Number</td>
+      <td>Int32</td>
     </tr>
-     <tr>
+    <tr>
       <td>CLIPHumidity</td>
       <td>humidity</td>
-      <td>Number</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td>CLIPLightLevel</td>
+      <td>lightlevel</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lux</td>
+      <td>Uint32</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>dark</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>daylight</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tholddark</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tholddarkoffset</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td>CLIPOpenClose</td>
+      <td>open</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>CLIPPower</td>
+      <td>power</td>
+      <td>Int16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>voltage</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>current</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td>CLIPPresence</td>
+      <td>presence</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>duration</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td>CLIPPressure</td>
+      <td>pressure</td>
+      <td>Int16</td>
+    </tr>
+    <tr>
+      <td>CLIPSwitch</td>
+      <td>buttonevent</td>
+      <td>Uint32</td>
+    </tr>
+    <tr>
+      <td>CLIPTemperature</td>
+      <td>temperature</td>
+      <td>Int16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>offset</td>
+      <td>Int16</td>
+    </tr>
+    <tr>
+      <td>CLIPVibration</td>
+      <td>vibration</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>CLIPWater</td>
+      <td>water</td>
+      <td>Bool</td>
     </tr>
   </tbody>
 </table>
