@@ -213,7 +213,7 @@ New apps should use `xy` instead.
             </td>
         </tr>
         <tr>
-            <td>`r`</td>
+            <td>r</td>
             <td>String</td>
             <td>
                 The resource type to which the message belongs:
@@ -281,7 +281,7 @@ New apps should use `xy` instead.
             <td>The full light resource.<br>Only for <code>added</code> events of a light resource.</td>
         </tr>
         <tr>
-            <td>`sensor`</td>
+            <td>sensor</td>
             <td>Map</td>
             <td>The full sensor resource.<br>Only for <code>added</code> events of a sensor resource.</td>
         </tr>
