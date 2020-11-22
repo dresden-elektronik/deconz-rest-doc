@@ -23,9 +23,8 @@ nav:
       - endpoints/rules/index.md
       - endpoints/scenes/index.md
       - endpoints/schedules/index.md
-      - Sensors:
-        - endpoints/sensors/index.md
-        - endpoints/sensors/button_maps.md
+      - Sensors: endpoints/sensors/index.md
+      - 'Button Events': endpoints/sensors/button_events.md
       - endpoints/touchlink/index.md
       - endpoints/websocket/index.md
     - Misc:

@@ -36,36 +36,57 @@ actionNames = {
     "S_BUTTON_ACTION_MANY_PRESS": "Many press"
 }
 
-print("# Button Maps\n")
+print("# Button Events\n")
 print("This page was auto generated from [button_maps.json](" + url + ")\n")
-print('The following sections enumerate supported values for `state.buttonevent` for sensors of type ZHASwitch.\n')
+print('The following sections enumerate supported values for `state.buttonevent` for [/sensors](../../sensors) of type ZHASwitch.\n')
 
 
-def print_button(btnArr, buttons, actions, acc):
+def print_button(btnArr, buttons, buttons1, actions, acc):
 	btn = btnArr[5] # button ref in array
 	action = btnArr[6] # action ref in array
 
+    #"buttons": [
+    #    {"S_BUTTON_1": "Top left button"},
+    #    {"S_BUTTON_2": "Bottom left button"},
+    #    {"S_BUTTON_3": "Top right button"},
+    #    {"S_BUTTON_4": "Bottom right button"}
+    #]
 
 
 	if "S_BUTTON" in btn and "_ACTION_" in action and action in actionNames:
 		val = buttons[btn] | actions[action]
+
+		extra = "Button {0}".format(int(buttons[btn] / 1000))  # 4000 --> 4
+
+		if buttons1:
+			for x in buttons1:
+				if btn in x:
+					extra = x[btn]
+
 		if val not in acc:
 			acc.append(val)
-			print("| {0:14d} | {1:<34s} |".format(val, actionNames[action])) # btnArr[-1]
+			print("| {0:14d} | {1:16s} | {2:<24s} |".format(val, actionNames[action], extra)) # btnArr[-1]
 
 	return acc
 
 
 def print_buttons(key, rsp):
 
-	print("| {0:<14s} | {1:<34s} |".format("Value", "Description"))
-	print("|----------------|------------------------------------|")
+	print("| {0:<14s} | {1:<16s} | {2:<24s} |".format("Value", "Action", "Button"))
+	print("|----------------|------------------|--------------------------|")
 
 	acc = []
 
+	obj = rsp["maps"][key]
 
-	for btn in rsp["maps"][key]["map"]:
-		acc = print_button(btn, rsp["buttons"], rsp["buttonActions"], acc)
+	buttons1 = [ ]
+	if "buttons" in obj:
+		buttons1 = obj["buttons"];
+
+
+	for btn in obj["map"]:
+
+		acc = print_button(btn, rsp["buttons"], buttons1, rsp["buttonActions"], acc)
 
 	print('\n')
 
