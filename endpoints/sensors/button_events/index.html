@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Button Maps - deCONZ REST-API</title>
+  <title>Button Events - deCONZ REST-API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Button Maps";
-    var mkdocs_page_input_path = "endpoints/sensors/button_maps.md";
+    var mkdocs_page_name = "Button Events";
+    var mkdocs_page_input_path = "endpoints/sensors/button_events.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -71,106 +71,102 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../schedules/">Schedules</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Sensors</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../">Sensors</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Button Events</a>
     <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../">Sensors</a>
-                </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Button Maps</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#dresden-elektronik-lighting-switch">dresden elektronik Lighting Switch</a>
+    <li class="toctree-l2"><a class="reference internal" href="#dresden-elektronik-lighting-switch">dresden elektronik Lighting Switch</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#dresden-elektronik-scene-switch">dresden elektronik Scene Switch</a>
+    <li class="toctree-l2"><a class="reference internal" href="#dresden-elektronik-scene-switch">dresden elektronik Scene Switch</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#gira-jung-switches-and-remotes">GIRA / JUNG Switches and remotes</a>
+    <li class="toctree-l2"><a class="reference internal" href="#gira-jung-switches-and-remotes">GIRA / JUNG Switches and remotes</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ikea-tradfri-onoff-switch">IKEA TRÅDFRI on/off switch</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ikea-tradfri-onoff-switch">IKEA TRÅDFRI on/off switch</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ikea-tradfri-openclose-remote">IKEA TRÅDFRI open/close remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ikea-tradfri-openclose-remote">IKEA TRÅDFRI open/close remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ikea-tradfri-round-5-button-remote">IKEA TRÅDFRI round 5 button remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ikea-tradfri-round-5-button-remote">IKEA TRÅDFRI round 5 button remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#osram-lightify-switch-mini">OSRAM Lightify Switch Mini</a>
+    <li class="toctree-l2"><a class="reference internal" href="#osram-lightify-switch-mini">OSRAM Lightify Switch Mini</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#osram-lightify-4-button-remote-1">OSRAM Lightify 4 button remote (1)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#osram-lightify-4-button-remote-1">OSRAM Lightify 4 button remote (1)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#osram-lightify-4-button-remote-2">OSRAM Lightify 4 button remote (2)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#osram-lightify-4-button-remote-2">OSRAM Lightify 4 button remote (2)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ikea-tradfri-dimmer">IKEA TRÅDFRI dimmer</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ikea-tradfri-dimmer">IKEA TRÅDFRI dimmer</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ikea-tradfri-motion-sensor">IKEA TRÅDFRI motion sensor</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ikea-tradfri-motion-sensor">IKEA TRÅDFRI motion sensor</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ikea-symfonisk-remote">IKEA SYMFONISK remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ikea-symfonisk-remote">IKEA SYMFONISK remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#busch-jaeger-switches">Busch-Jaeger Switches</a>
+    <li class="toctree-l2"><a class="reference internal" href="#busch-jaeger-switches">Busch-Jaeger Switches</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#trust-zyct-202-remote">Trust ZYCT-202 remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#trust-zyct-202-remote">Trust ZYCT-202 remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#xiaomi-wxkg11lm-remote">Xiaomi WXKG11LM remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#xiaomi-wxkg11lm-remote">Xiaomi WXKG11LM remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#xiaomi-wxkg01lm-remote">Xiaomi WXKG01LM remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#xiaomi-wxkg01lm-remote">Xiaomi WXKG01LM remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#xiaomi-vibration-sensor">Xiaomi Vibration sensor</a>
+    <li class="toctree-l2"><a class="reference internal" href="#xiaomi-vibration-sensor">Xiaomi Vibration sensor</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ubisys-universal-dimmer-d1-and-power-switch-s1">Ubisys Universal dimmer D1 and power switch S1</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ubisys-universal-dimmer-d1-and-power-switch-s1">Ubisys Universal dimmer D1 and power switch S1</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ubisys-control-unit-c4">Ubisys Control unit C4</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ubisys-control-unit-c4">Ubisys Control unit C4</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ubisys-power-switch-s2">Ubisys Power switch S2</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ubisys-power-switch-s2">Ubisys Power switch S2</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#lutron-lzl4bwhl-remote">Lutron LZL4BWHL remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#lutron-lzl4bwhl-remote">Lutron LZL4BWHL remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#lutron-z3-1brl-remote">Lutron Z3-1BRL remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#lutron-z3-1brl-remote">Lutron Z3-1BRL remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#innr-rc-110-remote">Innr RC 110 remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#innr-rc-110-remote">Innr RC 110 remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#icasa-iczb-kpd1-remote">iCasa ICZB-KPD1 remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#icasa-iczb-kpd1-remote">iCasa ICZB-KPD1 remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#icasa-remotes">iCasa Remotes</a>
+    <li class="toctree-l2"><a class="reference internal" href="#icasa-remotes">iCasa Remotes</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#samjin-remote">Samjin Remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#samjin-remote">Samjin Remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#sunricher-cct-remote">Sunricher CCT remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#sunricher-cct-remote">Sunricher CCT remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#rgbgenie-micro-remote-zb-5121">RGBgenie Micro remote ZB-5121</a>
+    <li class="toctree-l2"><a class="reference internal" href="#rgbgenie-micro-remote-zb-5121">RGBgenie Micro remote ZB-5121</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#sunricher-remotes">Sunricher Remotes</a>
+    <li class="toctree-l2"><a class="reference internal" href="#sunricher-remotes">Sunricher Remotes</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#tuya-3-gang-remote">Tuya 3-gang remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#tuya-3-gang-remote">Tuya 3-gang remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#legrand-remote-switch">Legrand Remote switch</a>
+    <li class="toctree-l2"><a class="reference internal" href="#legrand-remote-switch">Legrand Remote switch</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#legrand-double-remote-switch">Legrand Double remote switch</a>
+    <li class="toctree-l2"><a class="reference internal" href="#legrand-double-remote-switch">Legrand Double remote switch</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#xiaomi-aqara-opple-switches">Xiaomi Aqara Opple switches</a>
+    <li class="toctree-l2"><a class="reference internal" href="#xiaomi-aqara-opple-switches">Xiaomi Aqara Opple switches</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#legrand-shutter-switch-remote">Legrand Shutter switch remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#legrand-shutter-switch-remote">Legrand Shutter switch remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#legrand-remote-toggle-switch">Legrand Remote toggle switch</a>
+    <li class="toctree-l2"><a class="reference internal" href="#legrand-remote-toggle-switch">Legrand Remote toggle switch</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#legrand-remote-motion-sensor">Legrand Remote motion sensor</a>
+    <li class="toctree-l2"><a class="reference internal" href="#legrand-remote-motion-sensor">Legrand Remote motion sensor</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#bitron-4-button-remote-90201023">Bitron 4 button remote 902010/23</a>
+    <li class="toctree-l2"><a class="reference internal" href="#bitron-4-button-remote-90201023">Bitron 4 button remote 902010/23</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#heiman-smart-controller-hs1rc-m-and-hs1rc-e">Heiman Smart controller HS1RC-M and HS1RC-E</a>
+    <li class="toctree-l2"><a class="reference internal" href="#heiman-smart-controller-hs1rc-m-and-hs1rc-e">Heiman Smart controller HS1RC-M and HS1RC-E</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#tint-remote">Tint Remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#tint-remote">Tint Remote</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#sage-door-bell">Sage Door bell</a>
+    <li class="toctree-l2"><a class="reference internal" href="#sage-door-bell">Sage Door bell</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#sonoff-switch-snzb-01">Sonoff Switch SNZB-01</a>
+    <li class="toctree-l2"><a class="reference internal" href="#sonoff-switch-snzb-01">Sonoff Switch SNZB-01</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#yphix-rgb-wall-switch">YPHIX RGB wall switch</a>
+    <li class="toctree-l2"><a class="reference internal" href="#yphix-rgb-wall-switch">YPHIX RGB wall switch</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#yphix-k2-wall-switch">YPHIX K2 wall switch</a>
+    <li class="toctree-l2"><a class="reference internal" href="#yphix-k2-wall-switch">YPHIX K2 wall switch</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ecosmartlds-4-button-cct-switch">EcoSmart/LDS 4 button CCT switch</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ecosmartlds-4-button-cct-switch">EcoSmart/LDS 4 button CCT switch</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#linkind-1-button-remote-zs232000178">Linkind 1 button remote ZS232000178</a>
+    <li class="toctree-l2"><a class="reference internal" href="#linkind-1-button-remote-zs232000178">Linkind 1 button remote ZS232000178</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#iluminize-4-button-cct-touch-remote">Iluminize 4 button CCT touch remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#iluminize-4-button-cct-touch-remote">Iluminize 4 button CCT touch remote</a>
     </li>
-    </ul>
-                </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../touchlink/">Touchlink</a>
@@ -210,18 +206,14 @@
     
       
         
-          <li>Sensors &raquo;</li>
-        
-      
-        
           <li>API Endpoints &raquo;</li>
         
       
     
-    <li>Button Maps</li>
+    <li>Button Events</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/endpoints/sensors/button_maps.md"
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/endpoints/sensors/button_events.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -232,9 +224,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="button-maps">Button Maps<a class="headerlink" href="#button-maps" title="Permanent link">&para;</a></h1>
+                <h1 id="button-events">Button Events<a class="headerlink" href="#button-events" title="Permanent link">&para;</a></h1>
 <p>This page was auto generated from <a href="https://raw.githubusercontent.com/manup/deconz-rest-plugin/button_maps/button_maps.json">button_maps.json</a></p>
-<p>The following sections enumerate supported values for <code>state.buttonevent</code> for sensors of type ZHASwitch.</p>
+<p>The following sections enumerate supported values for <code>state.buttonevent</code> for <a href="../../sensors">/sensors</a> of type ZHASwitch.</p>
 <h2 id="dresden-elektronik-lighting-switch">dresden elektronik Lighting Switch<a class="headerlink" href="#dresden-elektronik-lighting-switch" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
@@ -647,47 +639,47 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Button 1</td>
+<td>Up button</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Button 1</td>
+<td>Up button</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Button 1</td>
+<td>Up button</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Button 3</td>
+<td>Middle button</td>
 </tr>
 <tr>
 <td>3001</td>
 <td>Hold</td>
-<td>Button 3</td>
+<td>Middle button</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>Button 3</td>
+<td>Middle button</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Button 2</td>
+<td>Down button</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Button 2</td>
+<td>Down button</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Button 2</td>
+<td>Down button</td>
 </tr>
 </tbody>
 </table>
@@ -710,62 +702,62 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Button 1</td>
+<td>Top left button</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Button 1</td>
+<td>Top left button</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Button 1</td>
+<td>Top left button</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Button 2</td>
+<td>Top right button</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Button 2</td>
+<td>Top right button</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Button 2</td>
+<td>Top right button</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Button 3</td>
+<td>Bottom left button</td>
 </tr>
 <tr>
 <td>3001</td>
 <td>Hold</td>
-<td>Button 3</td>
+<td>Bottom left button</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>Button 3</td>
+<td>Bottom left button</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>Button 4</td>
+<td>Bottom right button</td>
 </tr>
 <tr>
 <td>4001</td>
 <td>Hold</td>
-<td>Button 4</td>
+<td>Bottom right button</td>
 </tr>
 <tr>
 <td>4003</td>
 <td>Long release</td>
-<td>Button 4</td>
+<td>Bottom right button</td>
 </tr>
 </tbody>
 </table>
@@ -787,62 +779,62 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Button 1</td>
+<td>Top left button</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Button 1</td>
+<td>Top left button</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Button 1</td>
+<td>Top left button</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Button 2</td>
+<td>Top right button</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Button 2</td>
+<td>Top right button</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Button 2</td>
+<td>Top right button</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Button 3</td>
+<td>Bottom left button</td>
 </tr>
 <tr>
 <td>3001</td>
 <td>Hold</td>
-<td>Button 3</td>
+<td>Bottom left button</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>Button 3</td>
+<td>Bottom left button</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>Button 4</td>
+<td>Bottom right button</td>
 </tr>
 <tr>
 <td>4001</td>
 <td>Hold</td>
-<td>Button 4</td>
+<td>Bottom right button</td>
 </tr>
 <tr>
 <td>4003</td>
 <td>Long release</td>
-<td>Button 4</td>
+<td>Bottom right button</td>
 </tr>
 </tbody>
 </table>
