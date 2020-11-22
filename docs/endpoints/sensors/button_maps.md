@@ -15,38 +15,18 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | On                                 |
-|           2002 | Off                                |
-|           1001 | Dimm up                            |
-|           1003 | Dimm stop                          |
-|           2001 | Dimm down                          |
-|           2003 | Dimm stop                          |
-|           3002 | On                                 |
-|           4002 | Off                                |
-|           3001 | Dimm up                            |
-|           3003 | Dimm stop                          |
-|           4001 | Dimm down                          |
-|           4003 | Dimm stop                          |
-|           1002 | On                                 |
-|           2002 | Off                                |
-|           1001 | Dimm up                            |
-|           1003 | Dimm stop                          |
-|           2001 | Dimm down                          |
-|           2003 | Dimm stop                          |
-|           3002 | Recall scene 1                     |
-|           4002 | Recall scene 4                     |
-|           1002 | On                                 |
-|           2002 | Off                                |
-|           1001 | Dimm up                            |
-|           1003 | Dimm stop                          |
-|           2001 | Dimm down                          |
-|           2003 | Dimm stop                          |
-|           3002 | Color temperature move up          |
-|           4002 | Color temperature move down        |
-|           3001 | Color temperature move up hold     |
-|           4001 | Color temperature move down hold   |
-|           3003 | Color temperature move up stop     |
-|           4003 | Color temperature move down stop   |
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           4002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
 
 
 ## dresden elektronik Scene Switch
@@ -60,16 +40,16 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | On                                 |
-|           2002 | Off                                |
-|           1001 | Dimm up                            |
-|           1003 | Dimm up stop                       |
-|           2001 | Dimm down                          |
-|           2003 | Dimm down stop                     |
-|           3002 | Recall scene 1                     |
-|           4002 | Recall scene 2                     |
-|           5002 | Recall scene 3                     |
-|           6002 | Recall scene 4                     |
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           4002 | Short release                      |
+|           5002 | Short release                      |
+|           6002 | Short release                      |
 
 
 ## GIRA / JUNG Switches and remotes
@@ -85,18 +65,18 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Off with effect                    |
-|           2002 | On                                 |
-|           2001 | Dimm up                            |
-|           2003 | Dimm up stop                       |
-|           1001 | Dimm down                          |
-|           1003 | Dimm down stop                     |
-|           3002 | Recall scene 0                     |
-|           4002 | Recall scene 1                     |
-|           5002 | Recall scene 2                     |
-|           6002 | Recall scene 3                     |
-|           7002 | Recall scene 4                     |
-|           8002 | Recall scene 5                     |
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           3002 | Short release                      |
+|           4002 | Short release                      |
+|           5002 | Short release                      |
+|           6002 | Short release                      |
+|           7002 | Short release                      |
+|           8002 | Short release                      |
 
 
 ## IKEA TRÅDFRI on/off switch
@@ -110,12 +90,12 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | On                                 |
-|           2002 | Off                                |
-|           1001 | Move up (with on/off)              |
-|           2001 | Move down                          |
-|           1003 | Stop (with on/off)                 |
-|           2003 | Stop                               |
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           1001 | Hold                               |
+|           2001 | Hold                               |
+|           1003 | Long release                       |
+|           2003 | Long release                       |
 
 
 ## IKEA TRÅDFRI open/close remote
@@ -129,10 +109,10 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Open                               |
-|           1003 | Stop                               |
-|           2002 | Close                              |
-|           2003 | Stop                               |
+|           1002 | Short release                      |
+|           1003 | Long release                       |
+|           2002 | Short release                      |
+|           2003 | Long release                       |
 
 
 ## IKEA TRÅDFRI round 5 button remote
@@ -146,20 +126,20 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Toggle                             |
-|           1001 | Setup 10s                          |
-|           2002 | Step up (with on/off)              |
-|           2001 | Move up (with on/off)              |
-|           2003 | Stop_ (with on/off)                |
-|           3002 | Step down                          |
-|           3001 | Move down                          |
-|           3003 | Stop                               |
-|           4002 | Step ct colder                     |
-|           4001 | Move ct colder                     |
-|           4003 | Stop ct colder                     |
-|           5002 | Step ct warmer                     |
-|           5001 | Move ct warmer                     |
-|           5003 | Stop ct warmer                     |
+|           1002 | Short release                      |
+|           1001 | Hold                               |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
+|           5002 | Short release                      |
+|           5001 | Hold                               |
+|           5003 | Long release                       |
 
 
 ## OSRAM Lightify Switch Mini
@@ -173,15 +153,15 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Up short press                     |
-|           1001 | Up long press                      |
-|           1003 | Up long release                    |
-|           3002 | 0 short press                      |
-|           3001 | 0 long press                       |
-|           3003 | 0 long release                     |
-|           2002 | Down short press                   |
-|           2001 | Down long press                    |
-|           2003 | Down long release                  |
+|           1002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
 
 
 ## OSRAM Lightify 4 button remote (1)
@@ -196,18 +176,18 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | UL short press                     |
-|           1001 | UL long press                      |
-|           1003 | UL long release                    |
-|           2002 | UR short press                     |
-|           2001 | UR long press                      |
-|           2003 | UR long release                    |
-|           3002 | LL short press                     |
-|           3001 | LL long press                      |
-|           3003 | LL long release                    |
-|           4002 | LR short press                     |
-|           4001 | LR long press                      |
-|           4003 | LR long release                    |
+|           1002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
 
 
 ## OSRAM Lightify 4 button remote (2)
@@ -221,18 +201,18 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | UL short press                     |
-|           1001 | UL long press                      |
-|           1003 | UL long release                    |
-|           2002 | UR short press                     |
-|           2001 | UR long press                      |
-|           2003 | UR long release                    |
-|           3002 | LL short press                     |
-|           3001 | LL long press                      |
-|           3003 | LL long release                    |
-|           4002 | LR short press                     |
-|           4001 | LR long press                      |
-|           4003 | LR long release                    |
+|           1002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
 
 
 ## IKEA TRÅDFRI dimmer
@@ -246,10 +226,10 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Move to level 255 (with on/off)    |
-|           2002 | Move up (with on/off)              |
-|           3002 | Move down                          |
-|           4002 | Move to level 0 (with on/off)      |
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           3002 | Short release                      |
+|           4002 | Short release                      |
 
 
 ## IKEA TRÅDFRI motion sensor
@@ -263,7 +243,7 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | On with timed off                  |
+|           1002 | Short release                      |
 
 
 ## IKEA SYMFONISK remote
@@ -277,18 +257,15 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Toggle                             |
-|           1004 | Step Up                            |
-|           1005 | Step Down                          |
-|           1002 | Toggle                             |
-|           1004 | Step Up                            |
-|           1005 | Step Down                          |
-|           2001 | Move Up                            |
-|           2003 | Stop                               |
-|           2002 | Move Up                            |
-|           3001 | Move Down                          |
-|           3003 | Stop                               |
-|           3002 | Move Down                          |
+|           1002 | Short release                      |
+|           1004 | Double press                       |
+|           1005 | Treeble press                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           2002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           3002 | Short release                      |
 
 
 ## Busch-Jaeger Switches
@@ -303,60 +280,30 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Off                                |
-|           1001 | Step down                          |
-|           1003 | Stop                               |
-|           2002 | On                                 |
-|           2001 | Step up (with on/off)              |
-|           2003 | Stop                               |
-|           3002 | Off                                |
-|           3001 | Step down                          |
-|           3003 | Stop                               |
-|           3002 | Recall scene 3                     |
-|           4002 | On                                 |
-|           4001 | Step up (with on/off)              |
-|           4003 | Stop                               |
-|           4002 | Recall scene 4                     |
-|           5002 | Off                                |
-|           5001 | Step down                          |
-|           5003 | Stop                               |
-|           5002 | Recall scene 5                     |
-|           6002 | On                                 |
-|           6001 | Step up (with on/off)              |
-|           6003 | Stop                               |
-|           6002 | Recall scene 6                     |
-|           7002 | Off                                |
-|           7001 | Step down                          |
-|           7003 | Stop                               |
-|           7002 | Recall scene 7                     |
-|           8002 | On                                 |
-|           8001 | Step up (with on/off)              |
-|           8003 | Stop                               |
-|           8002 | Recall scene 8                     |
-|           1002 | Off                                |
-|           1001 | Step down                          |
-|           1003 | Stop                               |
-|           2002 | On                                 |
-|           2001 | Step up (with on/off)              |
-|           2003 | Stop                               |
-|           3002 | Off                                |
-|           3001 | Step down                          |
-|           3003 | Stop                               |
-|           4002 | On                                 |
-|           4001 | Step up (with on/off)              |
-|           4003 | Stop                               |
-|           5002 | Off                                |
-|           5001 | Step down                          |
-|           5003 | Stop                               |
-|           6002 | On                                 |
-|           6001 | Step up (with on/off)              |
-|           6003 | Stop                               |
-|           7002 | Off                                |
-|           7001 | Step down                          |
-|           7003 | Stop                               |
-|           8002 | On                                 |
-|           8001 | Step up (with on/off)              |
-|           8003 | Stop                               |
+|           1002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
+|           5002 | Short release                      |
+|           5001 | Hold                               |
+|           5003 | Long release                       |
+|           6002 | Short release                      |
+|           6001 | Hold                               |
+|           6003 | Long release                       |
+|           7002 | Short release                      |
+|           7001 | Hold                               |
+|           7003 | Long release                       |
+|           8002 | Short release                      |
+|           8001 | Hold                               |
+|           8003 | Long release                       |
 
 
 ## Trust ZYCT-202 remote
@@ -370,12 +317,12 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | On                                 |
-|           2001 | Dimm up                            |
-|           2003 | Dimm up stop                       |
-|           3001 | Dimm down                          |
-|           3003 | Dimm down stop                     |
-|           4002 | Off                                |
+|           1002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
 
 
 ## Xiaomi WXKG11LM remote
@@ -389,10 +336,10 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Normal press                       |
+|           1002 | Short release                      |
 |           1004 | Double press                       |
-|           1005 | Triple press                       |
-|           1006 | Quad press                         |
+|           1005 | Treeble press                      |
+|           1006 | Quadruple press                    |
 
 
 ## Xiaomi WXKG01LM remote
@@ -406,13 +353,12 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1000 | Normal press                       |
-|           1002 | Normal release                     |
+|           1000 | Initial press                      |
+|           1002 | Short release                      |
 |           1003 | Long release                       |
 |           1004 | Double press                       |
-|           1005 | Triple press                       |
-|           1006 | Quad press                         |
-|           1002 | Many press                         |
+|           1005 | Treeble press                      |
+|           1006 | Quadruple press                    |
 
 
 ## Xiaomi Vibration sensor
@@ -443,16 +389,12 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Toggle                             |
-|           1001 | Move up (with on/off)              |
-|           1003 | Stop_ (with on/off)                |
-|           1001 | Move down (with on/off)            |
-|           1003 | Stop_ (with on/off)                |
-|           2002 | Toggle                             |
-|           2001 | Move up (with on/off)              |
-|           2003 | Stop_ (with on/off)                |
-|           2001 | Move down (with on/off)            |
-|           2003 | Stop_ (with on/off)                |
+|           1002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
 
 
 ## Ubisys Control unit C4
@@ -466,26 +408,18 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Toggle                             |
-|           1001 | Move up (with on/off)              |
-|           1003 | Stop_ (with on/off)                |
-|           1001 | Move down (with on/off)            |
-|           1003 | Stop_ (with on/off)                |
-|           2002 | Toggle                             |
-|           2001 | Move up (with on/off)              |
-|           2003 | Stop_ (with on/off)                |
-|           2001 | Move down (with on/off)            |
-|           2003 | Stop_ (with on/off)                |
-|           3002 | Toggle                             |
-|           3001 | Move up (with on/off)              |
-|           3003 | Stop_ (with on/off)                |
-|           3001 | Move down (with on/off)            |
-|           3003 | Stop_ (with on/off)                |
-|           4002 | Toggle                             |
-|           4001 | Move up (with on/off)              |
-|           4003 | Stop_ (with on/off)                |
-|           4001 | Move down (with on/off)            |
-|           4003 | Stop_ (with on/off)                |
+|           1002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
 
 
 ## Ubisys Power switch S2
@@ -499,16 +433,12 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Toggle                             |
-|           1001 | Move up (with on/off)              |
-|           1003 | Stop_ (with on/off)                |
-|           1001 | Move down (with on/off)            |
-|           1003 | Stop_ (with on/off)                |
-|           2002 | Toggle                             |
-|           2001 | Move up (with on/off)              |
-|           2003 | Stop_ (with on/off)                |
-|           2001 | Move down (with on/off)            |
-|           2003 | Stop_ (with on/off)                |
+|           1002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
 
 
 ## Lutron LZL4BWHL remote
@@ -522,12 +452,12 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | on                                 |
-|           2001 | dimm up                            |
-|           2003 | dimm up release                    |
-|           3001 | dimm down                          |
-|           3003 | dimm down release                  |
-|           4002 | off                                |
+|           1002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
 
 
 ## Lutron Z3-1BRL remote
@@ -541,9 +471,9 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Toggle                             |
-|           2002 | DimUp                              |
-|           3002 | DimDown                            |
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           3002 | Short release                      |
 
 
 ## Innr RC 110 remote
@@ -557,68 +487,61 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | OnOff                              |
-|           1002 | OnOff                              |
-|           2001 | DimUp                              |
-|           2002 | DimUp                              |
-|           2003 | DimUp                              |
-|           3001 | DimDown                            |
-|           3002 | DimDown                            |
-|           3003 | DimDown                            |
-|           4002 | 1                                  |
-|           5002 | 2                                  |
-|           6002 | 3                                  |
-|           7002 | 4                                  |
-|           8002 | 5                                  |
-|           9002 | 6                                  |
-|          10002 | OnOff 1                            |
-|          10002 | OnOff 1                            |
-|          11001 | DimUp 1                            |
-|          11002 | DimUp 1                            |
-|          11003 | DimUp 1                            |
-|          12001 | DimDown 1                          |
-|          12002 | DimDown 1                          |
-|          12003 | DimDown 1                          |
-|          13002 | OnOff 2                            |
-|          13002 | OnOff 2                            |
-|          14001 | DimUp 2                            |
-|          14002 | DimUp 2                            |
-|          14003 | DimUp 2                            |
-|          15001 | DimDown 2                          |
-|          15002 | DimDown 2                          |
-|          15003 | DimDown 2                          |
-|          16002 | OnOff 3                            |
-|          16002 | OnOff 3                            |
-|          17001 | DimUp 3                            |
-|          17002 | DimUp 3                            |
-|          17003 | DimUp 3                            |
-|          18001 | DimDown 3                          |
-|          18002 | DimDown 3                          |
-|          18003 | DimDown 3                          |
-|          19002 | OnOff 4                            |
-|          19002 | OnOff 4                            |
-|          20001 | DimUp 4                            |
-|          20002 | DimUp 4                            |
-|          20003 | DimUp 4                            |
-|          21001 | DimDown 4                          |
-|          21002 | DimDown 4                          |
-|          21003 | DimDown 4                          |
-|          22002 | OnOff 5                            |
-|          22002 | OnOff 5                            |
-|          23001 | DimUp 5                            |
-|          23002 | DimUp 5                            |
-|          23003 | DimUp 5                            |
-|          24001 | DimDown 5                          |
-|          24002 | DimDown 5                          |
-|          24003 | DimDown 5                          |
-|          25002 | OnOff 6                            |
-|          25002 | OnOff 6                            |
-|          26001 | DimUp 6                            |
-|          26002 | DimUp 6                            |
-|          26003 | DimUp 6                            |
-|          27001 | DimDown 6                          |
-|          27002 | DimDown 6                          |
-|          27003 | DimDown 6                          |
+|           1002 | Short release                      |
+|           2001 | Hold                               |
+|           2002 | Short release                      |
+|           2003 | Long release                       |
+|           3001 | Hold                               |
+|           3002 | Short release                      |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           5002 | Short release                      |
+|           6002 | Short release                      |
+|           7002 | Short release                      |
+|           8002 | Short release                      |
+|           9002 | Short release                      |
+|          10002 | Short release                      |
+|          11001 | Hold                               |
+|          11002 | Short release                      |
+|          11003 | Long release                       |
+|          12001 | Hold                               |
+|          12002 | Short release                      |
+|          12003 | Long release                       |
+|          13002 | Short release                      |
+|          14001 | Hold                               |
+|          14002 | Short release                      |
+|          14003 | Long release                       |
+|          15001 | Hold                               |
+|          15002 | Short release                      |
+|          15003 | Long release                       |
+|          16002 | Short release                      |
+|          17001 | Hold                               |
+|          17002 | Short release                      |
+|          17003 | Long release                       |
+|          18001 | Hold                               |
+|          18002 | Short release                      |
+|          18003 | Long release                       |
+|          19002 | Short release                      |
+|          20001 | Hold                               |
+|          20002 | Short release                      |
+|          20003 | Long release                       |
+|          21001 | Hold                               |
+|          21002 | Short release                      |
+|          21003 | Long release                       |
+|          22002 | Short release                      |
+|          23001 | Hold                               |
+|          23002 | Short release                      |
+|          23003 | Long release                       |
+|          24001 | Hold                               |
+|          24002 | Short release                      |
+|          24003 | Long release                       |
+|          25002 | Short release                      |
+|          26001 | Hold                               |
+|          26002 | Short release                      |
+|          26003 | Long release                       |
+|          27001 | Hold                               |
+|          27002 | Short release                      |
+|          27003 | Long release                       |
 
 
 ## iCasa ICZB-KPD1 remote
@@ -632,24 +555,24 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Off                                |
-|           1001 | Move down (with on/off)            |
-|           1003 | Stop_ (with on/off)                |
-|           2002 | On                                 |
-|           2001 | Move up (with on/off)              |
-|           2003 | Stop_ (with on/off)                |
-|           3002 | Recall scene 1                     |
-|           3003 | Store scene 1                      |
-|           4002 | Recall scene 2                     |
-|           4003 | Store scene 2                      |
-|           5002 | Recall scene 3                     |
-|           5003 | Store scene 3                      |
-|           6002 | Recall scene 4                     |
-|           6003 | Store scene 4                      |
-|           7002 | Recall scene 5                     |
-|           7003 | Store scene 5                      |
-|           8002 | Recall scene 6                     |
-|           8003 | Store scene 6                      |
+|           1002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4003 | Long release                       |
+|           5002 | Short release                      |
+|           5003 | Long release                       |
+|           6002 | Short release                      |
+|           6003 | Long release                       |
+|           7002 | Short release                      |
+|           7003 | Long release                       |
+|           8002 | Short release                      |
+|           8003 | Long release                       |
 
 
 ## iCasa Remotes
@@ -666,32 +589,32 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Off                                |
-|           1001 | Move down (with on/off)            |
-|           1003 | Stop_ (with on/off)                |
-|           2002 | On                                 |
-|           2001 | Move up (with on/off)              |
-|           2003 | Stop_ (with on/off)                |
-|           9002 | Recall scene 1                     |
-|          10002 | Recall scene 2                     |
-|           3002 | Off                                |
-|           3001 | Move down (with on/off)            |
-|           3003 | Stop_ (with on/off)                |
-|           4002 | On                                 |
-|           4001 | Move up (with on/off)              |
-|           4003 | Stop_ (with on/off)                |
-|           5002 | Off                                |
-|           5001 | Move down (with on/off)            |
-|           5003 | Stop_ (with on/off)                |
-|           6002 | On                                 |
-|           6001 | Move up (with on/off)              |
-|           6003 | Stop_ (with on/off)                |
-|           7002 | Off                                |
-|           7001 | Move down (with on/off)            |
-|           7003 | Stop_ (with on/off)                |
-|           8002 | On                                 |
-|           8001 | Move up (with on/off)              |
-|           8003 | Stop_ (with on/off)                |
+|           1002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           9002 | Short release                      |
+|          10002 | Short release                      |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
+|           5002 | Short release                      |
+|           5001 | Hold                               |
+|           5003 | Long release                       |
+|           6002 | Short release                      |
+|           6001 | Hold                               |
+|           6003 | Long release                       |
+|           7002 | Short release                      |
+|           7001 | Hold                               |
+|           7003 | Long release                       |
+|           8002 | Short release                      |
+|           8001 | Hold                               |
+|           8003 | Long release                       |
 
 
 ## Samjin Remote
@@ -705,8 +628,492 @@ The following sections enumerate supported values for `state.buttonevent` for se
 
 | Value          | Description                        |
 |----------------|------------------------------------|
-|           1002 | Single press                       |
+|           1002 | Short release                      |
 |           1004 | Double press                       |
 |           1001 | Hold                               |
+
+
+## Sunricher CCT remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
+
+
+## RGBgenie Micro remote ZB-5121
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"RGBgenie ZB-5121"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
+|           5002 | Short release                      |
+|           5003 | Long release                       |
+
+
+## Sunricher Remotes
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ED-1001"</li>
+<li>"ZG2833K"</li>
+<li>"ZG2835"</li>
+<li>"45127"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
+|           5002 | Short release                      |
+|           5001 | Hold                               |
+|           5003 | Long release                       |
+|           6002 | Short release                      |
+|           6001 | Hold                               |
+|           6003 | Long release                       |
+|           7002 | Short release                      |
+|           7001 | Hold                               |
+|           7003 | Long release                       |
+|           8002 | Short release                      |
+|           8001 | Hold                               |
+|           8003 | Long release                       |
+
+
+## Tuya 3-gang remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>""</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           1004 | Double press                       |
+|           1003 | Long release                       |
+|           2002 | Short release                      |
+|           2004 | Double press                       |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           3004 | Double press                       |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4004 | Double press                       |
+|           4003 | Long release                       |
+
+
+## Legrand Remote switch
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"Remote switch"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+
+
+## Legrand Double remote switch
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"Double gangs remote switch"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           4002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
+
+
+## Xiaomi Aqara Opple switches
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"lumi.remote.b286opcn01"</li>
+<li>"lumi.remote.b486opcn01"</li>
+<li>"lumi.remote.b686opcn01"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1001 | Hold                               |
+|           1002 | Short release                      |
+|           1004 | Double press                       |
+|           1005 | Treeble press                      |
+|           1003 | Long release                       |
+|           2001 | Hold                               |
+|           2002 | Short release                      |
+|           2004 | Double press                       |
+|           2005 | Treeble press                      |
+|           2003 | Long release                       |
+|           3001 | Hold                               |
+|           3002 | Short release                      |
+|           3004 | Double press                       |
+|           3005 | Treeble press                      |
+|           3003 | Long release                       |
+|           4001 | Hold                               |
+|           4002 | Short release                      |
+|           4004 | Double press                       |
+|           4005 | Treeble press                      |
+|           4003 | Long release                       |
+|           5001 | Hold                               |
+|           5002 | Short release                      |
+|           5004 | Double press                       |
+|           5005 | Treeble press                      |
+|           5003 | Long release                       |
+|           6001 | Hold                               |
+|           6002 | Short release                      |
+|           6004 | Double press                       |
+|           6005 | Treeble press                      |
+|           6003 | Long release                       |
+
+
+## Legrand Shutter switch remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"Shutters central remote switch"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           3002 | Short release                      |
+|           3003 | Long release                       |
+
+
+## Legrand Remote toggle switch
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"Remote toggle switch"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+
+
+## Legrand Remote motion sensor
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"Remote motion sensor"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           3002 | Short release                      |
+
+
+## Bitron 4 button remote 902010/23
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"902010/23"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           3002 | Short release                      |
+|           4002 | Short release                      |
+
+
+## Heiman Smart controller HS1RC-M and HS1RC-E
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"RC_V14"</li>
+<li>"RC-EM"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           3002 | Short release                      |
+|           4002 | Short release                      |
+
+
+## Tint Remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ZBT-Remote-ALL-RGBW"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           5002 | Short release                      |
+|           6002 | Short release                      |
+|           7002 | Short release                      |
+|           8002 | Short release                      |
+|           9002 | Short release                      |
+|          10002 | Short release                      |
+|          11002 | Short release                      |
+|          12002 | Short release                      |
+
+
+## Sage Door bell
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"Bell"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+
+
+## Sonoff Switch SNZB-01
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"WB01"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1004 | Double press                       |
+|           1003 | Long release                       |
+|           1002 | Short release                      |
+
+
+## YPHIX RGB wall switch
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ZGRC-KEY-009"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4002 | Short release                      |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
+|           5002 | Short release                      |
+|           5001 | Hold                               |
+|           5003 | Long release                       |
+|           6002 | Short release                      |
+|           6001 | Hold                               |
+|           6003 | Long release                       |
+|           7002 | Short release                      |
+|           8002 | Short release                      |
+
+
+## YPHIX K2 wall switch
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ZGRC-KEY-007"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+
+
+## EcoSmart/LDS 4 button CCT switch
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ZBT-CCTSwitch-D0001"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+|           3002 | Short release                      |
+|           3001 | Hold                               |
+
+
+## Linkind 1 button remote ZS232000178
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ZBT-DIMSwitch-D0001"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           1001 | Hold                               |
+|           1003 | Long release                       |
+|           2001 | Hold                               |
+|           2003 | Long release                       |
+
+
+## Iluminize 4 button CCT touch remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ZGRC-TEUR-003"</li>
+</ul>
+
+| Value          | Description                        |
+|----------------|------------------------------------|
+|           1002 | Short release                      |
+|           2002 | Short release                      |
+|           3002 | Short release                      |
+|           4002 | Short release                      |
+|           3001 | Hold                               |
+|           3003 | Long release                       |
+|           4001 | Hold                               |
+|           4003 | Long release                       |
+|           5002 | Short release                      |
+|           6002 | Short release                      |
+|           6003 | Long release                       |
+|           7002 | Short release                      |
+|           8002 | Short release                      |
+|           9002 | Short release                      |
+|          10002 | Short release                      |
+|           9001 | Hold                               |
+|           9003 | Long release                       |
+|          10001 | Hold                               |
+|          10003 | Long release                       |
+|          11002 | Short release                      |
+|          12002 | Short release                      |
+|          12003 | Long release                       |
+|          13002 | Short release                      |
+|          14002 | Short release                      |
+|          15002 | Short release                      |
+|          16002 | Short release                      |
+|          15001 | Hold                               |
+|          15003 | Long release                       |
+|          16001 | Hold                               |
+|          16003 | Long release                       |
+|          17002 | Short release                      |
+|          18002 | Short release                      |
+|          18003 | Long release                       |
+|          19002 | Short release                      |
+|          20002 | Short release                      |
+|          21002 | Short release                      |
+|          22002 | Short release                      |
+|          21001 | Hold                               |
+|          21003 | Long release                       |
+|          22001 | Hold                               |
+|          22003 | Long release                       |
+|          23002 | Short release                      |
+|          24002 | Short release                      |
+|          24003 | Long release                       |
 
 
