@@ -396,6 +396,8 @@ Sensors expose certain configuration parameters depending on their defined or kn
 
 ### Parameters
 
+**Important:** Most attributes can be found in [Supported config attributes](#dev-sensor-config-attr)
+
 <table class="table table-bordered">
   <thead>
     <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
@@ -407,14 +409,6 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>The current battery state in percent, only for battery powered devices.</td>
       <td>optional</td>
     </tr>
-
-    <tr>
-      <td>coolsetpoint</td>
-      <td>Number (700&ndash;3500)</td>
-      <td data-since="v2.6.0-beta">Set the desired cooling temperature for thermostats.
-      </td>
-      <td>optional</td>
-    </tr>
     <tr>
       <td>delay</td>
       <td>Number (0&ndash;65535)</td>
@@ -424,59 +418,9 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>optional</td>
     </tr>
     <tr>
-      <td>displayflipped</td>
-      <td>Bool</td>
-      <td>Flip the display for TRVs supporting it.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>duration</td>
-      <td>Number (0&ndash;65535)</td>
-      <td>For ZHAPresence sensors: timeout in seconds presence state is set to false again.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>fanmode</td>
-      <td>String</td>
-      <td data-since="v2.6.0-beta">
-        <p>Sets the mode of the fan.</p>
-        <p>Supported values:</p>
-        <ul class="value-list">
-          <li>"off"</li>
-          <li>"low"</li>
-          <li>"medium"</li>
-          <li>"high"</li>
-          <li>"on"</li>
-          <li>"auto"</li>
-          <li>"smart"</li>
-        </ul>
-
-        Note modes are device dependent and only exposed for devices supporting it.
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>groups</td>
-      <td>Number</td>
-      <td>NOT SETTABLE. Displays the groups associated with the sensor.</td>
-      <td>Display only</td>
-    </tr>
-    <tr>
-      <td>heatsetpoint</td>
-      <td>Number (500&ndash;3200)</td>
-      <td>Set the desired heating temperature for thermostats/TRVs.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
       <td>hostflags</td>
       <td></td>
       <td><mark>todo: describe</mark></td>
-      <td>Display only</td>
-    </tr>
-    <tr>
-      <td>lat</td>
-      <td>Number</td>
-      <td>NOT SETTABLE and exclusively for predefined daylight sensor. Latitude of the set location/timezone.</td>
       <td>Display only</td>
     </tr>
     <tr>
@@ -492,90 +436,9 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>optional</td>
     </tr>
     <tr>
-      <td>locked</td>
-      <td>Bool</td>
-      <td data-since="v2.5.81">Child lock active/inactive for thermostats/TRVs supporting it.
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>long</td>
-      <td>Number</td>
-      <td>NOT SETTABLE and exclusively for predefined daylight sensor. Longitude of the set location/timezone.</td>
-      <td>Display only</td>
-    </tr>
-    <tr>
-      <td>mode</td>
-      <td>String</td>
-      <td>
-        <p>Sets the current operating mode of a thermostat.<p>
-        <p>Supported values:</p>
-        <ul class="value-list">
-          <li>"off"</li>
-          <li>"auto"</li>
-          <li>"cool"</li>
-          <li>"heat"</li>
-          <li>"emergency heating"</li>
-          <li>"precooling"</li>
-          <li>"fan only"</li>
-          <li>"dry"</li>
-          <li>"sleep"</li>
-        </ul>
-        <p>(Supported modes are device dependent)</p>
-
-        <hr/>
-
-        <p>For ubisys S1/S2, operation mode of the switch.</p>
-        <p>Supported values:</p>
-        <ul class="value-list">
-          <li>"momentary"</li>
-          <li>"rocker"</li>
-        </ul>
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>mountingmode</td>
-      <td>Bool</td>
-      <td data-since="v2.5.81">Sets a TRV into mounting mode if supported (valve fully open position).
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>The on/off status of the sensor.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>offset</td>
-      <td>Number (-32768&ndash;32767)</td>
-      <td>Adds a signed offset value to measured temperature and humidity state values. Values send by the REST-API are already amended by the offset.</td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>pending</td>
-      <td>Number</td>
-      <td>NOT SETTABLE. Bitmap of outstanding configuration tasks for a device. A value of "[]" indicates no outstanding tasks.</td>
-      <td>Display only</td>
-    </tr>
-    <tr>
-      <td>preset</td>
-      <td>String</td>
-      <td data-since="v2.5.83">
-        <p>Sets the current operating mode for Tuya thermostats.</p>
-        <p>Supported values:</p>
-        <ul class="value-list">
-          <li>"holiday"</li>
-          <li>"auto"
-          <li>"manual"</li>
-          <li>"comfort"</li>
-          <li>"eco"</li>
-          <li>"boost"</li>
-          <li>"complex"</li>
-        </ul>
-        <p>(Supported modes are device dependent)</p>
-      </td>
       <td>optional</td>
     </tr>
     <tr>
@@ -583,22 +446,7 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>Bool</td>
       <td>The reachable status of the sensor.</td>
       <td>optional</td>
-    </tr>
-    <tr>
-      <td>schedule</td>
-      <td>Array</td>
-      <td>
-        <p>A thermostat schedule.</p>
-        <mark>todo: describe</mark>
-     </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>scheduleon</td>
-      <td>Bool</td>
-      <td>true when a thermostat schedule is enabled.</td>
-      <td>optional</td>
-    </tr>
+    </tr>    
     <tr>
       <td>sensitivity</td>
       <td>Number</td>
@@ -619,103 +467,9 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>optional</td>
     </tr>
     <tr>
-      <td>sunriseoffset</td>
-      <td>Number (-120&ndash;120)</td>
-      <td>NOT SETTABLE and exclusively for predefined daylight sensor. Sunrise offset value for location/timezone in minutes.</td>
-      <td>Display only</td>
-    </tr>
-    <tr>
-      <td>sunsetoffset</td>
-      <td>Number (-120&ndash;120)</td>
-      <td>NOT SETTABLE and exclusively for predefined daylight sensor. Sunset offset value for location/timezone in minutes.</td>
-      <td>Display only</td>
-    </tr>
-    <tr>
-      <td>swingmode</td>
-      <td>String</td>
-      <td data-since="v2.6.0-beta">
-        <p>Sets the AC louvers position.</p>
-        <p>Supported values:</p>
-        <ul class="value-list">
-          <li>"fully closed"</li>
-          <li>"fully open"</li>
-          <li>"quarter open"</li>
-          <li>"half open"</li>
-          <li>"three quarters open"</li>
-        </ul>
-        (exposed for thermostats supporting it)
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>temperature</td>
-      <td>Number (-27315&ndash;32767)</td>
-      <td>
-        <p>NOT SETTABLE. Reported temperature values by Xiaomi devices which are no temperature measuring devices.</p>
-        <p>(presumably device temperature).</p>
-      </td>
-      <td>Display only</td>
-    </tr>
-    <tr>
-      <td>temperaturemeasurement</td>
-      <td>String</td>
-      <td data-since="v2.5.85">
-        <p>Sets the mode of operation for Elko Super TR thermostat.</p>
-        <p>Supported values:</p>
-        <ul class="value-list">
-          <li>"air sensor"</li>
-          <li>"floor sensor"</li>
-          <li>"floor protection"</li>
-        </ul>
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>tholddark</td>
-      <td>Number (0&ndash;65534)</td>
-      <td><mark>todo: describe</mark></td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>tholdoffset</td>
-      <td>Number (1&ndash;65534)</td>
-      <td><mark>todo: describe</mark></td>
-      <td>optional</td>
-    </tr>
-    <tr>
       <td>usertest</td>
       <td>Bool</td>
       <td><mark>todo: describe</mark></td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>windowcoveringtype</td>
-      <td>Number (0&ndash;9)</td>
-      <td>
-        <p>Sets the covering type and starts calibration for ubisys J1.</p>
-        <p>Supported values:</p>
-        <ul class="value-list">
-          <li>0 = Roller Shade</li>
-          <li>1 = Roller Shade two motors</li>
-          <li>2 = Roller Shade exterior</li>
-          <li>3 = Roller Shade two motors ext</li>
-          <li>4 = Drapery</li>
-          <li>5 = Awning</li>
-          <li>6 = Shutter</li>
-          <li>7 = Tilt Blind Lift only</li>
-          <li>8 = Tilt Blind lift & tilt</li>
-          <li>9 = Projector Screen
-        </ul>
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>windowopen_set</td>
-      <td>Bool</td>
-      <td data-since="v2.5.83">
-        <p>Sets if window open detection shall be active or inactive for Tuya thermostats.</p>
-        <p>(Support is device dependent)</p>
-      </td>
       <td>optional</td>
     </tr>
   </tbody>
@@ -1363,25 +1117,307 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
   </tbody>
 </table>
 
+<a name="dev-sensor-config-attr">&nbsp;</a>
 #### Supported config attributes
 <table class="table table-bordered">
   <thead>
-    <tr><th>Sensor type</th><th>Config attribute</th><th>Type</th><th>Description</th><th>Access</th></tr>
+    <tr><th>Sensor type</th><th>Config attribute</th><th>Type</th><th>Description</th><th></th></tr>
   </thead>
   <tbody>
-    <tr>
-      <td>ZHAAirQuality</td>
-      <td data-since="v2.6.0-beta">airquality</td>
-      <td>String</td>
-      <td></td>
-      <td>RW</td>
-    </tr>
     <tr>
       <td>Daylight</td>
       <td>configured</td>
       <td>Bool</td>
       <td>True if the daylight sensor is configured with coordinates.</td>
-      <td>Read only</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lat</td>
+      <td>Number</td>
+      <td>Latitude of the set location/timezone.</td>
+      <td>W</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>long</td>
+      <td>Number</td>
+      <td>Longitude of the set location/timezone.</td>
+      <td>W</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>sunriseoffset</td>
+      <td>Number (-120&ndash;120)</td>
+      <td>Sunrise offset value for location/timezone in minutes.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>sunsetoffset</td>
+      <td>Number (-120&ndash;120)</td>
+      <td>Sunset offset value for location/timezone in minutes.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>ZHALightLevel</td>
+      <td>tholddark</td>
+      <td>Number (0&ndash;65534)</td>
+      <td><mark>todo: describe</mark></td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tholdoffset</td>
+      <td>Number (1&ndash;65534)</td>
+      <td><mark>todo: describe</mark></td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>ZHAHumidity</td>
+      <td>offset</td>
+      <td>Number (-32768&ndash;32767)</td>
+      <td>Adds a signed offset value to measured state values. Values send by the REST-API are already amended by the offset.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>ZHAPresence</td>
+      <td>duration</td>
+      <td>Number (0&ndash;65535)</td>
+      <td>Timeout in seconds presence state is set to false again.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>ZHATemperature</td>
+      <td>offset</td>
+      <td>Number (-32768&ndash;32767)</td>
+      <td>Adds a signed offset value to measured state values. Values send by the REST-API are already amended by the offset.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>ZHASwitch</td>
+      <td>group</td>
+      <td>Uint16</td>
+      <td>
+        <p>The associated Zigbee group the sensor controls.</p>
+        <p>(only supported by some sensor)</p>
+      </td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>mode</td>
+      <td>String</td>
+      <td>
+        <p>For ubisys S1/S2, operation mode of the switch.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"momentary"</li>
+          <li>"rocker"</li>
+        </ul>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>
+        <p>Ubisys J1</p>(ZHASwitch)</td>
+      <td>window coveringtype</td>
+      <td>Number (0&ndash;9)</td>
+      <td>
+        <p>Sets the covering type and starts calibration.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>0 = Roller Shade</li>
+          <li>1 = Roller Shade two motors</li>
+          <li>2 = Roller Shade exterior</li>
+          <li>3 = Roller Shade two motors ext</li>
+          <li>4 = Drapery</li>
+          <li>5 = Awning</li>
+          <li>6 = Shutter</li>
+          <li>7 = Tilt Blind Lift only</li>
+          <li>8 = Tilt Blind lift & tilt</li>
+          <li>9 = Projector Screen
+        </ul>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>ZHAThermostat</td>
+      <td>mode</td>
+      <td>String</td>
+      <td>
+        <p>Sets the current operating mode of a thermostat.<p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"off"</li>
+          <li>"auto"</li>
+          <li>"cool"</li>
+          <li>"heat"</li>
+          <li>"emergency heating"</li>
+          <li>"precooling"</li>
+          <li>"fan only"</li>
+          <li>"dry"</li>
+          <li>"sleep"</li>
+        </ul>
+        <p>(Supported modes are device dependent)</p>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>displayflipped</td>
+      <td>Bool</td>
+      <td>Flip the display for TRVs supporting it.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>fanmode</td>
+      <td>String</td>
+      <td data-since="v2.6.0-beta">
+        <p>Sets the mode of the fan.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"off"</li>
+          <li>"low"</li>
+          <li>"medium"</li>
+          <li>"high"</li>
+          <li>"on"</li>
+          <li>"auto"</li>
+          <li>"smart"</li>
+        </ul>
+
+        (device dependent and only exposed for devices supporting it)
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>locked</td>
+      <td>Bool</td>
+      <td data-since="v2.5.81">Child lock active/inactive for thermostats/TRVs supporting it.
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>preset</td>
+      <td>String</td>
+      <td data-since="v2.5.83">
+        <p>Sets the operating mode for Tuya thermostats.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"holiday"</li>
+          <li>"auto"
+          <li>"manual"</li>
+          <li>"comfort"</li>
+          <li>"eco"</li>
+          <li>"boost"</li>
+          <li>"complex"</li>
+        </ul>
+        <p>(supported modes are device dependent)</p>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>swingmode</td>
+      <td>String</td>
+      <td data-since="v2.6.0-beta">
+        <p>Sets the AC louvers position.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"fully closed"</li>
+          <li>"fully open"</li>
+          <li>"quarter open"</li>
+          <li>"half open"</li>
+          <li>"three quarters open"</li>
+        </ul>
+        (exposed for thermostats supporting it)
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>temperature measurement</td>
+      <td>String</td>
+      <td data-since="v2.5.85">
+        <p>Sets the mode of operation for Elko Super TR thermostat.</p>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"air sensor"</li>
+          <li>"floor sensor"</li>
+          <li>"floor protection"</li>
+        </ul>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>window open_set</td>
+      <td>Bool</td>
+      <td data-since="v2.5.83">
+        <p>Sets if window open detection shall be active or inactive for Tuya thermostats.</p>
+        <p>(support is device dependent)</p>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>schedule</td>
+      <td>Array</td>
+      <td>
+        <p>A thermostat schedule.</p>
+        <mark>todo: describe</mark>
+     </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>scheduleon</td>
+      <td>Bool</td>
+      <td>True when a thermostat schedule is enabled.</td>
+      <td>RW</td>
+    </tr>
+   <tr>
+      <td></td>
+      <td>coolsetpoint</td>
+      <td>Number (700&ndash;3500)</td>
+      <td data-since="v2.6.0-beta">Set the desired cooling temperature.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>heatsetpoint</td>
+      <td>Number (500&ndash;3200)</td>
+      <td>Set the desired heating temperature.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>mountingmode</td>
+      <td>Bool</td>
+      <td data-since="v2.5.81">Sets a TRV into mounting mode if supported (valve fully open position).</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>Various sensors</td>
+      <td>pending</td>
+      <td>Uint8</td>
+      <td>Bitmap of outstanding configuration tasks for a device. A value of "[]" indicates no outstanding tasks.
+        <mark>todo: describe possibe values</mark>
+      </td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>Xiaomi sensors</td>
+      <td>temperature</td>
+      <td>Number (-27315&ndash;32767)</td>
+      <td>
+        <p>Reported temperature values by devices which are no temperature measuring devices.</p>
+        <p>(presumably device temperature).</p>
+      </td>
+      <td>R</td>
     </tr>
   </tbody>
 </table>
