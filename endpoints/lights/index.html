@@ -96,6 +96,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#set-light-state">Set light state&nbsp;</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#parameters_2">Parameters</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#window-covering-parameters">Window covering parameters</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#example-request-data">Example request data</a>
     </li>
@@ -587,6 +591,94 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>xy</td>
       <td>Array</td>
       <td>Set the CIE xy color space coordinates as array [x, y] of real values (0&ndash;1).</td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="window-covering-parameters">Window covering parameters<a class="headerlink" href="#window-covering-parameters" title="Permanent link">&para;</a></h4>
+<p>For historic reasons window covering devices are currently exposed under the lights endpoint.</p>
+<p>For lights with <b>type</b>:</p>
+<ul  class="value-list">
+  <li>"Window covering controller"</li>
+  <li>"Window covering device"</li>
+</ul>
+
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>open</td>
+      <td>Bool</td>
+      <td>Set to true to lift the shutter to 0&thinsp;%, false to lift it to 100&thinsp;%.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>stop</td>
+      <td>Bool</td>
+      <td>Stops the current action.</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>lift</td>
+      <td>Number<br/>String</td>
+      <td>
+        <p>Supported range is 0&ndash;100&thinsp;% or special value "stop".</p>
+        <ul  class="value-list">
+          <li>0 &mdash; Shutter opened (open = true)</li>
+          <li>1&ndash;100 &mdash; Shutter closed (open = false)</li>
+          <li>"stop" &mdash; Stops the lift action</li>
+        </ul>
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>tilt</td>
+      <td>Number</td>
+      <td>Sets the tilt angle of the shutter (0&ndash;100&thinsp;%).</td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Deprecated</b>
+      </td>
+    </tr>
+    <tr>
+      <td>bri</td>
+      <td>Number String</td>
+      <td>
+        <p>(deprecated by "lift")</p>
+        0&ndash;100 or "stop"
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>bri_inc</td>
+      <td>Number</td>
+      <td>
+        <p>(deprecated by "stop")</p>
+        Only supported value is 0 meaning stop.
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>
+        <p>(deprecated by "open")</p>
+        <p>Inverted value of "open".</p>
+      </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>sat</td>
+      <td>Number</td>
+      <td>
+        <p>(deprecated by "tilt")</p>
+        0&ndash;255 where tilt = sat * 100 / 254.
+      </td>
       <td>optional</td>
     </tr>
   </tbody>
