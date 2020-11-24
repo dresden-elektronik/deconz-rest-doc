@@ -410,20 +410,6 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>optional</td>
     </tr>
     <tr>
-      <td>delay</td>
-      <td>Number (0&ndash;65535)</td>
-      <td>
-        <mark>todo: describe</mark>
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>ledindication</td>
-      <td>Bool</td>
-      <td><mark>todo: describe</mark></td>
-      <td>optional</td>
-    </tr>
-    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>The on/off status of the sensor.</td>
@@ -433,31 +419,6 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>reachable</td>
       <td>Bool</td>
       <td>The reachable status of the sensor.</td>
-      <td>optional</td>
-    </tr>    
-    <tr>
-      <td>sensitivity</td>
-      <td>Number</td>
-      <td><mark>todo: describe</mark></td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>sensitivitymax</td>
-      <td>Number</td>
-      <td>
-        <p>For Xiaomi vibration sensors, only following 3 values apply:</p>
-        <ul class="value-list">
-           <li>21 = low</li>
-           <li>11 = medium</li>
-           <li>&nbsp;&nbsp;1 = high</li>
-        </ul>
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>usertest</td>
-      <td>Bool</td>
-      <td><mark>todo: describe</mark></td>
       <td>optional</td>
     </tr>
   </tbody>
@@ -655,16 +616,6 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>Bool</td>
     </tr>
     <tr>
-      <td></td>
-      <td>tholddark</td>
-      <td>Uint16</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>tholddarkoffset</td>
-      <td>Uint16</td>
-    </tr>
-    <tr>
       <td>CLIPOpenClose</td>
       <td>open</td>
       <td>Bool</td>
@@ -732,6 +683,16 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>CLIPHumidity</td>
       <td>offset</td>
       <td>Int16</td>
+    </tr>
+    <tr>
+      <td>CLIPLightLevel</td>
+      <td>tholddark</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tholddarkoffset</td>
+      <td>Uint16</td>
     </tr>
     <tr>
       <td>CLIPTemperature</td>
@@ -1151,14 +1112,20 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>ZHALightLevel</td>
       <td>tholddark</td>
       <td>Number (0&ndash;65534)</td>
-      <td><mark>todo: describe</mark></td>
+      <td>
+        <p>Specifies at which <code>lightlevel</code> the <code>dark</code> attribute turns false.</p>
+        <p>Default: 12000</p>
+      </td>
       <td>RW</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
       <td>tholdoffset</td>
       <td>Number (1&ndash;65534)</td>
-      <td><mark>todo: describe</mark></td>
+      <td>
+        <p>Relative offset to <code>tholddark</code>. Sets <code>daylight</code> attribute to true when when lightlevel is at or above (tholddark + tholdoffset).</p>
+        <p>Default: 7000</p>
+      </td>
       <td>RW</td>
     </tr>
     <tr class="strong-border-bottom">
@@ -1168,11 +1135,20 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>Adds a signed offset value to measured state values. Values send by the REST-API are already amended by the offset.</td>
       <td>RW</td>
     </tr>
-    <tr class="strong-border-bottom">
+    <tr>
       <td>ZHAPresence</td>
       <td>duration</td>
       <td>Number (0&ndash;65535)</td>
       <td>Timeout in seconds presence state is set to false again.</td>
+      <td>RW</td>
+    </tr>
+    <tr class="strong-border-bottom">
+      <td></td>
+      <td>delay</td>
+      <td>Uint16 (0&ndash;65535)</td>
+      <td>
+        <p>The occupied to unoccupied delay in seconds.</p>
+      </td>
       <td>RW</td>
     </tr>
     <tr class="strong-border-bottom">
@@ -1418,14 +1394,67 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td data-since="v2.5.81">Sets a TRV into mounting mode if supported (valve fully open position).</td>
       <td>RW</td>
     </tr>
-    <tr class="strong-border-bottom">
+    <tr>
       <td>Various sensors</td>
+      <td>ledindication</td>
+      <td>Bool</td>
+      <td>
+        <p>Lets the sensor indicate itself, usually via LED blinking.</p>
+        <p>Supported for Philips Hue motion sensor.</p>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>pending</td>
       <td>Uint8</td>
       <td>Bitmap of outstanding configuration tasks for a device. A value of "[]" indicates no outstanding tasks.
         <mark>todo: describe possibe values</mark>
       </td>
       <td>R</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>sensitivity</td>
+      <td>Number</td>
+      <td>
+        <p>Device specific sensitivity, with following supported values.</p>
+        <p>Philips Hue motion sensor:</p>
+        <ul class="value-list">
+           <li>0 = low</li>
+           <li>1 = medium</li>
+           <li>2 = high</li>
+        </ul>
+
+        <p>Xiaomi vibration sensor:</p>
+        <ul class="value-list">
+           <li>21 = low</li>
+           <li>11 = medium</li>
+           <li>&nbsp;&nbsp;1 = high</li>
+        </ul>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>sensitivitymax</td>
+      <td>Number</td>
+      <td>
+        Device specific maximum <code class="api-attribute">sensitivity</code> value.
+        <p>Xiaomi vibration sensor:&nbsp;21</p>
+        <p>Philips Hue motion sensor:&nbsp;2</p>
+      </td>
+      <td>R</td>
+    </tr>
+    <tr class="strong-border-bottom">
+      <td></td>
+      <td>usertest</td>
+      <td>Bool</td>
+      <td>
+        <p>Starts the sensor self-test mode.</p>
+        <p>Supported for Philips Hue motion sensor.</p>
+      </td>
+      <td>RW</td>
     </tr>
     <tr>
       <td>Xiaomi sensors</td>
