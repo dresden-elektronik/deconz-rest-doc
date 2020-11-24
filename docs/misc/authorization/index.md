@@ -17,9 +17,14 @@ Apps which want to access the API must obtain an API key. There are two methods 
 
 Unlocking the gateway for a short period of time allows any app to [acquire an API key](../../endpoints/configuration#aquireapikey) via configuration API.
 
-To unlock the gateway for 60 seconds visit the gateway main page in the browser and choose `Settings/System` from the top menu. On the system page click on the `unlock` button in order to unlock the gateway, see [Discovery](../discovery).
+To unlock the gateway for 60 seconds:
 
-In the next 60 seconds any app may acquire a new API key.
+ - In a new browser tab open the Phoscon App
+ - Click on *Menu &rarr; Settings &rarr; Gateway*
+ - Click on "Advanced" button
+ - Click on the "Authenticate app" button
+
+See: [Phoscon App &mdash; Advanced Gateway Settings](https://phoscon.de/en/app/doc#settings-gateway-advanced-en)
 
 ## HTTP basic authentication
 

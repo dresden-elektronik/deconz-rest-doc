@@ -72,11 +72,14 @@ The reason why the request failed is that the gateway was not unlocked. This mec
 
 As described in the section [Authorization](../misc/authorization) unlock the gateway as follows:
 
- - In a new browser tab open the webapp
- - Click on `Menu/Settings` from the top menu
- - Click on the **Unlock Gateway** button
+ - In a new browser tab open the Phoscon App
+ - Click on *Menu &rarr; Settings &rarr; Gateway*
+ - Click on "Advanced" button
+ - Click on the "Authenticate app" button
 
- Now the gateway is unlocked for _60 seconds_.
+See: [Phoscon App &mdash; Advanced Gateway Settings](https://phoscon.de/en/app/doc#settings-gateway-advanced-en)
+
+Now the gateway is unlocked for _60 seconds_.
 
 #### Second attempt
 
