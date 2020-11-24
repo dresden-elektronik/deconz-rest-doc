@@ -418,12 +418,6 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>optional</td>
     </tr>
     <tr>
-      <td>hostflags</td>
-      <td></td>
-      <td><mark>todo: describe</mark></td>
-      <td>Display only</td>
-    </tr>
-    <tr>
       <td>ledindication</td>
       <td>Bool</td>
       <td><mark>todo: describe</mark></td>
@@ -1293,6 +1287,22 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td></td>
+      <td>hostflags</td>
+      <td>Uint32</td>
+      <td>
+        <p>Eurotronic Spirit SPZB</p>
+        <ul class="value-list">
+          <li>0x0002 &mdash; Display flipped</li>
+          <li>0x0004 &mdash; Mode heat</li>
+          <li>0x0010 &mdash; Mode off</li>
+          <li>0x0080 &mdash; Locked</li>
+        </ul>
+        <p>Only for debugging purpose.</p>
+      </td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>locked</td>
       <td>Bool</td>
       <td data-since="v2.5.81">Child lock active/inactive for thermostats/TRVs supporting it.
@@ -1316,6 +1326,20 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
           <li>"complex"</li>
         </ul>
         <p>(supported modes are device dependent)</p>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>setvalve</td>
+      <td>Bool</td>
+      <td data-since="v2.6.0-beta">
+        <p>Controls valve of thermostats.</p>
+        <ul class="value-list">
+          <li>false &mdash; Close valve</li>
+          <li>true &mdash; Open valve</li>
+        </ul>
+        (exposed for thermostats supporting it)
       </td>
       <td>RW</td>
     </tr>
