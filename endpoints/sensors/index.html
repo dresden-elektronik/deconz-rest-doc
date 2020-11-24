@@ -302,9 +302,9 @@
       <td>
         <p>The config of the sensor.</p>
         <ul class="value-list">
-          <li>on &mdash; Bool (default: true)</li>
-          <li>reachable &mdash; Bool (default: true)</li>
-          <li>battery &mdash; Number (0&ndash;100)</li>
+          <li><code class="api-attribute">on</code> &mdash; Bool (default: true)</li>
+          <li><code  class="api-attribute">reachable</code> &mdash; Bool (default: true)</li>
+          <li><code  class="api-attribute">battery</code> &mdash; Number (0&ndash;100)</li>
         </ul>
       </td>
       <td>optional</td>
@@ -488,7 +488,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     </tr>
     <tr>
       <td>mode</td>
-      <td>Number (1|2|3)</td>
+      <td>Number</td>
       <td>
         <p>The mode of the sensor.</p>
         <ul class="value-list">
@@ -554,7 +554,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     </tr>
     <tr>
       <td>mode</td>
-      <td>Number (1|2|3)</td>
+      <td>Number</td>
       <td>
         <p>Only availabe for dresden elektronik Lighting Switch. Set the mode of the switch.</p>
         <ul class="value-list">
@@ -608,32 +608,6 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>optional</td>
     </tr>
     <tr>
-      <td>delay</td>
-      <td>Number (0&ndash;65535)</td>
-      <td>
-        <mark>todo: describe</mark>
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>hostflags</td>
-      <td></td>
-      <td><mark>todo: describe</mark></td>
-      <td>Display only</td>
-    </tr>
-    <tr>
-      <td>ledindication</td>
-      <td>Bool</td>
-      <td><mark>todo: describe</mark></td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>localtime</td>
-      <td></td>
-      <td><mark>todo: describe</mark></td>
-      <td>optional</td>
-    </tr>
-    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>The on/off status of the sensor.</td>
@@ -643,31 +617,6 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>reachable</td>
       <td>Bool</td>
       <td>The reachable status of the sensor.</td>
-      <td>optional</td>
-    </tr>    
-    <tr>
-      <td>sensitivity</td>
-      <td>Number</td>
-      <td><mark>todo: describe</mark></td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>sensitivitymax</td>
-      <td>Number</td>
-      <td>
-        <p>For Xiaomi vibration sensors, only following 3 values apply:</p>
-        <ul class="value-list">
-           <li>21 = low</li>
-           <li>11 = medium</li>
-           <li>&nbsp;&nbsp;1 = high</li>
-        </ul>
-      </td>
-      <td>optional</td>
-    </tr>
-    <tr>
-      <td>usertest</td>
-      <td>Bool</td>
-      <td><mark>todo: describe</mark></td>
       <td>optional</td>
     </tr>
   </tbody>
@@ -841,16 +790,6 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>Bool</td>
     </tr>
     <tr>
-      <td></td>
-      <td>tholddark</td>
-      <td>Uint16</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>tholddarkoffset</td>
-      <td>Uint16</td>
-    </tr>
-    <tr>
       <td>CLIPOpenClose</td>
       <td>open</td>
       <td>Bool</td>
@@ -920,6 +859,16 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>Int16</td>
     </tr>
     <tr>
+      <td>CLIPLightLevel</td>
+      <td>tholddark</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>tholddarkoffset</td>
+      <td>Uint16</td>
+    </tr>
+    <tr>
       <td>CLIPTemperature</td>
       <td>offset</td>
       <td>Int16</td>
@@ -940,7 +889,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       </td>
       <td>String</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td data-since="v2.6.0-beta">airqualityppb
       </td>
@@ -961,7 +910,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>lowbattery</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>tampered</td>
       <td>Bool</td>
@@ -981,7 +930,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>lowbattery</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>tampered</td>
       <td>Bool</td>
@@ -996,7 +945,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>lastupdated</td>
       <td>String</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>power</td>
       <td>Number</td>
@@ -1016,7 +965,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>lowbattery</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>tampered</td>
       <td>Bool</td>
@@ -1026,7 +975,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>humidity</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
       <td>String</td>
@@ -1051,7 +1000,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>dark</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>daylight</td>
       <td>Bool</td>
@@ -1061,7 +1010,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>open</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
       <td>String</td>
@@ -1081,7 +1030,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>power</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>voltage</td>
       <td>Number</td>
@@ -1091,7 +1040,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>presence</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
       <td>String</td>
@@ -1130,7 +1079,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>y</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>angle</td>
       <td>Number</td>
@@ -1140,7 +1089,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>pressure</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
       <td>String</td>
@@ -1150,7 +1099,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>temperature</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
       <td>String</td>
@@ -1170,7 +1119,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>localtime</td>
       <td>Time</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>utc</td>
       <td>Time</td>
@@ -1225,7 +1174,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>valve</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td data-since="v2.5.79">windowopen
       </td>
@@ -1243,25 +1192,15 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     </tr>
     <tr>
       <td></td>
-      <td>orientation_x</td>
-      <td>Number</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>orientation_y</td>
-      <td>Number</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>orientation_z</td>
-      <td>Number</td>
+      <td>orientation</td>
+      <td>Array of 3 Numbers</td>
     </tr>
     <tr>
       <td></td>
       <td>tiltangle</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>vibrationstrength</td>
       <td>Number</td>
@@ -1324,7 +1263,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>Sunrise offset value for location/timezone in minutes.</td>
       <td>R</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>sunsetoffset</td>
       <td>Number (-120&ndash;120)</td>
@@ -1335,17 +1274,23 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>ZHALightLevel</td>
       <td>tholddark</td>
       <td>Number (0&ndash;65534)</td>
-      <td><mark>todo: describe</mark></td>
+      <td>
+        <p>Specifies at which <code class="api-attribute">lightlevel</code> the <code class="api-attribute">dark</code> attribute turns false.</p>
+        <p>Default: 12000</p>
+      </td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>tholdoffset</td>
       <td>Number (1&ndash;65534)</td>
-      <td><mark>todo: describe</mark></td>
+      <td>
+        <p>Relative offset to <code class="api-attribute">tholddark</code>. Sets <code class="api-attribute">daylight</code> attribute to true when when lightlevel is at or above (tholddark + tholdoffset).</p>
+        <p>Default: 7000</p>
+      </td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td>ZHAHumidity</td>
       <td>offset</td>
       <td>Number (-32768&ndash;32767)</td>
@@ -1359,7 +1304,16 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>Timeout in seconds presence state is set to false again.</td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
+      <td></td>
+      <td>delay</td>
+      <td>Uint16 (0&ndash;65535)</td>
+      <td>
+        <p>The occupied to unoccupied delay in seconds.</p>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr class="strong-border-bottom">
       <td>ZHATemperature</td>
       <td>offset</td>
       <td>Number (-32768&ndash;32767)</td>
@@ -1390,7 +1344,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       </td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td>
         <p>Ubisys J1</p>(ZHASwitch)</td>
       <td>window coveringtype</td>
@@ -1465,6 +1419,22 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     </tr>
     <tr>
       <td></td>
+      <td>hostflags</td>
+      <td>Uint32</td>
+      <td>
+        <p>Eurotronic Spirit SPZB</p>
+        <ul class="value-list">
+          <li>0x0002 &mdash; Display flipped</li>
+          <li>0x0004 &mdash; Mode heat</li>
+          <li>0x0010 &mdash; Mode off</li>
+          <li>0x0080 &mdash; Locked</li>
+        </ul>
+        <p>Only for debugging purpose.</p>
+      </td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>locked</td>
       <td>Bool</td>
       <td data-since="v2.5.81">Child lock active/inactive for thermostats/TRVs supporting it.
@@ -1488,6 +1458,20 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
           <li>"complex"</li>
         </ul>
         <p>(supported modes are device dependent)</p>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>setvalve</td>
+      <td>Bool</td>
+      <td data-since="v2.6.0-beta">
+        <p>Controls valve of thermostats.</p>
+        <ul class="value-list">
+          <li>false &mdash; Close valve</li>
+          <li>true &mdash; Open valve</li>
+        </ul>
+        (exposed for thermostats supporting it)
       </td>
       <td>RW</td>
     </tr>
@@ -1565,7 +1549,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>Set the desired heating temperature.</td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>mountingmode</td>
       <td>Bool</td>
@@ -1574,12 +1558,65 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     </tr>
     <tr>
       <td>Various sensors</td>
+      <td>ledindication</td>
+      <td>Bool</td>
+      <td>
+        <p>Lets the sensor indicate itself, usually via LED blinking.</p>
+        <p>Supported for Philips Hue motion sensor.</p>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>pending</td>
       <td>Uint8</td>
       <td>Bitmap of outstanding configuration tasks for a device. A value of "[]" indicates no outstanding tasks.
         <mark>todo: describe possibe values</mark>
       </td>
       <td>R</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>sensitivity</td>
+      <td>Number</td>
+      <td>
+        <p>Device specific sensitivity, with following supported values.</p>
+        <p>Philips Hue motion sensor:</p>
+        <ul class="value-list">
+           <li>0 = low</li>
+           <li>1 = medium</li>
+           <li>2 = high</li>
+        </ul>
+
+        <p>Xiaomi vibration sensor:</p>
+        <ul class="value-list">
+           <li>21 = low</li>
+           <li>11 = medium</li>
+           <li>&nbsp;&nbsp;1 = high</li>
+        </ul>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>sensitivitymax</td>
+      <td>Number</td>
+      <td>
+        Device specific maximum <code class="api-attribute">sensitivity</code> value.
+        <p>Xiaomi vibration sensor:&nbsp;21</p>
+        <p>Philips Hue motion sensor:&nbsp;2</p>
+      </td>
+      <td>R</td>
+    </tr>
+    <tr class="strong-border-bottom">
+      <td></td>
+      <td>usertest</td>
+      <td>Bool</td>
+      <td>
+        <p>Starts the sensor self-test mode.</p>
+        <p>Supported for Philips Hue motion sensor.</p>
+      </td>
+      <td>RW</td>
     </tr>
     <tr>
       <td>Xiaomi sensors</td>
