@@ -67,9 +67,9 @@ Creates a new CLIP sensor.
       <td>
         <p>The config of the sensor.</p>
         <ul class="value-list">
-          <li>on &mdash; Bool (default: true)</li>
-          <li>reachable &mdash; Bool (default: true)</li>
-          <li>battery &mdash; Number (0&ndash;100)</li>
+          <li><code class="api-attribute">on</code> &mdash; Bool (default: true)</li>
+          <li><code  class="api-attribute">reachable</code> &mdash; Bool (default: true)</li>
+          <li><code  class="api-attribute">battery</code> &mdash; Number (0&ndash;100)</li>
         </ul>
       </td>
       <td>optional</td>
@@ -274,7 +274,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     </tr>
     <tr>
       <td>mode</td>
-      <td>Number (1|2|3)</td>
+      <td>Number</td>
       <td>
         <p>The mode of the sensor.</p>
         <ul class="value-list">
@@ -347,7 +347,7 @@ Update a sensor with the specified parameters.
     </tr>
     <tr>
       <td>mode</td>
-      <td>Number (1|2|3)</td>
+      <td>Number</td>
       <td>
         <p>Only availabe for dresden elektronik Lighting Switch. Set the mode of the switch.</p>
         <ul class="value-list">
@@ -1113,7 +1113,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>tholddark</td>
       <td>Number (0&ndash;65534)</td>
       <td>
-        <p>Specifies at which <code>lightlevel</code> the <code>dark</code> attribute turns false.</p>
+        <p>Specifies at which <code class="api-attribute">lightlevel</code> the <code class="api-attribute">dark</code> attribute turns false.</p>
         <p>Default: 12000</p>
       </td>
       <td>RW</td>
@@ -1123,7 +1123,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>tholdoffset</td>
       <td>Number (1&ndash;65534)</td>
       <td>
-        <p>Relative offset to <code>tholddark</code>. Sets <code>daylight</code> attribute to true when when lightlevel is at or above (tholddark + tholdoffset).</p>
+        <p>Relative offset to <code class="api-attribute">tholddark</code>. Sets <code class="api-attribute">daylight</code> attribute to true when when lightlevel is at or above (tholddark + tholdoffset).</p>
         <p>Default: 7000</p>
       </td>
       <td>RW</td>
