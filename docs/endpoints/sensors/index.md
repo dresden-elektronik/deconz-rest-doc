@@ -768,7 +768,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       </td>
       <td>String</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td data-since="v2.6.0-beta">airqualityppb
       </td>
@@ -789,7 +789,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>lowbattery</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>tampered</td>
       <td>Bool</td>
@@ -809,7 +809,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>lowbattery</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>tampered</td>
       <td>Bool</td>
@@ -824,7 +824,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>lastupdated</td>
       <td>String</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>power</td>
       <td>Number</td>
@@ -844,7 +844,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>lowbattery</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>tampered</td>
       <td>Bool</td>
@@ -854,7 +854,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>humidity</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
       <td>String</td>
@@ -879,7 +879,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>dark</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>daylight</td>
       <td>Bool</td>
@@ -889,7 +889,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>open</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
       <td>String</td>
@@ -909,7 +909,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>power</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>voltage</td>
       <td>Number</td>
@@ -919,7 +919,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>presence</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
       <td>String</td>
@@ -958,7 +958,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>y</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>angle</td>
       <td>Number</td>
@@ -968,7 +968,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>pressure</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
       <td>String</td>
@@ -978,7 +978,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>temperature</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
       <td>String</td>
@@ -998,7 +998,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>localtime</td>
       <td>Time</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>utc</td>
       <td>Time</td>
@@ -1053,7 +1053,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>valve</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td data-since="v2.5.79">windowopen
       </td>
@@ -1089,7 +1089,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>tiltangle</td>
       <td>Number</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>vibrationstrength</td>
       <td>Number</td>
@@ -1152,7 +1152,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>Sunrise offset value for location/timezone in minutes.</td>
       <td>R</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>sunsetoffset</td>
       <td>Number (-120&ndash;120)</td>
@@ -1166,28 +1166,28 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td><mark>todo: describe</mark></td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>tholdoffset</td>
       <td>Number (1&ndash;65534)</td>
       <td><mark>todo: describe</mark></td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td>ZHAHumidity</td>
       <td>offset</td>
       <td>Number (-32768&ndash;32767)</td>
       <td>Adds a signed offset value to measured state values. Values send by the REST-API are already amended by the offset.</td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td>ZHAPresence</td>
       <td>duration</td>
       <td>Number (0&ndash;65535)</td>
       <td>Timeout in seconds presence state is set to false again.</td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td>ZHATemperature</td>
       <td>offset</td>
       <td>Number (-32768&ndash;32767)</td>
@@ -1218,7 +1218,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       </td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td>
         <p>Ubisys J1</p>(ZHASwitch)</td>
       <td>window coveringtype</td>
@@ -1393,14 +1393,14 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>Set the desired heating temperature.</td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>mountingmode</td>
       <td>Bool</td>
       <td data-since="v2.5.81">Sets a TRV into mounting mode if supported (valve fully open position).</td>
       <td>RW</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td>Various sensors</td>
       <td>pending</td>
       <td>Uint8</td>

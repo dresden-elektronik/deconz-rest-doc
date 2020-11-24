@@ -144,3 +144,7 @@ table tr:not(:last-child) th,
 table thead tr th {
     border-bottom: 1px solid #a9a9a9 !important;
 }
+
+table tr.strong-border-bottom td {
+    border-bottom: 1px solid #a9a9a9 !important;
+}
