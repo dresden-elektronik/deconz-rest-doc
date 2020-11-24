@@ -1020,18 +1020,8 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td></td>
-      <td>orientation_x</td>
-      <td>Number</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>orientation_y</td>
-      <td>Number</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>orientation_z</td>
-      <td>Number</td>
+      <td>orientation</td>
+      <td>Array of 3 Numbers</td>
     </tr>
     <tr>
       <td></td>
