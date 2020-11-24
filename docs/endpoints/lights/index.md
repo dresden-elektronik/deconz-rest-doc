@@ -440,10 +440,11 @@ For historic reasons window covering devices are currently exposed under the lig
       <td>lift</td>
       <td>Number<br/>String</td>
       <td>
-        <p>Supported range is 0&ndash;100&thinsp;% or special value "stop".</p>
+        <p>Supported range is 0&ndash;100 or special value "stop".</p>
+        <p>lift is best understood as “percentage closed”. So for any lift value below 100&thinsp;%, open is true.</p>
         <ul  class="value-list">
-          <li>0 &mdash; Shutter opened (open = true)</li>
-          <li>1&ndash;100 &mdash; Shutter closed (open = false)</li>
+          <li>0&ndash;99 &mdash; <code>open</code> is true</li>
+          <li>100 &mdash; <code>open</code> is false</li>
           <li>"stop" &mdash; Stops the lift action</li>
         </ul>
       </td>
@@ -465,7 +466,8 @@ For historic reasons window covering devices are currently exposed under the lig
       <td>Number String</td>
       <td>
         <p>(deprecated by "lift")</p>
-        0&ndash;100 or "stop"
+        0&ndash;255 or "stop"
+        where lift = bri * 100 / 254.
       </td>
       <td>optional</td>
     </tr>
