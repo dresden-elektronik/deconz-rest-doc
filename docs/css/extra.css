@@ -35,6 +35,13 @@
 
 }
 
+/* API attribute*/
+code.api-attribute {
+    color: #222;
+    border-radius: 3px;
+    font-size: 0.75rem;
+}
+
 /* value lists in attribute descriptions */
 ul.value-list {
     /*margin-top: 1rem;*/

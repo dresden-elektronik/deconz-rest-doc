@@ -441,10 +441,10 @@ For historic reasons window covering devices are currently exposed under the lig
       <td>Number<br/>String</td>
       <td>
         <p>Supported range is 0&ndash;100 or special value "stop".</p>
-        <p>lift is best understood as “percentage closed”. So for any lift value below 100&thinsp;%, open is true.</p>
+        <p><code class="api-attribute">lift</code> is best understood as “percentage closed”. So for any lift value below 100&thinsp;%, open is true.</p>
         <ul  class="value-list">
-          <li>0&ndash;99 &mdash; <code>open</code> is true</li>
-          <li>100 &mdash; <code>open</code> is false</li>
+          <li>0&ndash;99 &mdash; <code class="api-attribute">open</code> is true</li>
+          <li>100 &mdash; <code class="api-attribute">open</code> is false</li>
           <li>"stop" &mdash; Stops the lift action</li>
         </ul>
       </td>
@@ -467,7 +467,7 @@ For historic reasons window covering devices are currently exposed under the lig
       <td>
         <p>(deprecated by "lift")</p>
         0&ndash;255 or "stop"
-        where lift = bri * 100 / 254.
+        where <code class="api-attribute">lift</code> = bri * 100 / 254.
       </td>
       <td>optional</td>
     </tr>
@@ -485,7 +485,7 @@ For historic reasons window covering devices are currently exposed under the lig
       <td>Bool</td>
       <td>
         <p>(deprecated by "open")</p>
-        <p>Inverted value of "open".</p>
+        <p>Inverted value of <code class="api-attribute">open</code>.</p>
       </td>
       <td>optional</td>
     </tr>
@@ -494,7 +494,7 @@ For historic reasons window covering devices are currently exposed under the lig
       <td>Number</td>
       <td>
         <p>(deprecated by "tilt")</p>
-        0&ndash;255 where tilt = sat * 100 / 254.
+        0&ndash;255 where <code class="api-attribute">tilt</code> = sat * 100 / 254.
       </td>
       <td>optional</td>
     </tr>
