@@ -424,12 +424,6 @@ Sensors expose certain configuration parameters depending on their defined or kn
       <td>optional</td>
     </tr>
     <tr>
-      <td>localtime</td>
-      <td></td>
-      <td><mark>todo: describe</mark></td>
-      <td>optional</td>
-    </tr>
-    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>The on/off status of the sensor.</td>
