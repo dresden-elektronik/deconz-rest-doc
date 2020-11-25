@@ -359,6 +359,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           1004 | Double press     | Button 1                 |
 |           1005 | Treeble press    | Button 1                 |
 |           1006 | Quadruple press  | Button 1                 |
+|           1010 | Many press       | Button 1                 |
 
 
 ## Xiaomi Vibration sensor
@@ -373,8 +374,8 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
 |           1007 | Shake            | Button 1                 |
-|           1001 | Tilt             | Button 1                 |
-|           1000 | Drop             | Button 1                 |
+|           1009 | Tilt             | Button 1                 |
+|           1008 | Drop             | Button 1                 |
 
 
 ## Ubisys Universal dimmer D1 and power switch S1

@@ -54,7 +54,7 @@ def print_button(btnArr, buttons, buttons1, actions, acc):
 
 
 	if "S_BUTTON" in btn and "_ACTION_" in action and action in actionNames:
-		val = buttons[btn] | actions[action]
+		val = buttons[btn] + actions[action]
 
 		extra = "Button {0}".format(int(buttons[btn] / 1000))  # 4000 --> 4
 
