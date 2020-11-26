@@ -325,7 +325,42 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           4002 | Short release    | Button 4                 |
 
 
-## Xiaomi WXKG11LM remote
+## Xiaomi WXKG12LM remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"lumi.sensor_switch.aq3"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           1004 | Double press     | Button 1                 |
+|           1001 | Hold             | Button 1                 |
+|           1003 | Long release     | Button 1                 |
+|           1007 | Shake            | Button 1                 |
+
+
+## Xiaomi WXKG11LM 2018 remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"lumi.remote.b1acn01"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           1004 | Double press     | Button 1                 |
+|           1001 | Hold             | Button 1                 |
+|           1003 | Long release     | Button 1                 |
+
+
+## Xiaomi WXKG11LM 2016 remote
 
 **Model identifiers**
 
@@ -362,7 +397,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           1010 | Many press       | Button 1                 |
 
 
-## Xiaomi Vibration sensor
+## Xiaomi Vibration sensor (not implemented)
 
 **Model identifiers**
 
