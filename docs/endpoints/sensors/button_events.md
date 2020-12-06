@@ -326,6 +326,21 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           4002 | Short release    | Button 4                 |
 
 
+## Xiaomi QBKG11LM switch
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"lumi.ctrl_ln1.aq1"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           1004 | Double press     | Button 1                 |
+
+
 ## Xiaomi WXKG12LM remote
 
 **Model identifiers**
