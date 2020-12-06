@@ -511,7 +511,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     </tr>
     <tr>
       <td>state.lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
       <td>Timestamp when the sensor was last updated.</td>
     </tr>
     <tr>
@@ -885,15 +885,25 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
   <tbody>
     <tr>
       <td>ZHAAirQuality</td>
-      <td data-since="v2.6.0-beta">airquality
+      <td data-since="v2.6.0-beta">airquality</td>
+      <td>String
+        <hr/>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"excellent"</li>
+          <li>"good"</li>
+          <li>"moderate"</li>
+          <li>"poor"</li>
+          <li>"unhealthy"</li>
+          <li>"out of scale"</li>
+        </ul>
       </td>
-      <td>String</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
       <td data-since="v2.6.0-beta">airqualityppb
       </td>
-      <td>Number</td>
+      <td>Uint16 (0&ndash;65534)</td>
     </tr>
     <tr>
       <td>ZHAAlarm</td>
@@ -903,7 +913,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -923,7 +933,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -943,7 +953,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
@@ -958,7 +968,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -978,7 +988,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td>ZHALightLevel</td>
@@ -988,7 +998,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -1013,7 +1023,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td>ZHAPower</td>
@@ -1023,7 +1033,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -1043,7 +1053,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td>ZHASwitch</td>
@@ -1057,7 +1067,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -1092,7 +1102,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td>ZHATemperature</td>
@@ -1102,7 +1112,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td>ZHATime</td>
@@ -1112,12 +1122,12 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>Time</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
       <td>localtime</td>
-      <td>Time</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
@@ -1156,7 +1166,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -1188,7 +1198,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -1213,7 +1223,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
