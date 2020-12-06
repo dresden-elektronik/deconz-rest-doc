@@ -359,6 +359,22 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           3002 | Short release    | Both buttons             |
 
 
+## Xiaomi WXKG03LM 2018 remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"lumi.remote.b186acn01"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           1004 | Double press     | Button 1                 |
+|           1001 | Hold             | Button 1                 |
+
+
 ## Xiaomi WXKG12LM remote
 
 **Model identifiers**
