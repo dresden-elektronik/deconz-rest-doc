@@ -297,7 +297,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     </tr>
     <tr>
       <td>state.lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
       <td>Timestamp when the sensor was last updated.</td>
     </tr>
     <tr>
@@ -731,7 +731,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -751,7 +751,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -771,7 +771,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
@@ -786,7 +786,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -806,7 +806,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td>ZHALightLevel</td>
@@ -816,7 +816,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -841,7 +841,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td>ZHAPower</td>
@@ -851,7 +851,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -871,7 +871,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td>ZHASwitch</td>
@@ -885,7 +885,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -920,7 +920,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td>ZHATemperature</td>
@@ -930,7 +930,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr class="strong-border-bottom">
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td>ZHATime</td>
@@ -940,12 +940,12 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>Time</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
       <td>localtime</td>
-      <td>Time</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
@@ -984,7 +984,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -1016,7 +1016,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
@@ -1041,7 +1041,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     <tr>
       <td></td>
       <td>lastupdated</td>
-      <td>String</td>
+      <td>ISO 8601 timestamp</td>
     </tr>
     <tr>
       <td></td>
