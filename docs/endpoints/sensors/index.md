@@ -713,15 +713,25 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
   <tbody>
     <tr>
       <td>ZHAAirQuality</td>
-      <td data-since="v2.6.0-beta">airquality
+      <td data-since="v2.6.0-beta">airquality</td>
+      <td>String
+        <hr/>
+        <p>Supported values:</p>
+        <ul class="value-list">
+          <li>"excellent"</li>
+          <li>"good"</li>
+          <li>"moderate"</li>
+          <li>"poor"</li>
+          <li>"unhealthy"</li>
+          <li>"out of scale"</li>
+        </ul>
       </td>
-      <td>String</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
       <td data-since="v2.6.0-beta">airqualityppb
       </td>
-      <td>Number</td>
+      <td>Uint16 (0&ndash;65534)</td>
     </tr>
     <tr>
       <td>ZHAAlarm</td>
