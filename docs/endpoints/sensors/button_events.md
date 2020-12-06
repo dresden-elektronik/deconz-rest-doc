@@ -313,6 +313,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 <ul class="value-list">
 <li>"ZYCT-202"</li>
+<li>"ZLL-NonColorController"</li>
 </ul>
 
 | Value          | Action           | Button                   |
