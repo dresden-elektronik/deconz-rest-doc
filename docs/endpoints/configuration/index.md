@@ -4,7 +4,7 @@ title: Configuration
 
 # Configuration
 
-This endpoint allows to retreive and modify the current configuration of the gateway.
+This endpoint allows to retrieve and modify the current configuration of the gateway.
 
 ## Acquire API key<a name="aquireapikey">&nbsp;</a>
 
