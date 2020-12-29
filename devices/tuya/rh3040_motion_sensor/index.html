@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Motion sensor ESS-SI-PIR-6101 - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Motion sensor ESS-SI-PIR-6101";
+    var mkdocs_page_input_path = "devices/tuya/rh3040_motion_sensor.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../about_rest/">About REST</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../getting_started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/configuration/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/lights/">Lights</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/rules/">Rules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/schedules/">Schedules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/sensors/">Sensors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/sensors/button_events/">Button Events</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/websocket/">Websocket</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Devices</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Ikea</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../ikea/kadrilj_roller_blind/">KADRILJ roller blind</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Tuya</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Motion sensor ESS-SI-PIR-6101</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#1-zhapresence">1. ZHAPresence</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#device-information">Device information</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#top-level-attributes">Top level attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#config-attributes">Config attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#state-attributes">State attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example-output">Example output</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Xiaomi</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../xiaomi/aq_vibration_sensor/">Vibration sensor DJT11LM</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tuya &raquo;</li>
+        
+      
+        
+          <li>Devices &raquo;</li>
+        
+      
+    
+    <li>Motion sensor ESS-SI-PIR-6101</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/tuya/rh3040_motion_sensor.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="motion-sensor-ess-si-pir-6101">Motion sensor ESS-SI-PIR-6101<a class="headerlink" href="#motion-sensor-ess-si-pir-6101" title="Permanent link">&para;</a></h1>
+<p> File: rh3040_motion_sensor.json</p>
+<hr/>
+<h2 id="1-zhapresence">1. ZHAPresence<a class="headerlink" href="#1-zhapresence" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <code> /sensors</code></p>
+<h3 id="device-information">Device information<a class="headerlink" href="#device-information" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Value</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>status</td>
+      <td>Bronze</td>
+    </tr>
+    <tr>
+      <td>product</td>
+      <td>ESS-SI-PIR-6101</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>RH3040</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>Tuyatec</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>ZHAPresence</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="top-level-attributes">Top level attributes<a class="headerlink" href="#top-level-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>Manufacturer name of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>Model identifier of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Todo not shown in output?</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>Type of the resource.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes">Config attributes<a class="headerlink" href="#config-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>battery</td>
+      <td>UInt8</td>
+      <td>The current device battery level.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>duration</td>
+      <td>UInt16</td>
+      <td>The duration until presence is automatically turned back to false.<p>  Default: 120</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>pending</td>
+      <td>Array</td>
+      <td>Pending tasks to configure the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes">State attributes<a class="headerlink" href="#state-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>presence</td>
+      <td>Bool</td>
+      <td>The current presence state.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lowbattery</td>
+      <td>Bool</td>
+      <td>True when the device battery runs low.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>tampered</td>
+      <td>Bool</td>
+      <td>True when the device tampered alarm was triggered.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-output">Example output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  &quot;config&quot;: {
+    &quot;battery&quot;: 75,
+    &quot;duration&quot;: 120,
+    &quot;on&quot;: true,
+    &quot;pending&quot;: [],
+    &quot;reachable&quot;: true
+  },
+  &quot;lastseen&quot;: &quot;2020-12-29T14:47Z&quot;,
+  &quot;manufacturername&quot;: &quot;Tuyatec&quot;,
+  &quot;modelid&quot;: &quot;RH3040&quot;,
+  &quot;name&quot;: &quot;Presence 68&quot;,
+  &quot;state&quot;: {
+    &quot;lastupdated&quot;: &quot;2020-12-29T14:47:19.022&quot;,
+    &quot;lowbattery&quot;: false,
+    &quot;presence&quot;: true,
+    &quot;tampered&quot;: false
+  },
+  &quot;type&quot;: &quot;ZHAPresence&quot;,
+  &quot;uniqueid&quot;: &quot;14:b4:57:ff:fe:15:66:fc-01-0500&quot;
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../xiaomi/aq_vibration_sensor/" class="btn btn-neutral float-right" title="Vibration sensor DJT11LM">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../ikea/kadrilj_roller_blind/" class="btn btn-neutral" title="KADRILJ roller blind"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../ikea/kadrilj_roller_blind/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../xiaomi/aq_vibration_sensor/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

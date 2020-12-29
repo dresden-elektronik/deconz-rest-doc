@@ -35,6 +35,14 @@
 
 }
 
+em.deprecated {
+    margin-top: 1rem;
+    padding: 0.5rem 0.5;
+    color: #C31;
+    display: block;
+    font-style: normal;
+}
+
 /* API attribute*/
 code.api-attribute {
     color: #222;
@@ -44,7 +52,7 @@ code.api-attribute {
 
 /* value lists in attribute descriptions */
 ul.value-list {
-    /*margin-top: 1rem;*/
+    margin-top: 0.5rem;
 }
 
 ul.value-list li {
