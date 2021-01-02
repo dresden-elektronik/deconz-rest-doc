@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>TRADFRI bulb GU10 WS 400lm - deCONZ REST-API</title>
+  <title>TRÅDFRI bulb GU10 WS 400lm - deCONZ REST-API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -19,7 +19,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "TRADFRI bulb GU10 WS 400lm";
+    var mkdocs_page_name = "TR\u00c5DFRI bulb GU10 WS 400lm";
     var mkdocs_page_input_path = "devices/ikea/gu10_ws_400lm_light.md";
     var mkdocs_page_url = null;
   </script>
@@ -116,7 +116,7 @@
     
       
     
-    <li>TRADFRI bulb GU10 WS 400lm</li>
+    <li>TRÅDFRI bulb GU10 WS 400lm</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/ikea/gu10_ws_400lm_light.md"
@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="tradfri-bulb-gu10-ws-400lm">TRADFRI bulb GU10 WS 400lm<a class="headerlink" href="#tradfri-bulb-gu10-ws-400lm" title="Permanent link">&para;</a></h1>
+                <h1 id="tradfri-bulb-gu10-ws-400lm">TRÅDFRI bulb GU10 WS 400lm<a class="headerlink" href="#tradfri-bulb-gu10-ws-400lm" title="Permanent link">&para;</a></h1>
 <p> File: gu10_ws_400lm_light.json</p>
 <hr/>
 <h2 id="1-color-temperature-light">1. Color temperature light<a class="headerlink" href="#1-color-temperature-light" title="Permanent link">&para;</a></h2>
@@ -148,7 +148,7 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>TRADFRI bulb GU10 WS 400lm</td>
+      <td>TRÅDFRI bulb GU10 WS 400lm</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -321,6 +321,11 @@
   &quot;uniqueid&quot;: &quot;00:0b:57:ff:fe:26:56:80-01&quot;
 }
 </code></pre>
+<hr/>
+<h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
+<h3 id="radio-silence">Radio Silence<a class="headerlink" href="#radio-silence" title="Permanent link">&para;</a></h3>
+<p>All mains powered IKEA lights and repeaters have a bug that causes the device to not operate correctly anymore. The bug is triggered mostly in larger networks with many end-devices likely after receiving a Parent Announce message a few times.</p>
+<p><strong>Workaround:</strong> To get the device back online it must be power-cycled. Which means cut the power for a few seconds. After that the device should work normally again.</p>
               
             </div>
           </div>
