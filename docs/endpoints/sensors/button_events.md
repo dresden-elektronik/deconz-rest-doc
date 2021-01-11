@@ -86,6 +86,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 <ul class="value-list">
 <li>"TRADFRI on/off switch"</li>
+<li>"TRADFRI SHORTCUT Button"</li>
 </ul>
 
 | Value          | Action           | Button                   |
@@ -252,7 +253,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 
 <ul class="value-list">
-<li>"SYMFONISK"</li>
+<li>"SYMFONISK Sound Controller"</li>
 </ul>
 
 | Value          | Action           | Button                   |
