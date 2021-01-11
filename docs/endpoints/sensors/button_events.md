@@ -850,7 +850,13 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 
 <ul class="value-list">
-<li>""</li>
+<li>"_TZ3000_bi6lpsew"</li>
+<li>"_TZ3400_keyjhapk"</li>
+<li>"_TYZB02_key8kk7r"</li>
+<li>"_TZ3400_keyjqthh"</li>
+<li>"_TZ3400_key8kk7r"</li>
+<li>"_TZ3000_vp6clf9d"</li>
+<li>"_TYZB02_keyjqthh"</li>
 </ul>
 
 | Value          | Action           | Button                   |
