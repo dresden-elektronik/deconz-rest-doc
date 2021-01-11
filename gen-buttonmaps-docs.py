@@ -16,7 +16,7 @@ except ImportError:
 
 
 #url = "https://raw.githubusercontent.com/dresden-elektronik/deconz-rest-plugin/master/button_maps.json"
-url = "https://raw.githubusercontent.com/manup/deconz-rest-plugin/button_maps/button_maps.json"
+url = "https://raw.githubusercontent.com/manup/deconz-rest-plugin/master/button_maps.json"
 
 f = urlopen(url)
 

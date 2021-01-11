@@ -1,6 +1,6 @@
 # Button Events
 
-This page was auto generated from [button_maps.json](https://raw.githubusercontent.com/manup/deconz-rest-plugin/button_maps/button_maps.json)
+This page was auto generated from [button_maps.json](https://raw.githubusercontent.com/manup/deconz-rest-plugin/master/button_maps.json)
 
 The following sections enumerate supported values for `state.buttonevent` for [/sensors](../../sensors) of type ZHASwitch.
 
