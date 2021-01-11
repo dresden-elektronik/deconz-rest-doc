@@ -1252,3 +1252,27 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |          24003 | Long release     | Button 24                |
 
 
+## LIDL Livarno Lux LIDL / Livarno Lux Remote Control (_TYZB01_bngwdjsr)
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"HG06323"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           1004 | Double press     | Button 1                 |
+|           1005 | Treeble press    | Button 1                 |
+|           1006 | Quadruple press  | Button 1                 |
+|           2002 | Short release    | Button 2                 |
+|           2001 | Hold             | Button 2                 |
+|           2003 | Long release     | Button 2                 |
+|           3002 | Short release    | Button 3                 |
+|           3001 | Hold             | Button 3                 |
+|           3003 | Long release     | Button 3                 |
+|           4002 | Short release    | Button 4                 |
+
+
