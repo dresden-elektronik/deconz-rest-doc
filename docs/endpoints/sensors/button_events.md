@@ -631,35 +631,77 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |          27003 | Long release     | Button 27                |
 
 
-## iCasa ICZB-KPD1 remote
+## iCasa ICZB-KPD12 remote
 
 **Model identifiers**
 
 
 <ul class="value-list">
-<li>"ICZB-KPD1"</li>
+<li>"ICZB-KPD12"</li>
 </ul>
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Button 1                 |
-|           1001 | Hold             | Button 1                 |
-|           1003 | Long release     | Button 1                 |
-|           2002 | Short release    | Button 2                 |
-|           2001 | Hold             | Button 2                 |
-|           2003 | Long release     | Button 2                 |
-|           3002 | Short release    | Button 3                 |
-|           3003 | Long release     | Button 3                 |
-|           4002 | Short release    | Button 4                 |
-|           4003 | Long release     | Button 4                 |
-|           5002 | Short release    | Button 5                 |
-|           5003 | Long release     | Button 5                 |
-|           6002 | Short release    | Button 6                 |
-|           6003 | Long release     | Button 6                 |
-|           7002 | Short release    | Button 7                 |
-|           7003 | Long release     | Button 7                 |
-|           8002 | Short release    | Button 8                 |
-|           8003 | Long release     | Button 8                 |
+|           1002 | Short release    | Off button               |
+|           1001 | Hold             | Off button               |
+|           1003 | Long release     | Off button               |
+|           2002 | Short release    | On button                |
+|           2001 | Hold             | On button                |
+|           2003 | Long release     | On button                |
+
+
+## iCasa ICZB-KPD14S remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ICZB-KPD14S"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Off button               |
+|           1001 | Hold             | Off button               |
+|           1003 | Long release     | Off button               |
+|           2002 | Short release    | On button                |
+|           2001 | Hold             | On button                |
+|           2003 | Long release     | On button                |
+|           3002 | Short release    | S1 button                |
+|           3003 | Long release     | S1 button                |
+|           4002 | Short release    | S2 button                |
+|           4003 | Long release     | S2 button                |
+
+
+## iCasa ICZB-KPD18S remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ICZB-KPD18S"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Off button               |
+|           1001 | Hold             | Off button               |
+|           1003 | Long release     | Off button               |
+|           2002 | Short release    | On button                |
+|           2001 | Hold             | On button                |
+|           2003 | Long release     | On button                |
+|           3002 | Short release    | S1 button                |
+|           3003 | Long release     | S1 button                |
+|           4002 | Short release    | S2 button                |
+|           4003 | Long release     | S2 button                |
+|           5002 | Short release    | S3 button                |
+|           5003 | Long release     | S3 button                |
+|           6002 | Short release    | S4 button                |
+|           6003 | Long release     | S4 button                |
+|           7002 | Short release    | S5 button                |
+|           7003 | Long release     | S5 button                |
+|           8002 | Short release    | S6 button                |
+|           8003 | Long release     | S6 button                |
 
 
 ## iCasa Remotes
