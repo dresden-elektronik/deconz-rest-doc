@@ -131,7 +131,11 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#innr-rc-110-remote">Innr RC 110 remote</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#icasa-iczb-kpd1-remote">iCasa ICZB-KPD1 remote</a>
+    <li class="toctree-l2"><a class="reference internal" href="#icasa-iczb-kpd12-remote">iCasa ICZB-KPD12 remote</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#icasa-iczb-kpd14s-remote">iCasa ICZB-KPD14S remote</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#icasa-iczb-kpd18s-remote">iCasa ICZB-KPD18S remote</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#icasa-remotes">iCasa Remotes</a>
     </li>
@@ -176,6 +180,8 @@
     <li class="toctree-l2"><a class="reference internal" href="#linkind-1-button-remote-zs232000178">Linkind 1 button remote ZS232000178</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#iluminize-4-button-cct-touch-remote">Iluminize 4 button CCT touch remote</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lidl-livarno-lux-lidl-livarno-lux-remote-control-_tyzb01_bngwdjsr">LIDL Livarno Lux LIDL / Livarno Lux Remote Control (_TYZB01_bngwdjsr)</a>
     </li>
     </ul>
                     </li>
@@ -239,7 +245,7 @@
             <div class="section">
               
                 <h1 id="button-events">Button Events<a class="headerlink" href="#button-events" title="Permanent link">&para;</a></h1>
-<p>This page was auto generated from <a href="https://raw.githubusercontent.com/manup/deconz-rest-plugin/button_maps/button_maps.json">button_maps.json</a></p>
+<p>This page was auto generated from <a href="https://raw.githubusercontent.com/manup/deconz-rest-plugin/master/button_maps.json">button_maps.json</a></p>
 <p>The following sections enumerate supported values for <code>state.buttonevent</code> for <a href="../../sensors">/sensors</a> of type ZHASwitch.</p>
 <h2 id="dresden-elektronik-lighting-switch">dresden elektronik Lighting Switch<a class="headerlink" href="#dresden-elektronik-lighting-switch" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
@@ -468,6 +474,7 @@
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
 <li>"TRADFRI on/off switch"</li>
+<li>"TRADFRI SHORTCUT Button"</li>
 </ul>
 
 <table>
@@ -914,7 +921,7 @@
 <h2 id="ikea-symfonisk-remote">IKEA SYMFONISK remote<a class="headerlink" href="#ikea-symfonisk-remote" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
-<li>"SYMFONISK"</li>
+<li>"SYMFONISK Sound Controller"</li>
 </ul>
 
 <table>
@@ -2003,10 +2010,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="icasa-iczb-kpd1-remote">iCasa ICZB-KPD1 remote<a class="headerlink" href="#icasa-iczb-kpd1-remote" title="Permanent link">&para;</a></h2>
+<h2 id="icasa-iczb-kpd12-remote">iCasa ICZB-KPD12 remote<a class="headerlink" href="#icasa-iczb-kpd12-remote" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
-<li>"ICZB-KPD1"</li>
+<li>"ICZB-KPD12"</li>
 </ul>
 
 <table>
@@ -2021,92 +2028,206 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Button 1</td>
+<td>Off button</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Button 1</td>
+<td>Off button</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Button 1</td>
+<td>Off button</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Button 2</td>
+<td>On button</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Button 2</td>
+<td>On button</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Button 2</td>
+<td>On button</td>
+</tr>
+</tbody>
+</table>
+<h2 id="icasa-iczb-kpd14s-remote">iCasa ICZB-KPD14S remote<a class="headerlink" href="#icasa-iczb-kpd14s-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"ICZB-KPD14S"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Off button</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Hold</td>
+<td>Off button</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Long release</td>
+<td>Off button</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>On button</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Hold</td>
+<td>On button</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Long release</td>
+<td>On button</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Button 3</td>
+<td>S1 button</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>Button 3</td>
+<td>S1 button</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>Button 4</td>
+<td>S2 button</td>
 </tr>
 <tr>
 <td>4003</td>
 <td>Long release</td>
-<td>Button 4</td>
+<td>S2 button</td>
+</tr>
+</tbody>
+</table>
+<h2 id="icasa-iczb-kpd18s-remote">iCasa ICZB-KPD18S remote<a class="headerlink" href="#icasa-iczb-kpd18s-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"ICZB-KPD18S"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Off button</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Hold</td>
+<td>Off button</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Long release</td>
+<td>Off button</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>On button</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Hold</td>
+<td>On button</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Long release</td>
+<td>On button</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>S1 button</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Long release</td>
+<td>S1 button</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Short release</td>
+<td>S2 button</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Long release</td>
+<td>S2 button</td>
 </tr>
 <tr>
 <td>5002</td>
 <td>Short release</td>
-<td>Button 5</td>
+<td>S3 button</td>
 </tr>
 <tr>
 <td>5003</td>
 <td>Long release</td>
-<td>Button 5</td>
+<td>S3 button</td>
 </tr>
 <tr>
 <td>6002</td>
 <td>Short release</td>
-<td>Button 6</td>
+<td>S4 button</td>
 </tr>
 <tr>
 <td>6003</td>
 <td>Long release</td>
-<td>Button 6</td>
+<td>S4 button</td>
 </tr>
 <tr>
 <td>7002</td>
 <td>Short release</td>
-<td>Button 7</td>
+<td>S5 button</td>
 </tr>
 <tr>
 <td>7003</td>
 <td>Long release</td>
-<td>Button 7</td>
+<td>S5 button</td>
 </tr>
 <tr>
 <td>8002</td>
 <td>Short release</td>
-<td>Button 8</td>
+<td>S6 button</td>
 </tr>
 <tr>
 <td>8003</td>
 <td>Long release</td>
-<td>Button 8</td>
+<td>S6 button</td>
 </tr>
 </tbody>
 </table>
@@ -2553,7 +2674,13 @@
 <h2 id="tuya-3-gang-remote">Tuya 3-gang remote<a class="headerlink" href="#tuya-3-gang-remote" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
-<li>""</li>
+<li>"_TZ3000_bi6lpsew"</li>
+<li>"_TZ3400_keyjhapk"</li>
+<li>"_TYZB02_key8kk7r"</li>
+<li>"_TZ3400_keyjqthh"</li>
+<li>"_TZ3400_key8kk7r"</li>
+<li>"_TZ3000_vp6clf9d"</li>
+<li>"_TYZB02_keyjqthh"</li>
 </ul>
 
 <table>
@@ -3729,6 +3856,78 @@
 <td>24003</td>
 <td>Long release</td>
 <td>Button 24</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lidl-livarno-lux-lidl-livarno-lux-remote-control-_tyzb01_bngwdjsr">LIDL Livarno Lux LIDL / Livarno Lux Remote Control (_TYZB01_bngwdjsr)<a class="headerlink" href="#lidl-livarno-lux-lidl-livarno-lux-remote-control-_tyzb01_bngwdjsr" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"HG06323"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Double press</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>Treeble press</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>Quadruple press</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Hold</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Long release</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Hold</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Long release</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Short release</td>
+<td>Button 4</td>
 </tr>
 </tbody>
 </table>
