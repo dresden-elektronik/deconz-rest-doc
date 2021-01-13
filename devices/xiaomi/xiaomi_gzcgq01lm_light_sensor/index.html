@@ -255,12 +255,6 @@
 </td>
       <td>RW</td>
     </tr>
-    <tr>
-      <td>temperature</td>
-      <td>UInt8</td>
-      <td>The current device temperature in °C.</td>
-      <td>R</td>
-    </tr>
   </tbody>
 </table>
 
@@ -279,7 +273,7 @@
     <tr>
       <td>dark</td>
       <td>Bool</td>
-      <td>True when <code class="api-attribute">lightlevel</code> is greater than <code class="api-attribute">tholddark</code>.</td>
+      <td>True when <code class="api-attribute">lightlevel</code> is lower than <code class="api-attribute">tholddark</code>.</td>
       <td>R</td>
     </tr>
     <tr>
@@ -309,7 +303,6 @@
     &quot;battery&quot;: 100,
     &quot;on&quot;: true,
     &quot;reachable&quot;: true,
-    &quot;temperature&quot;: null,
     &quot;tholddark&quot;: 12000,
     &quot;tholdoffset&quot;: 7000
   },
