@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Light sensor GZCGQ01LM - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Light sensor GZCGQ01LM";
+    var mkdocs_page_input_path = "devices/xiaomi/xiaomi_gzcgq01lm_light_sensor.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../about_rest/">About REST</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../getting_started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/configuration/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/lights/">Lights</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/rules/">Rules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/schedules/">Schedules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/sensors/">Sensors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/sensors/button_events/">Button Events</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/websocket/">Websocket</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../">Supported Devices</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Light sensor GZCGQ01LM</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/xiaomi/xiaomi_gzcgq01lm_light_sensor.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="light-sensor-gzcgq01lm">Light sensor GZCGQ01LM<a class="headerlink" href="#light-sensor-gzcgq01lm" title="Permanent link">&para;</a></h1>
+<p> File: xiaomi_gzcgq01lm_light_sensor.json</p>
+<hr/>
+<h2 id="1-zhalightlevel">1. ZHALightLevel<a class="headerlink" href="#1-zhalightlevel" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+</p>
+<h3 id="device-information">Device information<a class="headerlink" href="#device-information" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Value</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>status</td>
+      <td>Silver</td>
+    </tr>
+    <tr>
+      <td>product</td>
+      <td>GZCGQ01LM</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>lumi.sen_ill.mgl01</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>XIAOMI</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>ZHALightLevel</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="top-level-attributes">Top level attributes<a class="headerlink" href="#top-level-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>Manufacturer name of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>Model identifier of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>Type of the resource.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes">Config attributes<a class="headerlink" href="#config-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>battery</td>
+      <td>UInt8</td>
+      <td>The current device battery level.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>tholddark</td>
+      <td>UInt16</td>
+      <td>Specifies at which <code class="api-attribute">lightlevel</code> the <code class="api-attribute">dark</code> attribute turns false.<p>  Default: 12000</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>tholdoffset</td>
+      <td>UInt16</td>
+      <td>Relative offset to <code class="api-attribute">tholddark</code>. Sets <code class="api-attribute">daylight</code> attribute to true when when lightlevel is at or above (tholddark + tholdoffset).<p>  Default: 7000</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>temperature</td>
+      <td>UInt8</td>
+      <td>The current device temperature in °C.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes">State attributes<a class="headerlink" href="#state-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lightlevel</td>
+      <td>UInt16</td>
+      <td>The current Light level in 10000 log10 (lux) + 1.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>dark</td>
+      <td>Bool</td>
+      <td>True when <code class="api-attribute">lightlevel</code> is greater than <code class="api-attribute">tholddark</code>.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>daylight</td>
+      <td>Bool</td>
+      <td>True when <code class="api-attribute">lightlevel</code> suits daylight according <code class="api-attribute">tholddark</code> and <code class="api-attribute">tholdoffset</code> configuration.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lux</td>
+      <td>UInt32</td>
+      <td>The current Light level in lux.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-output">Example output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  &quot;config&quot;: {
+    &quot;battery&quot;: 100,
+    &quot;on&quot;: true,
+    &quot;reachable&quot;: true,
+    &quot;temperature&quot;: null,
+    &quot;tholddark&quot;: 12000,
+    &quot;tholdoffset&quot;: 7000
+  },
+  &quot;ep&quot;: 1,
+  &quot;etag&quot;: &quot;761fff5a33ee73a8b9e4ec2e8ee5dac2&quot;,
+  &quot;lastseen&quot;: &quot;2021-01-13T12:07Z&quot;,
+  &quot;manufacturername&quot;: &quot;XIAOMI&quot;,
+  &quot;modelid&quot;: &quot;lumi.sen_ill.mgl01&quot;,
+  &quot;name&quot;: &quot;Light Sensor&quot;,
+  &quot;state&quot;: {
+    &quot;dark&quot;: false,
+    &quot;daylight&quot;: false,
+    &quot;lastupdated&quot;: &quot;2021-01-13T12:07:27.511&quot;,
+    &quot;lightlevel&quot;: 13425,
+    &quot;lux&quot;: 22
+  },
+  &quot;swversion&quot;: &quot;2019&quot;,
+  &quot;type&quot;: &quot;ZHALightLevel&quot;,
+  &quot;uniqueid&quot;: &quot;04:cf:8c:df:3c:7f:1f:80-01-0400&quot;
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
