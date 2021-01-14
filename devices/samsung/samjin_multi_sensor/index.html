@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Samsung Button - deCONZ REST-API</title>
+  <title>Samsung Multipurpose Sensor - deCONZ REST-API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Samsung Button";
-    var mkdocs_page_input_path = "devices/samsung/samjin_button_switch.md";
+    var mkdocs_page_name = "Samsung Multipurpose Sensor";
+    var mkdocs_page_input_path = "devices/samsung/samjin_multi_sensor.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -116,10 +116,10 @@
     
       
     
-    <li>Samsung Button</li>
+    <li>Samsung Multipurpose Sensor</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/samsung/samjin_button_switch.md"
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/samsung/samjin_multi_sensor.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -130,10 +130,10 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="samsung-button">Samsung Button<a class="headerlink" href="#samsung-button" title="Permanent link">&para;</a></h1>
-<p> File: samjin_button_switch.json</p>
+                <h1 id="samsung-multipurpose-sensor">Samsung Multipurpose Sensor<a class="headerlink" href="#samsung-multipurpose-sensor" title="Permanent link">&para;</a></h1>
+<p> File: samjin_multi_sensor.json</p>
 <hr/>
-<h2 id="1-zhaswitch">1. ZHASwitch<a class="headerlink" href="#1-zhaswitch" title="Permanent link">&para;</a></h2>
+<h2 id="1-zhaopenclose">1. ZHAOpenClose<a class="headerlink" href="#1-zhaopenclose" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
 </p>
 <h3 id="device-information">Device information<a class="headerlink" href="#device-information" title="Permanent link">&para;</a></h3>
@@ -148,11 +148,11 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>IM6001-BTP01</td>
+      <td>IM6001-OTP01</td>
     </tr>
     <tr>
       <td>modelid</td>
-      <td>button</td>
+      <td>multi</td>
     </tr>
     <tr>
       <td>manufacturername</td>
@@ -160,7 +160,7 @@
     </tr>
     <tr>
       <td>type</td>
-      <td>ZHASwitch</td>
+      <td>ZHAOpenClose</td>
     </tr>
   </tbody>
 </table>
@@ -188,12 +188,6 @@
       <td>String</td>
       <td>Model identifier of the device.</td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>mode</td>
-      <td>UInt32</td>
-      <td>Operational mode.</td>
-      <td>RW</td>
     </tr>
     <tr>
       <td>name</td>
@@ -269,10 +263,10 @@
       <td>R</td>
     </tr>
     <tr>
-      <td>buttonevent</td>
-      <td>UInt32</td>
-      <td>The last received button event.</td>
-      <td>R</td>
+      <td>open</td>
+      <td>Bool</td>
+      <td>The open/close state.</td>
+      <td>RW</td>
     </tr>
   </tbody>
 </table>
@@ -280,24 +274,24 @@
 <h3 id="example-output">Example output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h3>
 <pre><code>{
   &quot;config&quot;: {
-    &quot;battery&quot;: 67,
+    &quot;battery&quot;: 100,
+    &quot;enrolled&quot;: 1,
     &quot;on&quot;: true,
     &quot;pending&quot;: [],
     &quot;reachable&quot;: true
   },
   &quot;ep&quot;: 1,
-  &quot;etag&quot;: &quot;d1e74f93f14c016ab59e33df99c9656c&quot;,
-  &quot;lastseen&quot;: &quot;2021-01-12T17:59Z&quot;,
+  &quot;etag&quot;: &quot;63d006cf5722271299d75d5829a33974&quot;,
+  &quot;lastseen&quot;: &quot;2021-01-14T11:35Z&quot;,
   &quot;manufacturername&quot;: &quot;Samjin&quot;,
-  &quot;mode&quot;: 1,
-  &quot;modelid&quot;: &quot;button&quot;,
-  &quot;name&quot;: &quot;Button&quot;,
+  &quot;modelid&quot;: &quot;multi&quot;,
+  &quot;name&quot;: &quot;Multipurpose Sensor&quot;,
   &quot;state&quot;: {
-    &quot;buttonevent&quot;: 1001,
-    &quot;lastupdated&quot;: &quot;2021-01-11T19:30:44.544&quot;
+    &quot;lastupdated&quot;: &quot;2021-01-14T11:13:45.367&quot;,
+    &quot;open&quot;: false
   },
-  &quot;type&quot;: &quot;ZHASwitch&quot;,
-  &quot;uniqueid&quot;: &quot;28:6d:97:00:01:06:41:79-01-0500&quot;
+  &quot;type&quot;: &quot;ZHAOpenClose&quot;,
+  &quot;uniqueid&quot;: &quot;28:6d:97:00:01:06:ce:ae-01-0500&quot;
 }
 </code></pre>
 <hr/>
@@ -316,11 +310,11 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>IM6001-BTP01</td>
+      <td>IM6001-OTP01</td>
     </tr>
     <tr>
       <td>modelid</td>
-      <td>button</td>
+      <td>multi</td>
     </tr>
     <tr>
       <td>manufacturername</td>
@@ -443,23 +437,188 @@
 <h3 id="example-output_1">Example output<a class="headerlink" href="#example-output_1" title="Permanent link">&para;</a></h3>
 <pre><code>{
   &quot;config&quot;: {
-    &quot;battery&quot;: 67,
+    &quot;battery&quot;: 100,
     &quot;offset&quot;: 0,
     &quot;on&quot;: true,
     &quot;reachable&quot;: true
   },
   &quot;ep&quot;: 1,
-  &quot;etag&quot;: &quot;d1e74f93f14c016ab59e33df99c9656c&quot;,
-  &quot;lastseen&quot;: &quot;2021-01-12T17:59Z&quot;,
+  &quot;etag&quot;: &quot;df082b6de6637a33e750f7111b7bd336&quot;,
+  &quot;lastseen&quot;: &quot;2021-01-14T11:35Z&quot;,
   &quot;manufacturername&quot;: &quot;Samjin&quot;,
-  &quot;modelid&quot;: &quot;button&quot;,
-  &quot;name&quot;: &quot;Temperature 118&quot;,
+  &quot;modelid&quot;: &quot;multi&quot;,
+  &quot;name&quot;: &quot;Multipurpose Sensor&quot;,
   &quot;state&quot;: {
-    &quot;lastupdated&quot;: &quot;2021-01-11T19:29:33.399&quot;,
-    &quot;temperature&quot;: 2771
+    &quot;lastupdated&quot;: &quot;2021-01-14T11:34:57.853&quot;,
+    &quot;temperature&quot;: 2096
   },
   &quot;type&quot;: &quot;ZHATemperature&quot;,
-  &quot;uniqueid&quot;: &quot;28:6d:97:00:01:06:41:79-01-0402&quot;
+  &quot;uniqueid&quot;: &quot;28:6d:97:00:01:06:ce:ae-01-0402&quot;
+}
+</code></pre>
+<hr/>
+<h2 id="3-zhavibration">3. ZHAVibration<a class="headerlink" href="#3-zhavibration" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+</p>
+<h3 id="device-information_2">Device information<a class="headerlink" href="#device-information_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Value</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>status</td>
+      <td>Silver</td>
+    </tr>
+    <tr>
+      <td>product</td>
+      <td>IM6001-OTP01</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>multi</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>Samjin</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>ZHAVibration</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="top-level-attributes_2">Top level attributes<a class="headerlink" href="#top-level-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>Manufacturer name of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>Model identifier of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>Type of the resource.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes_2">Config attributes<a class="headerlink" href="#config-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>battery</td>
+      <td>UInt8</td>
+      <td>The current device battery level in 0&ndash;100&thinsp;%.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_2">State attributes<a class="headerlink" href="#state-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>orientation</td>
+      <td>Array[3]</td>
+      <td><p>The orientation as [X, Y, Z].</p> <p><b>Note:</b> These are the raw device values, it's not known what they represent, they are in range -1400&ndash;1400.</p></td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>vibration</td>
+      <td>Bool</td>
+      <td>True when vibration is detected.</td>
+      <td>RW</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-output_2">Example output<a class="headerlink" href="#example-output_2" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  &quot;config&quot;: {
+    &quot;battery&quot;: 100,
+    &quot;on&quot;: true,
+    &quot;reachable&quot;: true
+  },
+  &quot;ep&quot;: 1,
+  &quot;etag&quot;: &quot;97a223f7b2d965a8f36a02ee8b9b264e&quot;,
+  &quot;lastseen&quot;: &quot;2021-01-14T11:35Z&quot;,
+  &quot;manufacturername&quot;: &quot;Samjin&quot;,
+  &quot;modelid&quot;: &quot;multi&quot;,
+  &quot;name&quot;: &quot;Multipurpose Sensor&quot;,
+  &quot;state&quot;: {
+    &quot;lastupdated&quot;: &quot;2021-01-14T11:35:42.744&quot;,
+    &quot;orientation&quot;: [
+      12,
+      -37,
+      -1029
+    ],
+    &quot;vibration&quot;: false
+  },
+  &quot;type&quot;: &quot;ZHAVibration&quot;,
+  &quot;uniqueid&quot;: &quot;28:6d:97:00:01:06:ce:ae-01-fc02&quot;
 }
 </code></pre>
               
