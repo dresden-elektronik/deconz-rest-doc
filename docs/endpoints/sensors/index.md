@@ -845,13 +845,23 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td>ZHAOpenClose</td>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lowbattery</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>open</td>
       <td>Bool</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
-      <td>lastupdated</td>
-      <td>ISO 8601 timestamp</td>
+      <td>tampered</td>
+      <td>Bool</td>
     </tr>
     <tr>
       <td>ZHAPower</td>
@@ -875,13 +885,23 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td>ZHAPresence</td>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lowbattery</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>presence</td>
       <td>Bool</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
-      <td>lastupdated</td>
-      <td>ISO 8601 timestamp</td>
+      <td>tampered</td>
+      <td>Bool</td>
     </tr>
     <tr>
       <td>ZHASwitch</td>
@@ -971,7 +991,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td></td>
       <td data-since="v2.5.81">errorcode
       </td>
-      <td>Bool</td>
+      <td>String</td>
     </tr>
     <tr>
       <td></td>
@@ -1368,7 +1388,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td></td>
-      <td>scheduleon</td>
+      <td>schedule_on</td>
       <td>Bool</td>
       <td>True when a thermostat schedule is enabled.</td>
       <td>RW</td>
@@ -1396,6 +1416,28 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td>Various sensors</td>
+      <td>enrolled</td>
+      <td>Number</td>
+      <td data-since="v2.9.1-beta">
+        <p>Displays the current IAS enrollment status.</p>
+        <p>Supported for all devices having the IAS Zone cluster:</p>
+        <ul class="value-list">
+           <li>0 = Init</li>
+           <li>1 = Enrolled</li>
+           <li>2 = Read</li>
+           <li>3 = Wait read</li>
+           <li>4 = Write CIE address</li>
+           <li>5 = Wait write CIE address</li>
+           <li>6 = Delay enroll</li>
+           <li>7 = Enroll</li>
+           <li>8 = Wait enroll</li>
+           <li>9 = Max (invalid)</li>
+        </ul>
+      </td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>ledindication</td>
       <td>Bool</td>
       <td>
