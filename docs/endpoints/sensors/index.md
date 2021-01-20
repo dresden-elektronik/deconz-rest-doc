@@ -158,6 +158,7 @@ HTTP/1.1 200 OK
         },
         "ep": 1,
         "etag": "61eaee2477fc3d5c27932fefeef638bd",
+        "lastseen": "2016-07-06T09:39Z",
         "manufacturername": "dresden elektronik",
         "modelid": "Lighting Switch",
         "name": "Lighting Switch 1",
@@ -176,6 +177,7 @@ HTTP/1.1 200 OK
         },
         "ep": 2,
         "etag": "61eaee2477fc3d5c27932fefeef638bd",
+        "lastseen": "2016-07-06T09:39Z",
         "manufacturername": "dresden elektronik",
         "modelid": "Lighting Switch",
         "name": "Lighting Switch 2",
@@ -226,6 +228,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     },
     "ep": 1,
     "etag": "61eaee2477fc3d5c27932fefeef638bd",
+    "lastseen": "2016-07-06T09:39Z",
     "manufacturername": "dresden elektronik",
     "mode": 2,
     "modelid": "Lighting Switch",
@@ -263,14 +266,14 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>HTTP <a href="../../misc/polling#etag">etag</a> which changes whenever the sensor changes.</td>
     </tr>
     <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp representing the last time a message from the sensor was received. UTC with resolution of minutes.</td>
+    </tr>
+    <tr>
       <td>manufacturername</td>
       <td>String</td>
       <td>The manufacturer name of the sensor.</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>String</td>
-      <td>The model id of the sensor.</td>
     </tr>
     <tr>
       <td>mode</td>
@@ -286,6 +289,11 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       </td>
     </tr>
     <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>The model id of the sensor.</td>
+    </tr>
+    <tr>
       <td>name</td>
       <td>String</td>
       <td>The name of the sensor.</td>
@@ -294,11 +302,6 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>state</td>
       <td>Object</td>
       <td>The state of the sensor.</td>
-    </tr>
-    <tr>
-      <td>state.lastupdated</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp when the sensor was last updated.</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -845,13 +848,23 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td>ZHAOpenClose</td>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lowbattery</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>open</td>
       <td>Bool</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
-      <td>lastupdated</td>
-      <td>ISO 8601 timestamp</td>
+      <td>tampered</td>
+      <td>Bool</td>
     </tr>
     <tr>
       <td>ZHAPower</td>
@@ -875,13 +888,23 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td>ZHAPresence</td>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>lowbattery</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>presence</td>
       <td>Bool</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
-      <td>lastupdated</td>
-      <td>ISO 8601 timestamp</td>
+      <td>tampered</td>
+      <td>Bool</td>
     </tr>
     <tr>
       <td>ZHASwitch</td>
@@ -971,7 +994,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td></td>
       <td data-since="v2.5.81">errorcode
       </td>
-      <td>Bool</td>
+      <td>String</td>
     </tr>
     <tr>
       <td></td>
@@ -1368,7 +1391,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td></td>
-      <td>scheduleon</td>
+      <td>schedule_on</td>
       <td>Bool</td>
       <td>True when a thermostat schedule is enabled.</td>
       <td>RW</td>
@@ -1396,6 +1419,28 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td>Various sensors</td>
+      <td>enrolled</td>
+      <td>Number</td>
+      <td data-since="v2.9.1-beta">
+        <p>Displays the current IAS enrollment status.</p>
+        <p>Supported for all devices having the IAS Zone cluster:</p>
+        <ul class="value-list">
+           <li>0 = Init</li>
+           <li>1 = Enrolled</li>
+           <li>2 = Read</li>
+           <li>3 = Wait read</li>
+           <li>4 = Write CIE address</li>
+           <li>5 = Wait write CIE address</li>
+           <li>6 = Delay enroll</li>
+           <li>7 = Enroll</li>
+           <li>8 = Wait enroll</li>
+           <li>9 = Max (invalid)</li>
+        </ul>
+      </td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>ledindication</td>
       <td>Bool</td>
       <td>

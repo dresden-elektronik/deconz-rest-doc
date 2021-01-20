@@ -495,27 +495,9 @@ Modify configuration parameters.
     </thead>
     <tbody>
         <tr>
-            <td>name</td>
-            <td>String (0&ndash;16 chars)</td>
-            <td>Name of the gateway.</td>
-            <td>optional</td>
-        </tr>
-        <tr>
-            <td>rfconnected</td>
+            <td>discovery</td>
             <td>Bool</td>
-            <td>Set connected state of the gateway.</td>
-            <td>optional</td>
-        </tr>
-        <tr>
-            <td>updatechannel</td>
-            <td>String</td>
-            <td>Set update channel ("stable"|"alpha"|"beta").</td>
-            <td>optional</td>
-        </tr>
-        <tr>
-            <td>permitjoin</td>
-            <td>Number (0&ndash;255)</td>
-            <td>Open the network so that other zigbee devices can join. 0 = network closed, 255 = network open, 1&ndash;254 = time in seconds the network remains open. The value will decrement automatically.</td>
+            <td>Set gateway discovery over the internet active or inactive.</td>
             <td>optional</td>
         </tr>
         <tr>
@@ -525,15 +507,18 @@ Modify configuration parameters.
             <td>optional</td>
         </tr>
         <tr>
-            <td>otauactive</td>
-            <td>Bool</td>
-            <td>Set OTAU active or inactive.</td>
+            <td>lightlastseeninterval</td>
+            <td>Number (1&ndash;65535)</td>
+            <td data-since="v2.9.1-beta">
+              <p>Sets the number of seconds where the timestamp for "lastseen" is updated at the earliest for light resources. For any such update, a seperate websocket event will be triggered.</p>
+              <p>Default: 60</p>
+            </td>
             <td>optional</td>
         </tr>
         <tr>
-            <td>discovery</td>
-            <td>Bool</td>
-            <td>Set gateway discovery over the internet active or inactive.</td>
+            <td>name</td>
+            <td>String (0&ndash;16 chars)</td>
+            <td>Name of the gateway.</td>
             <td>optional</td>
         </tr>
         <tr>
@@ -543,21 +528,27 @@ Modify configuration parameters.
             <td>optional</td>
         </tr>
         <tr>
+            <td>otauactive</td>
+            <td>Bool</td>
+            <td>Set OTAU active or inactive.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>permitjoin</td>
+            <td>Number (0&ndash;255)</td>
+            <td>Open the network so that other zigbee devices can join. 0 = network closed, 255 = network open, 1&ndash;254 = time in seconds the network remains open. The value will decrement automatically.</td>
+            <td>optional</td>
+        </tr>
+        <tr>
             <td>rfconnected</td>
             <td>Bool</td>
             <td>Set to true to bring the Zigbee network up and false to bring it down. This has the same effect as using the Join and Leave buttons in deCONZ.</td>
             <td>optional</td>
         </tr>
         <tr>
-            <td>unlock</td>
-            <td>Number (0&ndash;600)</td>
-            <td>Unlock the gateway so that apps can register themselves to the gateway (time in seconds).</td>
-            <td>optional</td>
-        </tr>
-        <tr>
-            <td>zigbeechannel</td>
-            <td>Number (11|15|20|25)</td>
-            <td>Set the zigbeechannel of the gateway. Notify other Zigbee devices also to change their channel.</td>
+            <td>timeformat</td>
+            <td>String</td>
+            <td>Can be used to store the timeformat permanently. It can be either "12h" or "24h".</td>
             <td>optional</td>
         </tr>
         <tr>
@@ -569,15 +560,27 @@ Modify configuration parameters.
             <td>optional</td>
         </tr>
         <tr>
+            <td>unlock</td>
+            <td>Number (0&ndash;600)</td>
+            <td>Unlock the gateway so that apps can register themselves to the gateway (time in seconds).</td>
+            <td>optional</td>
+        </tr>
+        <tr>
+            <td>updatechannel</td>
+            <td>String</td>
+            <td>Set update channel ("stable"|"alpha"|"beta").</td>
+            <td>optional</td>
+        </tr>
+        <tr>
             <td>utc | UTC</td>
             <td>String</td>
             <td>Set the UTC time of the gateway (only on Raspbery Pi) in ISO 8601 format (yyyy-MM-ddTHH:mm:ss). For historical reasons both "utc" and "UTC" are supported as key.</td>
             <td>optional</td>
         </tr>
-		<tr>
-            <td>timeformat</td>
-            <td>String</td>
-            <td>Can be used to store the timeformat permanently. It can be either "12h" or "24h".</td>
+        <tr>
+            <td>zigbeechannel</td>
+            <td>Number (11|15|20|25)</td>
+            <td>Set the zigbeechannel of the gateway. Notify other Zigbee devices also to change their channel.</td>
             <td>optional</td>
         </tr>
     </tbody>
