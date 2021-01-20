@@ -158,6 +158,7 @@ HTTP/1.1 200 OK
         },
         "ep": 1,
         "etag": "61eaee2477fc3d5c27932fefeef638bd",
+        "lastseen": "2016-07-06T09:39Z",
         "manufacturername": "dresden elektronik",
         "modelid": "Lighting Switch",
         "name": "Lighting Switch 1",
@@ -176,6 +177,7 @@ HTTP/1.1 200 OK
         },
         "ep": 2,
         "etag": "61eaee2477fc3d5c27932fefeef638bd",
+        "lastseen": "2016-07-06T09:39Z",
         "manufacturername": "dresden elektronik",
         "modelid": "Lighting Switch",
         "name": "Lighting Switch 2",
@@ -226,6 +228,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     },
     "ep": 1,
     "etag": "61eaee2477fc3d5c27932fefeef638bd",
+    "lastseen": "2016-07-06T09:39Z",
     "manufacturername": "dresden elektronik",
     "mode": 2,
     "modelid": "Lighting Switch",
@@ -263,14 +266,14 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>HTTP <a href="../../misc/polling#etag">etag</a> which changes whenever the sensor changes.</td>
     </tr>
     <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp representing the last time a message from the sensor was received. UTC with resolution of minutes.</td>
+    </tr>
+    <tr>
       <td>manufacturername</td>
       <td>String</td>
       <td>The manufacturer name of the sensor.</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>String</td>
-      <td>The model id of the sensor.</td>
     </tr>
     <tr>
       <td>mode</td>
@@ -286,6 +289,11 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       </td>
     </tr>
     <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>The model id of the sensor.</td>
+    </tr>
+    <tr>
       <td>name</td>
       <td>String</td>
       <td>The name of the sensor.</td>
@@ -294,11 +302,6 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>state</td>
       <td>Object</td>
       <td>The state of the sensor.</td>
-    </tr>
-    <tr>
-      <td>state.lastupdated</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp when the sensor was last updated.</td>
     </tr>
     <tr>
       <td>swversion</td>
