@@ -15,8 +15,8 @@ except ImportError:
 	from urllib import urlretrieve
 
 
-#url = "https://raw.githubusercontent.com/dresden-elektronik/deconz-rest-plugin/master/button_maps.json"
-url = "https://raw.githubusercontent.com/manup/deconz-rest-plugin/master/button_maps.json"
+url = "https://raw.githubusercontent.com/dresden-elektronik/deconz-rest-plugin/master/button_maps.json"
+#url = "https://raw.githubusercontent.com/manup/deconz-rest-plugin/master/button_maps.json"
 
 f = urlopen(url)
 

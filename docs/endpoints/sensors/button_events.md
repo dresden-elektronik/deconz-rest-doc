@@ -1,6 +1,6 @@
 # Button Events
 
-This page was auto generated from [button_maps.json](https://raw.githubusercontent.com/manup/deconz-rest-plugin/master/button_maps.json)
+This page was auto generated from [button_maps.json](https://raw.githubusercontent.com/dresden-elektronik/deconz-rest-plugin/master/button_maps.json)
 
 The following sections enumerate supported values for `state.buttonevent` for [/sensors](../../sensors) of type ZHASwitch.
 
@@ -534,7 +534,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 
 <ul class="value-list">
-<li>"LZL4BWHL"</li>
+<li>"LZL4BWHL01 Remote"</li>
 </ul>
 
 | Value          | Action           | Button                   |
@@ -710,7 +710,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 
 <ul class="value-list">
-<li>"ICZB-RM"</li>
+<li>"ICZB-RM11S"</li>
 <li>"ZGRC-KEY-012"</li>
 <li>"ZGRC-KEY-013"</li>
 <li>"RGBgenie ZB-5001"</li>
@@ -804,16 +804,30 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           5003 | Long release     | Button 5                 |
 
 
-## Sunricher Remotes
+## Sunricher Wireless switches from Sunricher, Namron and EcoDim
 
 **Model identifiers**
 
 
 <ul class="value-list">
-<li>"ED-1001"</li>
+<li>"ED-10010"</li>
+<li>"ED-10011"</li>
+<li>"ED-10012"</li>
+<li>"ED-10013"</li>
+<li>"ED-10014"</li>
+<li>"ED-10015"</li>
 <li>"ZG2833K"</li>
 <li>"ZG2835"</li>
-<li>"45127"</li>
+<li>"4512700"</li>
+<li>"4512701"</li>
+<li>"4512702"</li>
+<li>"4512703"</li>
+<li>"4512705"</li>
+<li>"4512714"</li>
+<li>"4512719"</li>
+<li>"4512720"</li>
+<li>"4512721"</li>
+<li>"4512722"</li>
 </ul>
 
 | Value          | Action           | Button                   |
@@ -1100,6 +1114,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 <ul class="value-list">
 <li>"WB01"</li>
+<li>"WB-01"</li>
 </ul>
 
 | Value          | Action           | Button                   |
