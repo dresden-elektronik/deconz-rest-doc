@@ -1259,6 +1259,28 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td></td>
+      <td>externalsensortemp</td>
+      <td>Number (-32768&ndash;32767)</td>
+      <td data-since="v2.10.0-beta">
+        <p>Allows to use the temperature value provided by an external sensor.</p>
+
+        (device dependent and only exposed for devices supporting it)
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>externalwindowopen</td>
+      <td>Bool</td>
+      <td data-since="v2.10.2-beta">
+        <p>Allows to use the open/close state from an external sensor.</p>
+
+        (device dependent and only exposed for devices supporting it)
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>fanmode</td>
       <td>String</td>
       <td data-since="v2.6.0-beta">
@@ -1510,6 +1532,47 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
         <p>(presumably device temperature).</p>
       </td>
       <td>R</td>
+    </tr>
+    <tr>
+      <td>Develco Metering Interfaces</td>
+      <td>interfacemode</td>
+      <td>Number</td>
+      <td data-since="v2.10.3-beta">
+        <p>Allows to set the device specific interface mode.</p>
+        <p>ZHEMI101:</p>
+        <ul class="value-list">
+           <li>1 = Pulse Counting on an Electricity Meter – Unit KWh</li>
+           <li>2 = Pulse Counting on a Gas Meter – Unit m3</li>
+           <li>3 = Pulse Counting on a Water Meter – Unit m3</li>
+           <li>4 = Kamstrup KMP Protocol</li>
+           <li>5 = Not Supported - Linky Protocol</li>
+           <li>6 = DLMS-COSEM - IEC62056-21 mod A</li>
+           <li>7 = P1 Dutch Standard – DSMR 2.3 Version</li>
+           <li>8 = P1 Dutch Standard – DSMR 4.0 Version</li>
+        </ul>
+        <p>EMIZB-132:</p>
+        <ul class="value-list">
+           <li>1 = Norwegian HAN</li>
+           <li>2 = Norwegian HAN – Enable extra load</li>
+           <li>3 = Aidon Meter supporting Norwegian HAN HW interface</li>
+           <li>4 = Kaifa meter and Kamstrup meters running old firmware</li>
+           <li>5 = Auto detect meter function</li>
+        </ul>
+
+        (device dependent and only exposed for devices supporting it)
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>pulseconfiguration</td>
+      <td>Number (0&ndash;65535)</td>
+      <td data-since="v2.10.3-beta">
+        <p>Pulse Configuration represents the number of pulses the meter outputs per unit.</p>
+
+        (device dependent and only exposed for devices supporting it)
+      </td>
+      <td>RW</td>
     </tr>
   </tbody>
 </table>
