@@ -80,47 +80,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/websocket/">Websocket</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Devices</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="#">Ikea</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../ikea/kadrilj_roller_blind/">KADRILJ roller blind</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Tuya</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../tuya/rh3040_motion_sensor/">Motion sensor ESS-SI-PIR-6101</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Xiaomi</a>
-    <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Vibration sensor DJT11LM</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#1-zhavibration">1. ZHAVibration</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#device-information">Device information</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#top-level-attributes">Top level attributes</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#config-attributes">Config attributes</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#state-attributes">State attributes</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#example-output">Example output</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#known-issues">Known Issues</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#sticky-parents">Sticky Parents</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../">Supported Devices</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Misc</span></p>
@@ -154,14 +115,6 @@
     <li><a href="../../..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Xiaomi &raquo;</li>
-        
-      
-        
-          <li>Devices &raquo;</li>
-        
-      
     
     <li>Vibration sensor DJT11LM</li>
     <li class="wy-breadcrumbs-aside">
@@ -178,39 +131,36 @@
             <div class="section">
               
                 <h1 id="vibration-sensor-djt11lm">Vibration sensor DJT11LM<a class="headerlink" href="#vibration-sensor-djt11lm" title="Permanent link">&para;</a></h1>
-<p> File: aq1_vibration_sensor.json</p>
-<hr/>
-<h2 id="1-zhavibration">1. ZHAVibration<a class="headerlink" href="#1-zhavibration" title="Permanent link">&para;</a></h2>
-<p> Endpoint: <code> /sensors</code></p>
-<h3 id="device-information">Device information<a class="headerlink" href="#device-information" title="Permanent link">&para;</a></h3>
+<p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/xiaomi/aq1_vibration_sensor.json">aq1_vibration_sensor.json</a>
+</p>
 <table>
   <thead>
     <tr><th>Attribute</th><th>Value</th></tr>
   </thead>
   <tbody>
     <tr>
-      <td>status</td>
-      <td>Bronze</td>
-    </tr>
-    <tr>
-      <td>product</td>
-      <td>DJT11LM</td>
+      <td>manufacturername</td>
+      <td>LUMI</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>lumi.vibration.aq1</td>
     </tr>
     <tr>
-      <td>manufacturername</td>
-      <td>LUMI</td>
+      <td>product</td>
+      <td>DJT11LM</td>
     </tr>
     <tr>
-      <td>type</td>
-      <td>ZHAVibration</td>
+      <td>status</td>
+      <td>Bronze</td>
     </tr>
   </tbody>
 </table>
 
+<hr/>
+<h2 id="1-zhavibration">1. ZHAVibration<a class="headerlink" href="#1-zhavibration" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+</p>
 <h3 id="top-level-attributes">Top level attributes<a class="headerlink" href="#top-level-attributes" title="Permanent link">&para;</a></h3>
 <table>
   <thead>
@@ -226,13 +176,13 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>Manufacturer name of the device.</td>
+      <td>"LUMI"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>Model identifier of the device.</td>
+      <td>"lumi.vibration.aq1"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -250,7 +200,7 @@
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>Type of the resource.</td>
+      <td>"ZHAVibration"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -290,7 +240,7 @@
     <tr>
       <td>battery</td>
       <td>UInt8</td>
-      <td>The current device battery level.</td>
+      <td>The current device battery level in 0&ndash;100&thinsp;%.</td>
       <td>R</td>
     </tr>
     <tr>
@@ -405,15 +355,6 @@ The parent is the device which repeats the signal, it can be a router or the coo
           </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../../../misc/discovery/" class="btn btn-neutral float-right" title="Discovery">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../../tuya/rh3040_motion_sensor/" class="btn btn-neutral" title="Motion sensor ESS-SI-PIR-6101"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
@@ -438,10 +379,6 @@ The parent is the device which repeats the signal, it can be a router or the coo
           <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../tuya/rh3040_motion_sensor/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../../../misc/discovery/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

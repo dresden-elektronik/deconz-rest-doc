@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Motion sensor ESS-SI-PIR-6101 - deCONZ REST-API</title>
+  <title>Samsung Multipurpose Sensor - deCONZ REST-API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Motion sensor ESS-SI-PIR-6101";
-    var mkdocs_page_input_path = "devices/tuya/rh3040_motion_sensor.md";
+    var mkdocs_page_name = "Samsung Multipurpose Sensor";
+    var mkdocs_page_input_path = "devices/samsung/samjin_multi_sensor.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -116,10 +116,10 @@
     
       
     
-    <li>Motion sensor ESS-SI-PIR-6101</li>
+    <li>Samsung Multipurpose Sensor</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/tuya/rh3040_motion_sensor.md"
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/samsung/samjin_multi_sensor.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -130,8 +130,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="motion-sensor-ess-si-pir-6101">Motion sensor ESS-SI-PIR-6101<a class="headerlink" href="#motion-sensor-ess-si-pir-6101" title="Permanent link">&para;</a></h1>
-<p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/tuya/rh3040_motion_sensor.json">rh3040_motion_sensor.json</a>
+                <h1 id="samsung-multipurpose-sensor">Samsung Multipurpose Sensor<a class="headerlink" href="#samsung-multipurpose-sensor" title="Permanent link">&para;</a></h1>
+<p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/samsung/samjin_multi_sensor.json">samjin_multi_sensor.json</a>
 </p>
 <table>
   <thead>
@@ -140,25 +140,25 @@
   <tbody>
     <tr>
       <td>manufacturername</td>
-      <td>Tuyatec</td>
+      <td>Samjin</td>
     </tr>
     <tr>
       <td>modelid</td>
-      <td>RH3040</td>
+      <td>multi</td>
     </tr>
     <tr>
       <td>product</td>
-      <td>ESS-SI-PIR-6101</td>
+      <td>IM6001-OTP01</td>
     </tr>
     <tr>
       <td>status</td>
-      <td>Bronze</td>
+      <td>Silver</td>
     </tr>
   </tbody>
 </table>
 
 <hr/>
-<h2 id="1-zhapresence">1. ZHAPresence<a class="headerlink" href="#1-zhapresence" title="Permanent link">&para;</a></h2>
+<h2 id="1-zhaopenclose">1. ZHAOpenClose<a class="headerlink" href="#1-zhaopenclose" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
 </p>
 <h3 id="top-level-attributes">Top level attributes<a class="headerlink" href="#top-level-attributes" title="Permanent link">&para;</a></h3>
@@ -168,15 +168,21 @@
   </thead>
   <tbody>
     <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"Tuyatec"</td>
+      <td>"Samjin"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"RH3040"</td>
+      <td>"multi"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -188,25 +194,19 @@
     <tr>
       <td>swversion</td>
       <td>String</td>
-      <td>Todo not shown in output?</td>
+      <td>Firmware version of the device.</td>
       <td>R</td>
     </tr>
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHAPresence"</td>
+      <td>"ZHAOpenClose"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>uniqueid</td>
       <td>String</td>
       <td>Unique identifier of the resource.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>lastseen</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp of the last communication.</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -223,13 +223,6 @@
       <td>UInt8</td>
       <td>The current device battery level in 0&ndash;100&thinsp;%.</td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>duration</td>
-      <td>UInt16</td>
-      <td>The duration until presence is automatically turned back to false.<p>  Default: 120</p>
-</td>
-      <td>RW</td>
     </tr>
     <tr>
       <td>on</td>
@@ -260,21 +253,269 @@
   </thead>
   <tbody>
     <tr>
-      <td>presence</td>
-      <td>Bool</td>
-      <td>The current presence state.</td>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp when state was last updated.</td>
       <td>R</td>
     </tr>
     <tr>
-      <td>lowbattery</td>
+      <td>open</td>
       <td>Bool</td>
-      <td>True when the device battery runs low.</td>
+      <td>The open/close state.</td>
+      <td>RW</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-output">Example output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  &quot;config&quot;: {
+    &quot;battery&quot;: 100,
+    &quot;enrolled&quot;: 1,
+    &quot;on&quot;: true,
+    &quot;pending&quot;: [],
+    &quot;reachable&quot;: true
+  },
+  &quot;ep&quot;: 1,
+  &quot;etag&quot;: &quot;63d006cf5722271299d75d5829a33974&quot;,
+  &quot;lastseen&quot;: &quot;2021-01-14T11:35Z&quot;,
+  &quot;manufacturername&quot;: &quot;Samjin&quot;,
+  &quot;modelid&quot;: &quot;multi&quot;,
+  &quot;name&quot;: &quot;Multipurpose Sensor&quot;,
+  &quot;state&quot;: {
+    &quot;lastupdated&quot;: &quot;2021-01-14T11:13:45.367&quot;,
+    &quot;open&quot;: false
+  },
+  &quot;type&quot;: &quot;ZHAOpenClose&quot;,
+  &quot;uniqueid&quot;: &quot;28:6d:97:00:01:06:ce:ae-01-0500&quot;
+}
+</code></pre>
+<hr/>
+<h2 id="2-zhatemperature">2. ZHATemperature<a class="headerlink" href="#2-zhatemperature" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+</p>
+<h3 id="top-level-attributes_1">Top level attributes<a class="headerlink" href="#top-level-attributes_1" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
       <td>R</td>
     </tr>
     <tr>
-      <td>tampered</td>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"Samjin"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"multi"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHATemperature"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes_1">Config attributes<a class="headerlink" href="#config-attributes_1" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>battery</td>
+      <td>UInt8</td>
+      <td>The current device battery level in 0&ndash;100&thinsp;%.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>offset</td>
+      <td>Int16</td>
+      <td>Relative offset to the main measured value.<p>  Default: 0</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>on</td>
       <td>Bool</td>
-      <td>True when the device tampered alarm was triggered.</td>
+      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_1">State attributes<a class="headerlink" href="#state-attributes_1" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>temperature</td>
+      <td>Int16</td>
+      <td>The current temperature in °C &times; 100.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-output_1">Example output<a class="headerlink" href="#example-output_1" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  &quot;config&quot;: {
+    &quot;battery&quot;: 100,
+    &quot;offset&quot;: 0,
+    &quot;on&quot;: true,
+    &quot;reachable&quot;: true
+  },
+  &quot;ep&quot;: 1,
+  &quot;etag&quot;: &quot;df082b6de6637a33e750f7111b7bd336&quot;,
+  &quot;lastseen&quot;: &quot;2021-01-14T11:35Z&quot;,
+  &quot;manufacturername&quot;: &quot;Samjin&quot;,
+  &quot;modelid&quot;: &quot;multi&quot;,
+  &quot;name&quot;: &quot;Multipurpose Sensor&quot;,
+  &quot;state&quot;: {
+    &quot;lastupdated&quot;: &quot;2021-01-14T11:34:57.853&quot;,
+    &quot;temperature&quot;: 2096
+  },
+  &quot;type&quot;: &quot;ZHATemperature&quot;,
+  &quot;uniqueid&quot;: &quot;28:6d:97:00:01:06:ce:ae-01-0402&quot;
+}
+</code></pre>
+<hr/>
+<h2 id="3-zhavibration">3. ZHAVibration<a class="headerlink" href="#3-zhavibration" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+</p>
+<h3 id="top-level-attributes_2">Top level attributes<a class="headerlink" href="#top-level-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"Samjin"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"multi"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAVibration"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes_2">Config attributes<a class="headerlink" href="#config-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>battery</td>
+      <td>UInt8</td>
+      <td>The current device battery level in 0&ndash;100&thinsp;%.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_2">State attributes<a class="headerlink" href="#state-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>orientation</td>
+      <td>Array[3]</td>
+      <td><p>The orientation as [X, Y, Z].</p> <p><b>Note:</b> These are the raw device values, it's not known what they represent, they are in range -1400&ndash;1400.</p></td>
       <td>R</td>
     </tr>
     <tr>
@@ -283,30 +524,39 @@
       <td>Timestamp when state was last updated.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>vibration</td>
+      <td>Bool</td>
+      <td>True when vibration is detected.</td>
+      <td>RW</td>
+    </tr>
   </tbody>
 </table>
 
-<h3 id="example-output">Example output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h3>
+<h3 id="example-output_2">Example output<a class="headerlink" href="#example-output_2" title="Permanent link">&para;</a></h3>
 <pre><code>{
   &quot;config&quot;: {
-    &quot;battery&quot;: 75,
-    &quot;duration&quot;: 120,
+    &quot;battery&quot;: 100,
     &quot;on&quot;: true,
-    &quot;pending&quot;: [],
     &quot;reachable&quot;: true
   },
-  &quot;lastseen&quot;: &quot;2020-12-29T14:47Z&quot;,
-  &quot;manufacturername&quot;: &quot;Tuyatec&quot;,
-  &quot;modelid&quot;: &quot;RH3040&quot;,
-  &quot;name&quot;: &quot;Presence 68&quot;,
+  &quot;ep&quot;: 1,
+  &quot;etag&quot;: &quot;97a223f7b2d965a8f36a02ee8b9b264e&quot;,
+  &quot;lastseen&quot;: &quot;2021-01-14T11:35Z&quot;,
+  &quot;manufacturername&quot;: &quot;Samjin&quot;,
+  &quot;modelid&quot;: &quot;multi&quot;,
+  &quot;name&quot;: &quot;Multipurpose Sensor&quot;,
   &quot;state&quot;: {
-    &quot;lastupdated&quot;: &quot;2020-12-29T14:47:19.022&quot;,
-    &quot;lowbattery&quot;: false,
-    &quot;presence&quot;: true,
-    &quot;tampered&quot;: false
+    &quot;lastupdated&quot;: &quot;2021-01-14T11:35:42.744&quot;,
+    &quot;orientation&quot;: [
+      12,
+      -37,
+      -1029
+    ],
+    &quot;vibration&quot;: false
   },
-  &quot;type&quot;: &quot;ZHAPresence&quot;,
-  &quot;uniqueid&quot;: &quot;14:b4:57:ff:fe:15:66:fc-01-0500&quot;
+  &quot;type&quot;: &quot;ZHAVibration&quot;,
+  &quot;uniqueid&quot;: &quot;28:6d:97:00:01:06:ce:ae-01-fc02&quot;
 }
 </code></pre>
               
