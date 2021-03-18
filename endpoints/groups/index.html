@@ -160,8 +160,25 @@
                     <li class="toctree-l1"><a class="reference internal" href="../websocket/">Websocket</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Devices</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devices/">Supported Devices</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Ikea</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../devices/ikea/kadrilj_roller_blind/">KADRILJ roller blind</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Tuya</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../devices/tuya/rh3040_motion_sensor/">Motion sensor ESS-SI-PIR-6101</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Xiaomi</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../devices/xiaomi/aq_vibration_sensor/">Vibration sensor DJT11LM</a>
+                </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Misc</span></p>
@@ -644,7 +661,7 @@ ETag: "000bf36b51ef3324446c98hdf6a6ace6"
     <tr>
       <td>transitiontime</td>
       <td>Number</td>
-      <td>Transition time in 1/10 seconds between two states.</td>
+      <td>Transition time in 1/10 seconds between two states. Note that not all states support a transition time. For example, a transition time when setting <pre>on</pre> will be ignored as the Zigbee On and Off commands do not support transition times. In general, light attributes that support a range of values support transition times, while boolean values do not.</td>
       <td>optional</td>
     </tr>
   </tbody>
