@@ -27,13 +27,7 @@ nav:
       - 'Button Events': endpoints/sensors/button_events.md
       - endpoints/touchlink/index.md
       - endpoints/websocket/index.md
-    - Devices:
-      - Ikea:
-        - devices/ikea/kadrilj_roller_blind.md
-      - Tuya:
-        - devices/tuya/rh3040_motion_sensor.md
-      - Xiaomi:
-        - devices/xiaomi/aq_vibration_sensor.md
+    - 'Supported Devices': devices/index.md
     - Misc:
       - misc/discovery/index.md
       - misc/authorization/index.md
