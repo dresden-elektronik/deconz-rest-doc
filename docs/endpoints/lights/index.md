@@ -397,7 +397,7 @@ Sets the state of a light.
     <tr>
       <td>transitiontime</td>
       <td>Number</td>
-      <td>Transition time in 1/10 seconds between two states.</td>
+      <td>Transition time in 1/10 seconds between two states. Note that not all states support a transition time. For example, a transition time when setting <pre>on</pre> will be ignored as the Zigbee On and Off commands do not support transition times. In general, light attributes that support a range of values support transition times, while boolean values do not.</td>
       <td>optional</td>
     </tr>
     <tr>
