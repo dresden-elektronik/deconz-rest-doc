@@ -583,6 +583,12 @@ Modify configuration parameters.
             <td>Set the zigbeechannel of the gateway. Notify other Zigbee devices also to change their channel.</td>
             <td>optional</td>
         </tr>
+        <tr>
+            <td>websocketnotifyall</td>
+            <td>Bool</td>
+            <td>When true all state changes will be signalled through the Websocket connection (default true).</td>
+            <td>optional</td>
+        </tr>
     </tbody>
 </table>
 
