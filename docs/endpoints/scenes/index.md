@@ -441,7 +441,7 @@ Modifies the state of a light of the scene.
      <tr>
       <td>transitiontime</td>
       <td>Number</td>
-      <td>Transitiontime of the light when the scene is called in 1/10 seconds</td>
+      <td>Transitiontime of the light when the scene is called in 1/10 seconds. Note that not all states support a transition time. For example, a transition time when setting <pre>on</pre> will be ignored as the Zigbee On and Off commands do not support transition times. In general, light attributes that support a range of values support transition times, while boolean values do not.</td>
       <td>optional</td>
     </tr>
      <tr>
