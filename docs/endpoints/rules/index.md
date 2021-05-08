@@ -482,7 +482,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 
 ## Delete rule<a name="delete">&nbsp;</a>
 
-    DELETE /api/<apikey>/ruless/<id>
+    DELETE /api/<apikey>/rules/<id>
 
 Delete a rule.
 
