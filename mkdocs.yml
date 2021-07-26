@@ -17,6 +17,7 @@ nav:
       - about_rest/index.md
       - 'Getting Started': getting_started/index.md
     - 'API Endpoints':
+      - endpoints/alarmsystems/index.md
       - endpoints/configuration/index.md
       - endpoints/groups/index.md
       - endpoints/lights/index.md
