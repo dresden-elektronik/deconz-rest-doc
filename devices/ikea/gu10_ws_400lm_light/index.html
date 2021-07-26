@@ -59,6 +59,8 @@
                 </ul>
                 <p class="caption"><span class="caption-text">API Endpoints</span></p>
                 <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/alarmsystems/">Alarm Systems</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/configuration/">Configuration</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/groups/">Groups</a>
@@ -168,27 +170,6 @@
   </thead>
   <tbody>
     <tr>
-      <td>colorcapabilities</td>
-      <td>UInt16</td>
-      <td>The supported color modes as bitmap.<p>  Default: 16</p>
-</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>ctmin</td>
-      <td>UInt16</td>
-      <td>Minimum supported color temperature.<p>  Default: 250</p>
-</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>ctmax</td>
-      <td>UInt16</td>
-      <td>Maximum supported color temperature.<p>  Default: 454</p>
-</td>
-      <td>R</td>
-    </tr>
-    <tr>
       <td>lastannounced</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp of the last power-cyle or rejoin.</td>
@@ -234,6 +215,36 @@
       <td>uniqueid</td>
       <td>String</td>
       <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes">Config attributes<a class="headerlink" href="#config-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>colorcapabilities</td>
+      <td>UInt16</td>
+      <td>The supported color modes as bitmap.<p>  Default: 16</p>
+</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>ctmin</td>
+      <td>UInt16</td>
+      <td>Minimum supported color temperature.<p>  Default: 250</p>
+</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>ctmax</td>
+      <td>UInt16</td>
+      <td>Maximum supported color temperature.<p>  Default: 454</p>
+</td>
       <td>R</td>
     </tr>
   </tbody>

@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Motion sensor ESS-SI-PIR-6101 - deCONZ REST-API</title>
+  <title>Dimmer Switch 1. Gen EU/US - deCONZ REST-API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Motion sensor ESS-SI-PIR-6101";
-    var mkdocs_page_input_path = "devices/tuya/rh3040_motion_sensor.md";
+    var mkdocs_page_name = "Dimmer Switch 1. Gen EU/US";
+    var mkdocs_page_input_path = "devices/philips/rwl02_gen1_dimmer_switch.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -118,10 +118,10 @@
     
       
     
-    <li>Motion sensor ESS-SI-PIR-6101</li>
+    <li>Dimmer Switch 1. Gen EU/US</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/tuya/rh3040_motion_sensor.md"
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/philips/rwl02_gen1_dimmer_switch.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -132,8 +132,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="motion-sensor-ess-si-pir-6101">Motion sensor ESS-SI-PIR-6101<a class="headerlink" href="#motion-sensor-ess-si-pir-6101" title="Permanent link">&para;</a></h1>
-<p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/tuya/rh3040_motion_sensor.json">rh3040_motion_sensor.json</a>
+                <h1 id="dimmer-switch-1-gen-euus">Dimmer Switch 1. Gen EU/US<a class="headerlink" href="#dimmer-switch-1-gen-euus" title="Permanent link">&para;</a></h1>
+<p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/philips/rwl02_dimmer_switch.json">rwl02_dimmer_switch.json</a>
 </p>
 <table>
   <thead>
@@ -142,25 +142,25 @@
   <tbody>
     <tr>
       <td>manufacturername</td>
-      <td>Tuyatec</td>
+      <td>Philips</td>
     </tr>
     <tr>
       <td>modelid</td>
-      <td>RH3040</td>
+      <td>RWL021RWL021</td>
     </tr>
     <tr>
       <td>product</td>
-      <td>ESS-SI-PIR-6101</td>
+      <td>Dimmer Switch 1. Gen</td>
     </tr>
     <tr>
       <td>status</td>
-      <td>Bronze</td>
+      <td>Gold</td>
     </tr>
   </tbody>
 </table>
 
 <hr/>
-<h2 id="1-zhapresence">1. ZHAPresence<a class="headerlink" href="#1-zhapresence" title="Permanent link">&para;</a></h2>
+<h2 id="1-zhaswitch">1. ZHASwitch<a class="headerlink" href="#1-zhaswitch" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
 </p>
 <h3 id="top-level-attributes">Top level attributes<a class="headerlink" href="#top-level-attributes" title="Permanent link">&para;</a></h3>
@@ -170,15 +170,21 @@
   </thead>
   <tbody>
     <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"Tuyatec"</td>
+      <td>"Philips"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"RH3040"</td>
+      <td>"RWL021RWL021"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -190,25 +196,19 @@
     <tr>
       <td>swversion</td>
       <td>String</td>
-      <td>Todo not shown in output?</td>
+      <td>Firmware version of the device.</td>
       <td>R</td>
     </tr>
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHAPresence"</td>
+      <td>"ZHASwitch"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>uniqueid</td>
       <td>String</td>
       <td>Unique identifier of the resource.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>lastseen</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp of the last communication.</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -227,24 +227,11 @@
       <td>R</td>
     </tr>
     <tr>
-      <td>duration</td>
-      <td>UInt16</td>
-      <td>The duration until presence is automatically turned back to false.<p>  Default: 120</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>When true the sensor is enabled in rules.<p>  Default: true</p>
 </td>
       <td>RW</td>
-    </tr>
-    <tr>
-      <td>pending</td>
-      <td>Array</td>
-      <td>Pending tasks to configure the device.</td>
-      <td>R</td>
     </tr>
     <tr>
       <td>reachable</td>
@@ -262,27 +249,21 @@
   </thead>
   <tbody>
     <tr>
-      <td>presence</td>
-      <td>Bool</td>
-      <td>The current presence state.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>lowbattery</td>
-      <td>Bool</td>
-      <td>True when the device battery runs low.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>tampered</td>
-      <td>Bool</td>
-      <td>True when the device tampered alarm was triggered.</td>
-      <td>R</td>
-    </tr>
-    <tr>
       <td>lastupdated</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>buttonevent</td>
+      <td>UInt32</td>
+      <td>The last received button event.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>eventduration</td>
+      <td>UInt16</td>
+      <td>Determines how long an event lasted (not implemented yet).</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -291,24 +272,25 @@
 <h3 id="example-output">Example output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h3>
 <pre><code>{
   &quot;config&quot;: {
-    &quot;battery&quot;: 75,
-    &quot;duration&quot;: 120,
+    &quot;battery&quot;: null,
     &quot;on&quot;: true,
-    &quot;pending&quot;: [],
     &quot;reachable&quot;: true
   },
-  &quot;lastseen&quot;: &quot;2020-12-29T14:47Z&quot;,
-  &quot;manufacturername&quot;: &quot;Tuyatec&quot;,
-  &quot;modelid&quot;: &quot;RH3040&quot;,
-  &quot;name&quot;: &quot;Presence 68&quot;,
+  &quot;ep&quot;: 2,
+  &quot;etag&quot;: &quot;d60d24fb0d41f5ed9e69c638631e9e34&quot;,
+  &quot;lastseen&quot;: &quot;2021-05-02T18:44Z&quot;,
+  &quot;manufacturername&quot;: &quot;Philips&quot;,
+  &quot;mode&quot;: 2,
+  &quot;modelid&quot;: &quot;RWL021&quot;,
+  &quot;name&quot;: &quot;Switch 5&quot;,
   &quot;state&quot;: {
-    &quot;lastupdated&quot;: &quot;2020-12-29T14:47:19.022&quot;,
-    &quot;lowbattery&quot;: false,
-    &quot;presence&quot;: true,
-    &quot;tampered&quot;: false
+    &quot;buttonevent&quot;: 1002,
+    &quot;eventduration&quot;: 1,
+    &quot;lastupdated&quot;: &quot;2021-05-02T18:44:00.559&quot;
   },
-  &quot;type&quot;: &quot;ZHAPresence&quot;,
-  &quot;uniqueid&quot;: &quot;14:b4:57:ff:fe:15:66:fc-01-0500&quot;
+  &quot;swversion&quot;: &quot;5.45.1.17846&quot;,
+  &quot;type&quot;: &quot;ZHASwitch&quot;,
+  &quot;uniqueid&quot;: &quot;00:17:88:01:08:f7:76:8c-02-fc00&quot;
 }
 </code></pre>
               

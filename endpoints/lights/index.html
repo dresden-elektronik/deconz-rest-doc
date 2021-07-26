@@ -59,6 +59,8 @@
                 </ul>
                 <p class="caption"><span class="caption-text">API Endpoints</span></p>
                 <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../alarmsystems/">Alarm Systems</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../groups/">Groups</a>
@@ -588,7 +590,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     <tr>
       <td>transitiontime</td>
       <td>Number</td>
-      <td>Transition time in 1/10 seconds between two states.</td>
+      <td>Transition time in 1/10 seconds between two states. Note that not all states support a transition time. For example, a transition time when setting <pre>on</pre> will be ignored as the Zigbee On and Off commands do not support transition times. In general, light attributes that support a range of values support transition times, while boolean values do not.</td>
       <td>optional</td>
     </tr>
     <tr>
