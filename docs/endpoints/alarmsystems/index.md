@@ -83,11 +83,11 @@ A trigger duration determines how long a alarm system stays in the `in_alarm` st
 
 ### PIN codes
 
-A PIN code can be configured to protect arming and disarming the alarm system. It is compared against the entered code of keypads, and REST-API requests for arming and disarming.
+A PIN code protects arming and disarming the alarm system. It's compared to the entered code of keypads and REST-API requests for arming and disarming.
 
 **Important:** PIN codes are configured for whole alarm system, not a single keypad. Multiple keypads, as well as the REST-API refer to the same PIN codes.
 
-Currently only one PIN code, aka "code0", is supported. In future multiple PIN codes can be specified. Internally a PIN code has the state "enabled" or "disabled". This makes it possible to dynamically enable a PIN code, for example a rule enables the guest PIN code on weekends.
+Currently only one PIN code, aka "code0", is supported. In future multiple PIN codes can be configured. Internally a PIN code has the state "enabled" or "disabled". This makes it possible to dynamically enable a PIN code, for example a rule enables the guest PIN code on weekends.
 
 
 
@@ -98,6 +98,8 @@ Currently only one PIN code, aka "code0", is supported. In future multiple PIN c
 Creates a new alarm system. After creation the arm mode is set to `disarmed`.
 
 !!! Note
+    This is only needed than more than one alarm system is needed. The "default" alarm system with id "1" is created automatically.
+
     Running multiple alarm systems is useful to seperate areas, for example: One alarm system for the house, and one for the guest house. Each with their own keypads and PIN codes.
 
 ### Parameters
@@ -168,7 +170,6 @@ None
 <pre class="headers">
 <code class="no-highlight">
 HTTP/1.1 200 OK
-Etag: 203941fel3ds8ad61903224
 </code>
 </pre>
 <pre class="highlight">
@@ -235,7 +236,6 @@ None
 <pre class="headers">
 <code class="no-highlight">
 HTTP/1.1 200 OK
-Etag: 0b32030b31ef30a4446c9adff6a6f9e5
 </code>
 </pre>
 <pre class="highlight">
@@ -465,7 +465,7 @@ The keys in the `devices` object refer to the `uniqueid` of a light, sensor, or 
           <li>A — <code>armed_away</code></li>
           <li>N — <code>armed_night</code></li>
           <li>S — <code>armed_stay</code></li>
-          <li>"none" — for keypads</li>
+          <li>"none" — for keypads and keyfobs</li>
         </ul>
       </td>
       <td>R</td>
@@ -482,7 +482,7 @@ The keys in the `devices` object refer to the `uniqueid` of a light, sensor, or 
           <li>"state/buttonevent"</li>
           <li>"state/on"</li>
         </ul>
-        <p>This attribute is not available for keypads.</p>
+        <p>This attribute is not available for keypads and keyfobs.</p>
       </td>
       <td>R</td>
     </tr>
@@ -531,7 +531,6 @@ Sets attributes of an alarm system.
 <pre class="headers">
 <code class="no-highlight">
 HTTP/1.1 200 OK
-Etag: 030cf8c1c0025420f3a0659afab251f5
 </code>
 </pre>
 <pre class="highlight">
@@ -684,14 +683,18 @@ HTTP/1.1 200 OK
 A keypad can be added to exactly *one* alarm system.
 After pairing, a keypad is added to the "default" alarm system with id "1" automatically.
 
-When a keypad is added, the the alarm system's PIN code (see [Update alarm system configuration](#updateconfig)) is verified each time the keypad arms or disarms the alarm system. If a valid PIN code is entered on the keypad, the respective alarm system changes its state to the requested arm mode.
+When a keypad is added, the the alarm system's PIN code (see [Update alarm system configuration](#updateconfig)) is verified each time the keypad arms or disarms the alarm system. If a valid PIN code is entered on the keypad, the alarm system changes its state to the requested arm mode.
+
+Once added, a keypad automatically signals the state of the alarm system on its panel, no further configuration is needed.
 
 !!! Note
-    The request is the same as [Add device to alarm system](#adddevice) call but without any content.
+    The request is the same as [Add device to alarm system](#adddevice) request, but with an empty JSON object as body content.
 
 ### Parameters
 
-None
+Empty JSON object.
+
+    { }
 
 ### Response
 <pre class="headers">
@@ -773,9 +776,6 @@ GET /api/12345/sensors/ec:1b:bd:ff:fe:6f:c3:4d-01-0501
   </tbody>
 </table>
 
-!!! Note
-    Once added, a keypad automatically signals the state of the respective alarm system on its panel, no further configuration is needed.
-
 ### Possible errors
 
 [403 Forbidden](../../misc/errors#403)
@@ -788,7 +788,9 @@ GET /api/12345/sensors/ec:1b:bd:ff:fe:6f:c3:4d-01-0501
 
     PUT /api/<apikey>/alarmsystems/<id>/device/<uniqueid>
 
-A device can be linked to exactly *one* alarm system.
+A device can be linked to exactly *one* alarm system. If it is added to another alarm system, it is automatically removed from the prior one.
+
+This request is used for adding and also for updating a device entry.
 
 The `uniqueid` refers to sensors, lights, or keypads. Adding a light can be useful, e.g. when an alarm should be triggered, after a light is powered or switched on in the basement.
 
@@ -810,7 +812,9 @@ PUT /api/12345/alarmsystems/1/device/00:15:8d:00:02:af:95:f9-01-0101
 ### Parameters
 
 !!! Note
-    For keypads the request body should be an empty object.
+    For keypads and keyfobs the request body shall be an empty object.
+
+        { }
 
 <table class="table table-bordered">
   <thead>
@@ -834,7 +838,7 @@ PUT /api/12345/alarmsystems/1/device/00:15:8d:00:02:af:95:f9-01-0101
       <td>trigger</td>
       <td>String</td>
       <td>
-        <p>Specifies arm modes in which the device triggers alarms.</p>
+        <p>Specifies what attribute of a device triggers alarms.</p>
         <ul class="value-list">
           <li>"state/presence"</li>
           <li>"state/open"</li>
@@ -867,7 +871,7 @@ HTTP/1.1 200 OK
 
     DELETE /api/<apikey>/alarmsystems/<id>/device/<uniqueid>
 
-Removes a device from an alarm system.
+Removes a device from an alarm system. Note that the respective sensor or light resource is not deleted, only the link to  the alarm system.
 
 ### Parameters
 
@@ -890,3 +894,16 @@ HTTP/1.1 200 OK
 [403 Forbidden](../../misc/errors#403)
 
 [404 Not Found](../../misc/errors#404)
+
+------------------------------------------------------
+
+## Trigger alarm via REST-API<a name="triggeralarm">&nbsp;</a>
+
+<mark>TODO</mark>
+
+------------------------------------------------------
+
+## Arm and disarm via REST-API<a name="armdisarm">&nbsp;</a>
+
+<mark>TODO</mark>
+
