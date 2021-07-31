@@ -195,7 +195,7 @@ HTTP/1.1 200 OK
     },
     "state": {
         "armstate": "armed_away",
-        "secondsremaining": 0
+        "seconds_remaining": 0
     },
     "devices": {
         "ec:1b:bd:ff:fe:6f:c3:4d-01-0501": {
@@ -259,7 +259,7 @@ HTTP/1.1 200 OK
     },
     "state": {
         "armstate": "armed_away",
-        "secondsremaining": 0
+        "seconds_remaining": 0
     },
     "devices": {
         "ec:1b:bd:ff:fe:6f:c3:4d-01-0501": {
@@ -435,8 +435,8 @@ Delay options are described in [Entry and exit delays](#entry-and-exit-delays).
       <td>R</td>
     </tr>
 	<tr>
-      <td>secondsremaining</td>
-      <td>Number</td>
+      <td>seconds_remaining</td>
+      <td>Number (0–255)</td>
       <td>
         <p>
         	During "exit_delay" and "entry_delay" states, this value holds the remaining time. In all other states the value is 0.
@@ -679,13 +679,14 @@ HTTP/1.1 200 OK
     PUT /api/<apikey>/alarmsystems/<id>/device/<uniqueid>
 
 
-
 A keypad can be added to exactly *one* alarm system.
-After pairing, a keypad is added to the "default" alarm system with id "1" automatically.
 
-When a keypad is added, the the alarm system's PIN code (see [Update alarm system configuration](#updateconfig)) is verified each time the keypad arms or disarms the alarm system. If a valid PIN code is entered on the keypad, the alarm system changes its state to the requested arm mode.
+&rarr; After pairing a keypad as sensor, it's automatically added to the default alarm system with id "1".
 
-Once added, a keypad automatically signals the state of the alarm system on its panel, no further configuration is needed.
+* Keypads use the the alarm system PIN code (see [Update alarm system configuration](#updateconfig)), which is verified each time the keypad arms or disarms the alarm system.
+* If a valid PIN code is entered on the keypad, the alarm system's state changes according to the requested arm or disarm command.
+* **Important:** For REST-API clients a keypad is a **read-only** sensor. The alarm system automatically takes care of: controlling the keypad's panel state, entry and exit delays, and state transitions.
+
 
 !!! Note
     The request is the same as [Add device to alarm system](#adddevice) request, but with an empty JSON object as body content.
@@ -708,9 +709,11 @@ HTTP/1.1 200 OK
 </code>
 </pre>
 
-#### Remarks
+### Sensor resource
 
-Example of the Linkind keypad
+Each Keypad is represented by a "ZHAAncillaryControl" `/sensor` resource, which is wired to the alarm system and automatically reflects its state on the keypad panel.
+
+**Example Linkind keypad**
 
 <pre class="headers">
 <code class="no-highlight">
@@ -737,6 +740,8 @@ GET /api/12345/sensors/ec:1b:bd:ff:fe:6f:c3:4d-01-0501
         "action": "armed_stay",
         "lastupdated": "2021-07-25T18:02:51.172",
         "lowbattery": false,
+        "panel": "exit_delay",
+        "seconds_remaining": 55,
         "tampered": false
     },
     "swversion": "3.13",
@@ -746,7 +751,7 @@ GET /api/12345/sensors/ec:1b:bd:ff:fe:6f:c3:4d-01-0501
 </code>
 </pre>
 
-**Important:** The attribute `state.action` contains the last action of the keypad. The state and configuration of the alarm system are independent and can be different if changed by another keypad or REST-API request.
+The read-only attribute `state.action` contains the last action a user invoked on the keypad.
 
 <table class="table table-bordered">
   <thead>
@@ -755,19 +760,19 @@ GET /api/12345/sensors/ec:1b:bd:ff:fe:6f:c3:4d-01-0501
   <tbody>
     <tr>
       <td><code>disarmed</code></td>
-      <td>The keypad sucessfully <code>disarmed</code> the alarm system.</td>
-    </tr>
-    <tr>
-      <td><code>armed_away</code></td>
-      <td>The keypad sucessfully armed the <code>armed_away</code> mode.</td>
+      <td>Sucessful request to <code>disarmed</code> the alarm system.</td>
     </tr>
     <tr>
       <td><code>armed_stay</code></td>
-      <td>The keypad sucessfully armed the <code>armed_stay</code> mode.</td>
+      <td>Sucessful request for <code>armed_stay</code> arm mode.</td>
     </tr>
     <tr>
       <td><code>armed_night</code></td>
-      <td>The keypad sucessfully armed the <code>armed_night</code> mode.</td>
+      <td>Sucessful request for <code>armed_night</code> arm mode.</td>
+    </tr>
+    <tr>
+      <td><code>armed_away</code></td>
+      <td>Sucessful request for <code>armed_away</code> arm mode.</td>
     </tr>
     <tr>
       <td><code>invalid_code</code></td>
@@ -775,6 +780,78 @@ GET /api/12345/sensors/ec:1b:bd:ff:fe:6f:c3:4d-01-0501
     </tr>
   </tbody>
 </table>
+
+When a keypad requests a new arm mode it is not set immediately, first the state machine transitions through various states with exit and entry delays.
+
+-------------------------------
+
+The read-only attribute `state.panel` represents the state machine and mirrors the alarm system `state.armstate` attribute.
+It reflects what is shown on the panel (when activated by the keypad's proximity sensor).
+
+Note that due its shared nature, the attribute can also be controlled by other keypads, and by arming and disarming the alarm system via REST-API request.
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr><th><code>state.panel</code></th><th>Effect on the keypad panel</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>disarmed</code></td>
+      <td rowspan="4">
+        Armed and disarmed states are indicated with the respective symbol's LED and one audio beep.
+      </td>
+    </tr>
+    <tr>
+      <td><code>armed_stay</code></td>
+      <td style="display: none;"></td>
+    </tr>
+    <tr>
+      <td><code>armed_night</code></td>
+      <td style="display: none;"></td>
+    </tr>
+    <tr>
+      <td><code>armed_away</code></td>
+      <td style="display: none;"></td>
+    </tr>
+    <tr>
+      <td><code>exit_delay</code></td>
+      <td rowspan="2">
+        Exit and entry delays are indicated by flashing a symbol's LED and multiple audio beeps.
+        During these states the <code>seconds_remaining</code> attribute holds the remaining time until the next state is reached.
+      </td>
+    </tr>
+    <tr>
+      <td><code>entry_delay</code></td>
+      <td style="display: none;"></td>
+    </tr>
+    <tr>
+      <td><code>not_ready</code></td>
+      <td>Error conditions or undefined states, are signaled by audio or flashing a symbol's LED.</td>
+    </tr>
+    <tr>
+      <td><code>in_alarm</code></td>
+      <td >The alarm state is indicated by intense audio beeps.</td>
+    </tr>
+    <tr>
+      <td><code>arming_stay</code></td>
+      <td rowspan="3" style="border-bottom: none !important;">
+        The arming states are set after the <code>exit_delay</code> state, and before the respective armed state. Like the delay states, they are indicated by multiple audio beeps and flashing a symbol's LED.
+      </td>
+    </tr>
+    <tr>
+      <td><code>arming_night</code></td>
+      <td style="display: none;"></td>
+    </tr>
+    <tr>
+      <td><code>arming_away</code></td>
+      <td style="display: none;"></td>
+    </tr>
+  </tbody>
+</table>
+
+!!! Note
+    The `state.panel` attribute is read-only and managed automatically by the alarm system.
 
 ### Possible errors
 
