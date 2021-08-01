@@ -689,7 +689,7 @@ A keypad can be added to exactly *one* alarm system.
 
 
 !!! Note
-    The request is the same as [Add device to alarm system](#adddevice) request, but with an empty JSON object as body content.
+    The request is the same as [Add device to alarm system](#adddevice) request, but is allowed to have an empty JSON object as body content.
 
 ### Parameters
 
@@ -778,6 +778,18 @@ The read-only attribute `state.action` contains the last action a user invoked o
       <td><code>invalid_code</code></td>
       <td>The last entered PIN code was invalid.</td>
     </tr>
+    <tr>
+      <td><code>panic</code></td>
+      <td>The panic or SOS alarm was triggered.</td>
+    </tr>
+    <tr>
+      <td><code>emergency</code></td>
+      <td>The emergency alarm was triggert.</td>
+    </tr>
+    <tr>
+      <td><code>fire</code></td>
+      <td>The fire alarm was triggered.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -831,7 +843,7 @@ Note that due its shared nature, the attribute can also be controlled by other k
     </tr>
     <tr>
       <td><code>in_alarm</code></td>
-      <td >The alarm state is indicated by intense audio beeps.</td>
+      <td >The alarm state is indicated by intense audio beeps, or a neutral setting if not supported.</td>
     </tr>
     <tr>
       <td><code>arming_stay</code></td>
@@ -889,7 +901,7 @@ PUT /api/12345/alarmsystems/1/device/00:15:8d:00:02:af:95:f9-01-0101
 ### Parameters
 
 !!! Note
-    For keypads and keyfobs the request body shall be an empty object.
+    For keypads and keyfobs the request body can be an empty object.
 
         { }
 
@@ -922,8 +934,12 @@ PUT /api/12345/alarmsystems/1/device/00:15:8d:00:02:af:95:f9-01-0101
           <li>"state/vibration"</li>
           <li>"state/buttonevent"</li>
           <li>"state/on"</li>
+          <li>"state/action"</li>
         </ul>
-        <p>If the parameter is ommited, the default value for the device is selected.</p>
+        <ul>
+          <li>If the parameter is ommited, the default value for the device is selected.</li>
+          <li>The "state/action" refers to the "emergency", "fire", and "panic" buttons of a keypad.</li>
+        </ul>
       </td>
       <td>optional</td>
     </tr>
