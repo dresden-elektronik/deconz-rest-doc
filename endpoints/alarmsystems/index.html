@@ -871,7 +871,7 @@ HTTP/1.1 200 OK
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The request is the same as <a href="#adddevice">Add device to alarm system</a> request, but with an empty JSON object as body content.</p>
+<p>The request is the same as <a href="#adddevice">Add device to alarm system</a> request, but is allowed to have an empty JSON object as body content.</p>
 </div>
 <h3 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h3>
 <p>Empty JSON object.</p>
@@ -954,6 +954,18 @@ GET /api/12345/sensors/ec:1b:bd:ff:fe:6f:c3:4d-01-0501
       <td><code>invalid_code</code></td>
       <td>The last entered PIN code was invalid.</td>
     </tr>
+    <tr>
+      <td><code>panic</code></td>
+      <td>The panic or SOS alarm was triggered.</td>
+    </tr>
+    <tr>
+      <td><code>emergency</code></td>
+      <td>The emergency alarm was triggert.</td>
+    </tr>
+    <tr>
+      <td><code>fire</code></td>
+      <td>The fire alarm was triggered.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -1002,7 +1014,7 @@ It reflects what is shown on the panel (when activated by the keypad&rsquo;s pro
     </tr>
     <tr>
       <td><code>in_alarm</code></td>
-      <td >The alarm state is indicated by intense audio beeps.</td>
+      <td >The alarm state is indicated by intense audio beeps, or a neutral setting if not supported.</td>
     </tr>
     <tr>
       <td><code>arming_stay</code></td>
@@ -1053,7 +1065,7 @@ PUT /api/12345/alarmsystems/1/device/00:15:8d:00:02:af:95:f9-01-0101
 <h3 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For keypads and keyfobs the request body shall be an empty object.</p>
+<p>For keypads and keyfobs the request body can be an empty object.</p>
 <pre><code>{ }
 </code></pre>
 </div>
@@ -1086,8 +1098,12 @@ PUT /api/12345/alarmsystems/1/device/00:15:8d:00:02:af:95:f9-01-0101
           <li>"state/vibration"</li>
           <li>"state/buttonevent"</li>
           <li>"state/on"</li>
+          <li>"state/action"</li>
         </ul>
-        <p>If the parameter is ommited, the default value for the device is selected.</p>
+        <ul>
+          <li>If the parameter is ommited, the default value for the device is selected.</li>
+          <li>The "state/action" refers to the "emergency", "fire", and "panic" buttons of a keypad.</li>
+        </ul>
       </td>
       <td>optional</td>
     </tr>
