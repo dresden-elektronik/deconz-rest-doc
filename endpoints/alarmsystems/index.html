@@ -173,9 +173,17 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#trigger-alarm-via-rest-api">Trigger alarm via REST-API&nbsp;</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#arm-and-disarm-via-rest-api">Arm and disarm via REST-API&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_8">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data_4">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_8">Response</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#trigger-alarm-via-rest-api">Trigger alarm via REST-API&nbsp;</a>
     </li>
     </ul>
                     </li>
@@ -1145,10 +1153,65 @@ HTTP/1.1 200 OK
 <p><a href="../../misc/errors#403">403 Forbidden</a></p>
 <p><a href="../../misc/errors#404">404 Not Found</a></p>
 <hr />
-<h2 id="trigger-alarm-via-rest-api">Trigger alarm via REST-API<a name="triggeralarm">&nbsp;</a><a class="headerlink" href="#trigger-alarm-via-rest-api" title="Permanent link">&para;</a></h2>
-<p><mark>TODO</mark></p>
-<hr />
 <h2 id="arm-and-disarm-via-rest-api">Arm and disarm via REST-API<a name="armdisarm">&nbsp;</a><a class="headerlink" href="#arm-and-disarm-via-rest-api" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/alarmsystems/&lt;id&gt;/disarm
+PUT /api/&lt;apikey&gt;/alarmsystems/&lt;id&gt;/arm_away
+PUT /api/&lt;apikey&gt;/alarmsystems/&lt;id&gt;/arm_stay
+PUT /api/&lt;apikey&gt;/alarmsystems/&lt;id&gt;/arm_night
+</code></pre>
+<p>To arm or disarm an alarm system, the REST-API provides four requests, one for each mode.
+The request body is required to specify a valid <code>code0</code> PIN code, which is verified to protect against unauthorized access.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>config/armmode</code> of an alarm system can not be changed with a PUT <code>/config</code> request.</p>
+</div>
+<p>When arming or disarming the alarm system via REST-API, all keypads will reflect the state changes on their panels automatically.
+Note that the configured entry and exit delays are processed before the final target armmode is reached.</p>
+<h3 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>code0</td>
+      <td>String</td>
+      <td>
+        <p>The configured PIN code of the alarm system.</p>
+      </td>
+      <td>required</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data_4">Example request data<a class="headerlink" href="#example-request-data_4" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code class="no-highlight">
+PUT /api/12345/alarmsystems/1/arm_away
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "code0": "12345"
+}
+</code>
+</pre>
+
+<h3 id="response_8">Response<a class="headerlink" href="#response_8" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code class="no-highlight">
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "/alarmsystems/1/config/armmode": "armed_stay" } } ]
+</code>
+</pre>
+
+<hr />
+<h2 id="trigger-alarm-via-rest-api">Trigger alarm via REST-API<a name="triggeralarm">&nbsp;</a><a class="headerlink" href="#trigger-alarm-via-rest-api" title="Permanent link">&para;</a></h2>
 <p><mark>TODO</mark></p>
               
             </div>
