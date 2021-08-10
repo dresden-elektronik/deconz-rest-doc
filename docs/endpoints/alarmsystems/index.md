@@ -990,13 +990,72 @@ HTTP/1.1 200 OK
 
 ------------------------------------------------------
 
+## Arm and disarm via REST-API<a name="armdisarm">&nbsp;</a>
+
+    PUT /api/<apikey>/alarmsystems/<id>/disarm
+    PUT /api/<apikey>/alarmsystems/<id>/arm_away
+    PUT /api/<apikey>/alarmsystems/<id>/arm_stay
+    PUT /api/<apikey>/alarmsystems/<id>/arm_night
+
+
+To arm or disarm an alarm system, the REST-API provides four requests, one for each mode.
+The request body is required to specify a valid `code0` PIN code, which is verified to protect against unauthorized access.
+
+!!! Note
+    The `config/armmode` of an alarm system can not be changed with a PUT `/config` request.
+
+
+When arming or disarming the alarm system via REST-API, all keypads will reflect the state changes on their panels automatically.
+Note that the configured entry and exit delays are processed before the final target armmode is reached.
+
+### Parameters
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>code0</td>
+      <td>String</td>
+      <td>
+        <p>The configured PIN code of the alarm system.</p>
+      </td>
+      <td>required</td>
+    </tr>
+  </tbody>
+</table>
+
+### Example request data
+<pre class="headers">
+<code class="no-highlight">
+PUT /api/12345/alarmsystems/1/arm_away
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+    "code0": "12345"
+}
+</code>
+</pre>
+
+### Response
+<pre class="headers">
+<code class="no-highlight">
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "/alarmsystems/1/config/armmode": "armed_stay" } } ]
+</code>
+</pre>
+
+
+------------------------------------------------------
+
 ## Trigger alarm via REST-API<a name="triggeralarm">&nbsp;</a>
 
 <mark>TODO</mark>
 
-------------------------------------------------------
-
-## Arm and disarm via REST-API<a name="armdisarm">&nbsp;</a>
-
-<mark>TODO</mark>
 
