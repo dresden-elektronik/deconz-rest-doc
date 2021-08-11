@@ -266,7 +266,7 @@
 <p><mark>Work in progress</mark></p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>This page serves as a Request For Comments (RFC); the API is not available in any release yet.</p>
+<p>This page serves as a Request For Comments (RFC); the beta API is available since v2.12.4-beta release.</p>
 </div>
 <p>An alarm system uses sensors and keypads to implement a stateful security system. It can be disarmed, armed, and raises events when an alarm is triggered.</p>
 <p>Arming and disarming is done by:</p>
@@ -334,6 +334,10 @@
 <pre><code>POST /api/&lt;apikey&gt;/alarmsystems
 </code></pre>
 <p>Creates a new alarm system. After creation the arm mode is set to <code>disarmed</code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The request is not implemented yet.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is only needed than more than one alarm system is needed. The &ldquo;default&rdquo; alarm system with id &ldquo;1&rdquo; is created automatically.</p>
