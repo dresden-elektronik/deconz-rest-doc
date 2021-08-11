@@ -7,7 +7,7 @@ title: Alarm Systems
 <mark>Work in progress</mark>
 
 !!! Important
-    This page serves as a Request For Comments (RFC); the API is not available in any release yet.
+    This page serves as a Request For Comments (RFC); the beta API is available since v2.12.4-beta release.
 
 An alarm system uses sensors and keypads to implement a stateful security system. It can be disarmed, armed, and raises events when an alarm is triggered.
 
@@ -96,6 +96,9 @@ Currently only one PIN code, aka "code0", is supported. In future multiple PIN c
     POST /api/<apikey>/alarmsystems
 
 Creates a new alarm system. After creation the arm mode is set to `disarmed`.
+
+!!! Important
+    The request is not implemented yet.
 
 !!! Note
     This is only needed than more than one alarm system is needed. The "default" alarm system with id "1" is created automatically.
