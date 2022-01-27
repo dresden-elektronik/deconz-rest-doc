@@ -9,26 +9,25 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Motion sensor SML001 - deCONZ REST-API</title>
+  <title>Motion Sensor 1. Gen (SML001) - deCONZ REST-API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
   <link rel="stylesheet" href="../../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   <link href="../../../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Motion sensor SML001";
+    var mkdocs_page_name = "Motion Sensor 1. Gen (SML001)";
     var mkdocs_page_input_path = "devices/philips/sml001_motion_sensor.md";
     var mkdocs_page_url = null;
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -42,7 +41,7 @@
         <a href="../../.." class="icon icon-home"> deCONZ REST-API</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -118,7 +117,7 @@
     
       
     
-    <li>Motion sensor SML001</li>
+    <li>Motion Sensor 1. Gen (SML001)</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/philips/sml001_motion_sensor.md"
@@ -129,10 +128,11 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
-                <h1 id="motion-sensor-sml001">Motion sensor SML001<a class="headerlink" href="#motion-sensor-sml001" title="Permanent link">&para;</a></h1>
+                <h1 id="motion-sensor-1-gen-sml001">Motion Sensor 1. Gen (SML001)<a class="headerlink" href="#motion-sensor-1-gen-sml001" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/philips/sml001_motion_sensor.json">sml001_motion_sensor.json</a>
 </p>
 <table>
@@ -150,11 +150,11 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>SML001</td>
+      <td>Motion Sensor 1. Gen (SML001)</td>
     </tr>
     <tr>
       <td>status</td>
-      <td>Gold</td>
+      <td>Silver</td>
     </tr>
   </tbody>
 </table>
@@ -169,6 +169,18 @@
     <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
   </thead>
   <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
     <tr>
       <td>lastseen</td>
       <td>ISO 8601 timestamp</td>
@@ -312,7 +324,7 @@
     <tr>
       <td>presence</td>
       <td>Bool</td>
-      <td>The current presence state.</td>
+      <td>True when presence is detected.</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -357,6 +369,18 @@
     <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
   </thead>
   <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
     <tr>
       <td>lastseen</td>
       <td>ISO 8601 timestamp</td>
@@ -555,6 +579,18 @@
   </thead>
   <tbody>
     <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>lastseen</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp of the last communication.</td>
@@ -679,7 +715,8 @@
     <tr>
       <td>temperature</td>
       <td>Int16</td>
-      <td>The current temperature in °C &times; 100.</td>
+      <td>The current temperature in °C &times; 100.<p>  Default: 0</p>
+</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -736,15 +773,18 @@
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
 </div>
     <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
       <script src="../../../search/main.js" defer></script>
     <script defer>

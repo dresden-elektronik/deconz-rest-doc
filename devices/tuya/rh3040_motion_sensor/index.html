@@ -9,26 +9,25 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Motion sensor ESS-SI-PIR-6101 - deCONZ REST-API</title>
+  <title>Motion Sensor (ESS-SI-PIR-6101) - deCONZ REST-API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
   <link rel="stylesheet" href="../../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   <link href="../../../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Motion sensor ESS-SI-PIR-6101";
+    var mkdocs_page_name = "Motion Sensor (ESS-SI-PIR-6101)";
     var mkdocs_page_input_path = "devices/tuya/rh3040_motion_sensor.md";
     var mkdocs_page_url = null;
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -42,7 +41,7 @@
         <a href="../../.." class="icon icon-home"> deCONZ REST-API</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -118,7 +117,7 @@
     
       
     
-    <li>Motion sensor ESS-SI-PIR-6101</li>
+    <li>Motion Sensor (ESS-SI-PIR-6101)</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/tuya/rh3040_motion_sensor.md"
@@ -129,10 +128,11 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
-                <h1 id="motion-sensor-ess-si-pir-6101">Motion sensor ESS-SI-PIR-6101<a class="headerlink" href="#motion-sensor-ess-si-pir-6101" title="Permanent link">&para;</a></h1>
+                <h1 id="motion-sensor-ess-si-pir-6101">Motion Sensor (ESS-SI-PIR-6101)<a class="headerlink" href="#motion-sensor-ess-si-pir-6101" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/tuya/rh3040_motion_sensor.json">rh3040_motion_sensor.json</a>
 </p>
 <table>
@@ -150,7 +150,7 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>ESS-SI-PIR-6101</td>
+      <td>Motion Sensor (ESS-SI-PIR-6101)</td>
     </tr>
     <tr>
       <td>status</td>
@@ -170,6 +170,24 @@
   </thead>
   <tbody>
     <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>manufacturername</td>
       <td>String</td>
       <td>"Tuyatec"</td>
@@ -186,6 +204,24 @@
       <td>String</td>
       <td>Name of the resource.</td>
       <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAPresence"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -264,7 +300,7 @@
     <tr>
       <td>presence</td>
       <td>Bool</td>
-      <td>The current presence state.</td>
+      <td>True when presence is detected.</td>
       <td>R</td>
     </tr>
     <tr>
@@ -335,15 +371,18 @@
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
 </div>
     <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
       <script src="../../../search/main.js" defer></script>
     <script defer>

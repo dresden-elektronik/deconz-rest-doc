@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>S2 (5502) - deCONZ REST-API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "S2 (5502)";
+    var mkdocs_page_input_path = "devices/ubisys/s2_5502.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> deCONZ REST-API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../about_rest/">About REST</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../getting_started/">Getting Started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Endpoints</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/alarmsystems/">Alarm Systems</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/configuration/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/groups/">Groups</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/lights/">Lights</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/rules/">Rules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/scenes/">Scenes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/schedules/">Schedules</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/sensors/">Sensors</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/sensors/button_events/">Button Events</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/touchlink/">Touchlink</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/websocket/">Websocket</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../">Supported Devices</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/discovery/">Discovery</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/authorization/">Authorization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/errors/">Error handling</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/polling/">Polling</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">deCONZ REST-API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>S2 (5502)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/ubisys/s2_5502.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="s2-5502">S2 (5502)<a class="headerlink" href="#s2-5502" title="Permanent link">&para;</a></h1>
+<p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/ubisys/s2_5502.json">s2_5502.json</a>
+</p>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Value</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>manufacturername</td>
+      <td>ubisys</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>S2 (5502)</td>
+    </tr>
+    <tr>
+      <td>product</td>
+      <td>S2 (5502)</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>Gold</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+<h2 id="1-onoff-output">1. On/Off output<a class="headerlink" href="#1-onoff-output" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
+</p>
+<h3 id="top-level-attributes">Top level attributes<a class="headerlink" href="#top-level-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"ubisys"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"S2 (5502)"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"On/Off output"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes">State attributes<a class="headerlink" href="#state-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>alert</td>
+      <td>String</td>
+      <td>The currently active alert effect.<p>  Default: none</p>
+<ul class="value-list">
+<li>"none" &mdash; light is not performing an alert</li>
+<li>"select" &mdash; light is blinking a short time</li>
+<li>"lselect" &mdash; light is blinking a longer time</li>
+</ul>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>True when device is on; false when off.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+<h2 id="2-onoff-output">2. On/Off output<a class="headerlink" href="#2-onoff-output" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
+</p>
+<h3 id="top-level-attributes_1">Top level attributes<a class="headerlink" href="#top-level-attributes_1" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"ubisys"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"S2 (5502)"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"On/Off output"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_1">State attributes<a class="headerlink" href="#state-attributes_1" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>alert</td>
+      <td>String</td>
+      <td>The currently active alert effect.<p>  Default: none</p>
+<ul class="value-list">
+<li>"none" &mdash; light is not performing an alert</li>
+<li>"select" &mdash; light is blinking a short time</li>
+<li>"lselect" &mdash; light is blinking a longer time</li>
+</ul>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>True when device is on; false when off.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+<h2 id="3-zhaswitch">3. ZHASwitch<a class="headerlink" href="#3-zhaswitch" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+</p>
+<h3 id="top-level-attributes_2">Top level attributes<a class="headerlink" href="#top-level-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"ubisys"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"S2 (5502)"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHASwitch"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes">Config attributes<a class="headerlink" href="#config-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>group</td>
+      <td>String</td>
+      <td>comma seperated list of groups which a device controls.<p>  Default: auto,auto</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>String</td>
+      <td>Mode of the device.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_2">State attributes<a class="headerlink" href="#state-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>buttonevent</td>
+      <td>UInt32</td>
+      <td>The last received button event.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+<h2 id="4-zhapower">4. ZHAPower<a class="headerlink" href="#4-zhapower" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+</p>
+<h3 id="top-level-attributes_3">Top level attributes<a class="headerlink" href="#top-level-attributes_3" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"ubisys"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"S2 (5502)"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAPower"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes_1">Config attributes<a class="headerlink" href="#config-attributes_1" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_3">State attributes<a class="headerlink" href="#state-attributes_3" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>current</td>
+      <td>UInt16</td>
+      <td>The measured current (in mA).</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>power</td>
+      <td>Int16</td>
+      <td>The measured power (in W).</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>voltage</td>
+      <td>UInt16</td>
+      <td>The measured voltage (in V).</td>
+      <td>RW</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+<h2 id="5-zhaconsumption">5. ZHAConsumption<a class="headerlink" href="#5-zhaconsumption" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+</p>
+<h3 id="top-level-attributes_4">Top level attributes<a class="headerlink" href="#top-level-attributes_4" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"ubisys"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"S2 (5502)"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAConsumption"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes_2">Config attributes<a class="headerlink" href="#config-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_4">State attributes<a class="headerlink" href="#state-attributes_4" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>consumption</td>
+      <td>UInt64</td>
+      <td>The measured consumption (in Wh).</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>power</td>
+      <td>Int16</td>
+      <td>The measured power (in W).</td>
+      <td>RW</td>
+    </tr>
+  </tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

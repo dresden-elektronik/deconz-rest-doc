@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="../../../css/theme.css" />
   <link rel="stylesheet" href="../../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   <link href="../../../css/extra.css" rel="stylesheet" />
   
   <script>
@@ -26,9 +26,8 @@
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -42,7 +41,7 @@
         <a href="../../.." class="icon icon-home"> deCONZ REST-API</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -81,6 +80,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#dresden-elektronik-scene-switch">dresden elektronik Scene Switch</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dresden-elektronik-kobold">dresden elektronik Kobold</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#gira-jung-switches-and-remotes">GIRA / JUNG Switches and remotes</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ikea-tradfri-onoff-switch">IKEA TRÅDFRI on/off switch</a>
@@ -88,6 +89,8 @@
     <li class="toctree-l2"><a class="reference internal" href="#ikea-tradfri-openclose-remote">IKEA TRÅDFRI open/close remote</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ikea-tradfri-round-5-button-remote">IKEA TRÅDFRI round 5 button remote</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ikea-styrbar-remote">IKEA STYRBAR remote</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#osram-lightify-switch-mini">OSRAM Lightify Switch Mini</a>
     </li>
@@ -105,6 +108,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#trust-zyct-202-remote">Trust ZYCT-202 remote</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#schneider-electric-wiser-lk-fuga-battery-4-button-switch">Schneider Electric Wiser LK FUGA battery 4 button switch</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#xiaomi-qbkg11lm-switch">Xiaomi QBKG11LM switch</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#xiaomi-qbkg12lm-switch">Xiaomi QBKG12LM switch</a>
@@ -115,13 +120,23 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#xiaomi-wxkg11lm-2018-remote">Xiaomi WXKG11LM 2018 remote</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#xiaomi-wrs-r02-aqara-wireless-remote-switch-h1-double-rocker">Xiaomi WRS-R02 Aqara wireless remote switch H1 (Double Rocker)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#xiaomi-xiaomi-aqara-d1-1-gang-qbkg21lm-and-2-gang-qbkg22lm-without-neutral-wire-2020-version">Xiaomi Xiaomi Aqara D1 1-gang QBKG21LM and 2-gang QBKG22LM without neutral wire (2020 version)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#xiaomi-xiaomi-aqara-d1-1-gang-qbkg23lm-and-2-gang-qbkg24lm-with-neutral-wire-2020-version">Xiaomi Xiaomi Aqara D1 1-gang QBKG23LM and 2-gang QBKG24LM with neutral wire (2020 version)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#xiaomi-xiaomi-aqara-h1-12-gang-with-and-without-neutral-wire-ws-euk01-ws-euk02-ws-euk03-ws-euk04">Xiaomi Xiaomi Aqara H1 1/2-gang with and without neutral wire WS-EUK01, WS-EUK02, WS-EUK03, WS-EUK04</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#xiaomi-wxkg11lm-2016-remote">Xiaomi WXKG11LM 2016 remote</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#xiaomi-wxkg01lm-remote">Xiaomi WXKG01LM remote</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#xiaomi-vibration-sensor-not-implemented">Xiaomi Vibration sensor (not implemented)</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ubisys-universal-dimmer-d1-and-power-switch-s1">Ubisys Universal dimmer D1 and power switch S1</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ubisys-universal-power-switch-s1-5501">Ubisys Universal power switch S1 (5501)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ubisys-universal-dimmer-d1-and-power-switch-s1-r">Ubisys Universal dimmer D1 and power switch S1-R</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ubisys-control-unit-c4">Ubisys Control unit C4</a>
     </li>
@@ -145,11 +160,17 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#sunricher-cct-remote">Sunricher CCT remote</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sunricher-zigbee-push-button-coupler-sr-zg2833pac-c4">Sunricher Zigbee Push-Button Coupler SR-ZG2833PAC-C4</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#rgbgenie-micro-remote-zb-5121">RGBgenie Micro remote ZB-5121</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sunricher-wireless-switches-from-sunricher-namron-and-ecodim">Sunricher Wireless switches from Sunricher, Namron and EcoDim</a>
+    <li class="toctree-l2"><a class="reference internal" href="#sunricher-wireless-switches-from-sunricher-namron-slc-and-ecodim">Sunricher Wireless switches from Sunricher, Namron, SLC and EcoDim</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#tuya-3-gang-remote">Tuya 3-gang remote</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tuya-4-gang-remote">Tuya 4-gang remote</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#legrand-pocket-remote">Legrand Pocket remote</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#legrand-remote-switch">Legrand Remote switch</a>
     </li>
@@ -167,6 +188,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#heiman-smart-controller-hs1rc-m-and-hs1rc-e">Heiman Smart controller HS1RC-M and HS1RC-E</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#immax-smart-keyfob-07046l">Immax Smart Keyfob 07046L</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#tint-remote">Tint Remote</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#sage-door-bell">Sage Door bell</a>
@@ -179,17 +202,23 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ecosmartlds-4-button-cct-switch">EcoSmart/LDS 4 button CCT switch</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lds-mueller-licht-tint-dimmer">LDS Mueller-Licht tint dimmer</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#linkind-1-button-remote-zs232000178">Linkind 1 button remote ZS232000178</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#iluminize-4-button-cct-touch-remote">Iluminize 4 button CCT touch remote</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#lidl-livarno-lux-lidl-livarno-lux-remote-control-_tyzb01_bngwdjsr">LIDL Livarno Lux LIDL / Livarno Lux Remote Control (_TYZB01_bngwdjsr)</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lidl-silvercrest-lidl-silvercrest-doorbell-_tz1800_ladpngdx">LIDL Silvercrest Lidl / Silvercrest doorbell (_TZ1800_ladpngdx)</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#sengled-sengled-smart-light-switch">Sengled Sengled Smart Light Switch</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#elko-elko-esh-316-endevender-rf">ELKO Elko ESH 316 Endevender RF</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#adurolight-manufacturing-eria-adurosmart-wireless-dimming-switch">Adurolight Manufacturing Eria Adurosmart Wireless Dimming Switch</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#terncy-terncy-smart-dial-sd01">Terncy Terncy Smart Dial SD01</a>
     </li>
     </ul>
                     </li>
@@ -249,6 +278,7 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
@@ -273,62 +303,62 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Top right button</td>
+<td>Top Right</td>
 </tr>
 <tr>
 <td>3001</td>
 <td>Hold</td>
-<td>Top right button</td>
+<td>Top Right</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>Top right button</td>
+<td>Top Right</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>Bottom right button</td>
+<td>Bottom Right</td>
 </tr>
 <tr>
 <td>4001</td>
 <td>Hold</td>
-<td>Bottom right button</td>
+<td>Bottom Right</td>
 </tr>
 <tr>
 <td>4003</td>
 <td>Long release</td>
-<td>Bottom right button</td>
+<td>Bottom Right</td>
 </tr>
 </tbody>
 </table>
@@ -350,52 +380,84 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Scene 1 button</td>
+<td>Scene 1</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>Scene 2 button</td>
+<td>Scene 2</td>
 </tr>
 <tr>
 <td>5002</td>
 <td>Short release</td>
-<td>Scene 3 button</td>
+<td>Scene 3</td>
 </tr>
 <tr>
 <td>6002</td>
 <td>Short release</td>
-<td>Scene 4 button</td>
+<td>Scene 4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dresden-elektronik-kobold">dresden elektronik Kobold<a class="headerlink" href="#dresden-elektronik-kobold" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"Kobold"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Hold</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Long release</td>
+<td>Button 1</td>
 </tr>
 </tbody>
 </table>
@@ -497,32 +559,32 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 </tbody>
 </table>
@@ -544,22 +606,22 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Open button</td>
+<td>Open</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Open button</td>
+<td>Open</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Close button</td>
+<td>Close</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Close button</td>
+<td>Close</td>
 </tr>
 </tbody>
 </table>
@@ -581,72 +643,149 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Large middle button</td>
+<td>On/Off</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Large middle button</td>
+<td>On/Off</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Top dimm up button</td>
+<td>Dim Up</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Top dimm up button</td>
+<td>Dim Up</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Top dimm up button</td>
+<td>Dim Up</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Bottom dimm down button</td>
+<td>Dim Down</td>
 </tr>
 <tr>
 <td>3001</td>
 <td>Hold</td>
-<td>Bottom dimm down button</td>
+<td>Dim Down</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>Bottom dimm down button</td>
+<td>Dim Down</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>Left arrow button</td>
+<td>Previous Scene</td>
 </tr>
 <tr>
 <td>4001</td>
 <td>Hold</td>
-<td>Left arrow button</td>
+<td>Previous Scene</td>
 </tr>
 <tr>
 <td>4003</td>
 <td>Long release</td>
-<td>Left arrow button</td>
+<td>Previous Scene</td>
 </tr>
 <tr>
 <td>5002</td>
 <td>Short release</td>
-<td>Right arrow button</td>
+<td>Next Scene</td>
 </tr>
 <tr>
 <td>5001</td>
 <td>Hold</td>
-<td>Right arrow button</td>
+<td>Next Scene</td>
 </tr>
 <tr>
 <td>5003</td>
 <td>Long release</td>
-<td>Right arrow button</td>
+<td>Next Scene</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ikea-styrbar-remote">IKEA STYRBAR remote<a class="headerlink" href="#ikea-styrbar-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"Remote Control N2"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Dim Up</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Hold</td>
+<td>Dim Up</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Long release</td>
+<td>Dim Up</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Dim Down</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Hold</td>
+<td>Dim Down</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Long release</td>
+<td>Dim Down</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Previous Scene</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Hold</td>
+<td>Previous Scene</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Long release</td>
+<td>Previous Scene</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Short release</td>
+<td>Next Scene</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Hold</td>
+<td>Next Scene</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Long release</td>
+<td>Next Scene</td>
 </tr>
 </tbody>
 </table>
@@ -668,47 +807,47 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Up button</td>
+<td>Up</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Up button</td>
+<td>Up</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Up button</td>
+<td>Up</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Middle button</td>
+<td>Middle</td>
 </tr>
 <tr>
 <td>3001</td>
 <td>Hold</td>
-<td>Middle button</td>
+<td>Middle</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>Middle button</td>
+<td>Middle</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Down button</td>
+<td>Down</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Down button</td>
+<td>Down</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Down button</td>
+<td>Down</td>
 </tr>
 </tbody>
 </table>
@@ -731,62 +870,62 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Top right button</td>
+<td>Top Right</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Top right button</td>
+<td>Top Right</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Top right button</td>
+<td>Top Right</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>3001</td>
 <td>Hold</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>Bottom right button</td>
+<td>Bottom Right</td>
 </tr>
 <tr>
 <td>4001</td>
 <td>Hold</td>
-<td>Bottom right button</td>
+<td>Bottom Right</td>
 </tr>
 <tr>
 <td>4003</td>
 <td>Long release</td>
-<td>Bottom right button</td>
+<td>Bottom Right</td>
 </tr>
 </tbody>
 </table>
@@ -808,62 +947,62 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Top left button</td>
+<td>Top Left</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Top right button</td>
+<td>Top Right</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Top right button</td>
+<td>Top Right</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Top right button</td>
+<td>Top Right</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>3001</td>
 <td>Hold</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>Bottom left button</td>
+<td>Bottom Left</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>Bottom right button</td>
+<td>Bottom Right</td>
 </tr>
 <tr>
 <td>4001</td>
 <td>Hold</td>
-<td>Bottom right button</td>
+<td>Bottom Right</td>
 </tr>
 <tr>
 <td>4003</td>
 <td>Long release</td>
-<td>Bottom right button</td>
+<td>Bottom Right</td>
 </tr>
 </tbody>
 </table>
@@ -885,22 +1024,42 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Rotate full brightness</td>
+<td>Rotate Full Brightness</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Rotate clockwise</td>
+<td>Rotate Clockwise</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Rotate counter clockwise</td>
+<td>Rotate Counter Clockwise</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>Rotate to off</td>
+<td>Rotate Off</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Hold</td>
+<td>Rotate Full Brightness</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Long release</td>
+<td>Rotate Full Brightness</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Hold</td>
+<td>Rotate Clockwise</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Long release</td>
+<td>Rotate Clockwise</td>
 </tr>
 </tbody>
 </table>
@@ -944,47 +1103,47 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Button 1</td>
+<td>Button</td>
 </tr>
 <tr>
 <td>1004</td>
 <td>Double press</td>
-<td>Button 1</td>
+<td>Button</td>
 </tr>
 <tr>
 <td>1005</td>
 <td>Treeble press</td>
-<td>Button 1</td>
+<td>Button</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Rotate clockwise</td>
+<td>Rotate Clockwise</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Rotate clockwise</td>
+<td>Rotate Clockwise</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Rotate clockwise</td>
+<td>Rotate Clockwise</td>
 </tr>
 <tr>
 <td>3001</td>
 <td>Hold</td>
-<td>Rotate counter clockwise</td>
+<td>Rotate Counter Clockwise</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>Rotate counter clockwise</td>
+<td>Rotate Counter Clockwise</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Rotate counter clockwise</td>
+<td>Rotate Counter Clockwise</td>
 </tr>
 </tbody>
 </table>
@@ -1174,6 +1333,43 @@
 </tr>
 </tbody>
 </table>
+<h2 id="schneider-electric-wiser-lk-fuga-battery-4-button-switch">Schneider Electric Wiser LK FUGA battery 4 button switch<a class="headerlink" href="#schneider-electric-wiser-lk-fuga-battery-4-button-switch" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"FLS/AIRLINK/4"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Top left</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Top right</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Bottom left</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Short release</td>
+<td>Bottom right</td>
+</tr>
+</tbody>
+</table>
 <h2 id="xiaomi-qbkg11lm-switch">Xiaomi QBKG11LM switch<a class="headerlink" href="#xiaomi-qbkg11lm-switch" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
@@ -1219,27 +1415,27 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Left button</td>
+<td>Left</td>
 </tr>
 <tr>
 <td>1004</td>
 <td>Double press</td>
-<td>Left button</td>
+<td>Left</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Right button</td>
+<td>Right</td>
 </tr>
 <tr>
 <td>2004</td>
 <td>Double press</td>
-<td>Right button</td>
+<td>Right</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Both buttons</td>
+<td>Both</td>
 </tr>
 </tbody>
 </table>
@@ -1351,6 +1547,304 @@
 <td>1003</td>
 <td>Long release</td>
 <td>Button 1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xiaomi-wrs-r02-aqara-wireless-remote-switch-h1-double-rocker">Xiaomi WRS-R02 Aqara wireless remote switch H1 (Double Rocker)<a class="headerlink" href="#xiaomi-wrs-r02-aqara-wireless-remote-switch-h1-double-rocker" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"lumi.remote.b28ac1"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1003</td>
+<td>Long release</td>
+<td>Left</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Left</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Double press</td>
+<td>Left</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>Treeble press</td>
+<td>Left</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Long release</td>
+<td>Right</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Right</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>Double press</td>
+<td>Right</td>
+</tr>
+<tr>
+<td>2005</td>
+<td>Treeble press</td>
+<td>Right</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Long release</td>
+<td>Both</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Both</td>
+</tr>
+<tr>
+<td>3004</td>
+<td>Double press</td>
+<td>Both</td>
+</tr>
+<tr>
+<td>3005</td>
+<td>Treeble press</td>
+<td>Both</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xiaomi-xiaomi-aqara-d1-1-gang-qbkg21lm-and-2-gang-qbkg22lm-without-neutral-wire-2020-version">Xiaomi Xiaomi Aqara D1 1-gang QBKG21LM and 2-gang QBKG22LM without neutral wire (2020 version)<a class="headerlink" href="#xiaomi-xiaomi-aqara-d1-1-gang-qbkg21lm-and-2-gang-qbkg22lm-without-neutral-wire-2020-version" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"lumi.switch.b1lacn02"</li>
+<li>"lumi.switch.b2lacn02"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Long release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Double press</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Long release</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>Double press</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Long release</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>3004</td>
+<td>Double press</td>
+<td>Button 3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xiaomi-xiaomi-aqara-d1-1-gang-qbkg23lm-and-2-gang-qbkg24lm-with-neutral-wire-2020-version">Xiaomi Xiaomi Aqara D1 1-gang QBKG23LM and 2-gang QBKG24LM with neutral wire (2020 version)<a class="headerlink" href="#xiaomi-xiaomi-aqara-d1-1-gang-qbkg23lm-and-2-gang-qbkg24lm-with-neutral-wire-2020-version" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"lumi.switch.b1nacn02"</li>
+<li>"lumi.switch.b2nacn02"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1001</td>
+<td>Hold</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Double press</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>Treeble press</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>Quadruple press</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Long release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Hold</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>Double press</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>2005</td>
+<td>Treeble press</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>Quadruple press</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Long release</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Hold</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>3004</td>
+<td>Double press</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>3005</td>
+<td>Treeble press</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>3006</td>
+<td>Quadruple press</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Long release</td>
+<td>Button 3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xiaomi-xiaomi-aqara-h1-12-gang-with-and-without-neutral-wire-ws-euk01-ws-euk02-ws-euk03-ws-euk04">Xiaomi Xiaomi Aqara H1 1/2-gang with and without neutral wire WS-EUK01, WS-EUK02, WS-EUK03, WS-EUK04<a class="headerlink" href="#xiaomi-xiaomi-aqara-h1-12-gang-with-and-without-neutral-wire-ws-euk01-ws-euk02-ws-euk03-ws-euk04" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"lumi.switch.l1aeu1"</li>
+<li>"lumi.switch.l2aeu1"</li>
+<li>"lumi.switch.n1aeu1"</li>
+<li>"lumi.switch.n2aeu1"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Double press</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>Double press</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>3004</td>
+<td>Double press</td>
+<td>Button 3</td>
 </tr>
 </tbody>
 </table>
@@ -1475,10 +1969,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="ubisys-universal-dimmer-d1-and-power-switch-s1">Ubisys Universal dimmer D1 and power switch S1<a class="headerlink" href="#ubisys-universal-dimmer-d1-and-power-switch-s1" title="Permanent link">&para;</a></h2>
+<h2 id="ubisys-universal-power-switch-s1-5501">Ubisys Universal power switch S1 (5501)<a class="headerlink" href="#ubisys-universal-power-switch-s1-5501" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"S1 (5501)"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Hold</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Long release</td>
+<td>Button 1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ubisys-universal-dimmer-d1-and-power-switch-s1-r">Ubisys Universal dimmer D1 and power switch S1-R<a class="headerlink" href="#ubisys-universal-dimmer-d1-and-power-switch-s1-r" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
 <li>"D1"</li>
+<li>"S1-R"</li>
 <li>"S1"</li>
 </ul>
 
@@ -1526,6 +2053,7 @@
 <h2 id="ubisys-control-unit-c4">Ubisys Control unit C4<a class="headerlink" href="#ubisys-control-unit-c4" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
+<li>"C4 (5504)"</li>
 <li>"C4"</li>
 </ul>
 
@@ -1603,7 +2131,9 @@
 <h2 id="ubisys-power-switch-s2">Ubisys Power switch S2<a class="headerlink" href="#ubisys-power-switch-s2" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
+<li>"S2 (5502)"</li>
 <li>"S2"</li>
+<li>"S2-R"</li>
 </ul>
 
 <table>
@@ -1712,17 +2242,17 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Button 1</td>
+<td>Button</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Button 2</td>
+<td>Rotate Clockwise</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Button 3</td>
+<td>Rotate Counter Clockwise</td>
 </tr>
 </tbody>
 </table>
@@ -2036,32 +2566,32 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 </tbody>
 </table>
@@ -2083,52 +2613,52 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>S1 button</td>
+<td>S1</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>S1 button</td>
+<td>S1</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>S2 button</td>
+<td>S2</td>
 </tr>
 <tr>
 <td>4003</td>
 <td>Long release</td>
-<td>S2 button</td>
+<td>S2</td>
 </tr>
 </tbody>
 </table>
@@ -2150,92 +2680,92 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 <tr>
 <td>1001</td>
 <td>Hold</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 <tr>
 <td>1003</td>
 <td>Long release</td>
-<td>Off button</td>
+<td>Off</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>On button</td>
+<td>On</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>S1 button</td>
+<td>S1</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>S1 button</td>
+<td>S1</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>S2 button</td>
+<td>S2</td>
 </tr>
 <tr>
 <td>4003</td>
 <td>Long release</td>
-<td>S2 button</td>
+<td>S2</td>
 </tr>
 <tr>
 <td>5002</td>
 <td>Short release</td>
-<td>S3 button</td>
+<td>S3</td>
 </tr>
 <tr>
 <td>5003</td>
 <td>Long release</td>
-<td>S3 button</td>
+<td>S3</td>
 </tr>
 <tr>
 <td>6002</td>
 <td>Short release</td>
-<td>S4 button</td>
+<td>S4</td>
 </tr>
 <tr>
 <td>6003</td>
 <td>Long release</td>
-<td>S4 button</td>
+<td>S4</td>
 </tr>
 <tr>
 <td>7002</td>
 <td>Short release</td>
-<td>S5 button</td>
+<td>S5</td>
 </tr>
 <tr>
 <td>7003</td>
 <td>Long release</td>
-<td>S5 button</td>
+<td>S5</td>
 </tr>
 <tr>
 <td>8002</td>
 <td>Short release</td>
-<td>S6 button</td>
+<td>S6</td>
 </tr>
 <tr>
 <td>8003</td>
 <td>Long release</td>
-<td>S6 button</td>
+<td>S6</td>
 </tr>
 </tbody>
 </table>
@@ -2246,6 +2776,7 @@
 <li>"ZGRC-KEY-012"</li>
 <li>"ZGRC-KEY-013"</li>
 <li>"RGBgenie ZB-5001"</li>
+<li>"RGBgenie ZB-5004"</li>
 </ul>
 
 <table>
@@ -2424,6 +2955,7 @@
 <h2 id="sunricher-cct-remote">Sunricher CCT remote<a class="headerlink" href="#sunricher-cct-remote" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
+<li>"ZGRC-KEY-002"</li>
 </ul>
 
 <table>
@@ -2468,6 +3000,43 @@
 <tr>
 <td>4003</td>
 <td>Long release</td>
+<td>Button 4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sunricher-zigbee-push-button-coupler-sr-zg2833pac-c4">Sunricher Zigbee Push-Button Coupler SR-ZG2833PAC-C4<a class="headerlink" href="#sunricher-zigbee-push-button-coupler-sr-zg2833pac-c4" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"ZG2833PAC"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Short release</td>
 <td>Button 4</td>
 </tr>
 </tbody>
@@ -2539,7 +3108,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="sunricher-wireless-switches-from-sunricher-namron-and-ecodim">Sunricher Wireless switches from Sunricher, Namron and EcoDim<a class="headerlink" href="#sunricher-wireless-switches-from-sunricher-namron-and-ecodim" title="Permanent link">&para;</a></h2>
+<h2 id="sunricher-wireless-switches-from-sunricher-namron-slc-and-ecodim">Sunricher Wireless switches from Sunricher, Namron, SLC and EcoDim<a class="headerlink" href="#sunricher-wireless-switches-from-sunricher-namron-slc-and-ecodim" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
 <li>"ED-10010"</li>
@@ -2560,6 +3129,12 @@
 <li>"4512720"</li>
 <li>"4512721"</li>
 <li>"4512722"</li>
+<li>"4512729"</li>
+<li>"S57003"</li>
+<li>"ROB_200-008"</li>
+<li>"ROB_200-009-0"</li>
+<li>"ROB_200-008-0"</li>
+<li>"ROB_200-007-0"</li>
 </ul>
 
 <table>
@@ -2708,6 +3283,10 @@
 <li>"_TZ3000_owgcnkrh"</li>
 <li>"_TZ3000_adkvzooy"</li>
 <li>"_TZ3000_arfwfgoa"</li>
+<li>"_TZ3000_a7ouggvs"</li>
+<li>"_TZ3000_rrjr1q0u"</li>
+<li>"_TZ3000_abci1hiu"</li>
+<li>"_TZ3000_dfgbtub0"</li>
 </ul>
 
 <table>
@@ -2777,6 +3356,90 @@
 <tr>
 <td>4003</td>
 <td>Long release</td>
+<td>Button 4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tuya-4-gang-remote">Tuya 4-gang remote<a class="headerlink" href="#tuya-4-gang-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"_TZ3000_xabckq1v"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Short release</td>
+<td>Button 4</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Hold</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Hold</td>
+<td>Button 4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="legrand-pocket-remote">Legrand Pocket remote<a class="headerlink" href="#legrand-pocket-remote" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"Pocket remote"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Short release</td>
 <td>Button 4</td>
 </tr>
 </tbody>
@@ -3212,6 +3875,44 @@
 <ul class="value-list">
 <li>"RC_V14"</li>
 <li>"RC-EM"</li>
+<li>"RC-EF-3.0"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Button 2</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Short release</td>
+<td>Button 4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="immax-smart-keyfob-07046l">Immax Smart Keyfob 07046L<a class="headerlink" href="#immax-smart-keyfob-07046l" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"Keyfob-ZB3.0"</li>
 </ul>
 
 <table>
@@ -3603,6 +4304,68 @@
 </tr>
 </tbody>
 </table>
+<h2 id="lds-mueller-licht-tint-dimmer">LDS Mueller-Licht tint dimmer<a class="headerlink" href="#lds-mueller-licht-tint-dimmer" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"ZBT-DIMController-D0800"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>On/Off</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Short release</td>
+<td>Dim Up</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Hold</td>
+<td>Dim Up</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Long release</td>
+<td>Dim Up</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Short release</td>
+<td>Dim Down</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Hold</td>
+<td>Dim Down</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Long release</td>
+<td>Dim Down</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Short release</td>
+<td>Scene</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>Long release</td>
+<td>Scene</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkind-1-button-remote-zs232000178">Linkind 1 button remote ZS232000178<a class="headerlink" href="#linkind-1-button-remote-zs232000178" title="Permanent link">&para;</a></h2>
 <p><strong>Model identifiers</strong></p>
 <ul class="value-list">
@@ -3905,57 +4668,64 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Button 1</td>
-</tr>
-<tr>
-<td>1004</td>
-<td>Double press</td>
-<td>Button 1</td>
-</tr>
-<tr>
-<td>1005</td>
-<td>Treeble press</td>
-<td>Button 1</td>
-</tr>
-<tr>
-<td>1006</td>
-<td>Quadruple press</td>
-<td>Button 1</td>
+<td>On</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Button 2</td>
+<td>Dim Up</td>
 </tr>
 <tr>
 <td>2001</td>
 <td>Hold</td>
-<td>Button 2</td>
+<td>Dim Up</td>
 </tr>
 <tr>
 <td>2003</td>
 <td>Long release</td>
-<td>Button 2</td>
+<td>Dim Up</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Button 3</td>
+<td>Dim Down</td>
 </tr>
 <tr>
 <td>3001</td>
 <td>Hold</td>
-<td>Button 3</td>
+<td>Dim Down</td>
 </tr>
 <tr>
 <td>3003</td>
 <td>Long release</td>
-<td>Button 3</td>
+<td>Dim Down</td>
 </tr>
 <tr>
 <td>4002</td>
 <td>Short release</td>
-<td>Button 4</td>
+<td>Off</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lidl-silvercrest-lidl-silvercrest-doorbell-_tz1800_ladpngdx">LIDL Silvercrest Lidl / Silvercrest doorbell (_TZ1800_ladpngdx)<a class="headerlink" href="#lidl-silvercrest-lidl-silvercrest-doorbell-_tz1800_ladpngdx" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"HG06668"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Button</td>
 </tr>
 </tbody>
 </table>
@@ -4034,17 +4804,17 @@
 <tr>
 <td>1002</td>
 <td>Short release</td>
-<td>Action button</td>
+<td>On/Off</td>
 </tr>
 <tr>
 <td>2002</td>
 <td>Short release</td>
-<td>Dim up</td>
+<td>Dim Up</td>
 </tr>
 <tr>
 <td>3002</td>
 <td>Short release</td>
-<td>Dim down</td>
+<td>Dim Down</td>
 </tr>
 </tbody>
 </table>
@@ -4085,6 +4855,48 @@
 </tr>
 </tbody>
 </table>
+<h2 id="terncy-terncy-smart-dial-sd01">Terncy Terncy Smart Dial SD01<a class="headerlink" href="#terncy-terncy-smart-dial-sd01" title="Permanent link">&para;</a></h2>
+<p><strong>Model identifiers</strong></p>
+<ul class="value-list">
+<li>"TERNCY-SD01"</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Action</th>
+<th>Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>Short release</td>
+<td>Action button</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Double press</td>
+<td>Action button</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>Treeble press</td>
+<td>Action button</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>Quadruple press</td>
+<td>Action button</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Long release</td>
+<td>Action button</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
@@ -4118,19 +4930,22 @@
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../../touchlink/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../touchlink/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
       <script src="../../../search/main.js" defer></script>
     <script defer>
