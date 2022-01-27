@@ -15,18 +15,18 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Top left button          |
-|           1001 | Hold             | Top left button          |
-|           1003 | Long release     | Top left button          |
-|           2002 | Short release    | Bottom left button       |
-|           2001 | Hold             | Bottom left button       |
-|           2003 | Long release     | Bottom left button       |
-|           3002 | Short release    | Top right button         |
-|           3001 | Hold             | Top right button         |
-|           3003 | Long release     | Top right button         |
-|           4002 | Short release    | Bottom right button      |
-|           4001 | Hold             | Bottom right button      |
-|           4003 | Long release     | Bottom right button      |
+|           1002 | Short release    | Top Left                 |
+|           1001 | Hold             | Top Left                 |
+|           1003 | Long release     | Top Left                 |
+|           2002 | Short release    | Bottom Left              |
+|           2001 | Hold             | Bottom Left              |
+|           2003 | Long release     | Bottom Left              |
+|           3002 | Short release    | Top Right                |
+|           3001 | Hold             | Top Right                |
+|           3003 | Long release     | Top Right                |
+|           4002 | Short release    | Bottom Right             |
+|           4001 | Hold             | Bottom Right             |
+|           4003 | Long release     | Bottom Right             |
 
 
 ## dresden elektronik Scene Switch
@@ -40,16 +40,32 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Top left button          |
-|           1001 | Hold             | Top left button          |
-|           1003 | Long release     | Top left button          |
-|           2002 | Short release    | Bottom left button       |
-|           2001 | Hold             | Bottom left button       |
-|           2003 | Long release     | Bottom left button       |
-|           3002 | Short release    | Scene 1 button           |
-|           4002 | Short release    | Scene 2 button           |
-|           5002 | Short release    | Scene 3 button           |
-|           6002 | Short release    | Scene 4 button           |
+|           1002 | Short release    | Top Left                 |
+|           1001 | Hold             | Top Left                 |
+|           1003 | Long release     | Top Left                 |
+|           2002 | Short release    | Bottom Left              |
+|           2001 | Hold             | Bottom Left              |
+|           2003 | Long release     | Bottom Left              |
+|           3002 | Short release    | Scene 1                  |
+|           4002 | Short release    | Scene 2                  |
+|           5002 | Short release    | Scene 3                  |
+|           6002 | Short release    | Scene 4                  |
+
+
+## dresden elektronik Kobold
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"Kobold"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           1001 | Hold             | Button 1                 |
+|           1003 | Long release     | Button 1                 |
 
 
 ## GIRA / JUNG Switches and remotes
@@ -91,12 +107,12 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | On button                |
-|           1001 | Hold             | On button                |
-|           1003 | Long release     | On button                |
-|           2002 | Short release    | Off button               |
-|           2001 | Hold             | Off button               |
-|           2003 | Long release     | Off button               |
+|           1002 | Short release    | On                       |
+|           1001 | Hold             | On                       |
+|           1003 | Long release     | On                       |
+|           2002 | Short release    | Off                      |
+|           2001 | Hold             | Off                      |
+|           2003 | Long release     | Off                      |
 
 
 ## IKEA TRÅDFRI open/close remote
@@ -110,10 +126,10 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Open button              |
-|           1003 | Long release     | Open button              |
-|           2002 | Short release    | Close button             |
-|           2003 | Long release     | Close button             |
+|           1002 | Short release    | Open                     |
+|           1003 | Long release     | Open                     |
+|           2002 | Short release    | Close                    |
+|           2003 | Long release     | Close                    |
 
 
 ## IKEA TRÅDFRI round 5 button remote
@@ -127,20 +143,45 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Large middle button      |
-|           1001 | Hold             | Large middle button      |
-|           2002 | Short release    | Top dimm up button       |
-|           2001 | Hold             | Top dimm up button       |
-|           2003 | Long release     | Top dimm up button       |
-|           3002 | Short release    | Bottom dimm down button  |
-|           3001 | Hold             | Bottom dimm down button  |
-|           3003 | Long release     | Bottom dimm down button  |
-|           4002 | Short release    | Left arrow button        |
-|           4001 | Hold             | Left arrow button        |
-|           4003 | Long release     | Left arrow button        |
-|           5002 | Short release    | Right arrow button       |
-|           5001 | Hold             | Right arrow button       |
-|           5003 | Long release     | Right arrow button       |
+|           1002 | Short release    | On/Off                   |
+|           1001 | Hold             | On/Off                   |
+|           2002 | Short release    | Dim Up                   |
+|           2001 | Hold             | Dim Up                   |
+|           2003 | Long release     | Dim Up                   |
+|           3002 | Short release    | Dim Down                 |
+|           3001 | Hold             | Dim Down                 |
+|           3003 | Long release     | Dim Down                 |
+|           4002 | Short release    | Previous Scene           |
+|           4001 | Hold             | Previous Scene           |
+|           4003 | Long release     | Previous Scene           |
+|           5002 | Short release    | Next Scene               |
+|           5001 | Hold             | Next Scene               |
+|           5003 | Long release     | Next Scene               |
+
+
+## IKEA STYRBAR remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"Remote Control N2"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Dim Up                   |
+|           1001 | Hold             | Dim Up                   |
+|           1003 | Long release     | Dim Up                   |
+|           2002 | Short release    | Dim Down                 |
+|           2001 | Hold             | Dim Down                 |
+|           2003 | Long release     | Dim Down                 |
+|           3002 | Short release    | Previous Scene           |
+|           3001 | Hold             | Previous Scene           |
+|           3003 | Long release     | Previous Scene           |
+|           4002 | Short release    | Next Scene               |
+|           4001 | Hold             | Next Scene               |
+|           4003 | Long release     | Next Scene               |
 
 
 ## OSRAM Lightify Switch Mini
@@ -154,15 +195,15 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Up button                |
-|           1001 | Hold             | Up button                |
-|           1003 | Long release     | Up button                |
-|           3002 | Short release    | Middle button            |
-|           3001 | Hold             | Middle button            |
-|           3003 | Long release     | Middle button            |
-|           2002 | Short release    | Down button              |
-|           2001 | Hold             | Down button              |
-|           2003 | Long release     | Down button              |
+|           1002 | Short release    | Up                       |
+|           1001 | Hold             | Up                       |
+|           1003 | Long release     | Up                       |
+|           3002 | Short release    | Middle                   |
+|           3001 | Hold             | Middle                   |
+|           3003 | Long release     | Middle                   |
+|           2002 | Short release    | Down                     |
+|           2001 | Hold             | Down                     |
+|           2003 | Long release     | Down                     |
 
 
 ## OSRAM Lightify 4 button remote (1)
@@ -177,18 +218,18 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Top left button          |
-|           1001 | Hold             | Top left button          |
-|           1003 | Long release     | Top left button          |
-|           2002 | Short release    | Top right button         |
-|           2001 | Hold             | Top right button         |
-|           2003 | Long release     | Top right button         |
-|           3002 | Short release    | Bottom left button       |
-|           3001 | Hold             | Bottom left button       |
-|           3003 | Long release     | Bottom left button       |
-|           4002 | Short release    | Bottom right button      |
-|           4001 | Hold             | Bottom right button      |
-|           4003 | Long release     | Bottom right button      |
+|           1002 | Short release    | Top Left                 |
+|           1001 | Hold             | Top Left                 |
+|           1003 | Long release     | Top Left                 |
+|           2002 | Short release    | Top Right                |
+|           2001 | Hold             | Top Right                |
+|           2003 | Long release     | Top Right                |
+|           3002 | Short release    | Bottom Left              |
+|           3001 | Hold             | Bottom Left              |
+|           3003 | Long release     | Bottom Left              |
+|           4002 | Short release    | Bottom Right             |
+|           4001 | Hold             | Bottom Right             |
+|           4003 | Long release     | Bottom Right             |
 
 
 ## OSRAM Lightify 4 button remote (2)
@@ -202,18 +243,18 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Top left button          |
-|           1001 | Hold             | Top left button          |
-|           1003 | Long release     | Top left button          |
-|           2002 | Short release    | Top right button         |
-|           2001 | Hold             | Top right button         |
-|           2003 | Long release     | Top right button         |
-|           3002 | Short release    | Bottom left button       |
-|           3001 | Hold             | Bottom left button       |
-|           3003 | Long release     | Bottom left button       |
-|           4002 | Short release    | Bottom right button      |
-|           4001 | Hold             | Bottom right button      |
-|           4003 | Long release     | Bottom right button      |
+|           1002 | Short release    | Top Left                 |
+|           1001 | Hold             | Top Left                 |
+|           1003 | Long release     | Top Left                 |
+|           2002 | Short release    | Top Right                |
+|           2001 | Hold             | Top Right                |
+|           2003 | Long release     | Top Right                |
+|           3002 | Short release    | Bottom Left              |
+|           3001 | Hold             | Bottom Left              |
+|           3003 | Long release     | Bottom Left              |
+|           4002 | Short release    | Bottom Right             |
+|           4001 | Hold             | Bottom Right             |
+|           4003 | Long release     | Bottom Right             |
 
 
 ## IKEA TRÅDFRI dimmer
@@ -227,10 +268,14 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Rotate full brightness   |
-|           2002 | Short release    | Rotate clockwise         |
-|           3002 | Short release    | Rotate counter clockwise |
-|           4002 | Short release    | Rotate to off            |
+|           1002 | Short release    | Rotate Full Brightness   |
+|           2002 | Short release    | Rotate Clockwise         |
+|           3002 | Short release    | Rotate Counter Clockwise |
+|           4002 | Short release    | Rotate Off               |
+|           1001 | Hold             | Rotate Full Brightness   |
+|           1003 | Long release     | Rotate Full Brightness   |
+|           2001 | Hold             | Rotate Clockwise         |
+|           2003 | Long release     | Rotate Clockwise         |
 
 
 ## IKEA TRÅDFRI motion sensor
@@ -258,15 +303,15 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Button 1                 |
-|           1004 | Double press     | Button 1                 |
-|           1005 | Treeble press    | Button 1                 |
-|           2001 | Hold             | Rotate clockwise         |
-|           2003 | Long release     | Rotate clockwise         |
-|           2002 | Short release    | Rotate clockwise         |
-|           3001 | Hold             | Rotate counter clockwise |
-|           3003 | Long release     | Rotate counter clockwise |
-|           3002 | Short release    | Rotate counter clockwise |
+|           1002 | Short release    | Button                   |
+|           1004 | Double press     | Button                   |
+|           1005 | Treeble press    | Button                   |
+|           2001 | Hold             | Rotate Clockwise         |
+|           2003 | Long release     | Rotate Clockwise         |
+|           2002 | Short release    | Rotate Clockwise         |
+|           3001 | Hold             | Rotate Counter Clockwise |
+|           3003 | Long release     | Rotate Counter Clockwise |
+|           3002 | Short release    | Rotate Counter Clockwise |
 
 
 ## Busch-Jaeger Switches
@@ -327,6 +372,23 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           4002 | Short release    | Button 4                 |
 
 
+## Schneider Electric Wiser LK FUGA battery 4 button switch
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"FLS/AIRLINK/4"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Top left                 |
+|           2002 | Short release    | Top right                |
+|           3002 | Short release    | Bottom left              |
+|           4002 | Short release    | Bottom right             |
+
+
 ## Xiaomi QBKG11LM switch
 
 **Model identifiers**
@@ -353,11 +415,11 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Left button              |
-|           1004 | Double press     | Left button              |
-|           2002 | Short release    | Right button             |
-|           2004 | Double press     | Right button             |
-|           3002 | Short release    | Both buttons             |
+|           1002 | Short release    | Left                     |
+|           1004 | Double press     | Left                     |
+|           2002 | Short release    | Right                    |
+|           2004 | Double press     | Right                    |
+|           3002 | Short release    | Both                     |
 
 
 ## Xiaomi WXKG03LM 2018 remote
@@ -409,6 +471,108 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           1004 | Double press     | Button 1                 |
 |           1001 | Hold             | Button 1                 |
 |           1003 | Long release     | Button 1                 |
+
+
+## Xiaomi WRS-R02 Aqara wireless remote switch H1 (Double Rocker)
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"lumi.remote.b28ac1"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1003 | Long release     | Left                     |
+|           1002 | Short release    | Left                     |
+|           1004 | Double press     | Left                     |
+|           1005 | Treeble press    | Left                     |
+|           2003 | Long release     | Right                    |
+|           2002 | Short release    | Right                    |
+|           2004 | Double press     | Right                    |
+|           2005 | Treeble press    | Right                    |
+|           3003 | Long release     | Both                     |
+|           3002 | Short release    | Both                     |
+|           3004 | Double press     | Both                     |
+|           3005 | Treeble press    | Both                     |
+
+
+## Xiaomi Xiaomi Aqara D1 1-gang QBKG21LM and 2-gang QBKG22LM without neutral wire (2020 version)
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"lumi.switch.b1lacn02"</li>
+<li>"lumi.switch.b2lacn02"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           1003 | Long release     | Button 1                 |
+|           1004 | Double press     | Button 1                 |
+|           2002 | Short release    | Button 2                 |
+|           2003 | Long release     | Button 2                 |
+|           2004 | Double press     | Button 2                 |
+|           3002 | Short release    | Button 3                 |
+|           3003 | Long release     | Button 3                 |
+|           3004 | Double press     | Button 3                 |
+
+
+## Xiaomi Xiaomi Aqara D1 1-gang QBKG23LM and 2-gang QBKG24LM with neutral wire (2020 version)
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"lumi.switch.b1nacn02"</li>
+<li>"lumi.switch.b2nacn02"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1001 | Hold             | Button 1                 |
+|           1002 | Short release    | Button 1                 |
+|           1004 | Double press     | Button 1                 |
+|           1005 | Treeble press    | Button 1                 |
+|           1006 | Quadruple press  | Button 1                 |
+|           1003 | Long release     | Button 1                 |
+|           2001 | Hold             | Button 2                 |
+|           2002 | Short release    | Button 2                 |
+|           2004 | Double press     | Button 2                 |
+|           2005 | Treeble press    | Button 2                 |
+|           2006 | Quadruple press  | Button 2                 |
+|           2003 | Long release     | Button 2                 |
+|           3001 | Hold             | Button 3                 |
+|           3002 | Short release    | Button 3                 |
+|           3004 | Double press     | Button 3                 |
+|           3005 | Treeble press    | Button 3                 |
+|           3006 | Quadruple press  | Button 3                 |
+|           3003 | Long release     | Button 3                 |
+
+
+## Xiaomi Xiaomi Aqara H1 1/2-gang with and without neutral wire WS-EUK01, WS-EUK02, WS-EUK03, WS-EUK04
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"lumi.switch.l1aeu1"</li>
+<li>"lumi.switch.l2aeu1"</li>
+<li>"lumi.switch.n1aeu1"</li>
+<li>"lumi.switch.n2aeu1"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           1004 | Double press     | Button 1                 |
+|           2002 | Short release    | Button 2                 |
+|           2004 | Double press     | Button 2                 |
+|           3002 | Short release    | Button 3                 |
+|           3004 | Double press     | Button 3                 |
 
 
 ## Xiaomi WXKG11LM 2016 remote
@@ -464,13 +628,30 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           1008 | Drop             | Button 1                 |
 
 
-## Ubisys Universal dimmer D1 and power switch S1
+## Ubisys Universal power switch S1 (5501)
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"S1 (5501)"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           1001 | Hold             | Button 1                 |
+|           1003 | Long release     | Button 1                 |
+
+
+## Ubisys Universal dimmer D1 and power switch S1-R
 
 **Model identifiers**
 
 
 <ul class="value-list">
 <li>"D1"</li>
+<li>"S1-R"</li>
 <li>"S1"</li>
 </ul>
 
@@ -490,6 +671,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 
 <ul class="value-list">
+<li>"C4 (5504)"</li>
 <li>"C4"</li>
 </ul>
 
@@ -515,7 +697,9 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 
 <ul class="value-list">
+<li>"S2 (5502)"</li>
 <li>"S2"</li>
+<li>"S2-R"</li>
 </ul>
 
 | Value          | Action           | Button                   |
@@ -558,9 +742,9 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Button 1                 |
-|           2002 | Short release    | Button 2                 |
-|           3002 | Short release    | Button 3                 |
+|           1002 | Short release    | Button                   |
+|           2002 | Short release    | Rotate Clockwise         |
+|           3002 | Short release    | Rotate Counter Clockwise |
 
 
 ## Innr RC 110 remote
@@ -642,12 +826,12 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Off button               |
-|           1001 | Hold             | Off button               |
-|           1003 | Long release     | Off button               |
-|           2002 | Short release    | On button                |
-|           2001 | Hold             | On button                |
-|           2003 | Long release     | On button                |
+|           1002 | Short release    | Off                      |
+|           1001 | Hold             | Off                      |
+|           1003 | Long release     | Off                      |
+|           2002 | Short release    | On                       |
+|           2001 | Hold             | On                       |
+|           2003 | Long release     | On                       |
 
 
 ## iCasa ICZB-KPD14S remote
@@ -661,16 +845,16 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Off button               |
-|           1001 | Hold             | Off button               |
-|           1003 | Long release     | Off button               |
-|           2002 | Short release    | On button                |
-|           2001 | Hold             | On button                |
-|           2003 | Long release     | On button                |
-|           3002 | Short release    | S1 button                |
-|           3003 | Long release     | S1 button                |
-|           4002 | Short release    | S2 button                |
-|           4003 | Long release     | S2 button                |
+|           1002 | Short release    | Off                      |
+|           1001 | Hold             | Off                      |
+|           1003 | Long release     | Off                      |
+|           2002 | Short release    | On                       |
+|           2001 | Hold             | On                       |
+|           2003 | Long release     | On                       |
+|           3002 | Short release    | S1                       |
+|           3003 | Long release     | S1                       |
+|           4002 | Short release    | S2                       |
+|           4003 | Long release     | S2                       |
 
 
 ## iCasa ICZB-KPD18S remote
@@ -684,24 +868,24 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
-|           1002 | Short release    | Off button               |
-|           1001 | Hold             | Off button               |
-|           1003 | Long release     | Off button               |
-|           2002 | Short release    | On button                |
-|           2001 | Hold             | On button                |
-|           2003 | Long release     | On button                |
-|           3002 | Short release    | S1 button                |
-|           3003 | Long release     | S1 button                |
-|           4002 | Short release    | S2 button                |
-|           4003 | Long release     | S2 button                |
-|           5002 | Short release    | S3 button                |
-|           5003 | Long release     | S3 button                |
-|           6002 | Short release    | S4 button                |
-|           6003 | Long release     | S4 button                |
-|           7002 | Short release    | S5 button                |
-|           7003 | Long release     | S5 button                |
-|           8002 | Short release    | S6 button                |
-|           8003 | Long release     | S6 button                |
+|           1002 | Short release    | Off                      |
+|           1001 | Hold             | Off                      |
+|           1003 | Long release     | Off                      |
+|           2002 | Short release    | On                       |
+|           2001 | Hold             | On                       |
+|           2003 | Long release     | On                       |
+|           3002 | Short release    | S1                       |
+|           3003 | Long release     | S1                       |
+|           4002 | Short release    | S2                       |
+|           4003 | Long release     | S2                       |
+|           5002 | Short release    | S3                       |
+|           5003 | Long release     | S3                       |
+|           6002 | Short release    | S4                       |
+|           6003 | Long release     | S4                       |
+|           7002 | Short release    | S5                       |
+|           7003 | Long release     | S5                       |
+|           8002 | Short release    | S6                       |
+|           8003 | Long release     | S6                       |
 
 
 ## iCasa Remotes
@@ -714,6 +898,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 <li>"ZGRC-KEY-012"</li>
 <li>"ZGRC-KEY-013"</li>
 <li>"RGBgenie ZB-5001"</li>
+<li>"RGBgenie ZB-5004"</li>
 </ul>
 
 | Value          | Action           | Button                   |
@@ -768,6 +953,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 
 <ul class="value-list">
+<li>"ZGRC-KEY-002"</li>
 </ul>
 
 | Value          | Action           | Button                   |
@@ -779,6 +965,23 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           4002 | Short release    | Button 4                 |
 |           4001 | Hold             | Button 4                 |
 |           4003 | Long release     | Button 4                 |
+
+
+## Sunricher Zigbee Push-Button Coupler SR-ZG2833PAC-C4
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ZG2833PAC"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           2002 | Short release    | Button 2                 |
+|           3002 | Short release    | Button 3                 |
+|           4002 | Short release    | Button 4                 |
 
 
 ## RGBgenie Micro remote ZB-5121
@@ -804,7 +1007,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           5003 | Long release     | Button 5                 |
 
 
-## Sunricher Wireless switches from Sunricher, Namron and EcoDim
+## Sunricher Wireless switches from Sunricher, Namron, SLC and EcoDim
 
 **Model identifiers**
 
@@ -816,7 +1019,7 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 <li>"ED-10013"</li>
 <li>"ED-10014"</li>
 <li>"ED-10015"</li>
-<li>"ZG2833K"</li>
+<li>"ZG2833K8_EU05"</li>
 <li>"ZG2835"</li>
 <li>"4512700"</li>
 <li>"4512701"</li>
@@ -828,6 +1031,12 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 <li>"4512720"</li>
 <li>"4512721"</li>
 <li>"4512722"</li>
+<li>"4512729"</li>
+<li>"S57003"</li>
+<li>"ROB_200-008"</li>
+<li>"ROB_200-009-0"</li>
+<li>"ROB_200-008-0"</li>
+<li>"ROB_200-007-0"</li>
 </ul>
 
 | Value          | Action           | Button                   |
@@ -871,6 +1080,15 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 <li>"_TZ3400_key8kk7r"</li>
 <li>"_TZ3000_vp6clf9d"</li>
 <li>"_TYZB02_keyjqthh"</li>
+<li>"_TZ3000_peszejy7"</li>
+<li>"_TZ3000_qzjcsmar"</li>
+<li>"_TZ3000_owgcnkrh"</li>
+<li>"_TZ3000_adkvzooy"</li>
+<li>"_TZ3000_arfwfgoa"</li>
+<li>"_TZ3000_a7ouggvs"</li>
+<li>"_TZ3000_rrjr1q0u"</li>
+<li>"_TZ3000_abci1hiu"</li>
+<li>"_TZ3000_dfgbtub0"</li>
 </ul>
 
 | Value          | Action           | Button                   |
@@ -887,6 +1105,42 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           4002 | Short release    | Button 4                 |
 |           4004 | Double press     | Button 4                 |
 |           4003 | Long release     | Button 4                 |
+
+
+## Tuya 4-gang remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"_TZ3000_xabckq1v"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           2002 | Short release    | Button 2                 |
+|           3002 | Short release    | Button 3                 |
+|           4002 | Short release    | Button 4                 |
+|           3001 | Hold             | Button 3                 |
+|           4001 | Hold             | Button 4                 |
+
+
+## Legrand Pocket remote
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"Pocket remote"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           2002 | Short release    | Button 2                 |
+|           3002 | Short release    | Button 3                 |
+|           4002 | Short release    | Button 4                 |
 
 
 ## Legrand Remote switch
@@ -1051,6 +1305,24 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 <ul class="value-list">
 <li>"RC_V14"</li>
 <li>"RC-EM"</li>
+<li>"RC-EF-3.0"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           2002 | Short release    | Button 2                 |
+|           3002 | Short release    | Button 3                 |
+|           4002 | Short release    | Button 4                 |
+
+
+## Immax Smart Keyfob 07046L
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"Keyfob-ZB3.0"</li>
 </ul>
 
 | Value          | Action           | Button                   |
@@ -1191,6 +1463,28 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 |           3001 | Hold             | Button 3                 |
 
 
+## LDS Mueller-Licht tint dimmer
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ZBT-DIMController-D0800"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | On/Off                   |
+|           2002 | Short release    | Dim Up                   |
+|           2001 | Hold             | Dim Up                   |
+|           2003 | Long release     | Dim Up                   |
+|           3002 | Short release    | Dim Down                 |
+|           3001 | Hold             | Dim Down                 |
+|           3003 | Long release     | Dim Down                 |
+|           4002 | Short release    | Scene                    |
+|           4003 | Long release     | Scene                    |
+
+
 ## Linkind 1 button remote ZS232000178
 
 **Model identifiers**
@@ -1278,16 +1572,99 @@ The following sections enumerate supported values for `state.buttonevent` for [/
 
 | Value          | Action           | Button                   |
 |----------------|------------------|--------------------------|
+|           1002 | Short release    | On                       |
+|           2002 | Short release    | Dim Up                   |
+|           2001 | Hold             | Dim Up                   |
+|           2003 | Long release     | Dim Up                   |
+|           3002 | Short release    | Dim Down                 |
+|           3001 | Hold             | Dim Down                 |
+|           3003 | Long release     | Dim Down                 |
+|           4002 | Short release    | Off                      |
+
+
+## LIDL Silvercrest Lidl / Silvercrest doorbell (_TZ1800_ladpngdx)
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"HG06668"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button                   |
+
+
+## Sengled Sengled Smart Light Switch
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"E1E-G7F"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
 |           1002 | Short release    | Button 1                 |
 |           1004 | Double press     | Button 1                 |
-|           1005 | Treeble press    | Button 1                 |
-|           1006 | Quadruple press  | Button 1                 |
+|           1003 | Long release     | Button 1                 |
 |           2002 | Short release    | Button 2                 |
-|           2001 | Hold             | Button 2                 |
-|           2003 | Long release     | Button 2                 |
 |           3002 | Short release    | Button 3                 |
-|           3001 | Hold             | Button 3                 |
-|           3003 | Long release     | Button 3                 |
 |           4002 | Short release    | Button 4                 |
+|           4004 | Double press     | Button 4                 |
+|           4003 | Long release     | Button 4                 |
+
+
+## ELKO Elko ESH 316 Endevender RF
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"ElkoDimmerRemoteZHA"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | On/Off                   |
+|           2002 | Short release    | Dim Up                   |
+|           3002 | Short release    | Dim Down                 |
+
+
+## Adurolight Manufacturing Eria Adurosmart Wireless Dimming Switch
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"Adurolight_NCC"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Button 1                 |
+|           2002 | Short release    | Button 2                 |
+|           3002 | Short release    | Button 3                 |
+|           4002 | Short release    | Button 4                 |
+
+
+## Terncy Terncy Smart Dial SD01
+
+**Model identifiers**
+
+
+<ul class="value-list">
+<li>"TERNCY-SD01"</li>
+</ul>
+
+| Value          | Action           | Button                   |
+|----------------|------------------|--------------------------|
+|           1002 | Short release    | Action button            |
+|           1004 | Double press     | Action button            |
+|           1005 | Treeble press    | Action button            |
+|           1006 | Quadruple press  | Action button            |
+|           1003 | Long release     | Action button            |
 
 
