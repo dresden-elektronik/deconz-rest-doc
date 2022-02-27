@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>WISZB-120 - deCONZ REST-API</title>
+  <title>HESZB-120 - deCONZ REST-API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "WISZB-120";
-    var mkdocs_page_input_path = "devices/frient/wiszb-120_open_close_sensor.md";
+    var mkdocs_page_name = "HESZB-120";
+    var mkdocs_page_input_path = "devices/frient/heszb-120_heat_detector.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -117,10 +117,10 @@
     
       
     
-    <li>WISZB-120</li>
+    <li>HESZB-120</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/frient/wiszb-120_open_close_sensor.md"
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/frient/heszb-120_heat_detector.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -132,8 +132,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="wiszb-120">WISZB-120<a class="headerlink" href="#wiszb-120" title="Permanent link">&para;</a></h1>
-<p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/frient/wiszb-120_open_close_sensor.json">wiszb-120_open_close_sensor.json</a>
+                <h1 id="heszb-120">HESZB-120<a class="headerlink" href="#heszb-120" title="Permanent link">&para;</a></h1>
+<p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/frient/heszb-120_heat_detector.json">heszb-120_heat_detector.json</a>
 </p>
 <table>
   <thead>
@@ -146,11 +146,11 @@
     </tr>
     <tr>
       <td>modelid</td>
-      <td>WISZB-120</td>
+      <td>HESZB-120</td>
     </tr>
     <tr>
       <td>product</td>
-      <td>WISZB-120</td>
+      <td>HESZB-120</td>
     </tr>
     <tr>
       <td>status</td>
@@ -160,7 +160,7 @@
 </table>
 
 <hr/>
-<h2 id="1-zhaopenclose">1. ZHAOpenClose<a class="headerlink" href="#1-zhaopenclose" title="Permanent link">&para;</a></h2>
+<h2 id="1-zhafire">1. ZHAFire<a class="headerlink" href="#1-zhafire" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
 </p>
 <h3 id="top-level-attributes">Top level attributes<a class="headerlink" href="#top-level-attributes" title="Permanent link">&para;</a></h3>
@@ -196,7 +196,7 @@
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"WISZB-120"</td>
+      <td>"HESZB-120"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -214,7 +214,7 @@
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHAOpenClose"</td>
+      <td>"ZHAFire"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -224,24 +224,6 @@
       <td>R</td>
     </tr>
     <tr>
-      <td>manufacturername</td>
-      <td>String</td>
-      <td>"frient A/S"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>String</td>
-      <td>"WISZB-120"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of the resource.</td>
-      <td>RW</td>
-    </tr>
-    <tr>
       <td>swversion</td>
       <td>String</td>
       <td>Firmware version of the device.</td>
@@ -250,7 +232,7 @@
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHAOpenClose"</td>
+      <td>"ZHAFire"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -273,12 +255,6 @@
       <td>UInt8</td>
       <td>The current device battery level in 0&ndash;100&thinsp;%.</td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>enrolled</td>
-      <td>UInt32</td>
-      <td>State of IAS enrollment process.</td>
-      <td>RW</td>
     </tr>
     <tr>
       <td>on</td>
@@ -309,6 +285,12 @@
   </thead>
   <tbody>
     <tr>
+      <td>fire</td>
+      <td>Bool</td>
+      <td>True when fire is detected.</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>lastupdated</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp when state was last updated.</td>
@@ -321,15 +303,9 @@
       <td>R</td>
     </tr>
     <tr>
-      <td>open</td>
+      <td>test</td>
       <td>Bool</td>
-      <td>True when open is detected.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>tampered</td>
-      <td>Bool</td>
-      <td>True when the device tampered alarm was triggered.</td>
+      <td>True when a test is detected.</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -372,7 +348,7 @@
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"WISZB-120"</td>
+      <td>"HESZB-120"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -398,24 +374,6 @@
       <td>String</td>
       <td>Unique identifier of the resource.</td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>manufacturername</td>
-      <td>String</td>
-      <td>"frient A/S"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>String</td>
-      <td>"WISZB-120"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of the resource.</td>
-      <td>RW</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -490,6 +448,118 @@
       <td>Int16</td>
       <td>The current temperature in °C &times; 100.<p>  Default: 0</p>
 </td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+<h2 id="3-warning-device">3. Warning device<a class="headerlink" href="#3-warning-device" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
+</p>
+<h3 id="top-level-attributes_2">Top level attributes<a class="headerlink" href="#top-level-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"frient A/S"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"HESZB-120"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"Warning device"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"Warning device"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_2">State attributes<a class="headerlink" href="#state-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>alert</td>
+      <td>String</td>
+      <td>The currently active alert effect.<p>  Default: none</p>
+<ul class="value-list">
+<li>"none" &mdash; light is not performing an alert</li>
+<li>"select" &mdash; light is blinking a short time</li>
+<li>"lselect" &mdash; light is blinking a longer time</li>
+</ul>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
       <td>R</td>
     </tr>
   </tbody>
