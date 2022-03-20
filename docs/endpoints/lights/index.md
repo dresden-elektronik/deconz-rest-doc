@@ -485,7 +485,7 @@ For historic reasons window covering devices are currently exposed under the lig
       <td>Bool</td>
       <td>
         <p>(deprecated by "open")</p>
-        <p>Inverted value of <code class="api-attribute">open</code>.</p>
+        <p>true when lift > 0</p>
       </td>
       <td>optional</td>
     </tr>
