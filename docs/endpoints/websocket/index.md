@@ -288,6 +288,6 @@ New apps should use `xy` instead.
     </tbody>
 </table>
 
-Note that only one of `config`, `name`, or `state` will be present per `changed` event.
+Note that one `changed` event can contain one or multiple `config`, `name`, or `state` attributes.
 
-Note that the Websocket functionality is still under development.  Notably `added` and `deleted` notifications might not be issued under all circumstances.
+The Websocket functionality is still under development.  Notably `added` and `deleted` notifications might not be issued under all circumstances.
