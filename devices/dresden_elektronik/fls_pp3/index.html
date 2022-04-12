@@ -1,136 +1,119 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>FLS-PP lp - deCONZ REST-API</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-
-  <link rel="stylesheet" href="../../../css/theme.css" />
-  <link rel="stylesheet" href="../../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
-  <link href="../../../css/extra.css" rel="stylesheet" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "FLS-PP lp";
-    var mkdocs_page_input_path = "devices/dresden_elektronik/fls_pp3.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>FLS-PP lp - deCONZ REST-API</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "FLS-PP lp";
+        var mkdocs_page_input_path = "devices/dresden_elektronik/fls_pp3.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="../../.." class="icon icon-home"> deCONZ REST-API</a>
-        <div role="search">
+          <a href="../../.." class="icon icon-home"> deCONZ REST-API
+        </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">General</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../..">Introduction</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../about_rest/">About REST</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../getting_started/">Getting Started</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">API Endpoints</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/alarmsystems/">Alarm Systems</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/configuration/">Configuration</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/groups/">Groups</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/lights/">Lights</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/rules/">Rules</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/scenes/">Scenes</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/schedules/">Schedules</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/sensors/">Sensors</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/sensors/button_events/">Button Events</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/touchlink/">Touchlink</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/websocket/">Websocket</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../">Supported Devices</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Misc</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/discovery/">Discovery</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/authorization/">Authorization</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/errors/">Error handling</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../misc/polling/">Polling</a>
-                    </li>
-                </ul>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">General</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../about_rest/">About REST</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../getting_started/">Getting Started</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API Endpoints</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/alarmsystems/">Alarm Systems</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/configuration/">Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/groups/">Groups</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/lights/">Lights</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/rules/">Rules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/scenes/">Scenes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/schedules/">Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/sensors/">Sensors</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/sensors/button_events/">Button Events</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/touchlink/">Touchlink</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/websocket/">Websocket</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../">Supported Devices</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Misc</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../misc/discovery/">Discovery</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../misc/authorization/">Authorization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../misc/errors/">Error handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../misc/polling/">Polling</a>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../..">deCONZ REST-API</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">deCONZ REST-API</a>
+        
       </nav>
-
-      
       <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../..">Docs</a> &raquo;</li>
-    
-      
-    
-    <li>FLS-PP lp</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>FLS-PP lp</li>
     <li class="wy-breadcrumbs-aside">
-      
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/dresden_elektronik/fls_pp3.md"
           class="icon icon-github"> Edit on GitHub</a>
-      
     </li>
   </ul>
-  
   <hr/>
 </div>
 
-          <div role="main">
-            <div class="section">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
               
                 <h1 id="fls-pp-lp">FLS-PP lp<a class="headerlink" href="#fls-pp-lp" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/dresden_elektronik/fls_pp3.json">fls_pp3.json</a>
@@ -141,20 +124,22 @@
   </thead>
   <tbody>
     <tr>
-      <td>manufacturername</td>
-      <td>dresden elektronikdresden elektronik</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>FLS-PP3FLS-PP3 White</td>
+      <td>status</td>
+      <td>Silver</td>
     </tr>
     <tr>
       <td>product</td>
       <td>FLS-PP lp</td>
     </tr>
     <tr>
-      <td>status</td>
-      <td>Silver</td>
+      <td>modelid</td>
+      <td>FLS-PP3<br/>
+FLS-PP3 White</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>dresden elektronik<br/>
+dresden elektronik</td>
     </tr>
   </tbody>
 </table>
@@ -190,13 +175,15 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"dresden elektronikdresden elektronik"</td>
+      <td>"dresden elektronik"<br/>
+"dresden elektronik"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"FLS-PP3FLS-PP3 White"</td>
+      <td>"FLS-PP3"<br/>
+"FLS-PP3 White"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -226,7 +213,8 @@
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"FLS-PP3FLS-PP3 White"<p>  Default: FLS-PP3</p>
+      <td>"FLS-PP3"<br/>
+"FLS-PP3 White"<p>  Default: FLS-PP3</p>
 </td>
       <td>R</td>
     </tr>
@@ -412,13 +400,15 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"dresden elektronikdresden elektronik"</td>
+      <td>"dresden elektronik"<br/>
+"dresden elektronik"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"FLS-PP3FLS-PP3 White"</td>
+      <td>"FLS-PP3"<br/>
+"FLS-PP3 White"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -448,7 +438,8 @@
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"FLS-PP3FLS-PP3 White"<p>  Default: FLS-PP3 White</p>
+      <td>"FLS-PP3"<br/>
+"FLS-PP3 White"<p>  Default: FLS-PP3 White</p>
 </td>
       <td>R</td>
     </tr>
@@ -528,20 +519,17 @@
 </table>
               
             </div>
-          </div>
-          <footer>
-  
+          </div><footer>
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-    
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+          
         </div>
       </div>
 
@@ -549,11 +537,11 @@
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
+  <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     
