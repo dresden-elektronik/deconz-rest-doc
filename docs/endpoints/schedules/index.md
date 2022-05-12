@@ -78,8 +78,13 @@ Creates a new schedule.
           <li>timer: "PThh:mm:ss"</li>
           <li>recurring timer: "R[0&ndash;99]/PThh:mm:ss"</li>
         </ul>
-        Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.<br />
-The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.
+          Notes:
+        <ul>
+          <li>Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.</li>
+          <li>The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.</li>
+          <li>Randomized times: add Ahh:mm:ss to any time format to add a randomized offset where the value defines the maxium possible offset (max 12 hours).
+              Examaple: W124/T12:30:00A00:30:00 is a 30 min randomized offset.</li>
+          </ul>
       </td>
       <td>required</td>
     </tr>
@@ -297,8 +302,13 @@ Etag: 0b32030b31ef30a4446c9adff6a6f9e5
           <li>timer: "PThh:mm:ss"</li>
           <li>recurring timer: "R[0&ndash;99]/PThh:mm:ss"</li>
         </ul>
-        Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.<br />
-        The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.
+         Notes:
+        <ul>
+          <li>Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.</li>
+          <li>The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.</li>
+          <li>Randomized times: add Ahh:mm:ss to any time format to add a randomized offset where the value defines the maxium possible offset (max 12 hours).
+              Examaple: W124/T12:30:00A00:30:00 is a 30 min randomized offset.</li>
+          </ul>
       </td>
     </tr>
   </tbody>
@@ -383,8 +393,13 @@ Sets attributes of a schedule.
           <li>timer: "PThh:mm:ss"</li>
           <li>recurring timer: "R[0&ndash;99]/PThh:mm:ss"</li>
         </ul>
-        Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.<br />
-        The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.
+         Notes:
+        <ul>
+          <li>Repeated days use a bitmap to determine on which day of the week the alarm should trigger. The Format is: 0MTWTFSS. Example: 01111100 = 124 is weekdays, 00000011 = 3 is weekend.</li>
+          <li>The number after R of recurring timer determine the number of repetitions of the timer. Not specifying a number means infinity.</li>
+          <li>Randomized times: add Ahh:mm:ss to any time format to add a randomized offset where the value defines the maxium possible offset (max 12 hours).
+              Examaple: W124/T12:30:00A00:30:00 is a 30 min randomized offset.</li>
+          </ul>
       </td>
       <td>optional</td>
     </tr>
