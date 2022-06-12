@@ -1081,10 +1081,20 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>lowbattery</td>
       <td>Bool</td>
     </tr>
-    <tr>
+    <tr class="strong-border-bottom">
       <td></td>
       <td>tampered</td>
       <td>Bool</td>
+    </tr>
+    <tr>
+      <td>Various sensors</td>
+      <td data-since="v2.15.0-beta">charging</td>
+      <td>Bool</td>
+    </tr>
+    <tr>
+      <td>Various sensors</td>
+      <td data-since="v2.16.1">presenceevent</td>
+      <td>String</td>
     </tr>
   </tbody>
 </table>
@@ -1187,7 +1197,7 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
       <td>Uint16</td>
       <td>
         <p>The associated Zigbee group the sensor controls.</p>
-        <p>(only supported by some sensor)</p>
+        <p>(only supported by some sensors)</p>
       </td>
       <td>R</td>
     </tr>
@@ -1441,6 +1451,28 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td>Various sensors</td>
+      <td>clickmode</td>
+      <td>String</td>
+      <td data-since="v2.15.0-beta">
+        <p>Intended for devices which can configure the click behavior of a button.</p>
+        <p>Xiaomi devices have possible values of 'coupled', 'decoupled', 'multiclick' and 'highspeed'.</p>
+        <p>(only supported by some sensors)</p>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>devicemode</td>
+      <td>String</td>
+      <td data-since="v2.15.0-beta">
+        <p>Intended for devices which can change their mode of operation.</p>
+        <p>Xiaomi devices have possible values of 'compatibility' and 'zigbee'.</p>
+        <p>(only supported by some sensors, shouldn't be changed)</p>
+      </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>enrolled</td>
       <td>Number</td>
       <td data-since="v2.9.1-beta">
@@ -1482,6 +1514,15 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
     </tr>
     <tr>
       <td></td>
+      <td>resetpresence</td>
+      <td>Bool</td>
+      <td data-since="v2.16.1">
+        <p>Resets the presence state of the Xiaomi FP1 presence sensor.</p>
+      </td>
+      <td>W</td>
+    </tr>
+    <tr>
+      <td></td>
       <td>sensitivity</td>
       <td>Number</td>
       <td>
@@ -1512,6 +1553,15 @@ These are virtual sensors without a real device behind it. CLIP sensors can be c
         <p>Philips Hue motion sensor:&nbsp;2</p>
       </td>
       <td>R</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>triggerdistance</td>
+      <td>String</td>
+      <td data-since="v2.16.1">
+        <p>A device specific distance setting when it triggers the associated function (e.g. detect presence or motion).</p>
+      </td>
+      <td>RW</td>
     </tr>
     <tr class="strong-border-bottom">
       <td></td>
