@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Light Sensor (GZCGQ01LM) - deCONZ REST-API</title>
+    <title>Mija Light Sensor GZCGQ01LM - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Light Sensor (GZCGQ01LM)";
+        var mkdocs_page_name = "Mija Light Sensor GZCGQ01LM";
         var mkdocs_page_input_path = "devices/xiaomi/xiaomi_gzcgq01lm_light_sensor.md";
         var mkdocs_page_url = null;
       </script>
@@ -103,7 +103,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Light Sensor (GZCGQ01LM)</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Mija Light Sensor GZCGQ01LM</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/xiaomi/xiaomi_gzcgq01lm_light_sensor.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -115,7 +115,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="light-sensor-gzcgq01lm">Light Sensor (GZCGQ01LM)<a class="headerlink" href="#light-sensor-gzcgq01lm" title="Permanent link">&para;</a></h1>
+                <h1 id="mija-light-sensor-gzcgq01lm">Mija Light Sensor GZCGQ01LM<a class="headerlink" href="#mija-light-sensor-gzcgq01lm" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/xiaomi/xiaomi_gzcgq01lm_light_sensor.json">xiaomi_gzcgq01lm_light_sensor.json</a>
 </p>
 <table>
@@ -125,11 +125,11 @@
   <tbody>
     <tr>
       <td>status</td>
-      <td>Silver</td>
+      <td>Gold</td>
     </tr>
     <tr>
       <td>product</td>
-      <td>Light Sensor (GZCGQ01LM)</td>
+      <td>Mija Light Sensor GZCGQ01LM</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -174,6 +174,36 @@
       <td>manufacturername</td>
       <td>String</td>
       <td>"XIAOMI"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"lumi.sen_ill.mgl01"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHALightLevel"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
     <tr>
@@ -261,25 +291,29 @@
     <tr>
       <td>lightlevel</td>
       <td>UInt16</td>
-      <td>The current Light level in 10000 log10 (lux) + 1.</td>
+      <td>The current Light level in 10000 log10 (lux) + 1.<p>  Default: 0</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
       <td>dark</td>
       <td>Bool</td>
-      <td>True when <code class="api-attribute">lightlevel</code> is lower than <code class="api-attribute">tholddark</code>.</td>
+      <td>True when <code class="api-attribute">lightlevel</code> is lower than <code class="api-attribute">tholddark</code>.<p>  Default: false</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
       <td>daylight</td>
       <td>Bool</td>
-      <td>True when <code class="api-attribute">lightlevel</code> suits daylight according <code class="api-attribute">tholddark</code> and <code class="api-attribute">tholdoffset</code> configuration.</td>
+      <td>True when <code class="api-attribute">lightlevel</code> suits daylight according <code class="api-attribute">tholddark</code> and <code class="api-attribute">tholdoffset</code> configuration.<p>  Default: false</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
       <td>lux</td>
       <td>UInt32</td>
-      <td>The current Light level in lux.</td>
+      <td>The current Light level in lux.<p>  Default: 0</p>
+</td>
       <td>R</td>
     </tr>
     <tr>

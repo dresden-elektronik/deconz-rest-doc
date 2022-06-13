@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>TVOC Air Quality Monitor - deCONZ REST-API</title>
+    <title>Aqara TVOC Air Quality Monitor VOCKQJK11LM - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "TVOC Air Quality Monitor";
+        var mkdocs_page_name = "Aqara TVOC Air Quality Monitor VOCKQJK11LM";
         var mkdocs_page_input_path = "devices/xiaomi/xiaomi_airmonitor_acn01.md";
         var mkdocs_page_url = null;
       </script>
@@ -103,7 +103,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>TVOC Air Quality Monitor</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Aqara TVOC Air Quality Monitor VOCKQJK11LM</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/xiaomi/xiaomi_airmonitor_acn01.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -115,7 +115,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="tvoc-air-quality-monitor">TVOC Air Quality Monitor<a class="headerlink" href="#tvoc-air-quality-monitor" title="Permanent link">&para;</a></h1>
+                <h1 id="aqara-tvoc-air-quality-monitor-vockqjk11lm">Aqara TVOC Air Quality Monitor VOCKQJK11LM<a class="headerlink" href="#aqara-tvoc-air-quality-monitor-vockqjk11lm" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/xiaomi/xiaomi_airmonitor_acn01.json">xiaomi_airmonitor_acn01.json</a>
 </p>
 <table>
@@ -125,11 +125,11 @@
   <tbody>
     <tr>
       <td>status</td>
-      <td>Silver</td>
+      <td>Gold</td>
     </tr>
     <tr>
       <td>product</td>
-      <td>TVOC Air Quality Monitor</td>
+      <td>Aqara TVOC Air Quality Monitor VOCKQJK11LM</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -206,6 +206,36 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"lumi.airmonitor.acn01"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAAirQuality"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
   </tbody>
 </table>
 
@@ -223,6 +253,17 @@
       <td>R</td>
     </tr>
     <tr>
+      <td>devicemode</td>
+      <td>String</td>
+      <td>Mode of the Hue wall switch module with possible values 'singlerocker', 'singlepushbutton', 'dualrocker', 'dualpushbutton'. Xiaomi devices have possible values of 'compatibility' and 'zigbee', but DO NOT CHANGE UNLESS YOU KNOW EXACTLY, WHAT YOU'RE DOING<p>  Default: compatibility</p>
+<ul class="value-list">
+<li>"compatibility" &mdash; Default mode for Xiaomi devices</li>
+<li>"zigbee" &mdash; Closer to zigbee standard</li>
+</ul>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>When true the sensor is enabled in rules.<p>  Default: true</p>
@@ -233,12 +274,6 @@
       <td>reachable</td>
       <td>Bool</td>
       <td>When true the device is assumed to be operational.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>temperature</td>
-      <td>UInt8</td>
-      <td>The current device temperature in °C.</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -336,6 +371,36 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"lumi.airmonitor.acn01"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAHumidity"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
   </tbody>
 </table>
 
@@ -351,6 +416,17 @@
       <td>The current device battery level in 0&ndash;100&thinsp;%.<p>  Default: 0</p>
 </td>
       <td>R</td>
+    </tr>
+    <tr>
+      <td>devicemode</td>
+      <td>String</td>
+      <td>Mode of the Hue wall switch module with possible values 'singlerocker', 'singlepushbutton', 'dualrocker', 'dualpushbutton'. Xiaomi devices have possible values of 'compatibility' and 'zigbee', but DO NOT CHANGE UNLESS YOU KNOW EXACTLY, WHAT YOU'RE DOING<p>  Default: compatibility</p>
+<ul class="value-list">
+<li>"compatibility" &mdash; Default mode for Xiaomi devices</li>
+<li>"zigbee" &mdash; Closer to zigbee standard</li>
+</ul>
+</td>
+      <td>RW</td>
     </tr>
     <tr>
       <td>offset</td>
@@ -467,6 +543,36 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"lumi.airmonitor.acn01"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHATemperature"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
   </tbody>
 </table>
 
@@ -482,6 +588,17 @@
       <td>The current device battery level in 0&ndash;100&thinsp;%.<p>  Default: 0</p>
 </td>
       <td>R</td>
+    </tr>
+    <tr>
+      <td>devicemode</td>
+      <td>String</td>
+      <td>Mode of the Hue wall switch module with possible values 'singlerocker', 'singlepushbutton', 'dualrocker', 'dualpushbutton'. Xiaomi devices have possible values of 'compatibility' and 'zigbee', but DO NOT CHANGE UNLESS YOU KNOW EXACTLY, WHAT YOU'RE DOING<p>  Default: compatibility</p>
+<ul class="value-list">
+<li>"compatibility" &mdash; Default mode for Xiaomi devices</li>
+<li>"zigbee" &mdash; Closer to zigbee standard</li>
+</ul>
+</td>
+      <td>RW</td>
     </tr>
     <tr>
       <td>offset</td>

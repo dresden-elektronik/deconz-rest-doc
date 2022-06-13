@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Motion Sensor 2. Gen (SML003) - deCONZ REST-API</title>
+    <title>Hue motion sensor 2. Gen (SML003) - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Motion Sensor 2. Gen (SML003)";
+        var mkdocs_page_name = "Hue motion sensor 2. Gen (SML003)";
         var mkdocs_page_input_path = "devices/philips/sml003_motion_sensor.md";
         var mkdocs_page_url = null;
       </script>
@@ -103,7 +103,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Motion Sensor 2. Gen (SML003)</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Hue motion sensor 2. Gen (SML003)</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/philips/sml003_motion_sensor.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -115,7 +115,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="motion-sensor-2-gen-sml003">Motion Sensor 2. Gen (SML003)<a class="headerlink" href="#motion-sensor-2-gen-sml003" title="Permanent link">&para;</a></h1>
+                <h1 id="hue-motion-sensor-2-gen-sml003">Hue motion sensor 2. Gen (SML003)<a class="headerlink" href="#hue-motion-sensor-2-gen-sml003" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/philips/sml003_motion_sensor.json">sml003_motion_sensor.json</a>
 </p>
 <table>
@@ -129,7 +129,7 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>Motion Sensor 2. Gen (SML003)</td>
+      <td>Hue motion sensor 2. Gen (SML003)</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -137,7 +137,7 @@
     </tr>
     <tr>
       <td>manufacturername</td>
-      <td>Philips</td>
+      <td>Signify Netherlands B.V.</td>
     </tr>
   </tbody>
 </table>
@@ -173,7 +173,7 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"Philips"</td>
+      <td>"Signify Netherlands B.V."</td>
       <td>R</td>
     </tr>
     <tr>
@@ -244,7 +244,8 @@
     <tr>
       <td>ledindication</td>
       <td>Bool</td>
-      <td>Activates the LED indicator.</td>
+      <td>Activates the LED indicator.<p>  Default: false</p>
+</td>
       <td>RW</td>
     </tr>
     <tr>
@@ -269,7 +270,8 @@
     <tr>
       <td>sensitivity</td>
       <td>UInt8</td>
-      <td>The sensor sensitivity.<ul class="value-list">
+      <td>The sensor sensitivity.<p>  Default: 0</p>
+<ul class="value-list">
 <li>0 &mdash; verylow</li>
 <li>1 &mdash; low</li>
 <li>2 &mdash; medium</li>
@@ -310,41 +312,13 @@
     <tr>
       <td>presence</td>
       <td>Bool</td>
-      <td>True when presence is detected.</td>
+      <td>True when presence is detected.<p>  Default: false</p>
+</td>
       <td>R</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="example-output">Example output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h3>
-<pre><code>{
-  &quot;config&quot;: {
-    &quot;alert&quot;: &quot;none&quot;,
-    &quot;battery&quot;: 0,
-    &quot;delay&quot;: 0,
-    &quot;ledindication&quot;: false,
-    &quot;on&quot;: true,
-    &quot;pending&quot;: [],
-    &quot;reachable&quot;: true,
-    &quot;sensitivity&quot;: 2,
-    &quot;sensitivitymax&quot;: 4,
-    &quot;usertest&quot;: false
-  },
-  &quot;ep&quot;: 2,
-  &quot;etag&quot;: &quot;7f0d4873bf1bf93df92948fe160460e6&quot;,
-  &quot;lastseen&quot;: &quot;2022-01-13T13:20Z&quot;,
-  &quot;manufacturername&quot;: &quot;Philips&quot;,
-  &quot;modelid&quot;: &quot;SML003&quot;,
-  &quot;name&quot;: &quot;Motion Sensor (2)&quot;,
-  &quot;state&quot;: {
-    &quot;lastupdated&quot;: &quot;2022-01-13T13:20:06.879&quot;,
-    &quot;presence&quot;: false
-  },
-  &quot;swversion&quot;: &quot;2.53.6&quot;,
-  &quot;type&quot;: &quot;ZHAPresence&quot;,
-  &quot;uniqueid&quot;: &quot;00:17:88:01:02:00:21:f4-02-0406&quot;
-}
-</code></pre>
 <hr/>
 <h2 id="2-zhalightlevel">2. ZHALightLevel<a class="headerlink" href="#2-zhalightlevel" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
@@ -376,7 +350,7 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"Philips"</td>
+      <td>"Signify Netherlands B.V."</td>
       <td>R</td>
     </tr>
     <tr>
@@ -390,6 +364,24 @@
       <td>String</td>
       <td>Name of the resource.</td>
       <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHALightLevel"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -440,7 +432,8 @@
     <tr>
       <td>ledindication</td>
       <td>Bool</td>
-      <td>Activates the LED indicator.</td>
+      <td>Activates the LED indicator.<p>  Default: false</p>
+</td>
       <td>RW</td>
     </tr>
     <tr>
@@ -494,13 +487,15 @@
     <tr>
       <td>dark</td>
       <td>Bool</td>
-      <td>True when <code class="api-attribute">lightlevel</code> is lower than <code class="api-attribute">tholddark</code>.</td>
+      <td>True when <code class="api-attribute">lightlevel</code> is lower than <code class="api-attribute">tholddark</code>.<p>  Default: false</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
       <td>daylight</td>
       <td>Bool</td>
-      <td>True when <code class="api-attribute">lightlevel</code> suits daylight according <code class="api-attribute">tholddark</code> and <code class="api-attribute">tholdoffset</code> configuration.</td>
+      <td>True when <code class="api-attribute">lightlevel</code> suits daylight according <code class="api-attribute">tholddark</code> and <code class="api-attribute">tholdoffset</code> configuration.<p>  Default: false</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
@@ -512,49 +507,20 @@
     <tr>
       <td>lightlevel</td>
       <td>UInt16</td>
-      <td>The current Light level in 10000 log10 (lux) + 1.</td>
+      <td>The current Light level in 10000 log10 (lux) + 1.<p>  Default: 0</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
       <td>lux</td>
       <td>UInt32</td>
-      <td>The current Light level in lux.</td>
+      <td>The current Light level in lux.<p>  Default: 0</p>
+</td>
       <td>R</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="example-output_1">Example output<a class="headerlink" href="#example-output_1" title="Permanent link">&para;</a></h3>
-<pre><code>{
-  &quot;config&quot;: {
-    &quot;alert&quot;: &quot;none&quot;,
-    &quot;battery&quot;: 0,
-    &quot;ledindication&quot;: false,
-    &quot;on&quot;: true,
-    &quot;pending&quot;: [],
-    &quot;reachable&quot;: true,
-    &quot;tholddark&quot;: 12000,
-    &quot;tholdoffset&quot;: 7000,
-    &quot;usertest&quot;: false
-  },
-  &quot;ep&quot;: 2,
-  &quot;etag&quot;: &quot;58197854b7469e88cbb22afbe5ecf8d0&quot;,
-  &quot;lastseen&quot;: &quot;2022-01-13T13:20Z&quot;,
-  &quot;manufacturername&quot;: &quot;Philips&quot;,
-  &quot;modelid&quot;: &quot;SML003&quot;,
-  &quot;name&quot;: &quot;Motion Sensor (2)&quot;,
-  &quot;state&quot;: {
-    &quot;dark&quot;: false,
-    &quot;daylight&quot;: true,
-    &quot;lastupdated&quot;: &quot;2022-01-13T13:19:58.655&quot;,
-    &quot;lightlevel&quot;: 30063,
-    &quot;lux&quot;: 1014
-  },
-  &quot;swversion&quot;: &quot;2.53.6&quot;,
-  &quot;type&quot;: &quot;ZHALightLevel&quot;,
-  &quot;uniqueid&quot;: &quot;00:17:88:01:02:00:21:f4-02-0400&quot;
-}
-</code></pre>
 <hr/>
 <h2 id="3-zhatemperature">3. ZHATemperature<a class="headerlink" href="#3-zhatemperature" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
@@ -586,7 +552,7 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"Philips"</td>
+      <td>"Signify Netherlands B.V."</td>
       <td>R</td>
     </tr>
     <tr>
@@ -600,6 +566,24 @@
       <td>String</td>
       <td>Name of the resource.</td>
       <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHATemperature"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -650,7 +634,8 @@
     <tr>
       <td>ledindication</td>
       <td>Bool</td>
-      <td>Activates the LED indicator.</td>
+      <td>Activates the LED indicator.<p>  Default: false</p>
+</td>
       <td>RW</td>
     </tr>
     <tr>
@@ -709,34 +694,6 @@
     </tr>
   </tbody>
 </table>
-
-<h3 id="example-output_2">Example output<a class="headerlink" href="#example-output_2" title="Permanent link">&para;</a></h3>
-<pre><code>{
-  &quot;config&quot;: {
-    &quot;alert&quot;: &quot;none&quot;,
-    &quot;battery&quot;: 0,
-    &quot;ledindication&quot;: false,
-    &quot;offset&quot;: 0,
-    &quot;on&quot;: true,
-    &quot;pending&quot;: [],
-    &quot;reachable&quot;: true,
-    &quot;usertest&quot;: false
-  },
-  &quot;ep&quot;: 2,
-  &quot;etag&quot;: &quot;0f14835ede4aac034a6022f956aea426&quot;,
-  &quot;lastseen&quot;: &quot;2022-01-13T13:20Z&quot;,
-  &quot;manufacturername&quot;: &quot;Philips&quot;,
-  &quot;modelid&quot;: &quot;SML003&quot;,
-  &quot;name&quot;: &quot;Motion Sensor (2)&quot;,
-  &quot;state&quot;: {
-    &quot;lastupdated&quot;: &quot;2022-01-13T13:17:44.861&quot;,
-    &quot;temperature&quot;: 2142
-  },
-  &quot;swversion&quot;: &quot;2.53.6&quot;,
-  &quot;type&quot;: &quot;ZHATemperature&quot;,
-  &quot;uniqueid&quot;: &quot;00:17:88:01:02:00:21:f4-02-0402&quot;
-}
-</code></pre>
               
             </div>
           </div><footer>

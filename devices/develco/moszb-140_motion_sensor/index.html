@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>MOSZB-140 motion sensor - deCONZ REST-API</title>
+    <title>MOSZB-140 motion sensor pro - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "MOSZB-140 motion sensor";
+        var mkdocs_page_name = "MOSZB-140 motion sensor pro";
         var mkdocs_page_input_path = "devices/develco/moszb-140_motion_sensor.md";
         var mkdocs_page_url = null;
       </script>
@@ -103,7 +103,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>MOSZB-140 motion sensor</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>MOSZB-140 motion sensor pro</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/develco/moszb-140_motion_sensor.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -115,7 +115,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="moszb-140-motion-sensor">MOSZB-140 motion sensor<a class="headerlink" href="#moszb-140-motion-sensor" title="Permanent link">&para;</a></h1>
+                <h1 id="moszb-140-motion-sensor-pro">MOSZB-140 motion sensor pro<a class="headerlink" href="#moszb-140-motion-sensor-pro" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/develco/moszb-140_motion_sensor.json">moszb-140_motion_sensor.json</a>
 </p>
 <table>
@@ -129,7 +129,7 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>MOSZB-140 motion sensor</td>
+      <td>MOSZB-140 motion sensor pro</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -302,7 +302,8 @@
     <tr>
       <td>presence</td>
       <td>Bool</td>
-      <td>True when presence is detected.</td>
+      <td>True when presence is detected.<p>  Default: false</p>
+</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -468,7 +469,8 @@
     <tr>
       <td>presence</td>
       <td>Bool</td>
-      <td>True when presence is detected.</td>
+      <td>True when presence is detected.<p>  Default: false</p>
+</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -640,7 +642,8 @@
     <tr>
       <td>presence</td>
       <td>Bool</td>
-      <td>True when presence is detected.</td>
+      <td>True when presence is detected.<p>  Default: false</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
@@ -812,7 +815,8 @@
     <tr>
       <td>presence</td>
       <td>Bool</td>
-      <td>True when presence is detected.</td>
+      <td>True when presence is detected.<p>  Default: false</p>
+</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -973,13 +977,15 @@
     <tr>
       <td>dark</td>
       <td>Bool</td>
-      <td>True when <code class="api-attribute">lightlevel</code> is lower than <code class="api-attribute">tholddark</code>.</td>
+      <td>True when <code class="api-attribute">lightlevel</code> is lower than <code class="api-attribute">tholddark</code>.<p>  Default: false</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
       <td>daylight</td>
       <td>Bool</td>
-      <td>True when <code class="api-attribute">lightlevel</code> suits daylight according <code class="api-attribute">tholddark</code> and <code class="api-attribute">tholdoffset</code> configuration.</td>
+      <td>True when <code class="api-attribute">lightlevel</code> suits daylight according <code class="api-attribute">tholddark</code> and <code class="api-attribute">tholdoffset</code> configuration.<p>  Default: false</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
@@ -991,13 +997,15 @@
     <tr>
       <td>lightlevel</td>
       <td>UInt16</td>
-      <td>The current Light level in 10000 log10 (lux) + 1.</td>
+      <td>The current Light level in 10000 log10 (lux) + 1.<p>  Default: 0</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
       <td>lux</td>
       <td>UInt32</td>
-      <td>The current Light level in lux.</td>
+      <td>The current Light level in lux.<p>  Default: 0</p>
+</td>
       <td>R</td>
     </tr>
   </tbody>

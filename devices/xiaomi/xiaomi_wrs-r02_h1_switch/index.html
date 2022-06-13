@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Aqara WRS-R02 Wireless Remote Switch H1 (Double Rocker) - deCONZ REST-API</title>
+    <title>Aqara H1 dual rocker wireless remote switch WRS-R02 - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Aqara WRS-R02 Wireless Remote Switch H1 (Double Rocker)";
+        var mkdocs_page_name = "Aqara H1 dual rocker wireless remote switch WRS-R02";
         var mkdocs_page_input_path = "devices/xiaomi/xiaomi_wrs-r02_h1_switch.md";
         var mkdocs_page_url = null;
       </script>
@@ -103,7 +103,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Aqara WRS-R02 Wireless Remote Switch H1 (Double Rocker)</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Aqara H1 dual rocker wireless remote switch WRS-R02</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/xiaomi/xiaomi_wrs-r02_h1_switch.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -115,7 +115,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="aqara-wrs-r02-wireless-remote-switch-h1-double-rocker">Aqara WRS-R02 Wireless Remote Switch H1 (Double Rocker)<a class="headerlink" href="#aqara-wrs-r02-wireless-remote-switch-h1-double-rocker" title="Permanent link">&para;</a></h1>
+                <h1 id="aqara-h1-dual-rocker-wireless-remote-switch-wrs-r02">Aqara H1 dual rocker wireless remote switch WRS-R02<a class="headerlink" href="#aqara-h1-dual-rocker-wireless-remote-switch-wrs-r02" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/manup/deconz-rest-plugin/tree/device_descriptions/devices/xiaomi/xiaomi_wrs-r02_h1_switch.json">xiaomi_wrs-r02_h1_switch.json</a>
 </p>
 <table>
@@ -129,7 +129,7 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>Aqara WRS-R02 Wireless Remote Switch H1 (Double Rocker)</td>
+      <td>Aqara H1 dual rocker wireless remote switch WRS-R02</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -263,8 +263,8 @@
       <td>String</td>
       <td>Allows configuration of the individual Button(s), primarily for Xiaomi devices. Current usable values (device dependent) are 'coupled', 'decoupled', 'multiclick' and 'highspeed'.<p>  Default: multiclick</p>
 <ul class="value-list">
-<li>highspeed &mdash; 1</li>
-<li>multiclick &mdash; 2</li>
+<li>"highspeed" &mdash; Buttons emit only single click events, but fast</li>
+<li>"multiclick" &mdash; Emits single, double and treble presses</li>
 </ul>
 </td>
       <td>RW</td>
@@ -274,8 +274,8 @@
       <td>String</td>
       <td>Mode of the Hue wall switch module with possible values 'singlerocker', 'singlepushbutton', 'dualrocker', 'dualpushbutton'. Xiaomi devices have possible values of 'compatibility' and 'zigbee', but DO NOT CHANGE UNLESS YOU KNOW EXACTLY, WHAT YOU'RE DOING<p>  Default: compatibility</p>
 <ul class="value-list">
-<li>compatibility &mdash; 1</li>
-<li>zigbee &mdash; 2</li>
+<li>"compatibility" &mdash; Default mode for Xiaomi devices</li>
+<li>"zigbee" &mdash; Closer to zigbee standard</li>
 </ul>
 </td>
       <td>RW</td>
