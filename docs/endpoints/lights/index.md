@@ -629,7 +629,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 
 ------------------------------------------------------
 
-## Remove all groups<a name="removegroups">&nbsp;</a>
+## Remove from all groups<a name="removegroups">&nbsp;</a>
 
     DELETE /api/<apikey>/lights/<id>/groups
 
@@ -654,7 +654,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 
 ------------------------------------------------------
 
-## Remove all scenes<a name="removescenes">&nbsp;</a>
+## Remove from all scenes<a name="removescenes">&nbsp;</a>
 
     DELETE /api/<apikey>/lights/<id>/scenes
 
