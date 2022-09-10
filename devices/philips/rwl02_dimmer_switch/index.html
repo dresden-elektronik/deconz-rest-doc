@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Dimmer Switch 1. Gen EU/US - deCONZ REST-API</title>
+    <title>Hue dimmer switch - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Dimmer Switch 1. Gen EU/US";
+        var mkdocs_page_name = "Hue dimmer switch";
         var mkdocs_page_input_path = "devices/philips/rwl02_dimmer_switch.md";
         var mkdocs_page_url = null;
       </script>
@@ -103,7 +103,8 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Dimmer Switch 1. Gen EU/US</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Hue dimmer switch</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/philips/rwl02_dimmer_switch.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -111,11 +112,10 @@
   </ul>
   <hr/>
 </div>
-
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="dimmer-switch-1-gen-euus">Dimmer Switch 1. Gen EU/US<a class="headerlink" href="#dimmer-switch-1-gen-euus" title="Permanent link">&para;</a></h1>
+                <h1 id="hue-dimmer-switch">Hue dimmer switch<a class="headerlink" href="#hue-dimmer-switch" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/philips/rwl02_dimmer_switch.json">rwl02_dimmer_switch.json</a>
 </p>
 <table>
@@ -129,7 +129,7 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>Dimmer Switch 1. Gen EU/US</td>
+      <td>Hue dimmer switch</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -227,6 +227,13 @@ Philips</td>
       <td>R</td>
     </tr>
     <tr>
+      <td>group</td>
+      <td>String</td>
+      <td>comma seperated list of groups which a device controls.<p>  Default: auto</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>When true the sensor is enabled in rules.<p>  Default: true</p>
@@ -249,12 +256,6 @@ Philips</td>
   </thead>
   <tbody>
     <tr>
-      <td>lastupdated</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp when state was last updated.</td>
-      <td>R</td>
-    </tr>
-    <tr>
       <td>buttonevent</td>
       <td>UInt32</td>
       <td>The last received button event.</td>
@@ -266,33 +267,14 @@ Philips</td>
       <td>Determines how long an event lasted (not implemented yet).</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
   </tbody>
 </table>
-
-<h3 id="example-output">Example output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h3>
-<pre><code>{
-  &quot;config&quot;: {
-    &quot;battery&quot;: null,
-    &quot;on&quot;: true,
-    &quot;reachable&quot;: true
-  },
-  &quot;ep&quot;: 2,
-  &quot;etag&quot;: &quot;d60d24fb0d41f5ed9e69c638631e9e34&quot;,
-  &quot;lastseen&quot;: &quot;2021-05-02T18:44Z&quot;,
-  &quot;manufacturername&quot;: &quot;Philips&quot;,
-  &quot;mode&quot;: 2,
-  &quot;modelid&quot;: &quot;RWL021&quot;,
-  &quot;name&quot;: &quot;Switch 5&quot;,
-  &quot;state&quot;: {
-    &quot;buttonevent&quot;: 1002,
-    &quot;eventduration&quot;: 1,
-    &quot;lastupdated&quot;: &quot;2021-05-02T18:44:00.559&quot;
-  },
-  &quot;swversion&quot;: &quot;5.45.1.17846&quot;,
-  &quot;type&quot;: &quot;ZHASwitch&quot;,
-  &quot;uniqueid&quot;: &quot;00:17:88:01:08:f7:76:8c-02-fc00&quot;
-}
-</code></pre>
               
             </div>
           </div><footer>

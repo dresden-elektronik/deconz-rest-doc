@@ -103,7 +103,8 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Aqara TVOC Air Quality Monitor VOCKQJK11LM</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Aqara TVOC Air Quality Monitor VOCKQJK11LM</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/xiaomi/xiaomi_airmonitor_acn01.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -111,7 +112,6 @@
   </ul>
   <hr/>
 </div>
-
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
@@ -253,17 +253,6 @@
       <td>R</td>
     </tr>
     <tr>
-      <td>devicemode</td>
-      <td>String</td>
-      <td>Mode of the Hue wall switch module with possible values 'singlerocker', 'singlepushbutton', 'dualrocker', 'dualpushbutton'. Xiaomi devices have possible values of 'compatibility' and 'zigbee', but DO NOT CHANGE UNLESS YOU KNOW EXACTLY, WHAT YOU'RE DOING<p>  Default: compatibility</p>
-<ul class="value-list">
-<li>"compatibility" &mdash; Default mode for Xiaomi devices</li>
-<li>"zigbee" &mdash; Closer to zigbee standard</li>
-</ul>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>When true the sensor is enabled in rules.<p>  Default: true</p>
@@ -295,7 +284,15 @@
     <tr>
       <td>airquality</td>
       <td>String</td>
-      <td>Text representation of the air quality.</td>
+      <td>Text representation of the air quality.<p>  Default: excellent</p>
+<ul class="value-list">
+<li>1 &mdash; excellent</li>
+<li>2 &mdash; good</li>
+<li>3 &mdash; moderate</li>
+<li>4 &mdash; poor</li>
+<li>5 &mdash; unhealthy</li>
+</ul>
+</td>
       <td>R</td>
     </tr>
     <tr>
@@ -418,17 +415,6 @@
       <td>R</td>
     </tr>
     <tr>
-      <td>devicemode</td>
-      <td>String</td>
-      <td>Mode of the Hue wall switch module with possible values 'singlerocker', 'singlepushbutton', 'dualrocker', 'dualpushbutton'. Xiaomi devices have possible values of 'compatibility' and 'zigbee', but DO NOT CHANGE UNLESS YOU KNOW EXACTLY, WHAT YOU'RE DOING<p>  Default: compatibility</p>
-<ul class="value-list">
-<li>"compatibility" &mdash; Default mode for Xiaomi devices</li>
-<li>"zigbee" &mdash; Closer to zigbee standard</li>
-</ul>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
       <td>offset</td>
       <td>Int16</td>
       <td>Relative offset to the main measured value.<p>  Default: 0</p>
@@ -446,12 +432,6 @@
       <td>reachable</td>
       <td>Bool</td>
       <td>When true the device is assumed to be operational.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>temperature</td>
-      <td>UInt8</td>
-      <td>The current device temperature in °C.</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -588,17 +568,6 @@
       <td>The current device battery level in 0&ndash;100&thinsp;%.<p>  Default: 0</p>
 </td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>devicemode</td>
-      <td>String</td>
-      <td>Mode of the Hue wall switch module with possible values 'singlerocker', 'singlepushbutton', 'dualrocker', 'dualpushbutton'. Xiaomi devices have possible values of 'compatibility' and 'zigbee', but DO NOT CHANGE UNLESS YOU KNOW EXACTLY, WHAT YOU'RE DOING<p>  Default: compatibility</p>
-<ul class="value-list">
-<li>"compatibility" &mdash; Default mode for Xiaomi devices</li>
-<li>"zigbee" &mdash; Closer to zigbee standard</li>
-</ul>
-</td>
-      <td>RW</td>
     </tr>
     <tr>
       <td>offset</td>

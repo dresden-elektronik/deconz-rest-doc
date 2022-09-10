@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Samsung Multipurpose Sensor (IM6001-OTP01) - deCONZ REST-API</title>
+    <title>Multipurpose Sensor (IM6001-OTP01) - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Samsung Multipurpose Sensor (IM6001-OTP01)";
+        var mkdocs_page_name = "Multipurpose Sensor (IM6001-OTP01)";
         var mkdocs_page_input_path = "devices/samsung/samjin_multi_sensor.md";
         var mkdocs_page_url = null;
       </script>
@@ -103,7 +103,8 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Samsung Multipurpose Sensor (IM6001-OTP01)</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Multipurpose Sensor (IM6001-OTP01)</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/samsung/samjin_multi_sensor.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -111,11 +112,10 @@
   </ul>
   <hr/>
 </div>
-
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="samsung-multipurpose-sensor-im6001-otp01">Samsung Multipurpose Sensor (IM6001-OTP01)<a class="headerlink" href="#samsung-multipurpose-sensor-im6001-otp01" title="Permanent link">&para;</a></h1>
+                <h1 id="multipurpose-sensor-im6001-otp01">Multipurpose Sensor (IM6001-OTP01)<a class="headerlink" href="#multipurpose-sensor-im6001-otp01" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/samsung/samjin_multi_sensor.json">samjin_multi_sensor.json</a>
 </p>
 <table>
@@ -125,11 +125,11 @@
   <tbody>
     <tr>
       <td>status</td>
-      <td>Silver</td>
+      <td>Gold</td>
     </tr>
     <tr>
       <td>product</td>
-      <td>Samsung Multipurpose Sensor (IM6001-OTP01)</td>
+      <td>Multipurpose Sensor (IM6001-OTP01)</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -206,6 +206,48 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"Samjin"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"multi"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAOpenClose"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
   </tbody>
 </table>
 
@@ -228,12 +270,6 @@
       <td>When true the sensor is enabled in rules.<p>  Default: true</p>
 </td>
       <td>RW</td>
-    </tr>
-    <tr>
-      <td>pending</td>
-      <td>Array</td>
-      <td>Pending tasks to configure the device.</td>
-      <td>R</td>
     </tr>
     <tr>
       <td>reachable</td>
@@ -265,29 +301,6 @@
   </tbody>
 </table>
 
-<h3 id="example-output">Example output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h3>
-<pre><code>{
-  &quot;config&quot;: {
-    &quot;battery&quot;: 100,
-    &quot;enrolled&quot;: 1,
-    &quot;on&quot;: true,
-    &quot;pending&quot;: [],
-    &quot;reachable&quot;: true
-  },
-  &quot;ep&quot;: 1,
-  &quot;etag&quot;: &quot;63d006cf5722271299d75d5829a33974&quot;,
-  &quot;lastseen&quot;: &quot;2021-01-14T11:35Z&quot;,
-  &quot;manufacturername&quot;: &quot;Samjin&quot;,
-  &quot;modelid&quot;: &quot;multi&quot;,
-  &quot;name&quot;: &quot;Multipurpose Sensor&quot;,
-  &quot;state&quot;: {
-    &quot;lastupdated&quot;: &quot;2021-01-14T11:13:45.367&quot;,
-    &quot;open&quot;: false
-  },
-  &quot;type&quot;: &quot;ZHAOpenClose&quot;,
-  &quot;uniqueid&quot;: &quot;28:6d:97:00:01:06:ce:ae-01-0500&quot;
-}
-</code></pre>
 <hr/>
 <h2 id="2-zhatemperature">2. ZHATemperature<a class="headerlink" href="#2-zhatemperature" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
@@ -333,6 +346,24 @@
       <td>String</td>
       <td>Name of the resource.</td>
       <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHATemperature"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -413,28 +444,6 @@
   </tbody>
 </table>
 
-<h3 id="example-output_1">Example output<a class="headerlink" href="#example-output_1" title="Permanent link">&para;</a></h3>
-<pre><code>{
-  &quot;config&quot;: {
-    &quot;battery&quot;: 100,
-    &quot;offset&quot;: 0,
-    &quot;on&quot;: true,
-    &quot;reachable&quot;: true
-  },
-  &quot;ep&quot;: 1,
-  &quot;etag&quot;: &quot;df082b6de6637a33e750f7111b7bd336&quot;,
-  &quot;lastseen&quot;: &quot;2021-01-14T11:35Z&quot;,
-  &quot;manufacturername&quot;: &quot;Samjin&quot;,
-  &quot;modelid&quot;: &quot;multi&quot;,
-  &quot;name&quot;: &quot;Multipurpose Sensor&quot;,
-  &quot;state&quot;: {
-    &quot;lastupdated&quot;: &quot;2021-01-14T11:34:57.853&quot;,
-    &quot;temperature&quot;: 2096
-  },
-  &quot;type&quot;: &quot;ZHATemperature&quot;,
-  &quot;uniqueid&quot;: &quot;28:6d:97:00:01:06:ce:ae-01-0402&quot;
-}
-</code></pre>
 <hr/>
 <h2 id="3-zhavibration">3. ZHAVibration<a class="headerlink" href="#3-zhavibration" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
@@ -499,6 +508,24 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAVibration"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
   </tbody>
 </table>
 
@@ -544,6 +571,24 @@
       <td>R</td>
     </tr>
     <tr>
+      <td>orientation_x</td>
+      <td>Int16</td>
+      <td>The X orientation of a gyro.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>orientation_y</td>
+      <td>Int16</td>
+      <td>The Y orientation of a gyro.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>orientation_z</td>
+      <td>Int16</td>
+      <td>The Z orientation of a gyro.</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>lastupdated</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp when state was last updated.</td>
@@ -557,33 +602,6 @@
     </tr>
   </tbody>
 </table>
-
-<h3 id="example-output_2">Example output<a class="headerlink" href="#example-output_2" title="Permanent link">&para;</a></h3>
-<pre><code>{
-  &quot;config&quot;: {
-    &quot;battery&quot;: 100,
-    &quot;on&quot;: true,
-    &quot;reachable&quot;: true
-  },
-  &quot;ep&quot;: 1,
-  &quot;etag&quot;: &quot;97a223f7b2d965a8f36a02ee8b9b264e&quot;,
-  &quot;lastseen&quot;: &quot;2021-01-14T11:35Z&quot;,
-  &quot;manufacturername&quot;: &quot;Samjin&quot;,
-  &quot;modelid&quot;: &quot;multi&quot;,
-  &quot;name&quot;: &quot;Multipurpose Sensor&quot;,
-  &quot;state&quot;: {
-    &quot;lastupdated&quot;: &quot;2021-01-14T11:35:42.744&quot;,
-    &quot;orientation&quot;: [
-      12,
-      -37,
-      -1029
-    ],
-    &quot;vibration&quot;: false
-  },
-  &quot;type&quot;: &quot;ZHAVibration&quot;,
-  &quot;uniqueid&quot;: &quot;28:6d:97:00:01:06:ce:ae-01-fc02&quot;
-}
-</code></pre>
               
             </div>
           </div><footer>

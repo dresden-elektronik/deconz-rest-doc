@@ -103,7 +103,8 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>KEPZB-110 Keypad</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>KEPZB-110 Keypad</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/frient/kepzb-110_keypad.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -111,7 +112,6 @@
   </ul>
   <hr/>
 </div>
-
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
@@ -255,6 +255,22 @@ frient A/S</td>
   </thead>
   <tbody>
     <tr>
+      <td>action</td>
+      <td>String</td>
+      <td>The IAS arm action.<p>  Default: disarmed</p>
+<ul class="value-list">
+<li>"disarmed" &mdash; disarmed not triggering alarm</li>
+<li>"armed_stay" &mdash; trigger in stay mode</li>
+<li>"armed_night" &mdash; trigger in night mode</li>
+<li>"armed_away" &mdash; trigger in away mode</li>
+<li>"invalid_code" &mdash; invalid code was entered</li>
+<li>"not_ready" &mdash; alarm system not ready</li>
+<li>"already_disarmed" &mdash; attempt to disarm was ignored</li>
+</ul>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>lastupdated</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp when state was last updated.</td>
@@ -265,6 +281,13 @@ frient A/S</td>
       <td>Bool</td>
       <td>True when the device battery runs low.</td>
       <td>R</td>
+    </tr>
+    <tr>
+      <td>seconds_remaining</td>
+      <td>UInt32</td>
+      <td>The IAS panel seconds remaining.<p>  Default: 0</p>
+</td>
+      <td>RW</td>
     </tr>
     <tr>
       <td>panel</td>
