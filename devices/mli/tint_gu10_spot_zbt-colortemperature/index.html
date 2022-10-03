@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Mijia smart plug ZNCZ04LM - deCONZ REST-API</title>
+    <title>Tint GU10 Spot ZBT-ColorTemperature - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Mijia smart plug ZNCZ04LM";
-        var mkdocs_page_input_path = "devices/xiaomi/xiaomi_zncz04lm_smart_plug.md";
+        var mkdocs_page_name = "Tint GU10 Spot ZBT-ColorTemperature";
+        var mkdocs_page_input_path = "devices/mli/tint_gu10_spot_zbt-colortemperature.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -104,9 +104,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Mijia smart plug ZNCZ04LM</li>
+      <li>Tint GU10 Spot ZBT-ColorTemperature</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/xiaomi/xiaomi_zncz04lm_smart_plug.md"
+        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/mli/tint_gu10_spot_zbt-colortemperature.md"
           class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
@@ -115,8 +115,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="mijia-smart-plug-zncz04lm">Mijia smart plug ZNCZ04LM<a class="headerlink" href="#mijia-smart-plug-zncz04lm" title="Permanent link">&para;</a></h1>
-<p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/xiaomi/xiaomi_zncz04lm_smart_plug.json">xiaomi_zncz04lm_smart_plug.json</a>
+                <h1 id="tint-gu10-spot-zbt-colortemperature">Tint GU10 Spot ZBT-ColorTemperature<a class="headerlink" href="#tint-gu10-spot-zbt-colortemperature" title="Permanent link">&para;</a></h1>
+<p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/mli/tint_gu10_spot_zbt-colortemperature.json">tint_gu10_spot_zbt-colortemperature.json</a>
 </p>
 <table>
   <thead>
@@ -129,21 +129,21 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>Mijia smart plug ZNCZ04LM</td>
+      <td>Tint GU10 Spot ZBT-ColorTemperature</td>
     </tr>
     <tr>
       <td>modelid</td>
-      <td>lumi.plug.mmeu01</td>
+      <td>ZBT-ColorTemperature</td>
     </tr>
     <tr>
       <td>manufacturername</td>
-      <td>LUMI</td>
+      <td>MLI</td>
     </tr>
   </tbody>
 </table>
 
 <hr/>
-<h2 id="1-smart-plug">1. Smart plug<a class="headerlink" href="#1-smart-plug" title="Permanent link">&para;</a></h2>
+<h2 id="1-color-temperature-light">1. Color temperature light<a class="headerlink" href="#1-color-temperature-light" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
 </p>
 <h3 id="top-level-attributes">Top level attributes<a class="headerlink" href="#top-level-attributes" title="Permanent link">&para;</a></h3>
@@ -173,13 +173,13 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"LUMI"</td>
+      <td>"MLI"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"lumi.plug.mmeu01"</td>
+      <td>"ZBT-ColorTemperature"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -197,7 +197,7 @@
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"Smart plug"</td>
+      <td>"Color temperature light"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -206,22 +206,31 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes">Config attributes<a class="headerlink" href="#config-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>swversion</td>
-      <td>String</td>
-      <td>Firmware version of the device.</td>
+      <td>colorcapabilities</td>
+      <td>UInt16</td>
+      <td>The supported color modes as bitmap.</td>
       <td>R</td>
     </tr>
     <tr>
-      <td>type</td>
-      <td>String</td>
-      <td>"Smart plug"</td>
+      <td>ctmax</td>
+      <td>UInt16</td>
+      <td>Maximum supported color temperature.</td>
       <td>R</td>
     </tr>
     <tr>
-      <td>uniqueid</td>
-      <td>String</td>
-      <td>Unique identifier of the resource.</td>
+      <td>ctmin</td>
+      <td>UInt16</td>
+      <td>Minimum supported color temperature.</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -246,6 +255,30 @@
       <td>RW</td>
     </tr>
     <tr>
+      <td>bri</td>
+      <td>UInt8</td>
+      <td>The current brightness.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>colormode</td>
+      <td>String</td>
+      <td>The currently active color mode.<p>  Default: ct</p>
+<ul class="value-list">
+<li>"hs" &mdash; hue and saturation</li>
+<li>"xy" &mdash; CIE xy color space coordinates</li>
+<li>"ct" &mdash; color temperature</li>
+</ul>
+</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>ct</td>
+      <td>UInt16</td>
+      <td>The current Mired color temperature of the light. Where Mired is 1000000 / color temperature (in kelvins).</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>True when device is on; false when off.</td>
@@ -259,297 +292,6 @@
     </tr>
   </tbody>
 </table>
-
-<hr/>
-<h2 id="2-zhapower">2. ZHAPower<a class="headerlink" href="#2-zhapower" title="Permanent link">&para;</a></h2>
-<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
-</p>
-<h3 id="top-level-attributes_1">Top level attributes<a class="headerlink" href="#top-level-attributes_1" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>String</td>
-      <td>Identifier of the resource, unique within an endpoint.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>lastannounced</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp of the last power-cyle or rejoin.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>lastseen</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp of the last communication.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>manufacturername</td>
-      <td>String</td>
-      <td>"LUMI"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>String</td>
-      <td>"lumi.plug.mmeu01"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of the resource.</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>swversion</td>
-      <td>String</td>
-      <td>Firmware version of the device.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>type</td>
-      <td>String</td>
-      <td>"ZHAPower"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>uniqueid</td>
-      <td>String</td>
-      <td>Unique identifier of the resource.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>swversion</td>
-      <td>String</td>
-      <td>Firmware version of the device.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>type</td>
-      <td>String</td>
-      <td>"ZHAPower"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>uniqueid</td>
-      <td>String</td>
-      <td>Unique identifier of the resource.</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="config-attributes">Config attributes<a class="headerlink" href="#config-attributes" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>on</td>
-      <td>Bool</td>
-      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>reachable</td>
-      <td>Bool</td>
-      <td>When true the device is assumed to be operational.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>temperature</td>
-      <td>UInt8</td>
-      <td>The current device temperature in °C.</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="state-attributes_1">State attributes<a class="headerlink" href="#state-attributes_1" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>current</td>
-      <td>UInt16</td>
-      <td>The measured current (in mA).<p>  Default: 0</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>lastupdated</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp when state was last updated.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>power</td>
-      <td>Int16</td>
-      <td>The measured power (in W).<p>  Default: 0</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>voltage</td>
-      <td>UInt16</td>
-      <td>The measured voltage (in V).<p>  Default: 0</p>
-</td>
-      <td>RW</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr/>
-<h2 id="3-zhaconsumption">3. ZHAConsumption<a class="headerlink" href="#3-zhaconsumption" title="Permanent link">&para;</a></h2>
-<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
-</p>
-<h3 id="top-level-attributes_2">Top level attributes<a class="headerlink" href="#top-level-attributes_2" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>String</td>
-      <td>Identifier of the resource, unique within an endpoint.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>lastannounced</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp of the last power-cyle or rejoin.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>lastseen</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp of the last communication.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>manufacturername</td>
-      <td>String</td>
-      <td>"LUMI"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>String</td>
-      <td>"lumi.plug.mmeu01"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of the resource.</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>swversion</td>
-      <td>String</td>
-      <td>Firmware version of the device.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>type</td>
-      <td>String</td>
-      <td>"ZHAConsumption"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>uniqueid</td>
-      <td>String</td>
-      <td>Unique identifier of the resource.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>swversion</td>
-      <td>String</td>
-      <td>Firmware version of the device.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>type</td>
-      <td>String</td>
-      <td>"ZHAConsumption"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>uniqueid</td>
-      <td>String</td>
-      <td>Unique identifier of the resource.</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="config-attributes_1">Config attributes<a class="headerlink" href="#config-attributes_1" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>on</td>
-      <td>Bool</td>
-      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>reachable</td>
-      <td>Bool</td>
-      <td>When true the device is assumed to be operational.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>temperature</td>
-      <td>UInt8</td>
-      <td>The current device temperature in °C.</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="state-attributes_2">State attributes<a class="headerlink" href="#state-attributes_2" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>consumption</td>
-      <td>UInt64</td>
-      <td>The measured consumption (in Wh).<p>  Default: 0</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>lastupdated</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp when state was last updated.</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr/>
-<h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
-<h3 id="firmware-update-required">Firmware update required<a class="headerlink" href="#firmware-update-required" title="Permanent link">&para;</a></h3>
-<p>This applies for Xiaomi smart plugs ZNCZ04LM (lumi.plug.mmeu01) and SP-EUC01 (lumi.plug.maeu01). It is mandatory that RaspBee/ConBee I firmware version 0x26400500 (or higher) or RaspBee/ConBeeII firmware version 0x266f0700 (or higher) is installed.</p>
-<p>Further the plugs firmware need to be updated via OTA to work well with this DDF.
-A more detailed description can be found at: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Xiaomi-smart-plugs-not-working-correctly">wiki/Xiaomi-smart-plugs-not-working-correctly</a></p>
               
             </div>
           </div><footer>
