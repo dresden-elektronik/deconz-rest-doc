@@ -684,7 +684,7 @@ HTTP/1.1 200 OK
 
 A keypad can be added to exactly *one* alarm system.
 
-&rarr; After pairing a keypad as sensor, it's automatically added to the default alarm system with id "1".
+
 
 * Keypads use the the alarm system PIN code (see [Update alarm system configuration](#updateconfig)), which is verified each time the keypad arms or disarms the alarm system.
 * If a valid PIN code is entered on the keypad, the alarm system's state changes according to the requested arm or disarm command.
