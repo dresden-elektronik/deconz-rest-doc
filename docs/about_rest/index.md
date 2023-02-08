@@ -23,10 +23,12 @@ Currently the following endpoints are available.
 
 Endpoint                              | Description
 --------------------------------------|--------------------------
+[/alarmsystems](../endpoints/configuration) | Query and modify alarm systems configuration.
 [/config](../endpoints/configuration) | Query and modify the gateway configuration.
 [/lights](../endpoints/lights)        | Query and control lights.
 [/sensors](../endpoints/sensors)      | Query and control sensors.
 [/groups](../endpoints/groups)        | Setup groups and scenes with lights and control them.
+[/ruless](../endpoints/groups)        | Manage the ability to trigger actions of lights or groups.
 [/scenes](../endpoints/scenes)        | Setup and control scenes of a group.
 [/schedules](../endpoints/schedules)  | Created time based schedules.
 [/touchlink](../endpoints/touchlink)  | Execute Zigbee Light Link touchlink commands.
