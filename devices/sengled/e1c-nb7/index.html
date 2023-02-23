@@ -106,8 +106,7 @@
     <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
       <li>E1C-NB7</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/sengled/e1c-nb7.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/sengled/e1c-nb7.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -125,7 +124,7 @@
   <tbody>
     <tr>
       <td>status</td>
-      <td>Gold</td>
+      <td>Silver</td>
     </tr>
     <tr>
       <td>product</td>
@@ -344,6 +343,117 @@
 </td>
       <td>RW</td>
     </tr>
+    <tr>
+      <td>lastupdated</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>power</td>
+      <td>Int16</td>
+      <td>The measured power (in W).<p>  Default: 0</p>
+</td>
+      <td>RW</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+<h2 id="3-zhapower">3. ZHAPower<a class="headerlink" href="#3-zhapower" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+</p>
+<h3 id="top-level-attributes_2">Top level attributes<a class="headerlink" href="#top-level-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"sengled"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"E1C-NB7"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAPower"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes_1">Config attributes<a class="headerlink" href="#config-attributes_1" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_2">State attributes<a class="headerlink" href="#state-attributes_2" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
     <tr>
       <td>lastupdated</td>
       <td>ISO 8601 timestamp</td>

@@ -106,8 +106,7 @@
     <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
       <li>FLS-PP lp</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/dresden_elektronik/fls_pp3.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/dresden_elektronik/fls_pp3.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -242,6 +241,12 @@ dresden elektronik</td>
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>powerup</td>
+      <td>UInt32</td>
+      <td>Powerup mode of a device.</td>
+      <td>RW</td>
+    </tr>
   </tbody>
 </table>
 
@@ -254,26 +259,22 @@ dresden elektronik</td>
     <tr>
       <td>colorcapabilities</td>
       <td>UInt16</td>
-      <td>The supported color modes as bitmap.</td>
+      <td>Deprecated. The supported color capabilities as bitmap. <em class="deprecated">deprecated</em></td>
       <td>R</td>
     </tr>
     <tr>
       <td>ctmax</td>
       <td>UInt16</td>
-      <td>Maximum supported color temperature.</td>
+      <td>Deprecated. Maximum supported color temperature. <em class="deprecated">deprecated</em><p>  Default: 0xfeff</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
       <td>ctmin</td>
       <td>UInt16</td>
-      <td>Minimum supported color temperature.</td>
+      <td>Deprecated. Minimum supported color temperature. <em class="deprecated">deprecated</em><p>  Default: 0</p>
+</td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>powerup</td>
-      <td>UInt32</td>
-      <td>Powerup mode of a device.</td>
-      <td>RW</td>
     </tr>
   </tbody>
 </table>
@@ -467,15 +468,6 @@ dresden elektronik</td>
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
-  </tbody>
-</table>
-
-<h3 id="config-attributes_1">Config attributes<a class="headerlink" href="#config-attributes_1" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
     <tr>
       <td>powerup</td>
       <td>UInt32</td>

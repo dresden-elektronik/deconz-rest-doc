@@ -106,8 +106,7 @@
     <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
       <li>TH1124ZB</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/sinope/th1124zb.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/sinope/th1124zb.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -223,6 +222,15 @@
       <td>RW</td>
     </tr>
     <tr>
+      <td>resetpresence</td>
+      <td>Bool</td>
+      <td>Use it to address Occupancy specific attribute.
+false = Unoccupied
+true = Occupied<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>mode</td>
       <td>String</td>
       <td>Mode of the device.</td>
@@ -262,6 +270,13 @@
       <td>RW</td>
     </tr>
     <tr>
+      <td>unoccupiedheatsetpoint</td>
+      <td>Int16</td>
+      <td>Target temperature of a thermostat when local is unoccupied.<p>  Default: 1800</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>externalsensortemp</td>
       <td>Int16</td>
       <td>External sensor temperature used as Outdoor temperature on display.<p>  Default: -32768</p>
@@ -274,6 +289,13 @@
       <td>Use it for Backlight configuration.
 false = On demand
 true = Always ON<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>unoccupiedheatsetpoint</td>
+      <td>Int16</td>
+      <td>Target temperature of a thermostat when local is unoccupied.<p>  Default: 17</p>
 </td>
       <td>RW</td>
     </tr>
@@ -302,6 +324,13 @@ true = Always ON<p>  Default: true</p>
       <td>temperature</td>
       <td>Int16</td>
       <td>The current temperature in °C &times; 100.<p>  Default: 0</p>
+</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>valve</td>
+      <td>UInt8</td>
+      <td>PI Heating Demand. If below 10, then device is Idle, else device is Heating.<p>  Default: 0</p>
 </td>
       <td>R</td>
     </tr>
@@ -406,7 +435,7 @@ true = Always ON<p>  Default: true</p>
     <tr>
       <td>current</td>
       <td>UInt16</td>
-      <td>The measured current (in A).<p>  Default: 0</p>
+      <td>The measured current (in mA).<p>  Default: 0</p>
 </td>
       <td>RW</td>
     </tr>
