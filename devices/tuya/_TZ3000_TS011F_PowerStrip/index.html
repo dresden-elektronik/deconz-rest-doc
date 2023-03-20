@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>AQSZB-110 TVOC sensor - deCONZ REST-API</title>
+    <title>Tuya Powerstrip w/USB - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "AQSZB-110 TVOC sensor";
-        var mkdocs_page_input_path = "devices/frient/aqszb-110_voc_sensor.md";
+        var mkdocs_page_name = "Tuya Powerstrip w/USB";
+        var mkdocs_page_input_path = "devices/tuya/_TZ3000_TS011F_PowerStrip.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -104,9 +104,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>AQSZB-110 TVOC sensor</li>
+      <li>Tuya Powerstrip w/USB</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/frient/aqszb-110_voc_sensor.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/tuya/_TZ3000_TS011F_PowerStrip.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -114,8 +114,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="aqszb-110-tvoc-sensor">AQSZB-110 TVOC sensor<a class="headerlink" href="#aqszb-110-tvoc-sensor" title="Permanent link">&para;</a></h1>
-<p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/frient/aqszb-110_voc_sensor.json">aqszb-110_voc_sensor.json</a>
+                <h1 id="tuya-powerstrip-wusb">Tuya Powerstrip w/USB<a class="headerlink" href="#tuya-powerstrip-wusb" title="Permanent link">&para;</a></h1>
+<p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/tuya/_TZ3000_TS011F_PowerStrip.json">_TZ3000_TS011F_PowerStrip.json</a>
 </p>
 <table>
   <thead>
@@ -124,26 +124,28 @@
   <tbody>
     <tr>
       <td>status</td>
-      <td>Gold</td>
+      <td>Silver</td>
     </tr>
     <tr>
       <td>product</td>
-      <td>AQSZB-110 TVOC sensor</td>
+      <td>Tuya Powerstrip w/USB</td>
     </tr>
     <tr>
       <td>modelid</td>
-      <td>AQSZB-110</td>
+      <td>TS011F<br/>
+TS011F</td>
     </tr>
     <tr>
       <td>manufacturername</td>
-      <td>frient A/S</td>
+      <td>_TZ3000_cfnprab5<br/>
+_TZ3000_o005nuxx</td>
     </tr>
   </tbody>
 </table>
 
 <hr/>
-<h2 id="1-zhaairquality">1. ZHAAirQuality<a class="headerlink" href="#1-zhaairquality" title="Permanent link">&para;</a></h2>
-<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+<h2 id="1-onoff-plug-in-unit">1. On/Off plug-in unit<a class="headerlink" href="#1-onoff-plug-in-unit" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
 </p>
 <h3 id="top-level-attributes">Top level attributes<a class="headerlink" href="#top-level-attributes" title="Permanent link">&para;</a></h3>
 <table>
@@ -172,13 +174,15 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"frient A/S"</td>
+      <td>"_TZ3000_cfnprab5"<br/>
+"_TZ3000_o005nuxx"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"AQSZB-110"</td>
+      <td>"TS011F"<br/>
+"TS011F"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -196,7 +200,7 @@
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHAAirQuality"</td>
+      <td>"On/Off plug-in unit"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -204,24 +208,6 @@
       <td>String</td>
       <td>Unique identifier of the resource.</td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>manufacturername</td>
-      <td>String</td>
-      <td>"frient A/S"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>String</td>
-      <td>"AQSZB-110"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of the resource.</td>
-      <td>RW</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -232,42 +218,13 @@
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHAAirQuality"</td>
+      <td>"On/Off plug-in unit"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>uniqueid</td>
       <td>String</td>
       <td>Unique identifier of the resource.</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="config-attributes">Config attributes<a class="headerlink" href="#config-attributes" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>battery</td>
-      <td>UInt8</td>
-      <td>The current device battery level in 0&ndash;100&thinsp;%.<p>  Default: 0</p>
-</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>on</td>
-      <td>Bool</td>
-      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>reachable</td>
-      <td>Bool</td>
-      <td>When true the device is assumed to be operational.</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -280,29 +237,35 @@
   </thead>
   <tbody>
     <tr>
-      <td>airqualityppb</td>
-      <td>UInt16</td>
-      <td>Measured tVOC level in ppb.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>airquality</td>
+      <td>alert</td>
       <td>String</td>
-      <td>Text representation of the air quality based on tVOC level.</td>
-      <td>R</td>
+      <td>The currently active alert effect.<p>  Default: none</p>
+<ul class="value-list">
+<li>"none" &mdash; light is not performing an alert</li>
+<li>"select" &mdash; light is blinking a short time</li>
+<li>"lselect" &mdash; light is blinking a longer time</li>
+</ul>
+</td>
+      <td>RW</td>
     </tr>
     <tr>
-      <td>lastupdated</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp when state was last updated.</td>
+      <td>on</td>
+      <td>Bool</td>
+      <td>True when device is on; false when off.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
       <td>R</td>
     </tr>
   </tbody>
 </table>
 
 <hr/>
-<h2 id="2-zhatemperature">2. ZHATemperature<a class="headerlink" href="#2-zhatemperature" title="Permanent link">&para;</a></h2>
-<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+<h2 id="2-onoff-plug-in-unit">2. On/Off plug-in unit<a class="headerlink" href="#2-onoff-plug-in-unit" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
 </p>
 <h3 id="top-level-attributes_1">Top level attributes<a class="headerlink" href="#top-level-attributes_1" title="Permanent link">&para;</a></h3>
 <table>
@@ -331,13 +294,15 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"frient A/S"</td>
+      <td>"_TZ3000_cfnprab5"<br/>
+"_TZ3000_o005nuxx"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"AQSZB-110"</td>
+      <td>"TS011F"<br/>
+"TS011F"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -355,7 +320,7 @@
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHATemperature"</td>
+      <td>"On/Off plug-in unit"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -363,24 +328,6 @@
       <td>String</td>
       <td>Unique identifier of the resource.</td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>manufacturername</td>
-      <td>String</td>
-      <td>"frient A/S"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>String</td>
-      <td>"AQSZB-110"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of the resource.</td>
-      <td>RW</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -391,49 +338,13 @@
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHATemperature"</td>
+      <td>"On/Off plug-in unit"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>uniqueid</td>
       <td>String</td>
       <td>Unique identifier of the resource.</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="config-attributes_1">Config attributes<a class="headerlink" href="#config-attributes_1" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>battery</td>
-      <td>UInt8</td>
-      <td>The current device battery level in 0&ndash;100&thinsp;%.<p>  Default: 0</p>
-</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>offset</td>
-      <td>Int16</td>
-      <td>Relative offset to the main measured value.<p>  Default: 0</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>on</td>
-      <td>Bool</td>
-      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>reachable</td>
-      <td>Bool</td>
-      <td>When true the device is assumed to be operational.</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -446,24 +357,35 @@
   </thead>
   <tbody>
     <tr>
-      <td>lastupdated</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp when state was last updated.</td>
-      <td>R</td>
+      <td>alert</td>
+      <td>String</td>
+      <td>The currently active alert effect.<p>  Default: none</p>
+<ul class="value-list">
+<li>"none" &mdash; light is not performing an alert</li>
+<li>"select" &mdash; light is blinking a short time</li>
+<li>"lselect" &mdash; light is blinking a longer time</li>
+</ul>
+</td>
+      <td>RW</td>
     </tr>
     <tr>
-      <td>temperature</td>
-      <td>Int16</td>
-      <td>The current temperature in °C &times; 100.<p>  Default: 0</p>
-</td>
+      <td>on</td>
+      <td>Bool</td>
+      <td>True when device is on; false when off.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
       <td>R</td>
     </tr>
   </tbody>
 </table>
 
 <hr/>
-<h2 id="3-zhahumidity">3. ZHAHumidity<a class="headerlink" href="#3-zhahumidity" title="Permanent link">&para;</a></h2>
-<p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
+<h2 id="3-onoff-plug-in-unit">3. On/Off plug-in unit<a class="headerlink" href="#3-onoff-plug-in-unit" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
 </p>
 <h3 id="top-level-attributes_2">Top level attributes<a class="headerlink" href="#top-level-attributes_2" title="Permanent link">&para;</a></h3>
 <table>
@@ -492,13 +414,15 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"frient A/S"</td>
+      <td>"_TZ3000_cfnprab5"<br/>
+"_TZ3000_o005nuxx"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"AQSZB-110"</td>
+      <td>"TS011F"<br/>
+"TS011F"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -516,7 +440,7 @@
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHAHumidity"</td>
+      <td>"On/Off plug-in unit"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -524,24 +448,6 @@
       <td>String</td>
       <td>Unique identifier of the resource.</td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>manufacturername</td>
-      <td>String</td>
-      <td>"frient A/S"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>String</td>
-      <td>"AQSZB-110"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of the resource.</td>
-      <td>RW</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -552,49 +458,13 @@
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHAHumidity"</td>
+      <td>"On/Off plug-in unit"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>uniqueid</td>
       <td>String</td>
       <td>Unique identifier of the resource.</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="config-attributes_2">Config attributes<a class="headerlink" href="#config-attributes_2" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>battery</td>
-      <td>UInt8</td>
-      <td>The current device battery level in 0&ndash;100&thinsp;%.<p>  Default: 0</p>
-</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>offset</td>
-      <td>Int16</td>
-      <td>Relative offset to the main measured value.<p>  Default: 0</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>on</td>
-      <td>Bool</td>
-      <td>When true the sensor is enabled in rules.<p>  Default: true</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>reachable</td>
-      <td>Bool</td>
-      <td>When true the device is assumed to be operational.</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -607,16 +477,267 @@
   </thead>
   <tbody>
     <tr>
-      <td>humidity</td>
-      <td>UInt16</td>
-      <td>The current relative humidity in percent.<p>  Default: 0</p>
+      <td>alert</td>
+      <td>String</td>
+      <td>The currently active alert effect.<p>  Default: none</p>
+<ul class="value-list">
+<li>"none" &mdash; light is not performing an alert</li>
+<li>"select" &mdash; light is blinking a short time</li>
+<li>"lselect" &mdash; light is blinking a longer time</li>
+</ul>
 </td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>True when device is on; false when off.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+<h2 id="4-onoff-plug-in-unit">4. On/Off plug-in unit<a class="headerlink" href="#4-onoff-plug-in-unit" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
+</p>
+<h3 id="top-level-attributes_3">Top level attributes<a class="headerlink" href="#top-level-attributes_3" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
       <td>R</td>
     </tr>
     <tr>
-      <td>lastupdated</td>
+      <td>lastannounced</td>
       <td>ISO 8601 timestamp</td>
-      <td>Timestamp when state was last updated.</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"_TZ3000_cfnprab5"<br/>
+"_TZ3000_o005nuxx"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"TS011F"<br/>
+"TS011F"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"On/Off plug-in unit"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"On/Off plug-in unit"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_3">State attributes<a class="headerlink" href="#state-attributes_3" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>alert</td>
+      <td>String</td>
+      <td>The currently active alert effect.<p>  Default: none</p>
+<ul class="value-list">
+<li>"none" &mdash; light is not performing an alert</li>
+<li>"select" &mdash; light is blinking a short time</li>
+<li>"lselect" &mdash; light is blinking a longer time</li>
+</ul>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>True when device is on; false when off.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+<h2 id="5-onoff-plug-in-unit">5. On/Off plug-in unit<a class="headerlink" href="#5-onoff-plug-in-unit" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
+</p>
+<h3 id="top-level-attributes_4">Top level attributes<a class="headerlink" href="#top-level-attributes_4" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"_TZ3000_cfnprab5"<br/>
+"_TZ3000_o005nuxx"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"TS011F"<br/>
+"TS011F"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"On/Off plug-in unit"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"On/Off plug-in unit"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_4">State attributes<a class="headerlink" href="#state-attributes_4" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>alert</td>
+      <td>String</td>
+      <td>The currently active alert effect.<p>  Default: none</p>
+<ul class="value-list">
+<li>"none" &mdash; light is not performing an alert</li>
+<li>"select" &mdash; light is blinking a short time</li>
+<li>"lselect" &mdash; light is blinking a longer time</li>
+</ul>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>True when device is on; false when off.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
       <td>R</td>
     </tr>
   </tbody>
