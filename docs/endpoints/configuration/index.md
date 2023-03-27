@@ -176,7 +176,7 @@ ETag: "203941fel3ds8ad61903224"
         <tr>
             <td>gateway</td>
             <td>String</td>
-            <td>IPv4 address of the gateway.</td>
+            <td>IPv4 network gateway of the gateway.</td>
         </tr>
         <tr>
             <td>ipaddress</td>
@@ -249,7 +249,7 @@ ETag: "203941fel3ds8ad61903224"
             <td>Is true when the deCONZ is connected with the firmware and the Zigbee network is up.</td>
         </tr>
         <tr>
-            <td>softwareupdate</td>
+            <td>swupdate2</td>
             <td>Object</td>
             <td>Contains information related to software updates.</td>
         </tr>

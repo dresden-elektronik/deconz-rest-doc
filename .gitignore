@@ -1,6 +1,7 @@
 site/*
 _theme_packages/*
 docs/devices
+.devcontainer/
 
 Thumbs.db
 .DS_Store
