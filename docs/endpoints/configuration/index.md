@@ -862,7 +862,7 @@ HTTP/1.1 200 OK
 
 ## Reset password<a name="resetpw">&nbsp;</a>
 
-    DELETE /api/<apikey>/config/password
+    DELETE /api/config/password
 
 Resets the username and password to default username = “delight” and password = "delight”. The request can only succeed within 10 minutes after gateway start.
 
