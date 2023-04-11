@@ -95,58 +95,58 @@ HTTP/1.1 200 OK
 <pre class="highlight">
 <code>
 {
-  "1": {
-    "action": {
-      "bri": 0,
-      "ct": 500,
-      "effect": "none",
-      "hue": 0,
-      "on": false,
-      "sat": 0,
-      "xy": [ 0, 0 ]
+    "1": {
+        "action": {
+            "bri": 0,
+            "ct": 500,
+            "effect": "none",
+            "hue": 0,
+            "on": false,
+            "sat": 0,
+            "xy": [ 0, 0 ]
+        },
+        "devicemembership": [],
+        "etag": "0b32030b31ef30a4446c9adff6a6f9e5",
+        "hidden": false,
+        "id": "1",
+        "lights": [ "3","42","43" ],
+        "lightsequence": [ "42","43","3" ],
+        "multideviceids": ["2"],
+        "name": "Livingroom",
+        "scenes": [
+            { "id": "1", "name": "warmlight" }
+        ],
+        "state": {
+            "all_on": false,
+            "any_on": false
+        }
     },
-    "devicemembership": [],
-    "etag": "0b32030b31ef30a4446c9adff6a6f9e5",
-    "hidden": false,
-    "id": "1",
-    "lights": [ "3","42","43" ],
-    "lightsequence": [ "42","43","3" ],
-    "multideviceids": ["2"],
-    "name": "Livingroom",
-    "scenes": [
-      { "id": "1", "name": "warmlight" }
-    ],
-    "state": {
-      "all_on": false,
-      "any_on": false
+    "2": {
+        "action": {
+            "bri": 50,
+            "ct": 500,
+            "effect": "none",
+            "hue": 0,
+            "on": true,
+            "sat": 0,
+            "xy": [ 0, 0 ]
+        },
+        "devicemembership": ["3"],
+        "etag": "030cf8c1c0025420f3a0659afab251f5",
+        "hidden" : false,
+        "id": "2",
+        "lights": [ "3","42","43" ],
+        "lightsequence": [ "42","43","3" ],
+        "multideviceids": ["2"],
+        "name": "Kitchen",
+        "scenes": [
+            { "id": "1", "name": "warmlight" }
+        ],
+        "state": {
+            "all_on": true,
+            "any_on": true
+        }
     }
-  },
-  "2": {
-    "action": {
-      "bri": 50,
-      "ct": 500,
-      "effect": "none",
-      "hue": 0,
-      "on": true,
-      "sat": 0,
-      "xy": [ 0, 0 ]
-    },
-    "devicemembership": ["3"],
-    "etag": "030cf8c1c0025420f3a0659afab251f5",
-    "hidden" : false,
-    "id": "2",
-    "lights": [ "3","42","43" ],
-    "lightsequence": [ "42","43","3" ],
-    "multideviceids": ["2"],
-    "name": "Kitchen",
-    "scenes": [
-      { "id": "1", "name": "warmlight" }
-    ],
-    "state": {
-      "all_on": true,
-      "any_on": true
-    }
-  }
 }
 </code>
 </pre>
@@ -202,8 +202,8 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
         { "id": "1", "name": "warmlight" }
     ],
     "state": {
-      "all_on": false,
-      "any_on": false
+        "all_on": false,
+        "any_on": false
     }
 }
 </code>
@@ -353,7 +353,62 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>The type of the group. Currently only "LightGroup" supported.</td>
+      <td>The type of the group. LightGroup by default
+        <ul>
+          <li>LightGroup</li>
+          <li>Luminaire</li>
+          <li>Lightsource</li>
+          <li>Room</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td>The class of the group, only for "Room" groups.
+        <ul>
+          <li>Attic</li>
+          <li>Balcony</li>
+          <li>Barbecue</li>
+          <li>Bathroom</li>
+          <li>Bedroom</li>
+          <li>Carport</li>
+          <li>Closet</li>
+          <li>Computer</li>
+          <li>Dining</li>
+          <li>Downstairs</li>
+          <li>Driveway</li>
+          <li>Front door</li>
+          <li>Garage</li>
+          <li>Garden</li>
+          <li>Guest room</li>
+          <li>Gym</li>
+          <li>Hallway</li>
+          <li>Home</li>
+          <li>Kids bedroom</li>
+          <li>Kitchen</li>
+          <li>Laundry room</li>
+          <li>Living room</li>
+          <li>Lounge</li>
+          <li>Man cave</li>
+          <li>Music</li>
+          <li>Nursery</li>
+          <li>Office</li>
+          <li>Other</li>
+          <li>Pool</li>
+          <li>Porch</li>
+          <li>Reading</li>
+          <li>Recreation</li>
+          <li>Staircase</li>
+          <li>Storage</li>
+          <li>Studio</li>
+          <li>TV</li>
+          <li>Terrace</li>
+          <li>Toilet</li>
+          <li>Top floor</li>
+          <li>Upstairs</li>
+        </ul>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -415,10 +470,10 @@ Sets attributes of a group which are not related to its state.
 </table>
 
 ### Example request data
-    {
-        "name": "Living Room",
-        "lights": [ "1", "4" ]
-    }
+{
+    "name": "Living Room",
+    "lights": [ "1", "4" ]
+}
 
 ### Response
 <pre class="headers">
