@@ -321,6 +321,11 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
       <td>Bool</td>
       <td>true if any light of the group is on.</td>
     </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>The type of the group. Currently only "LightGroup" supported.</td>
+    </tr>
   </tbody>
 </table>
 
