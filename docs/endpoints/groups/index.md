@@ -95,52 +95,58 @@ HTTP/1.1 200 OK
 <pre class="highlight">
 <code>
 {
-    "1": {
-      "action": {
-        "bri": 0,
-        "ct": 500,
-        "effect": "none",
-        "hue": 0,
-        "on": false,
-        "sat": 0,
-        "xy": [ 0, 0 ]
-      },
-      "devicemembership": [],
-      "etag": "0b32030b31ef30a4446c9adff6a6f9e5",
-      "hidden": false,
-      "id": "1",
-      "lights": [ "3","42","43" ],
-      "lightsequence": [ "42","43","3" ],
-      "multideviceids": ["2"],
-      "name": "Livingroom",
-      "scenes": [
-        { "id": "1", "name": "warmlight" }
-      ],
-      "state": 0
+  "1": {
+    "action": {
+      "bri": 0,
+      "ct": 500,
+      "effect": "none",
+      "hue": 0,
+      "on": false,
+      "sat": 0,
+      "xy": [ 0, 0 ]
     },
-    "2": {
-      "action": {
-          "bri": 0,
-          "ct": 500,
-          "effect": "none",
-          "hue": 0,
-          "on": false,
-          "sat": 0,
-          "xy": [ 0, 0 ]
-        },
-        "devicemembership": ["3"],
-        "etag": "030cf8c1c0025420f3a0659afab251f5",
-        "hidden" : false,
-        "id": "2",
-        "lights": [ "3","42","43" ],
-        "lightsequence": [ "42","43","3" ],
-        "multideviceids": ["2"],
-        "name": "Kitchen",
-        "scenes": [
-          { "id": "1", "name": "warmlight" }
-        ],
-        "state": 0
+    "devicemembership": [],
+    "etag": "0b32030b31ef30a4446c9adff6a6f9e5",
+    "hidden": false,
+    "id": "1",
+    "lights": [ "3","42","43" ],
+    "lightsequence": [ "42","43","3" ],
+    "multideviceids": ["2"],
+    "name": "Livingroom",
+    "scenes": [
+      { "id": "1", "name": "warmlight" }
+    ],
+    "state": {
+      "all_on": false,
+      "any_on": false
     }
+  },
+  "2": {
+    "action": {
+      "bri": 50,
+      "ct": 500,
+      "effect": "none",
+      "hue": 0,
+      "on": true,
+      "sat": 0,
+      "xy": [ 0, 0 ]
+    },
+    "devicemembership": ["3"],
+    "etag": "030cf8c1c0025420f3a0659afab251f5",
+    "hidden" : false,
+    "id": "2",
+    "lights": [ "3","42","43" ],
+    "lightsequence": [ "42","43","3" ],
+    "multideviceids": ["2"],
+    "name": "Kitchen",
+    "scenes": [
+      { "id": "1", "name": "warmlight" }
+    ],
+    "state": {
+      "all_on": true,
+      "any_on": true
+    }
+  }
 }
 </code>
 </pre>
@@ -195,7 +201,10 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
     "scenes": [
         { "id": "1", "name": "warmlight" }
     ],
-    "state": 0
+    "state": {
+      "all_on": false,
+      "any_on": false
+    }
 }
 </code>
 </pre>
@@ -299,8 +308,18 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
     </tr>
     <tr>
       <td>state</td>
-      <td>Number</td>
-      <td>Deprecated - will be removed in future.</td>
+      <td>Object</td>
+      <td>The state of the group.</td>
+    </tr>
+    <tr>
+      <td>state.all_on</td>
+      <td>Bool</td>
+      <td>true if all lights of the group are on.</td>
+    </tr>
+    <tr>
+      <td>state.any_on</td>
+      <td>Bool</td>
+      <td>true if any light of the group is on.</td>
     </tr>
   </tbody>
 </table>
