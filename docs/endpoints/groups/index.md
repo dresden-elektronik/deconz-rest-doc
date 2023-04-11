@@ -323,7 +323,7 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
     <tr>
       <td>multideviceids</td>
       <td>Array</td>
-      <td>A list of light ids of this group that are subsequent ids from multidvices with multiple endpoints like the FLS-PP.</td>
+      <td>A list of light ids of this group that are subsequent ids from multidevices with multiple endpoints like the FLS-PP.</td>
     </tr>
     <tr>
       <td>name</td>
