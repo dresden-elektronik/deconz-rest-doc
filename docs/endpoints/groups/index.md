@@ -321,7 +321,7 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
       <td>A list of light ids of this group that can be sorted by the user. Need not to contain all light ids of this group.</td>
     </tr>
     <tr>
-      <td>mulitdeviceids</td>
+      <td>multideviceids</td>
       <td>Array</td>
       <td>A list of light ids of this group that are subsequent ids from multidvices with multiple endpoints like the FLS-PP.</td>
     </tr>
@@ -406,7 +406,7 @@ Sets attributes of a group which are not related to its state.
       <td>optional</td>
     </tr>
     <tr>
-      <td>mulitdeviceids</td>
+      <td>multideviceids</td>
       <td>Array</td>
       <td>Append the subsequential light ids of multidevices like the FLS-PP if the app should handle that light differently.</td>
       <td>optional</td>
