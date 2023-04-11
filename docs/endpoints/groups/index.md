@@ -227,9 +227,33 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
       <td>true if the group was turned on.</td>
     </tr>
     <tr>
+      <td>action.alert</td>
+      <td>String</td>
+      <td>
+        <p>Temporary alert effect.</p>
+        <ul class="value-list">
+          <li>"none" &mdash; group's lights is not performing an alert</li>
+          <li>"select" &mdash; group's lights is blinking a short time</li>
+          <li>"lselect" &mdash; group's lights is blinking a longer time</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>action.bri</td>
       <td>Number (0&ndash;255)</td>
       <td>Brightness of the group. Depending on the lights 0 might not mean visible "off" but minimum brightness.</td>
+    </tr>
+    <tr>
+      <td>action.colormode</td>
+      <td>String</td>
+      <td>
+        <p>The current color mode of the group's lights:</p>
+        <ul class="value-list">
+          <li>"hs" &mdash; hue and saturation</li>
+          <li>"xy" &mdash; CIE xy values</li>
+          <li>"ct" &mdash; color temperature</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td>action.hue</td>
@@ -260,6 +284,11 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
           <li>colorloop</li>
         </ul>
       </td>
+    </tr>
+    <tr>
+      <td>action.scene</td>
+      <td>String | null</td>
+      <td>Last scene called</td>
     </tr>
     <tr>
       <td>devicemembership</td>
