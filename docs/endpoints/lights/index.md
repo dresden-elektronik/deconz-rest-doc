@@ -29,7 +29,7 @@ HTTP/1.1 200 OK
     "1": {
         "etag": "026bcfe544ad76c7534e5ca8ed39047c",
         "hascolor": true,
-        "manufacturer": "dresden elektronik",
+        "manufacturername": "dresden elektronik",
         "modelid": "FLS-PP3",
         "name": "Light 1",
         "pointsymbol": {},
@@ -53,7 +53,7 @@ HTTP/1.1 200 OK
     "2": {
         "etag": "026bcfe544ad76c7534e5ca8ed39047c",
         "hascolor": false,
-        "manufacturer": "dresden elektronik",
+        "manufacturername": "dresden elektronik",
         "modelid": "FLS-PP3 White",
         "name": "Light 2",
         "pointsymbol": {},
@@ -104,7 +104,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 {
         "etag": "026bcfe544ad76c7534e5ca8ed39047c",
         "hascolor": true,
-        "manufacturer": "dresden elektronik",
+        "manufacturername": "dresden elektronik",
         "modelid": "FLS-PP3",
         "name": "Light 1",
         "pointsymbol": {},
@@ -170,9 +170,9 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>Indicates if the light can change color. Deprecated - use state instead: if light has no color colormode, hue and xy will not be shown.</td>
     </tr>
     <tr>
-      <td>manufacturer</td>
+      <td>manufacturername</td>
       <td>String</td>
-      <td>The manufacturer of the light device.</td>
+      <td>The manufacturer name of the light device.</td>
     </tr>
     <tr>
       <td>name</td>
@@ -218,11 +218,6 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
       <td>state.bri</td>
       <td>Number (0&ndash;255)</td>
       <td>Brightness of the light. Depending on the light type 0 might not mean visible "off" but minimum brightness.</td>
-    </tr>
-    <tr>
-      <td>state.effect</td>
-      <td>Number (0&ndash;7)</td>
-      <td>Run special scenes (if supported).</td>
     </tr>
     <tr>
       <td>state.hue</td>
