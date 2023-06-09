@@ -1,5 +1,5 @@
 ---
-title: About REST
+title: About RESTedit
 
 ---
 
