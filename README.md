@@ -23,6 +23,7 @@ To edit files locally and review the changes before creating a pull request, you
 2. Install MkDocs;
 ```
 cd deconz-rest-doc
+python -m venv venv
 source venv/bin/activate
 pip install mkdocs
 ```
