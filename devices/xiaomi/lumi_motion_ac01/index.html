@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Aqara FP1 human presence sensor RTCZCGQ11LM - deCONZ REST-API</title>
+    <title>Aqara FP1 Human Presence Sensor RTCZCGQ11LM - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Aqara FP1 human presence sensor RTCZCGQ11LM";
+        var mkdocs_page_name = "Aqara FP1 Human Presence Sensor RTCZCGQ11LM";
         var mkdocs_page_input_path = "devices/xiaomi/lumi_motion_ac01.md";
         var mkdocs_page_url = null;
       </script>
@@ -55,6 +55,8 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/alarmsystems/">Alarm Systems</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/configuration/">Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/ddf/">Device Description Files (DDF)</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/groups/">Groups</a>
                   </li>
@@ -104,7 +106,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>Aqara FP1 human presence sensor RTCZCGQ11LM</li>
+      <li>Aqara FP1 Human Presence Sensor RTCZCGQ11LM</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/xiaomi/lumi_motion_ac01.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -114,7 +116,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="aqara-fp1-human-presence-sensor-rtczcgq11lm">Aqara FP1 human presence sensor RTCZCGQ11LM<a class="headerlink" href="#aqara-fp1-human-presence-sensor-rtczcgq11lm" title="Permanent link">&para;</a></h1>
+                <h1 id="aqara-fp1-human-presence-sensor-rtczcgq11lm">Aqara FP1 Human Presence Sensor RTCZCGQ11LM<a class="headerlink" href="#aqara-fp1-human-presence-sensor-rtczcgq11lm" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/xiaomi/lumi_motion_ac01.json">lumi_motion_ac01.json</a>
 </p>
 <table>
@@ -128,7 +130,7 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>Aqara FP1 human presence sensor RTCZCGQ11LM</td>
+      <td>Aqara FP1 Human Presence Sensor RTCZCGQ11LM</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -257,6 +259,13 @@
       <td>R</td>
     </tr>
     <tr>
+      <td>reportgrid</td>
+      <td>Bool</td>
+      <td>Report detailed presence detection grid data (e.g. Aqara FP1).<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>resetpresence</td>
       <td>Bool</td>
       <td>Reset the presence state for devices supporting it (e.g. Aqara FP1).<p>  Default: false</p>
@@ -280,6 +289,12 @@
       <td>UInt8</td>
       <td>The maximum sensor sensitivity.<p>  Default: 2</p>
 </td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>temperature</td>
+      <td>UInt8</td>
+      <td>The current device temperature in °C.</td>
       <td>R</td>
     </tr>
     <tr>

@@ -56,6 +56,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/configuration/">Configuration</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/ddf/">Device Description Files (DDF)</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/groups/">Groups</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/lights/">Lights</a>
@@ -205,12 +207,6 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
-    <tr>
-      <td>powerup</td>
-      <td>UInt32</td>
-      <td>Powerup mode of a device.</td>
-      <td>RW</td>
-    </tr>
   </tbody>
 </table>
 
@@ -221,24 +217,39 @@
   </thead>
   <tbody>
     <tr>
-      <td>colorcapabilities</td>
-      <td>UInt16</td>
-      <td>Deprecated. The supported color capabilities as bitmap. <em class="deprecated">deprecated</em></td>
-      <td>R</td>
+      <td>bri/execute_if_off</td>
+      <td>Bool</td>
+      <td>Execute brightness changes when the device is off.<p>  Default: true</p>
+</td>
+      <td>RW</td>
     </tr>
     <tr>
-      <td>ctmax</td>
-      <td>UInt16</td>
-      <td>Deprecated. Maximum supported color temperature. <em class="deprecated">deprecated</em><p>  Default: 0xfeff</p>
+      <td>bri/startup</td>
+      <td>UInt8</td>
+      <td>Brightness on device startup (power on).<p>  Default: 255</p>
 </td>
-      <td>R</td>
+      <td>RW</td>
     </tr>
     <tr>
-      <td>ctmin</td>
+      <td>color/ct/startup</td>
       <td>UInt16</td>
-      <td>Deprecated. Minimum supported color temperature. <em class="deprecated">deprecated</em><p>  Default: 0</p>
+      <td>Color temperature on device startup (power on).<p>  Default: 336</p>
 </td>
-      <td>R</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>color/execute_if_off</td>
+      <td>Bool</td>
+      <td>Execute colour changes when the device is off.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>on/startup</td>
+      <td>UInt8</td>
+      <td>On/Off state on device startup (power on).<p>  Default: 255</p>
+</td>
+      <td>RW</td>
     </tr>
   </tbody>
 </table>
@@ -262,9 +273,45 @@
       <td>RW</td>
     </tr>
     <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>True when device is on; false when off.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>bri</td>
       <td>UInt8</td>
       <td>The current brightness.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>x</td>
+      <td>UInt16</td>
+      <td>The current color x coordinate.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>y</td>
+      <td>UInt16</td>
+      <td>The current color y coordinate.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>ct</td>
+      <td>UInt16</td>
+      <td>The current Mired color temperature of the light. Where Mired is 1000000 / color temperature (in kelvins).</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>hue</td>
+      <td>UInt16</td>
+      <td>The current color hue.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>sat</td>
+      <td>UInt8</td>
+      <td>The current color saturation.</td>
       <td>RW</td>
     </tr>
     <tr>
@@ -279,57 +326,10 @@
       <td>R</td>
     </tr>
     <tr>
-      <td>ct</td>
-      <td>UInt16</td>
-      <td>The current Mired color temperature of the light. Where Mired is 1000000 / color temperature (in kelvins).</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>effect</td>
-      <td>String</td>
-      <td>The currently active effect.<p>  Default: none</p>
-<ul class="value-list">
-<li>"none" &mdash; no effect is active</li>
-<li>"colorloop" &mdash; colorloop through hue values</li>
-</ul>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>hue</td>
-      <td>UInt16</td>
-      <td>The current color hue.</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>on</td>
-      <td>Bool</td>
-      <td>True when device is on; false when off.</td>
-      <td>RW</td>
-    </tr>
-    <tr>
       <td>reachable</td>
       <td>Bool</td>
       <td>When true the device is assumed to be operational.</td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>sat</td>
-      <td>UInt8</td>
-      <td>The current color saturation.</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>x</td>
-      <td>UInt16</td>
-      <td>The current color x coordinate.</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>y</td>
-      <td>UInt16</td>
-      <td>The current color y coordinate.</td>
-      <td>RW</td>
     </tr>
   </tbody>
 </table>

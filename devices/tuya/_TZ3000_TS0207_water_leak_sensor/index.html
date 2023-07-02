@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Tuya based Flooding detector - deCONZ REST-API</title>
+    <title>Tuya water leak sensor - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Tuya based Flooding detector";
+        var mkdocs_page_name = "Tuya water leak sensor";
         var mkdocs_page_input_path = "devices/tuya/_TZ3000_TS0207_water_leak_sensor.md";
         var mkdocs_page_url = null;
       </script>
@@ -55,6 +55,8 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/alarmsystems/">Alarm Systems</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/configuration/">Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/ddf/">Device Description Files (DDF)</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/groups/">Groups</a>
                   </li>
@@ -104,7 +106,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>Tuya based Flooding detector</li>
+      <li>Tuya water leak sensor</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/tuya/_TZ3000_TS0207_water_leak_sensor.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -114,7 +116,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="tuya-based-flooding-detector">Tuya based Flooding detector<a class="headerlink" href="#tuya-based-flooding-detector" title="Permanent link">&para;</a></h1>
+                <h1 id="tuya-water-leak-sensor">Tuya water leak sensor<a class="headerlink" href="#tuya-water-leak-sensor" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/tuya/_TZ3000_TS0207_water_leak_sensor.json">_TZ3000_TS0207_water_leak_sensor.json</a>
 </p>
 <table>
@@ -124,11 +126,11 @@
   <tbody>
     <tr>
       <td>status</td>
-      <td>Silver</td>
+      <td>Gold</td>
     </tr>
     <tr>
       <td>product</td>
-      <td>Tuya based Flooding detector</td>
+      <td>Tuya water leak sensor</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -138,17 +140,31 @@ TS0207<br/>
 TS0207<br/>
 TS0207<br/>
 TS0207<br/>
+TS0207<br/>
+TS0207<br/>
+TS0207<br/>
+TS0207<br/>
+TS0207<br/>
+TS0207<br/>
+TS0207<br/>
 TS0207</td>
     </tr>
     <tr>
       <td>manufacturername</td>
-      <td>_TZ3000_kyb656no<br/>
+      <td>_TZ3000_d16y6col<br/>
+_TZ3000_ww9i3e0y<br/>
+_TZ3000_qhozxs2b<br/>
+_TZ3000_85czd6fy<br/>
+_TZ3000_ocjlo4ea<br/>
+_TZ3000_kyb656no<br/>
 _TZ3000_fxvjhdyl<br/>
 _TZ3000_eit7p838<br/>
 _TZ3000_t6jriawg<br/>
 _TZ3000_85czd6fy<br/>
 _TYZB01_sqmd19i1<br/>
-_TYZB01_o63ssaah</td>
+_TYZB01_o63ssaah<br/>
+_TZ3000_it1hm1cr<br/>
+_TZ3000_upgcbody</td>
     </tr>
   </tbody>
 </table>
@@ -184,19 +200,33 @@ _TYZB01_o63ssaah</td>
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"_TZ3000_kyb656no"<br/>
+      <td>"_TZ3000_d16y6col"<br/>
+"_TZ3000_ww9i3e0y"<br/>
+"_TZ3000_qhozxs2b"<br/>
+"_TZ3000_85czd6fy"<br/>
+"_TZ3000_ocjlo4ea"<br/>
+"_TZ3000_kyb656no"<br/>
 "_TZ3000_fxvjhdyl"<br/>
 "_TZ3000_eit7p838"<br/>
 "_TZ3000_t6jriawg"<br/>
 "_TZ3000_85czd6fy"<br/>
 "_TYZB01_sqmd19i1"<br/>
-"_TYZB01_o63ssaah"</td>
+"_TYZB01_o63ssaah"<br/>
+"_TZ3000_it1hm1cr"<br/>
+"_TZ3000_upgcbody"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
       <td>"TS0207"<br/>
+"TS0207"<br/>
+"TS0207"<br/>
+"TS0207"<br/>
+"TS0207"<br/>
+"TS0207"<br/>
+"TS0207"<br/>
+"TS0207"<br/>
 "TS0207"<br/>
 "TS0207"<br/>
 "TS0207"<br/>
@@ -228,24 +258,6 @@ _TYZB01_o63ssaah</td>
       <td>String</td>
       <td>Unique identifier of the resource.</td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>String</td>
-      <td>"TS0207"<br/>
-"TS0207"<br/>
-"TS0207"<br/>
-"TS0207"<br/>
-"TS0207"<br/>
-"TS0207"<br/>
-"TS0207"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of the resource.</td>
-      <td>RW</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -282,12 +294,6 @@ _TYZB01_o63ssaah</td>
       <td>R</td>
     </tr>
     <tr>
-      <td>enrolled</td>
-      <td>UInt32</td>
-      <td>State of IAS enrollment process.</td>
-      <td>RW</td>
-    </tr>
-    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>When true the sensor is enabled in rules.<p>  Default: true</p>
@@ -319,6 +325,18 @@ _TYZB01_o63ssaah</td>
       <td>lastupdated</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lowbattery</td>
+      <td>Bool</td>
+      <td>True when the device battery runs low.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>tampered</td>
+      <td>Bool</td>
+      <td>True when the device tampered alarm was triggered.</td>
       <td>R</td>
     </tr>
     <tr>

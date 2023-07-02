@@ -56,6 +56,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/configuration/">Configuration</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/ddf/">Device Description Files (DDF)</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/groups/">Groups</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/lights/">Lights</a>
@@ -228,6 +230,13 @@ Signify Netherlands B.V.</td>
       <td>String</td>
       <td>Name of the resource.</td>
       <td>RW</td>
+    </tr>
+    <tr>
+      <td>productname</td>
+      <td>String</td>
+      <td>Product name of the device.<p>  Default: Hue outdoor motion sensor</p>
+</td>
+      <td>R</td>
     </tr>
     <tr>
       <td>swversion</td>
@@ -421,6 +430,13 @@ Signify Netherlands B.V.</td>
       <td>R</td>
     </tr>
     <tr>
+      <td>productname</td>
+      <td>String</td>
+      <td>Product name of the device.<p>  Default: Hue outdoor light sensor</p>
+</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>swversion</td>
       <td>String</td>
       <td>Firmware version of the device.</td>
@@ -467,13 +483,6 @@ Signify Netherlands B.V.</td>
       <td>R</td>
     </tr>
     <tr>
-      <td>ledindication</td>
-      <td>Bool</td>
-      <td>Activates the LED indicator.<p>  Default: false</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>When true the sensor is enabled in rules.<p>  Default: true</p>
@@ -498,12 +507,6 @@ Signify Netherlands B.V.</td>
       <td>UInt16</td>
       <td>Relative offset to <code class="api-attribute">tholddark</code>. Sets <code class="api-attribute">daylight</code> attribute to true when when lightlevel is at or above (tholddark + tholdoffset).<p>  Default: 7000</p>
 </td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>usertest</td>
-      <td>Bool</td>
-      <td>Activates the user test mode.</td>
       <td>RW</td>
     </tr>
   </tbody>
@@ -619,6 +622,13 @@ Signify Netherlands B.V.</td>
       <td>R</td>
     </tr>
     <tr>
+      <td>productname</td>
+      <td>String</td>
+      <td>Product name of the device.<p>  Default: Hue outdoor temp. sensor</p>
+</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>swversion</td>
       <td>String</td>
       <td>Firmware version of the device.</td>
@@ -665,13 +675,6 @@ Signify Netherlands B.V.</td>
       <td>R</td>
     </tr>
     <tr>
-      <td>ledindication</td>
-      <td>Bool</td>
-      <td>Activates the LED indicator.<p>  Default: false</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
       <td>offset</td>
       <td>Int16</td>
       <td>Relative offset to the main measured value.<p>  Default: 0</p>
@@ -690,12 +693,6 @@ Signify Netherlands B.V.</td>
       <td>Bool</td>
       <td>When true the device is assumed to be operational.</td>
       <td>R</td>
-    </tr>
-    <tr>
-      <td>usertest</td>
-      <td>Bool</td>
-      <td>Activates the user test mode.</td>
-      <td>RW</td>
     </tr>
   </tbody>
 </table>
