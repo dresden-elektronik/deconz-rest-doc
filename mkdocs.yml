@@ -19,6 +19,7 @@ nav:
     - 'API Endpoints':
       - endpoints/alarmsystems/index.md
       - endpoints/configuration/index.md
+      - endpoints/ddf/index.md
       - endpoints/groups/index.md
       - endpoints/lights/index.md
       - endpoints/rules/index.md
