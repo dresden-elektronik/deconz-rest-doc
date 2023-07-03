@@ -211,6 +211,26 @@ HTTP/1.1 200 OK
 
 ------------------------------------------------------
 
+## Get DDF bundle<a name="getddfbundle">&nbsp;</a>
+
+    GET /api/<apikey>/ddf/bundle/<sha256-hash>.ddf
+
+### Parameters
+
+None
+
+### Response
+
+The full DDF bundle as *&lt;sha25-hash&gt;.ddf* file.
+
+### Possible errors
+
+[403 Forbidden](../../misc/errors#403)
+
+[404 Not Found](../../misc/errors#404)
+
+------------------------------------------------------
+
 ## Upload DDF bundle<a name="uploadddfbundle">&nbsp;</a>
 
     POST /api/<apikey>/ddf/bundles
