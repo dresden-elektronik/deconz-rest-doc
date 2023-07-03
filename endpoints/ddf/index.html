@@ -96,15 +96,25 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#upload-ddf-bundle">Upload DDF bundle&nbsp;</a>
+    <li class="toctree-l2"><a class="reference internal" href="#get-ddf-bundle">Get DDF bundle&nbsp;</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#parameters_2">Parameters</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#example-request-data">Example request data</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#response_2">Response</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#possible-errors_2">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#upload-ddf-bundle">Upload DDF bundle&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_3">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_3">Possible errors</a>
     </li>
         </ul>
     </li>
@@ -351,11 +361,22 @@ Since the signatures are made over the SHA-256 hash it&rsquo;s easy to verify th
 <p><a href="../../misc/errors#403">403 Forbidden</a></p>
 <p><a href="../../misc/errors#404">404 Not Found</a></p>
 <hr />
+<h2 id="get-ddf-bundle">Get DDF bundle<a name="getddfbundle">&nbsp;</a><a class="headerlink" href="#get-ddf-bundle" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/ddf/bundle/&lt;sha256-hash&gt;.ddf
+</code></pre>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
+<p>The full DDF bundle as <em>&lt;sha25-hash&gt;.ddf</em> file.</p>
+<h3 id="possible-errors_2">Possible errors<a class="headerlink" href="#possible-errors_2" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+<hr />
 <h2 id="upload-ddf-bundle">Upload DDF bundle<a name="uploadddfbundle">&nbsp;</a><a class="headerlink" href="#upload-ddf-bundle" title="Permanent link">&para;</a></h2>
 <pre><code>POST /api/&lt;apikey&gt;/ddf/bundles
 </code></pre>
 <p>Uploads a DDF bundle so it can be used by DDF system.</p>
-<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
 <p>The DDF bundle is uploaded as <code>multipart/form-data</code>, which is used by HTML form input elements with <code>type="file"</code> (see: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition">MSDN</a>).</p>
 <h3 id="example-request-data">Example request data<a class="headerlink" href="#example-request-data" title="Permanent link">&para;</a></h3>
 <pre><code class="language-raw">POST /api/12345/ddf/bundles HTTP/1.1
@@ -368,7 +389,7 @@ Content-Disposition: form-data; name=&quot;ddfbundle&quot;; filename=&quot;examp
     ....... DDF bundle data .....
 --abcdef--
 </code></pre>
-<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
+<h3 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">&para;</a></h3>
 <pre class="headers">
 <code class="no-highlight">
 HTTP/1.1 200 OK
@@ -381,7 +402,7 @@ HTTP/1.1 200 OK
 </pre>
 
 <p>The returned <strong>id</strong> is the DDF bundle SHA-256 hash.</p>
-<h3 id="possible-errors_2">Possible errors<a class="headerlink" href="#possible-errors_2" title="Permanent link">&para;</a></h3>
+<h3 id="possible-errors_3">Possible errors<a class="headerlink" href="#possible-errors_3" title="Permanent link">&para;</a></h3>
 <p><a href="../../misc/errors#400">400 Bad Request</a></p>
 <p><a href="../../misc/errors#403">403 Forbidden</a></p>
 <hr />
