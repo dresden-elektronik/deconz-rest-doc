@@ -25,6 +25,7 @@ Endpoint                              | Description
 --------------------------------------|--------------------------
 [/alarmsystems](../endpoints/configuration) | Query and modify alarm systems configuration.
 [/config](../endpoints/configuration) | Query and modify the gateway configuration.
+[/devices](../endpoints/devices)      | Query and modify devices and their sub-devices.
 [/lights](../endpoints/lights)        | Query and control lights.
 [/sensors](../endpoints/sensors)      | Query and control sensors.
 [/groups](../endpoints/groups)        | Setup groups and scenes with lights and control them.
