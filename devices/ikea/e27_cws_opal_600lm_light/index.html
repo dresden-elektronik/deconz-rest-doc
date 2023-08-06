@@ -58,6 +58,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/ddf/">Device Description Files (DDF)</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/devices/">Devices</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/groups/">Groups</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../endpoints/lights/">Lights</a>
@@ -210,35 +212,6 @@
   </tbody>
 </table>
 
-<h3 id="config-attributes">Config attributes<a class="headerlink" href="#config-attributes" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>colorcapabilities</td>
-      <td>UInt16</td>
-      <td>Deprecated. The supported color capabilities as bitmap. <em class="deprecated">deprecated</em></td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>ctmin</td>
-      <td>UInt16</td>
-      <td>Deprecated. Minimum supported color temperature. <em class="deprecated">deprecated</em><p>  Default: 0</p>
-</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>ctmax</td>
-      <td>UInt16</td>
-      <td>Deprecated. Maximum supported color temperature. <em class="deprecated">deprecated</em><p>  Default: 0xfeff</p>
-</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
 <h3 id="state-attributes">State attributes<a class="headerlink" href="#state-attributes" title="Permanent link">&para;</a></h3>
 <table>
   <thead>
@@ -300,32 +273,6 @@
   </tbody>
 </table>
 
-<h3 id="example-output">Example output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h3>
-<pre><code>{
-  &quot;colorcapabilities&quot;: 0,
-  &quot;etag&quot;: &quot;08e72d5b3b4d09ea6eee75f92d85993f&quot;,
-  &quot;hascolor&quot;: true,
-  &quot;lastannounced&quot;: null,
-  &quot;lastseen&quot;: &quot;2021-03-28T16:01Z&quot;,
-  &quot;manufacturername&quot;: &quot;IKEA of Sweden&quot;,
-  &quot;modelid&quot;: &quot;TRADFRI bulb E27 CWS opal 600lm&quot;,
-  &quot;name&quot;: &quot;Color light 2&quot;,
-  &quot;state&quot;: {
-    &quot;alert&quot;: &quot;none&quot;,
-    &quot;bri&quot;: 0,
-    &quot;colormode&quot;: &quot;hs&quot;,
-    &quot;effect&quot;: &quot;none&quot;,
-    &quot;hue&quot;: 0,
-    &quot;on&quot;: false,
-    &quot;reachable&quot;: true,
-    &quot;sat&quot;: 0,
-    &quot;xy&quot;: [
-      0,
-      0
-    ]
-  }
-}
-</code></pre>
 <hr/>
 <h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
 <h3 id="radio-silence">Radio Silence<a class="headerlink" href="#radio-silence" title="Permanent link">&para;</a></h3>

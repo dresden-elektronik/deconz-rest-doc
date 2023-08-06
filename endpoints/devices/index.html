@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Devices - deCONZ REST-API</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Devices";
+        var mkdocs_page_input_path = "endpoints/devices/index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> deCONZ REST-API
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">General</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about_rest/">About REST</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting_started/">Getting Started</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API Endpoints</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../alarmsystems/">Alarm Systems</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ddf/">Device Description Files (DDF)</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Devices</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#get-all-devices">Get all Devices&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response">Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-device">Get Device&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_1">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_1">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pair-with-install-code">Pair with install code&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_2">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_1">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_2">Possible errors</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../groups/">Groups</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lights/">Lights</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rules/">Rules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../scenes/">Scenes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../schedules/">Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensors</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sensors/button_events/">Button Events</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../touchlink/">Touchlink</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../websocket/">Websocket</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../devices/">Supported Devices</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Misc</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../misc/discovery/">Discovery</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../misc/authorization/">Authorization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../misc/errors/">Error handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../misc/polling/">Polling</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">deCONZ REST-API</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>API Endpoints &raquo;</li>
+      <li>Devices</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/endpoints/devices/index.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="devices">Devices<a class="headerlink" href="#devices" title="Permanent link">&para;</a></h1>
+<p>The Devices endpoint can be used to obtain more details on a device and its capabilities. It is also used to pair devices by using zigbee install codes.</p>
+<h2 id="get-all-devices">Get all Devices<a name="getall">&nbsp;</a><a class="headerlink" href="#get-all-devices" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/devices
+</code></pre>
+<p>Returns a list of all devices. If there are no devices in the system, an empty object {} is returned.</p>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code class="no-highlight">
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[
+  "00:21:2e:ff:ff:47:62:36",
+  "00:15:8d:00:a3:b4:00:f2",
+  "00:15:8d:00:13:b9:29:e7"
+]
+</code>
+</pre>
+
+<h3 id="possible-errors">Possible errors<a class="headerlink" href="#possible-errors" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="get-device">Get Device<a name="getdevice">&nbsp;</a><a class="headerlink" href="#get-device" title="Permanent link">&para;</a></h2>
+<pre><code>GET /api/&lt;apikey&gt;/devices/&lt;device_mac_address&gt;
+</code></pre>
+<p>Returns the device details with the specified device MAC address.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The device MAC address in the request URL must be provided with colons!</p>
+</div>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code class="no-highlight">
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+{
+  "lastannounced": null,
+  "lastseen": "2023-08-05T20:04Z",
+  "manufacturername": "IKEA of Sweden",
+  "modelid": "TRADFRI remote control",
+  "name": "TRADFRI remote control",
+  "productid": "TRADFRI remote control E1810",
+  "subdevices": [
+    {
+      "config": {
+        "alert": {
+          "lastupdated": "2022-09-24T22:57:55Z",
+          "value": "none"
+        },
+        "battery": {
+          "lastupdated": "2023-03-10T00:47:58Z",
+          "value": 0
+        },
+        "group": {
+          "lastupdated": "2022-09-24T22:57:55Z",
+          "value": "8"
+        },
+        "on": {
+          "lastupdated": "2022-09-24T22:59:55Z",
+          "value": true
+        },
+        "reachable": {
+          "lastupdated": "2023-08-05T22:09:43Z",
+          "value": true
+        }
+      },
+      "state": {
+        "buttonevent": {
+          "lastupdated": "2022-09-24T23:03:58Z",
+          "value": 1002
+        }
+      },
+      "type": "ZHASwitch",
+      "uniqueid": "60:a4:23:ff:ba:f0:47:22-01-1000"
+    }
+  ],
+  "swversion": "2.3.014",
+  "uniqueid": "60:a4:23:ff:ba:f0:47:22"
+}
+</code>
+</pre>
+
+<h4 id="response-fields">Response fields<a class="headerlink" href="#response-fields" title="Permanent link">&para;</a></h4>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>General device information, config and state attributes of the defined subdevices with
+their respective values including last update time are presented.</p>
+</div>
+<h3 id="possible-errors_1">Possible errors<a class="headerlink" href="#possible-errors_1" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
+<hr />
+<h2 id="pair-with-install-code">Pair with install code<a name="installcode">&nbsp;</a><a class="headerlink" href="#pair-with-install-code" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/devices/&lt;device_mac_address&gt;/installcode
+</code></pre>
+<p>Pair a device by using zigbee install code.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The device MAC address in the request URL must be provided without colons!</p>
+</div>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>installcode</td>
+      <td>String</td>
+      <td>
+        <p>6, 8, 12 or 16 Byte device installation code, plus 2 Byte CRC.</p>
+        <p>This is an example of a 16 Byte code + 2 Byte CRC: 83FE D340 7A93 9723 A5C6 39B2 6916 D505 C3B5</p>
+      </td>
+      <td>required</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-request-data">Example request data<a class="headerlink" href="#example-request-data" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  "installcode": "83FED3407A939723A5C639B26916D505C3B5"
+}
+</code></pre>
+<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code class="no-highlight">
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+    {
+      "success": {
+        "installcode": "83FED3407A939723A5C639B26916D505C3B5",
+        "mmohash": "66B6900981E1EE3CA4206B6B861C02BB"
+      }
+    }
+</code>
+</pre>
+
+<h4 id="response-fields_1">Response fields<a class="headerlink" href="#response-fields_1" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>installcode</td>
+      <td>String</td>
+      <td>The device install code provided in the request.</td>
+    </tr>
+    <tr>
+      <td>mmohash</td>
+      <td>String</td>
+      <td>
+        <p>The Matyas-Meyer-Oseas (MMO) hash calculated based on the provided installation code.</p>
+        <p>It is automatically used by deCONZ to enable pairing with the target device.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="possible-errors_2">Possible errors<a class="headerlink" href="#possible-errors_2" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ddf/" class="btn btn-neutral float-left" title="Device Description Files (DDF)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../groups/" class="btn btn-neutral float-right" title="Groups">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../ddf/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../groups/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
