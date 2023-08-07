@@ -10,7 +10,7 @@ The Devices endpoint can be used to obtain more details on a device and its capa
 
     GET /api/<apikey>/devices
 
-Returns a list of all devices. If there are no devices in the system, an empty object {} is returned.
+Returns a list of all devices. If there are no devices in the system, an empty array [] is returned.
 
 ### Parameters
 
