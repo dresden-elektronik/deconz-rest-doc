@@ -4,11 +4,6 @@ title: Alarm Systems
 
 # Alarm Systems
 
-<mark>Work in progress</mark>
-
-!!! Important
-    This page serves as a Request For Comments (RFC); the beta API is available since v2.12.4-beta release.
-
 An alarm system uses sensors and keypads to implement a stateful security system. It can be disarmed, armed, and raises events when an alarm is triggered.
 
 
