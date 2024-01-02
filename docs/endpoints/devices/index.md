@@ -118,6 +118,7 @@ HTTP/1.1 200 OK
 
 [404 Not Found](../../misc/errors#404)
 
+
 ------------------------------------------------------
 
 ## Get Device DDF<a name="getdeviceddf">&nbsp;</a>
@@ -489,6 +490,86 @@ HTTP/1.1 200 OK
     The device returns the full DDF for the device.
 
 ### Possible errors
+
+[403 Forbidden](../../misc/errors#403)
+
+[404 Not Found](../../misc/errors#404)
+
+------------------------------------------------------
+
+## Set Device DDF<a name="setddf">&nbsp;</a>
+
+    PUT /api/<apikey>/devices/<device_mac_address>/ddf
+
+Set the mode to select DDF bundle for the device 
+
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>mode</td>
+      <td>String</td>
+      <td>"auto" - "manual"</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>hash</td>
+      <td>String</td>
+      <td>"bundle_hash"</td>
+      <td>required if mode is manual</td>
+    </tr>
+  </tbody>
+</table>
+
+By default the device will use the DDF bundle with the latest modified date and compatible with the current deCONZ version. Only DDF bundle with the stable signature will be used in the "auto" mode.
+
+If you want to use a specific DDF bundle, you can set the mode to "manual" and provide the hash of the DDF bundle.
+
+#### Response fields
+
+<pre class="headers">
+<code class="no-highlight">
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "mode": "auto" } } ]
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "mode": "manual", "bundle" : "bundle_hash" } } ]
+</code>
+</pre>
+
+### Possible errors
+
+<pre class="highlight">
+<code>
+{
+    "error": {
+        "type": 7,
+        "address": "devices/id",
+        "description": "Device not found"
+    }
+}
+</code>
+</pre>
+
+<pre class="highlight">
+<code>
+{
+    "error": {
+        "type": 7,
+        "address": "bundle/hash",
+        "description": "DDF Bundle not found"
+    }
+}
+</code>
+</pre>
 
 [403 Forbidden](../../misc/errors#403)
 
