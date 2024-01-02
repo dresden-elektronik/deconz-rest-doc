@@ -78,21 +78,25 @@ HTTP/1.1 200 OK
 <pre class="highlight">
 <code>
 {
-
   "12f39fa2bc4db1990715318e749d6270139609c68fb651a70c59339a91207450": {
-    "version": "1.2.5",
-    "version_deconz": ">2.19.3",
-    "last_modified": "2023-04-13T11:54:25Z",
-    "product": "STARKVIND Air purifier",
-    "device_identifiers": [
-      [
-        "IKEA of Sweden",
-        "STARKVIND Air purifier"
-      ],
-      [
-        "IKEA of Sweden",
-        "STARKVIND Air purifier table"
+    "desc": {
+      "version_deconz": ">2.19.3",
+      "last_modified": "2023-04-13T11:54:25Z",
+      "product": "STARKVIND Air purifier",
+      "device_identifiers": [
+        [
+          "IKEA of Sweden",
+          "STARKVIND Air purifier"
+        ],
+        [
+          "IKEA of Sweden",
+          "STARKVIND Air purifier table"
+        ]
       ]
+    },
+    "used_by": [
+      "00:15:8d:00:a3:b4:00:f2",
+      "00:15:8d:00:13:b9:29:e7"
     ]
   }
 }
@@ -141,20 +145,38 @@ HTTP/1.1 200 OK
 <pre class="highlight">
 <code>
 {
-    "version": "1.2.5",
+  "desc": {
+    "source": "https://deconz-community.github.io/ddf-store/XXXX/XXXX",
+    "last_modified": "2023-01-08T17:24:24z",
     "version_deconz": ">2.19.3",
-    "last_modified": "2023-04-13T11:54:25Z",
-    "product": "STARKVIND Air purifier",
+    "product": "acme 2000",
+    "product_localised": {
+      "de": "german product name",
+      "fr": "french product name"
+    },
+    "links": [
+      "url-to-forum-entry",
+      "url-to-github-entry"
+    ],
     "device_identifiers": [
-      [
-        "IKEA of Sweden",
-        "STARKVIND Air purifier"
-      ],
-      [
-        "IKEA of Sweden",
-        "STARKVIND Air purifier table"
-      ]
+      ["Philips", "acme 2000"],
+      ["Signify", "acme 200"]
     ]
+  },
+  "validation": {
+    "result": "success",
+    "version": "2.20.0"
+  },
+  "signatures": [
+    {
+      "key": "033a52651e5123e4c988ad0049a227bc4736f5ac1ffe2ce448642ac3808b442b7a",
+      "signature": "c9260ab14d316d61b4cb064574143d1b626e8d528494d3dca7fdffbd49e94b93633aafe83fde610859b88f2b125152d4cbcb025b2ef32bb27700a633dff32a9c"
+    }
+  ],
+  "used_by": [
+    "00:15:8d:00:a3:b4:00:f2",
+    "00:15:8d:00:13:b9:29:e7"
+  ]
 }
 </code>
 </pre>
