@@ -523,6 +523,9 @@ Delete a sensor.
 </table>
 
 ### Response
+
+Response when no reset option provided.
+
 <pre class="headers">
 <code class="no-highlight">
 HTTP/1.1 200 OK
@@ -531,9 +534,23 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 </pre>
 <pre class="highlight">
 <code>
-[ { "success": "1" } ]
+[ { "success": { "id": "1" } } ]
 </code>
 </pre>
+
+Response when reset option is provided.
+<pre class="headers">
+<code class="no-highlight">
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "/sensors/1/reset": false } } ]
+</code>
+</pre>
+
 
 ### Possible errors
 
