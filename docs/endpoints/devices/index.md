@@ -10,7 +10,7 @@ The Devices endpoint can be used to obtain more details on a device and its capa
 
     GET /api/<apikey>/devices
 
-Returns a list of all devices. If there are no devices in the system, an empty object {} is returned.
+Returns a list of all devices. If there are no devices in the system, an empty array [] is returned.
 
 ### Parameters
 
@@ -68,6 +68,7 @@ HTTP/1.1 200 OK
   "productid": "TRADFRI remote control E1810",
   "subdevices": [
     {
+      "endpoint": "/sensors/1",
       "config": {
         "alert": {
           "lastupdated": "2022-09-24T22:57:55Z",
