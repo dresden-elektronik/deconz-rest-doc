@@ -108,33 +108,7 @@ HTTP/1.1 200 OK
 
 #### Response fields
 
-<table class="table table-bordered">
-  <thead>
-    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>devicemembership</td>
-      <td>Array</td>
-      <td>If this group was created by a device (switch or sensor) this list contains the device ids.</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of a group.</td>
-    </tr>
-    <tr>
-      <td>etag</td>
-      <td>String</td>
-      <td>HTTP <a href="../../misc/polling#etag">etag</a> which changes on any action to the group.</td>
-    </tr>
-	<tr>
-      <td>hidden</td>
-      <td>Bool</td>
-      <td>Indicates if this group is hidden.</td>
-    </tr>
-  </tbody>
-</table>
+The whole group object as descripted in [Get group attributes](#getattr).
 
 ### Possible errors
 
@@ -205,9 +179,33 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
       <td>true if the group was turned on.</td>
     </tr>
     <tr>
+      <td>action.alert</td>
+      <td>String</td>
+      <td>
+        <p>Temporary alert effect.</p>
+        <ul class="value-list">
+          <li>"none" &mdash; group's lights is not performing an alert</li>
+          <li>"select" &mdash; group's lights is blinking a short time</li>
+          <li>"lselect" &mdash; group's lights is blinking a longer time</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>action.bri</td>
       <td>Number (0&ndash;255)</td>
       <td>Brightness of the group. Depending on the lights 0 might not mean visible "off" but minimum brightness.</td>
+    </tr>
+    <tr>
+      <td>action.colormode</td>
+      <td>String</td>
+      <td>
+        <p>The current color mode of the group's lights:</p>
+        <ul class="value-list">
+          <li>"hs" &mdash; hue and saturation</li>
+          <li>"xy" &mdash; CIE xy values</li>
+          <li>"ct" &mdash; color temperature</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td>action.hue</td>
@@ -240,6 +238,11 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
       </td>
     </tr>
     <tr>
+      <td>action.scene</td>
+      <td>String | null</td>
+      <td>Last scene called</td>
+    </tr>
+    <tr>
       <td>devicemembership</td>
       <td>Array</td>
       <td>A list of device ids (sensors) if this group was created by a device.</td>
@@ -270,9 +273,9 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
       <td>A list of light ids of this group that can be sorted by the user. Need not to contain all light ids of this group.</td>
     </tr>
     <tr>
-      <td>mulitdeviceids</td>
+      <td>multideviceids</td>
       <td>Array</td>
-      <td>A list of light ids of this group that are subsequent ids from multidvices with multiple endpoints like the FLS-PP.</td>
+      <td>A list of light ids of this group that are subsequent ids from multidevices with multiple endpoints like the FLS-PP.</td>
     </tr>
     <tr>
       <td>name</td>
@@ -286,8 +289,78 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
     </tr>
     <tr>
       <td>state</td>
-      <td>Number</td>
-      <td>Deprecated - will be removed in future.</td>
+      <td>Object</td>
+      <td>The state of the group.</td>
+    </tr>
+    <tr>
+      <td>state.all_on</td>
+      <td>Bool</td>
+      <td>true if all lights of the group are on.</td>
+    </tr>
+    <tr>
+      <td>state.any_on</td>
+      <td>Bool</td>
+      <td>true if any light of the group is on.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>The type of the group. LightGroup by default
+        <ul>
+          <li>LightGroup</li>
+          <li>Luminaire</li>
+          <li>Lightsource</li>
+          <li>Room</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td>The class of the group, only for "Room" groups.
+        <ul>
+          <li>Attic</li>
+          <li>Balcony</li>
+          <li>Barbecue</li>
+          <li>Bathroom</li>
+          <li>Bedroom</li>
+          <li>Carport</li>
+          <li>Closet</li>
+          <li>Computer</li>
+          <li>Dining</li>
+          <li>Downstairs</li>
+          <li>Driveway</li>
+          <li>Front door</li>
+          <li>Garage</li>
+          <li>Garden</li>
+          <li>Guest room</li>
+          <li>Gym</li>
+          <li>Hallway</li>
+          <li>Home</li>
+          <li>Kids bedroom</li>
+          <li>Kitchen</li>
+          <li>Laundry room</li>
+          <li>Living room</li>
+          <li>Lounge</li>
+          <li>Man cave</li>
+          <li>Music</li>
+          <li>Nursery</li>
+          <li>Office</li>
+          <li>Other</li>
+          <li>Pool</li>
+          <li>Porch</li>
+          <li>Reading</li>
+          <li>Recreation</li>
+          <li>Staircase</li>
+          <li>Storage</li>
+          <li>Studio</li>
+          <li>TV</li>
+          <li>Terrace</li>
+          <li>Toilet</li>
+          <li>Top floor</li>
+          <li>Upstairs</li>
+        </ul>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -340,7 +413,7 @@ Sets attributes of a group which are not related to its state.
       <td>optional</td>
     </tr>
     <tr>
-      <td>mulitdeviceids</td>
+      <td>multideviceids</td>
       <td>Array</td>
       <td>Append the subsequential light ids of multidevices like the FLS-PP if the app should handle that light differently.</td>
       <td>optional</td>
