@@ -91,16 +91,56 @@ HTTP/1.1 200 OK
 <code>
 {
     "1": {
+        "action": {
+            "bri": 0,
+            "ct": 500,
+            "effect": "none",
+            "hue": 0,
+            "on": false,
+            "sat": 0,
+            "xy": [ 0, 0 ]
+        },
         "devicemembership": [],
-        "etag": "ab5272cfe11339202929259af22252ae",
-        "hidden" : false,
-        "name": "Living Room"
+        "etag": "0b32030b31ef30a4446c9adff6a6f9e5",
+        "hidden": false,
+        "id": "1",
+        "lights": [ "3","42","43" ],
+        "lightsequence": [ "42","43","3" ],
+        "multideviceids": ["2"],
+        "name": "Livingroom",
+        "scenes": [
+            { "id": "1", "name": "warmlight" }
+        ],
+        "state": {
+            "all_on": false,
+            "any_on": false
+        }
     },
     "2": {
+        "action": {
+            "bri": 50,
+            "ct": 500,
+            "effect": "none",
+            "hue": 0,
+            "on": true,
+            "sat": 0,
+            "xy": [ 0, 0 ]
+        },
         "devicemembership": ["3"],
         "etag": "030cf8c1c0025420f3a0659afab251f5",
         "hidden" : false,
-        "name": "Kitchen"
+        "id": "2",
+        "lights": [ "3","42","43" ],
+        "lightsequence": [ "42","43","3" ],
+        "multideviceids": ["2"],
+        "name": "Kitchen",
+        "scenes": [
+            { "id": "1", "name": "warmlight" }
+        ],
+        "state": {
+            "all_on": true,
+            "any_on": true
+        }
     }
 }
 </code>
@@ -182,7 +222,10 @@ ETag: "0b32030b31ef30a4446c9adff6a6f9e5"
     "scenes": [
         { "id": "1", "name": "warmlight" }
     ],
-    "state": 0
+    "state": {
+        "all_on": false,
+        "any_on": false
+    }
 }
 </code>
 </pre>
@@ -349,10 +392,10 @@ Sets attributes of a group which are not related to its state.
 </table>
 
 ### Example request data
-    {
-        "name": "Living Room",
-        "lights": [ "1", "4" ]
-    }
+{
+    "name": "Living Room",
+    "lights": [ "1", "4" ]
+}
 
 ### Response
 <pre class="headers">
