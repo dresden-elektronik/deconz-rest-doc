@@ -221,8 +221,8 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
     </tr>
     <tr>
       <td>state.effect</td>
-      <td>Number (0&ndash;7)</td>
-      <td>Run special scenes (if supported).</td>
+      <td>String</td>
+      <td>Run special effect (if supported). See the device documentation for all possible values.</td>
     </tr>
     <tr>
       <td>state.hue</td>
