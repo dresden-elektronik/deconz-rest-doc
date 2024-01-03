@@ -80,6 +80,7 @@ HTTP/1.1 200 OK
 {
   "12f39fa2bc4db1990715318e749d6270139609c68fb651a70c59339a91207450": {
     "desc": {
+      "uuid": "0737c706-541f-4abb-9c8b-e242b4eeff3a",
       "version_deconz": ">2.19.3",
       "last_modified": "2023-04-13T11:54:25Z",
       "product": "STARKVIND Air purifier",
@@ -146,6 +147,7 @@ HTTP/1.1 200 OK
 <code>
 {
   "desc": {
+    "uuid": "0737c706-541f-4abb-9c8b-e242b4eeff3a",
     "source": "https://deconz-community.github.io/ddf-store/XXXX/XXXX",
     "last_modified": "2023-01-08T17:24:24z",
     "version_deconz": ">2.19.3",
