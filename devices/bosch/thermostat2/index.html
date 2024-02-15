@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Thermostat II - deCONZ REST-API</title>
+    <title>Thermostat II BTH-RA - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Thermostat II";
+        var mkdocs_page_name = "Thermostat II BTH-RA";
         var mkdocs_page_input_path = "devices/bosch/thermostat2.md";
         var mkdocs_page_url = null;
       </script>
@@ -108,7 +108,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>Thermostat II</li>
+      <li>Thermostat II BTH-RA</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/bosch/thermostat2.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -118,7 +118,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="thermostat-ii">Thermostat II<a class="headerlink" href="#thermostat-ii" title="Permanent link">&para;</a></h1>
+                <h1 id="thermostat-ii-bth-ra">Thermostat II BTH-RA<a class="headerlink" href="#thermostat-ii-bth-ra" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/bosch/thermostat2.json">thermostat2.json</a>
 </p>
 <table>
@@ -132,7 +132,7 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>Thermostat II</td>
+      <td>Thermostat II BTH-RA</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -229,6 +229,13 @@
       <td>displayflipped</td>
       <td>Bool</td>
       <td>Displayed content is normal or upside down.<p>  Default: false</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>externalsensortemp</td>
+      <td>Int16</td>
+      <td>The temperature measured by an external sensor, can be used for regulation or displayed on screen.<p>  Default: 0</p>
 </td>
       <td>RW</td>
     </tr>

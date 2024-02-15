@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>STYRBAR remote control - deCONZ REST-API</title>
+    <title>STYRBAR remote control - E2002 - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "STYRBAR remote control";
+        var mkdocs_page_name = "STYRBAR remote control - E2002";
         var mkdocs_page_input_path = "devices/ikea/styrbar_remote_control.md";
         var mkdocs_page_url = null;
       </script>
@@ -108,7 +108,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>STYRBAR remote control</li>
+      <li>STYRBAR remote control - E2002</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/ikea/styrbar_remote_control.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -118,7 +118,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="styrbar-remote-control">STYRBAR remote control<a class="headerlink" href="#styrbar-remote-control" title="Permanent link">&para;</a></h1>
+                <h1 id="styrbar-remote-control-e2002">STYRBAR remote control - E2002<a class="headerlink" href="#styrbar-remote-control-e2002" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/ikea/styrbar_remote_control.json">styrbar_remote_control.json</a>
 </p>
 <table>
@@ -132,7 +132,7 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>STYRBAR remote control</td>
+      <td>STYRBAR remote control - E2002</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -209,6 +209,30 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>productid</td>
+      <td>String</td>
+      <td>Product identifier of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHASwitch"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
   </tbody>
 </table>
 
@@ -218,6 +242,18 @@
     <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
   </thead>
   <tbody>
+    <tr>
+      <td>alert</td>
+      <td>String</td>
+      <td>The currently active alert.<p>  Default: none</p>
+<ul class="value-list">
+<li>"none" &mdash; no alert is set</li>
+<li>"select" &mdash; device is identifying a short time</li>
+<li>"lselect" &mdash; device is identifying a longer time</li>
+</ul>
+</td>
+      <td>RW</td>
+    </tr>
     <tr>
       <td>battery</td>
       <td>UInt8</td>

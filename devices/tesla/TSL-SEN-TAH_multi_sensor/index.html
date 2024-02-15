@@ -245,12 +245,6 @@
       <td>When true the device is assumed to be operational.</td>
       <td>R</td>
     </tr>
-    <tr>
-      <td>temperature</td>
-      <td>UInt8</td>
-      <td>The current device temperature in °C.</td>
-      <td>R</td>
-    </tr>
   </tbody>
 </table>
 
@@ -264,6 +258,13 @@
       <td>lastupdated</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>temperature</td>
+      <td>Int16</td>
+      <td>The current temperature in °C &times; 100.<p>  Default: 0</p>
+</td>
       <td>R</td>
     </tr>
   </tbody>

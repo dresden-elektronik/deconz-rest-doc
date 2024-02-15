@@ -694,6 +694,7 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 </table>
 
 <h3 id="response_6">Response<a class="headerlink" href="#response_6" title="Permanent link">&para;</a></h3>
+<p>Response when no reset option provided.</p>
 <pre class="headers">
 <code class="no-highlight">
 HTTP/1.1 200 OK
@@ -702,7 +703,20 @@ ETag: "030cf8c1c0025420f3a0659afab251f5"
 </pre>
 <pre class="highlight">
 <code>
-[ { "success": "1" } ]
+[ { "success": { "id": "1" } } ]
+</code>
+</pre>
+
+<p>Response when reset option is provided.</p>
+<pre class="headers">
+<code class="no-highlight">
+HTTP/1.1 200 OK
+ETag: "030cf8c1c0025420f3a0659afab251f5"
+</code>
+</pre>
+<pre class="highlight">
+<code>
+[ { "success": { "/sensors/1/reset": false } } ]
 </code>
 </pre>
 

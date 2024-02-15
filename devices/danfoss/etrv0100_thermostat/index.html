@@ -137,11 +137,17 @@
     <tr>
       <td>modelid</td>
       <td>eTRV0100<br/>
-eTRV0103</td>
+eTRV0103<br/>
+eT093WRO<br/>
+eT093WRG<br/>
+TRV001</td>
     </tr>
     <tr>
       <td>manufacturername</td>
       <td>Danfoss<br/>
+Danfoss<br/>
+D5X84YU<br/>
+D5X84YU<br/>
 Danfoss</td>
     </tr>
   </tbody>
@@ -179,6 +185,9 @@ Danfoss</td>
       <td>manufacturername</td>
       <td>String</td>
       <td>"Danfoss"<br/>
+"Danfoss"<br/>
+"D5X84YU"<br/>
+"D5X84YU"<br/>
 "Danfoss"</td>
       <td>R</td>
     </tr>
@@ -186,7 +195,10 @@ Danfoss</td>
       <td>modelid</td>
       <td>String</td>
       <td>"eTRV0100"<br/>
-"eTRV0103"</td>
+"eTRV0103"<br/>
+"eT093WRO"<br/>
+"eT093WRG"<br/>
+"TRV001"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -261,9 +273,23 @@ Danfoss</td>
       <td>RW</td>
     </tr>
     <tr>
+      <td>loadbalancing</td>
+      <td>Bool</td>
+      <td>Thermostat runs stand alone (false) or shares load with others in the same room (true).<p>  Default: false</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>locked</td>
       <td>Bool</td>
       <td>Locks or unlocks the device. This item has to be understood as child-lock.<p>  Default: false</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>String</td>
+      <td>Mode of the device.<p>  Default: heat</p>
 </td>
       <td>RW</td>
     </tr>
@@ -289,6 +315,13 @@ Danfoss</td>
       <td>RW</td>
     </tr>
     <tr>
+      <td>radiatorcovered</td>
+      <td>Bool</td>
+      <td>Radiator is standing freely (false) or is covered (true). Set this to true for Danfoss Ally to use external temp sensor.<p>  Default: false</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>reachable</td>
       <td>Bool</td>
       <td>When true the device is assumed to be operational.</td>
@@ -304,6 +337,13 @@ Danfoss</td>
       <td>schedule_on</td>
       <td>Bool</td>
       <td>Determines if on-device schedules for setting the heatsetpoint are currently used or if the thermostat is operated manually.<p>  Default: false</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>windowopendetectionenabled</td>
+      <td>Bool</td>
+      <td>Turns the window open detection feature on or off.<p>  Default: true</p>
 </td>
       <td>RW</td>
     </tr>
@@ -404,6 +444,9 @@ Danfoss</td>
       <td>manufacturername</td>
       <td>String</td>
       <td>"Danfoss"<br/>
+"Danfoss"<br/>
+"D5X84YU"<br/>
+"D5X84YU"<br/>
 "Danfoss"</td>
       <td>R</td>
     </tr>
@@ -411,7 +454,10 @@ Danfoss</td>
       <td>modelid</td>
       <td>String</td>
       <td>"eTRV0100"<br/>
-"eTRV0103"</td>
+"eTRV0103"<br/>
+"eT093WRO"<br/>
+"eT093WRG"<br/>
+"TRV001"</td>
       <td>R</td>
     </tr>
     <tr>

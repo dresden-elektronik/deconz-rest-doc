@@ -209,6 +209,74 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>productid</td>
+      <td>String</td>
+      <td>Product identifier of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"Dimmable light"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes">Config attributes<a class="headerlink" href="#config-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bri/execute_if_off</td>
+      <td>Bool</td>
+      <td>Execute brightness changes when the device is off.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>bri/on_level</td>
+      <td>UInt8</td>
+      <td>Brightness when device is turned on.<p>  Default: 255</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>bri/onoff_transitiontime</td>
+      <td>UInt16</td>
+      <td>Transition time in 1/10 seconds for turning the device on or off.<p>  Default: 4</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>bri/startup</td>
+      <td>UInt8</td>
+      <td>Brightness on device startup (power on).<p>  Default: 255</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>on/startup</td>
+      <td>UInt8</td>
+      <td>On/Off state on device startup (power on).<p>  Default: 255</p>
+</td>
+      <td>RW</td>
+    </tr>
   </tbody>
 </table>
 
@@ -231,15 +299,15 @@
       <td>RW</td>
     </tr>
     <tr>
-      <td>bri</td>
-      <td>UInt8</td>
-      <td>The current brightness.</td>
-      <td>RW</td>
-    </tr>
-    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>True when device is on; false when off.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>bri</td>
+      <td>UInt8</td>
+      <td>The current brightness.</td>
       <td>RW</td>
     </tr>
     <tr>

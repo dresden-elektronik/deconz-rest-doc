@@ -375,7 +375,7 @@ ETag: "203941fel3ds8ad61903224"
         <tr>
             <td>gateway</td>
             <td>String</td>
-            <td>IPv4 address of the gateway.</td>
+            <td>IPv4 network gateway of the gateway.</td>
         </tr>
         <tr>
             <td>ipaddress</td>
@@ -448,7 +448,7 @@ ETag: "203941fel3ds8ad61903224"
             <td>Is true when the deCONZ is connected with the firmware and the Zigbee network is up.</td>
         </tr>
         <tr>
-            <td>softwareupdate</td>
+            <td>swupdate2</td>
             <td>Object</td>
             <td>Contains information related to software updates.</td>
         </tr>
@@ -1011,7 +1011,7 @@ HTTP/1.1 200 OK
 <p><a href="../../misc/errors">401 Unauthorized</a></p>
 <hr />
 <h2 id="reset-password">Reset password<a name="resetpw">&nbsp;</a><a class="headerlink" href="#reset-password" title="Permanent link">&para;</a></h2>
-<pre><code>DELETE /api/&lt;apikey&gt;/config/password
+<pre><code>DELETE /api/config/password
 </code></pre>
 <p>Resets the username and password to default username = “delight” and password = &ldquo;delight”. The request can only succeed within 10 minutes after gateway start.</p>
 <h3 id="response_8">Response<a class="headerlink" href="#response_8" title="Permanent link">&para;</a></h3>

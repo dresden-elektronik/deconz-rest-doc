@@ -212,35 +212,6 @@
   </tbody>
 </table>
 
-<h3 id="config-attributes">Config attributes<a class="headerlink" href="#config-attributes" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>colorcapabilities</td>
-      <td>UInt16</td>
-      <td>Deprecated. The supported color capabilities as bitmap. <em class="deprecated">deprecated</em></td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>ctmax</td>
-      <td>UInt16</td>
-      <td>Deprecated. Maximum supported color temperature. <em class="deprecated">deprecated</em><p>  Default: 0xfeff</p>
-</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>ctmin</td>
-      <td>UInt16</td>
-      <td>Deprecated. Minimum supported color temperature. <em class="deprecated">deprecated</em><p>  Default: 0</p>
-</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
 <h3 id="state-attributes">State attributes<a class="headerlink" href="#state-attributes" title="Permanent link">&para;</a></h3>
 <table>
   <thead>
@@ -287,6 +258,12 @@
       <td>Bool</td>
       <td>True when device is on; false when off.</td>
       <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
     </tr>
   </tbody>
 </table>

@@ -209,6 +209,30 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>productid</td>
+      <td>String</td>
+      <td>Product identifier of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHATemperature"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
   </tbody>
 </table>
 
@@ -251,6 +275,13 @@
       <td>lastupdated</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp when state was last updated.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>measured_value</td>
+      <td>Double</td>
+      <td>Represents the concentration as a fraction of 1.<p>  Default: 0</p>
+</td>
       <td>R</td>
     </tr>
     <tr>
@@ -327,6 +358,48 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"IKEA of Sweden"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"VINDSTYRKA"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>productid</td>
+      <td>String</td>
+      <td>Product identifier of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAHumidity"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
   </tbody>
 </table>
 
@@ -368,7 +441,14 @@
     <tr>
       <td>humidity</td>
       <td>UInt16</td>
-      <td>The current relative humidity in percent.<p>  Default: 0</p>
+      <td>The current relative humidity in percent. <em class="deprecated">deprecated</em><p>  Default: 0</p>
+</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>measured_value</td>
+      <td>Double</td>
+      <td>Represents the concentration as a fraction of 1.<p>  Default: 0</p>
 </td>
       <td>R</td>
     </tr>
@@ -382,7 +462,7 @@
 </table>
 
 <hr/>
-<h2 id="3-zhaairquality">3. ZHAAirQuality<a class="headerlink" href="#3-zhaairquality" title="Permanent link">&para;</a></h2>
+<h2 id="3-zhaparticulatematter">3. ZHAParticulateMatter<a class="headerlink" href="#3-zhaparticulatematter" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
 </p>
 <h3 id="top-level-attributes_2">Top level attributes<a class="headerlink" href="#top-level-attributes_2" title="Permanent link">&para;</a></h3>
@@ -436,7 +516,49 @@
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHAAirQuality"</td>
+      <td>"ZHAParticulateMatter"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"IKEA of Sweden"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"VINDSTYRKA"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>productid</td>
+      <td>String</td>
+      <td>Product identifier of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAParticulateMatter"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -483,9 +605,16 @@
       <td>R</td>
     </tr>
     <tr>
+      <td>measured_value</td>
+      <td>Double</td>
+      <td>Represents the concentration as a fraction of 1.<p>  Default: 0</p>
+</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>pm2_5</td>
       <td>UInt16</td>
-      <td>Measured PM2.5 density in µg/m³.<p>  Default: 0</p>
+      <td>Measured PM2.5 density in µg/m³. <em class="deprecated">deprecated</em><p>  Default: 0</p>
 </td>
       <td>R</td>
     </tr>
@@ -562,6 +691,48 @@
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"IKEA of Sweden"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"VINDSTYRKA"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>productid</td>
+      <td>String</td>
+      <td>Product identifier of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAAirQuality"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
   </tbody>
 </table>
 
@@ -594,15 +765,22 @@
   </thead>
   <tbody>
     <tr>
+      <td>measured_value</td>
+      <td>Double</td>
+      <td>Represents the concentration as a fraction of 1.<p>  Default: 0</p>
+</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>airqualityppb</td>
       <td>UInt16</td>
-      <td>Measured tVOC level in ppb.</td>
+      <td>Measured tVOC level in ppb. <em class="deprecated">deprecated</em></td>
       <td>R</td>
     </tr>
     <tr>
       <td>airquality</td>
       <td>String</td>
-      <td>Text representation of the air quality.</td>
+      <td>Text representation of the air quality based on tVOC level.</td>
       <td>R</td>
     </tr>
     <tr>

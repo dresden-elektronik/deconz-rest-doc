@@ -213,6 +213,30 @@ IKEA of Sweden</td>
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+    <tr>
+      <td>productid</td>
+      <td>String</td>
+      <td>Product identifier of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAAirPurifier"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
   </tbody>
 </table>
 
@@ -319,7 +343,7 @@ IKEA of Sweden</td>
 </table>
 
 <hr/>
-<h2 id="2-zhaairquality">2. ZHAAirQuality<a class="headerlink" href="#2-zhaairquality" title="Permanent link">&para;</a></h2>
+<h2 id="2-zhaparticulatematter">2. ZHAParticulateMatter<a class="headerlink" href="#2-zhaparticulatematter" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/sensors">/sensors</a>
 </p>
 <h3 id="top-level-attributes_1">Top level attributes<a class="headerlink" href="#top-level-attributes_1" title="Permanent link">&para;</a></h3>
@@ -375,7 +399,51 @@ IKEA of Sweden</td>
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"ZHAAirQuality"</td>
+      <td>"ZHAParticulateMatter"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"IKEA of Sweden"<br/>
+"IKEA of Sweden"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"STARKVIND Air purifier"<br/>
+"STARKVIND Air purifier table"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>productid</td>
+      <td>String</td>
+      <td>Product identifier of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"ZHAParticulateMatter"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -422,17 +490,23 @@ IKEA of Sweden</td>
       <td>R</td>
     </tr>
     <tr>
+      <td>measured_value</td>
+      <td>Double</td>
+      <td>Represents the concentration as a fraction of 1.<p>  Default: 0</p>
+</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>pm2_5</td>
       <td>UInt16</td>
-      <td>Measured PM2.5 density in µg/m³.<p>  Default: 0</p>
+      <td>Measured PM2.5 density in µg/m³. <em class="deprecated">deprecated</em><p>  Default: 0</p>
 </td>
       <td>R</td>
     </tr>
     <tr>
       <td>airquality</td>
       <td>String</td>
-      <td>Text representation of the air quality based on tVOC level.<p>  Default: unknown</p>
-</td>
+      <td>Text representation of the air quality based on tVOC level.</td>
       <td>R</td>
     </tr>
   </tbody>
