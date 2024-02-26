@@ -465,10 +465,10 @@ Sets attributes of a group which are not related to its state.
 </table>
 
 ### Example request data
-{
-    "name": "Living Room",
-    "lights": [ "1", "4" ]
-}
+    {
+        "name": "Living Room",
+        "lights": [ "1", "4" ]
+    }
 
 ### Response
 <pre class="headers">
