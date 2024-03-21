@@ -61,13 +61,13 @@ The following tasks need to be clarified:
 
 ## Get all DDF bundle descriptors<a name="getallddfbundledescriptors">&nbsp;</a>
 
-    GET /api/<apikey>/ddf/descriptors
+    GET /api/<apikey>/ddf/descriptors[?next=<token>]
 
 Returns the descriptors of all available DDF bundles.
 
 ### Parameters
 
-None
+**next** &mdash; The token returned from the last request to query the next descriptors. The first and the last request doesn't specify the token. The response uses pagination and only returns max. N records since in future many thousands of bundles may exist.
 
 ### Response
 <pre class="headers">
@@ -80,7 +80,7 @@ HTTP/1.1 200 OK
 {
 
   "12f39fa2bc4db1990715318e749d6270139609c68fb651a70c59339a91207450": {
-    "version": "1.2.5",
+    "uuid": "0737c706-541f-4abb-9c8b-e242b4eeff3a",
     "version_deconz": ">2.19.3",
     "last_modified": "2023-04-13T11:54:25Z",
     "product": "STARKVIND Air purifier",
@@ -94,17 +94,24 @@ HTTP/1.1 200 OK
         "STARKVIND Air purifier table"
       ]
     ]
-  }
+  },
+  "next": 42
 }
 </code>
 </pre>
 
-!!! TODO
-    It might be useful to also return the bundle signatures, so a UI can show: offical, stable, beta and user labels.
 
 #### Response fields
 
 The keys in the returned object are the SHA-256 hashes of the immutable data in the DDF bundles (hash over DDFB section).
+
+The **next** key is returned for any but the last response, and if present needs to be specified for the following request to gather the next records.
+
+!!! Note
+    The **next** key is an opaque value and likely NOT be incrementally plus 1.
+    Thus the first response may return `"next": 24` and the second `"next": 63`.
+
+
 
 See <a href="#getddfbundledescriptor">Get DDF bundle descriptor</a> for a full description of the attributes.
 
@@ -141,7 +148,7 @@ HTTP/1.1 200 OK
 <pre class="highlight">
 <code>
 {
-    "version": "1.2.5",
+    "uuid": "0737c706-541f-4abb-9c8b-e242b4eeff3a",
     "version_deconz": ">2.19.3",
     "last_modified": "2023-04-13T11:54:25Z",
     "product": "STARKVIND Air purifier",
