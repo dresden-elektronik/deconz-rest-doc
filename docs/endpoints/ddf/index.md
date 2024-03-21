@@ -213,7 +213,7 @@ HTTP/1.1 200 OK
 
 ## Get DDF bundle<a name="getddfbundle">&nbsp;</a>
 
-    GET /api/<apikey>/ddf/bundles/<sha256-hash>.ddf
+    GET /api/<apikey>/ddf/bundles/<sha256-hash>
 
 ### Parameters
 
