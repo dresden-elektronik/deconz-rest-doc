@@ -68,6 +68,7 @@ HTTP/1.1 200 OK
   "productid": "TRADFRI remote control E1810",
   "subdevices": [
     {
+      "endpoint": "/sensors/1",
       "config": {
         "alert": {
           "lastupdated": "2022-09-24T22:57:55Z",
