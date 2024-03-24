@@ -54,7 +54,7 @@ The following tasks need to be clarified:
 
 - **Initial behaviour** when a device is joined it should automatically be assigned to a suiteable bundle, with the newest version, ideally a bundle that is signed with a "stable" signature.
 - **Manual update** Once a device is pinned to a bundle, updating to a new DDF bundle version needs to be done explicitly.
-  Like `PUT /api/<apikey>/devices/<uniqueid>/usebundle/<sha256>`, where the bundle with SHA-256 hash itself was [Uploaded](#uploadddfbundle) before.
+  Like `PUT /api/<apikey>/devices/<device_mac_address>/ddf`, where the bundle itself was [Uploaded](#uploadddfbundle) before.
 - **Auto updates** could be made an option, like auto update stable signed bundles. Each deCONZ release does contain the latest official DDF bundles. In future these can also be updated by loading fresh ones from the DDF store which doesn't depend on a deCONZ release.
 
 ------------------------------------------------------
