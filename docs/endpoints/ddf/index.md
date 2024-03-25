@@ -94,11 +94,7 @@ HTTP/1.1 200 OK
           "STARKVIND Air purifier table"
         ]
       ]
-    },
-    "used_by": [
-      "00:15:8d:00:a3:b4:00:f2",
-      "00:15:8d:00:13:b9:29:e7"
-    ]
+    }
   }
 }
 </code>
@@ -153,7 +149,7 @@ HTTP/1.1 200 OK
     "version_deconz": ">2.19.3",
     "product": "acme 2000",
     "product_localised": {
-      "de": "german product name",
+      "de": "german product name",()
       "fr": "french product name"
     },
     "links": [
@@ -174,10 +170,6 @@ HTTP/1.1 200 OK
       "key": "033a52651e5123e4c988ad0049a227bc4736f5ac1ffe2ce448642ac3808b442b7a",
       "signature": "c9260ab14d316d61b4cb064574143d1b626e8d528494d3dca7fdffbd49e94b93633aafe83fde610859b88f2b125152d4cbcb025b2ef32bb27700a633dff32a9c"
     }
-  ],
-  "used_by": [
-    "00:15:8d:00:a3:b4:00:f2",
-    "00:15:8d:00:13:b9:29:e7"
   ]
 }
 </code>
