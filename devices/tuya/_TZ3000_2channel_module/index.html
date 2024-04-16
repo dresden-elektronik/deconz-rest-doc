@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>1 gang switch module - deCONZ REST-API</title>
+    <title>Tuya 2 output module - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "1 gang switch module";
-        var mkdocs_page_input_path = "devices/tuya/_TZ3000_TS0011_1gang_switch_module.md";
+        var mkdocs_page_name = "Tuya 2 output module";
+        var mkdocs_page_input_path = "devices/tuya/_TZ3000_2channel_module.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -108,9 +108,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>1 gang switch module</li>
+      <li>Tuya 2 output module</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/tuya/_TZ3000_TS0011_1gang_switch_module.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/tuya/_TZ3000_2channel_module.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -118,8 +118,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="1-gang-switch-module">1 gang switch module<a class="headerlink" href="#1-gang-switch-module" title="Permanent link">&para;</a></h1>
-<p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/tuya/_TZ3000_TS0011_1gang_switch_module.json">_TZ3000_TS0011_1gang_switch_module.json</a>
+                <h1 id="tuya-2-output-module">Tuya 2 output module<a class="headerlink" href="#tuya-2-output-module" title="Permanent link">&para;</a></h1>
+<p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/tuya/_TZ3000_2channel_module.json">_TZ3000_2channel_module.json</a>
 </p>
 <table>
   <thead>
@@ -132,27 +132,19 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>1 gang switch module</td>
+      <td>Tuya 2 output module</td>
     </tr>
     <tr>
       <td>modelid</td>
-      <td>TS0011<br/>
-TS0011<br/>
-TS0011<br/>
-TS0011<br/>
-TS0011<br/>
-TS0011<br/>
-TS0011</td>
+      <td>TS0002<br/>
+TS0002<br/>
+TS0002</td>
     </tr>
     <tr>
       <td>manufacturername</td>
-      <td>_TZ3000_txpirhfq<br/>
-_TZ3000_qmi1cfuq<br/>
-_TZ3000_ji4araar<br/>
-_TZ3000_v7sopte0<br/>
-_TYZB01_qeqvmvti<br/>
-_TZ3000_7jsk6lxz<br/>
-_TZ3000_hhiodade</td>
+      <td>_TZ3000_zmy4lslw<br/>
+_TZ3000_lmlsduws<br/>
+_TZ3000_nuenzetq</td>
     </tr>
   </tbody>
 </table>
@@ -188,25 +180,17 @@ _TZ3000_hhiodade</td>
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"_TZ3000_txpirhfq"<br/>
-"_TZ3000_qmi1cfuq"<br/>
-"_TZ3000_ji4araar"<br/>
-"_TZ3000_v7sopte0"<br/>
-"_TYZB01_qeqvmvti"<br/>
-"_TZ3000_7jsk6lxz"<br/>
-"_TZ3000_hhiodade"</td>
+      <td>"_TZ3000_zmy4lslw"<br/>
+"_TZ3000_lmlsduws"<br/>
+"_TZ3000_nuenzetq"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"TS0011"<br/>
-"TS0011"<br/>
-"TS0011"<br/>
-"TS0011"<br/>
-"TS0011"<br/>
-"TS0011"<br/>
-"TS0011"</td>
+      <td>"TS0002"<br/>
+"TS0002"<br/>
+"TS0002"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -255,6 +239,116 @@ _TZ3000_hhiodade</td>
 </table>
 
 <h3 id="state-attributes">State attributes<a class="headerlink" href="#state-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>True when device is on; false when off.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>reachable</td>
+      <td>Bool</td>
+      <td>When true the device is assumed to be operational.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+<h2 id="2-onoff-output">2. On/Off output<a class="headerlink" href="#2-onoff-output" title="Permanent link">&para;</a></h2>
+<p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
+</p>
+<h3 id="top-level-attributes_1">Top level attributes<a class="headerlink" href="#top-level-attributes_1" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Identifier of the resource, unique within an endpoint.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastannounced</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last power-cyle or rejoin.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>lastseen</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp of the last communication.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>manufacturername</td>
+      <td>String</td>
+      <td>"_TZ3000_zmy4lslw"<br/>
+"_TZ3000_lmlsduws"<br/>
+"_TZ3000_nuenzetq"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>modelid</td>
+      <td>String</td>
+      <td>"TS0002"<br/>
+"TS0002"<br/>
+"TS0002"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of the resource.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"On/Off output"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>swversion</td>
+      <td>String</td>
+      <td>Firmware version of the device.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>"On/Off output"</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>uniqueid</td>
+      <td>String</td>
+      <td>Unique identifier of the resource.</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="state-attributes_1">State attributes<a class="headerlink" href="#state-attributes_1" title="Permanent link">&para;</a></h3>
 <table>
   <thead>
     <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>

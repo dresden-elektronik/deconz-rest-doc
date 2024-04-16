@@ -216,6 +216,12 @@
       <td>R</td>
     </tr>
     <tr>
+      <td>otaversion</td>
+      <td>UInt32</td>
+      <td>OTA cluster file version.</td>
+      <td>R</td>
+    </tr>
+    <tr>
       <td>swversion</td>
       <td>String</td>
       <td>Firmware version of the device.</td>
@@ -242,18 +248,6 @@
     <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
   </thead>
   <tbody>
-    <tr>
-      <td>alert</td>
-      <td>String</td>
-      <td>The currently active alert.<p>  Default: none</p>
-<ul class="value-list">
-<li>"none" &mdash; no alert is set</li>
-<li>"select" &mdash; device is identifying a short time</li>
-<li>"lselect" &mdash; device is identifying a longer time</li>
-</ul>
-</td>
-      <td>RW</td>
-    </tr>
     <tr>
       <td>battery</td>
       <td>UInt8</td>
