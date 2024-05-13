@@ -214,20 +214,46 @@
 Currently installed version: <strong>v1.2.1</strong> </br>
 Update to version <strong>v1.2.5</strong>? (yes/no/all)</p>
 </blockquote>
-<h2 id="ddf-bundle-pinning">DDF bundle pinning<a class="headerlink" href="#ddf-bundle-pinning" title="Permanent link">&para;</a></h2>
 <div class="admonition todo">
 <p class="admonition-title">Todo</p>
 <p>Currently this page only describes how to query bundle information and upload bundles.
 To actually assign/pin DDF bundles to a device <code>uniqueid</code>, the <code>/devices</code>
 endpoint needs to be extended.</p>
 </div>
-<p>The following tasks need to be clarified:</p>
+<h2 id="ddf-bundle-pinning">DDF bundle pinning<a class="headerlink" href="#ddf-bundle-pinning" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Initial behaviour</strong> when a device is joined it should automatically be assigned to a suiteable bundle, with the newest version, ideally a bundle that is signed with a &ldquo;stable&rdquo; signature.</li>
+<li><strong>Initial behaviour</strong> when a device is joined it is automatically be assigned to a suitable bundle, with priority on the newest bundle that is signed with a &ldquo;stable&rdquo; signature and if not found the latest &ldquo;beta&rdquo; or unsigned bundle.</li>
 <li><strong>Manual update</strong> Once a device is pinned to a bundle, updating to a new DDF bundle version needs to be done explicitly.
   Like <code>PUT /api/&lt;apikey&gt;/devices/&lt;uniqueid&gt;/usebundle/&lt;sha256&gt;</code>, where the bundle with SHA-256 hash itself was <a href="#uploadddfbundle">Uploaded</a> before.</li>
-<li><strong>Auto updates</strong> could be made an option, like auto update stable signed bundles. Each deCONZ release does contain the latest official DDF bundles. In future these can also be updated by loading fresh ones from the DDF store which doesn&rsquo;t depend on a deCONZ release.</li>
+<li><strong>Auto updates</strong> are enabled for <code>latest_prefer_stable</code> and <code>latest</code> policies. Each deCONZ release does contain the latest official beta and stable signed DDF bundles. These can also be updated by loading fresh ones from the DDF store which doesn&rsquo;t depend on a deCONZ release.</li>
 </ul>
+<p>Bundles are assigned according to a policy which is given as a per device <code>attr/ddf_policy</code> item.</p>
+<table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>latest_prefer_stable</td>
+<td><strong>(default)</strong> Use latest DDF bundle: beta signed one if no stable available.</td>
+</tr>
+<tr>
+<td>latest</td>
+<td>Use latest DDF bundle either beta or stable signed.</td>
+</tr>
+<tr>
+<td>pin</td>
+<td>Use and stay on bundle given by <code>&lt;sha256-hash&gt;</code>.</td>
+</tr>
+<tr>
+<td>raw_json</td>
+<td>For development like before bundles existed just use raw .json DDF files.</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="get-all-ddf-bundle-descriptors">Get all DDF bundle descriptors<a name="getallddfbundledescriptors">&nbsp;</a><a class="headerlink" href="#get-all-ddf-bundle-descriptors" title="Permanent link">&para;</a></h2>
 <pre><code>GET /api/&lt;apikey&gt;/ddf/descriptors[?next=&lt;token&gt;]

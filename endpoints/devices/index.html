@@ -156,6 +156,22 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#set-ddf-policy">Set DDF policy&nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_7">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data_1">Example request data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response_7">Response</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_6">Response fields</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_7">Possible errors</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../groups/">Groups</a>
@@ -263,6 +279,8 @@ HTTP/1.1 200 OK
 <pre class="highlight">
 <code>
 {
+  "ddf_hash": "042fa35e2038292f639a9eb24910b702b514c6680adc10aedf00f4644ecf7515",
+  "ddf_policy": "latest_prefer_stable",
   "lastannounced": null,
   "lastseen": "2023-08-05T20:04Z",
   "manufacturername": "IKEA of Sweden",
@@ -860,6 +878,115 @@ HTTP/1.1 200 OK
 <h3 id="possible-errors_6">Possible errors<a class="headerlink" href="#possible-errors_6" title="Permanent link">&para;</a></h3>
 <p><a href="../../misc/errors#400">400 Bad Request</a></p>
 <p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<hr />
+<h2 id="set-ddf-policy">Set DDF policy<a name="put_ddf_policy">&nbsp;</a><a class="headerlink" href="#set-ddf-policy" title="Permanent link">&para;</a></h2>
+<pre><code>PUT /api/&lt;apikey&gt;/devices/&lt;device_mac_address&gt;/ddf/policy
+</code></pre>
+<p><code>since v2.27.0-beta</code></p>
+<p>Sets the device DDF policy and optional bundle hash to be pinned. The policy determines which DDF bundle is loaded for a device, like a stable or beta signed, un-signed or specific bundle (pinned).</p>
+<p>By executing this request the matching DDF bundle will be hot-reloaded for the device. This allows switching to a different bundle at runtime.</p>
+<h3 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>policy</td>
+      <td>String</td>
+      <td>
+        <p>latest_prefer_stable</p>
+        <p>latest</p>
+        <p>pin</p>
+        <p>raw_json</p>
+      </td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>hash</td>
+      <td>String</td>
+      <td>
+        <p>DDF bundle hash (64 characters)</p>
+        <p>Required if policy is <b>pin</b>.</p>
+      </td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>latest_prefer_stable</td>
+<td><strong>(default)</strong> Use latest DDF bundle: beta signed one if no stable available.</td>
+</tr>
+<tr>
+<td>latest</td>
+<td>Use latest DDF bundle either beta or stable signed or un-signed as fallback.</td>
+</tr>
+<tr>
+<td>pin</td>
+<td>Use and stay on bundle given by <code>&lt;hash&gt;</code>.</td>
+</tr>
+<tr>
+<td>raw_json</td>
+<td>For development like before bundles existed just use raw .json DDF files.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-request-data_1">Example request data<a class="headerlink" href="#example-request-data_1" title="Permanent link">&para;</a></h3>
+<pre><code>{
+  "policy": "pin",
+  "hash": "042fa35e2038292f639a9eb24910b702b514c6680adc10aedf00f4644ecf7515"
+}
+</code></pre>
+<h3 id="response_7">Response<a class="headerlink" href="#response_7" title="Permanent link">&para;</a></h3>
+<pre class="headers">
+<code class="no-highlight">
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+  [
+    { "success": { "/devices/00:17:88:01:02:00:21:f4/ddf/policy": "pin" } },
+    { "success": {"/devices/00:17:88:01:02:00:21:f4/ddf/hash": "042fa35e2038292f639a9eb24910b702b514c6680adc10aedf00f4644ecf7515" } }
+  ]
+</code>
+</pre>
+
+<h4 id="response-fields_6">Response fields<a class="headerlink" href="#response-fields_6" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>policy</td>
+      <td>String</td>
+      <td>The DDF policy provided in the request.</td>
+    </tr>
+    <tr>
+      <td>hash</td>
+      <td>String</td>
+      <td>
+        <p>The DDF bundle hash provided in the request.</p>
+        <p>(Only present for the <b>pin</b> policy)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="possible-errors_7">Possible errors<a class="headerlink" href="#possible-errors_7" title="Permanent link">&para;</a></h3>
+<p><a href="../../misc/errors#400">400 Bad Request</a></p>
+<p><a href="../../misc/errors#403">403 Forbidden</a></p>
+<p><a href="../../misc/errors#404">404 Not Found</a></p>
               
             </div>
           </div><footer>
