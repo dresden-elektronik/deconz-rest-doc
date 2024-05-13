@@ -60,6 +60,8 @@ HTTP/1.1 200 OK
 <pre class="highlight">
 <code>
 {
+  "ddf_hash": "042fa35e2038292f639a9eb24910b702b514c6680adc10aedf00f4644ecf7515",
+  "ddf_policy": "latest_prefer_stable",
   "lastannounced": null,
   "lastseen": "2023-08-05T20:04Z",
   "manufacturername": "IKEA of Sweden",
@@ -697,3 +699,103 @@ HTTP/1.1 200 OK
 
 [403 Forbidden](../../misc/errors#403)
 
+------------------------------------------------------
+
+## Set DDF policy<a name="put_ddf_policy">&nbsp;</a>
+
+    PUT /api/<apikey>/devices/<device_mac_address>/ddf/policy
+
+`since v2.27.0-beta`
+
+Sets the device DDF policy and optional bundle hash to be pinned. The policy determines which DDF bundle is loaded for a device, like a stable or beta signed, un-signed or specific bundle (pinned).
+
+By executing this request the matching DDF bundle will be hot-reloaded for the device. This allows switching to a different bundle at runtime.
+
+### Parameters
+
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th>Required</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>policy</td>
+      <td>String</td>
+      <td>
+        <p>latest_prefer_stable</p>
+        <p>latest</p>
+        <p>pin</p>
+        <p>raw_json</p>
+      </td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>hash</td>
+      <td>String</td>
+      <td>
+        <p>DDF bundle hash (64 characters)</p>
+        <p>Required if policy is <b>pin</b>.</p>
+      </td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+Policy               | Description
+---------------------|--------------------------------
+latest_prefer_stable | **(default)** Use latest DDF bundle: beta signed one if no stable available.
+latest               | Use latest DDF bundle either beta or stable signed or un-signed as fallback.
+pin                  | Use and stay on bundle given by `<hash>`.
+raw_json             | For development like before bundles existed just use raw .json DDF files.
+
+### Example request data
+    {
+      "policy": "pin",
+      "hash": "042fa35e2038292f639a9eb24910b702b514c6680adc10aedf00f4644ecf7515"
+    }
+
+### Response
+<pre class="headers">
+<code class="no-highlight">
+HTTP/1.1 200 OK
+</code>
+</pre>
+<pre class="highlight">
+<code>
+  [
+    { "success": { "/devices/00:17:88:01:02:00:21:f4/ddf/policy": "pin" } },
+    { "success": {"/devices/00:17:88:01:02:00:21:f4/ddf/hash": "042fa35e2038292f639a9eb24910b702b514c6680adc10aedf00f4644ecf7515" } }
+  ]
+</code>
+</pre>
+
+#### Response fields
+
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>policy</td>
+      <td>String</td>
+      <td>The DDF policy provided in the request.</td>
+    </tr>
+    <tr>
+      <td>hash</td>
+      <td>String</td>
+      <td>
+        <p>The DDF bundle hash provided in the request.</p>
+        <p>(Only present for the <b>pin</b> policy)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### Possible errors
+
+[400 Bad Request](../../misc/errors#400)
+
+[403 Forbidden](../../misc/errors#403)
+
+[404 Not Found](../../misc/errors#404)
