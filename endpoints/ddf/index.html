@@ -82,39 +82,25 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#get-ddf-bundle-descriptor">Get DDF bundle descriptor&nbsp;</a>
+    <li class="toctree-l2"><a class="reference internal" href="#get-ddf-bundle">Get DDF bundle&nbsp;</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#parameters_1">Parameters</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#response_1">Response</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#response-fields_1">Response fields</a>
-    </li>
-        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#possible-errors_1">Possible errors</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#get-ddf-bundle">Get DDF bundle&nbsp;</a>
+    <li class="toctree-l2"><a class="reference internal" href="#upload-ddf-bundle">Upload DDF bundle&nbsp;</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-request-data">Example request data</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#response_2">Response</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#possible-errors_2">Possible errors</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#upload-ddf-bundle">Upload DDF bundle&nbsp;</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#parameters_3">Parameters</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#example-request-data">Example request data</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#response_3">Response</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#possible-errors_3">Possible errors</a>
     </li>
         </ul>
     </li>
@@ -300,103 +286,14 @@ Thus the first response may return <code>"next": 24</code> and the second <code>
 <h3 id="possible-errors">Possible errors<a class="headerlink" href="#possible-errors" title="Permanent link">&para;</a></h3>
 <p><a href="../../misc/errors#403">403 Forbidden</a></p>
 <hr />
-<h2 id="get-ddf-bundle-descriptor">Get DDF bundle descriptor<a name="getddfbundledescriptor">&nbsp;</a><a class="headerlink" href="#get-ddf-bundle-descriptor" title="Permanent link">&para;</a></h2>
-<pre><code>GET /api/&lt;apikey&gt;/ddf/descriptors/&lt;sha256-hash&gt;
-</code></pre>
-<p>Returns the descriptor of a DDF bundle.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This request is useful to retreive the active DDF bundle descriptor of a
-device which can be retreived with the <code>`/devices/&lt;uniqueid&gt;</code> endpoint (wip).
-The idea here is to <strong>pin</strong> a bundle via its SHA-256 hash to a device identified by its
-MAC address.</p>
-</div>
-<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
-<p>None</p>
-<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
-<pre class="headers">
-<code class="no-highlight">
-HTTP/1.1 200 OK
-</code>
-</pre>
-<pre class="highlight">
-<code>
-{
-    "uuid": "0737c706-541f-4abb-9c8b-e242b4eeff3a",
-    "version_deconz": ">2.19.3",
-    "last_modified": "2023-04-13T11:54:25Z",
-    "product": "STARKVIND Air purifier",
-    "device_identifiers": [
-      [
-        "IKEA of Sweden",
-        "STARKVIND Air purifier"
-      ],
-      [
-        "IKEA of Sweden",
-        "STARKVIND Air purifier table"
-      ]
-    ],
-    "file_hash": "929df9c00f39bd01aea2278b624bfddac03b7dd5aa06ee1e97f9811cc2f6abc5"
-}
-</code>
-</pre>
-
-<div class="admonition todo">
-<p class="admonition-title">Todo</p>
-<p>It might be useful to also return the bundle signatures, so a UI can show: offical, stable, beta and user labels.
-Since the signatures are made over the SHA-256 hash it&rsquo;s easy to verify them without loading the full bundle.</p>
-</div>
-<h4 id="response-fields_1">Response fields<a class="headerlink" href="#response-fields_1" title="Permanent link">&para;</a></h4>
-<table class="table table-bordered">
-  <thead>
-    <tr><th>Field</th><th>Type</th><th>Description</th><th></th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>version</td>
-      <td>String</td>
-      <td>The semantic version of a bundle.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>version_deconz</td>
-      <td>String</td>
-      <td>deCONZ versions requirements to run the bundle.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>last_modified</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp when the bundle was last modified.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>product</td>
-      <td>String</td>
-      <td>Human readable product name.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>device_identifiers</td>
-      <td>Array</td>
-      <td>Pairs of Zigbee manufacturer name and model id</br>from the Basic cluster.</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="possible-errors_1">Possible errors<a class="headerlink" href="#possible-errors_1" title="Permanent link">&para;</a></h3>
-<p><a href="../../misc/errors#403">403 Forbidden</a></p>
-<p><a href="../../misc/errors#404">404 Not Found</a></p>
-<hr />
 <h2 id="get-ddf-bundle">Get DDF bundle<a name="getddfbundle">&nbsp;</a><a class="headerlink" href="#get-ddf-bundle" title="Permanent link">&para;</a></h2>
 <pre><code>GET /api/&lt;apikey&gt;/ddf/bundles/&lt;sha256-hash&gt;
 </code></pre>
-<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
 <p>None</p>
-<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
+<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
 <p>The full DDF bundle as <em>&lt;sha25-hash&gt;.ddf</em> file.</p>
-<h3 id="possible-errors_2">Possible errors<a class="headerlink" href="#possible-errors_2" title="Permanent link">&para;</a></h3>
+<h3 id="possible-errors_1">Possible errors<a class="headerlink" href="#possible-errors_1" title="Permanent link">&para;</a></h3>
 <p><a href="../../misc/errors#403">403 Forbidden</a></p>
 <p><a href="../../misc/errors#404">404 Not Found</a></p>
 <hr />
@@ -404,7 +301,7 @@ Since the signatures are made over the SHA-256 hash it&rsquo;s easy to verify th
 <pre><code>POST /api/&lt;apikey&gt;/ddf/bundles
 </code></pre>
 <p>Uploads a DDF bundle so it can be used by DDF system.</p>
-<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
 <p>The DDF bundle is uploaded as <code>multipart/form-data</code>, which is used by HTML form input elements with <code>type="file"</code> (see: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition">MSDN</a>).</p>
 <h3 id="example-request-data">Example request data<a class="headerlink" href="#example-request-data" title="Permanent link">&para;</a></h3>
 <pre><code class="language-raw">POST /api/12345/ddf/bundles HTTP/1.1
@@ -417,7 +314,7 @@ Content-Disposition: form-data; name=&quot;ddfbundle&quot;; filename=&quot;examp
     ....... DDF bundle data .....
 --abcdef--
 </code></pre>
-<h3 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">&para;</a></h3>
+<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
 <pre class="headers">
 <code class="no-highlight">
 HTTP/1.1 200 OK
@@ -430,7 +327,7 @@ HTTP/1.1 200 OK
 </pre>
 
 <p>The returned <strong>id</strong> is the DDF bundle SHA-256 hash.</p>
-<h3 id="possible-errors_3">Possible errors<a class="headerlink" href="#possible-errors_3" title="Permanent link">&para;</a></h3>
+<h3 id="possible-errors_2">Possible errors<a class="headerlink" href="#possible-errors_2" title="Permanent link">&para;</a></h3>
 <p><a href="../../misc/errors#400">400 Bad Request</a></p>
 <p><a href="../../misc/errors#403">403 Forbidden</a></p>
 <hr />
