@@ -84,22 +84,18 @@ HTTP/1.1 200 OK
 <pre class="highlight">
 <code>
 {
-
-  "12f39fa2bc4db1990715318e749d6270139609c68fb651a70c59339a91207450": {
-    "uuid": "0737c706-541f-4abb-9c8b-e242b4eeff3a",
-    "version_deconz": ">2.19.3",
-    "last_modified": "2023-04-13T11:54:25Z",
-    "product": "STARKVIND Air purifier",
+  "377955a530cb7b35917021a47aca7f7ee13fc4d89ecf969da29098f77ad75c1a": {
+    "uuid": "b5b20dff-da08-45f9-b9b6-4f430ccd9ed4",
+    "product": "Aqara Vibration Sensor DJT11LM",
+    "version_deconz": ">2.27.0",
+    "last_modified": "2023-02-02T13:35:59.000Z",
     "device_identifiers": [
       [
-        "IKEA of Sweden",
-        "STARKVIND Air purifier"
-      ],
-      [
-        "IKEA of Sweden",
-        "STARKVIND Air purifier table"
+        "LUMI",
+        "lumi.vibration.aq1"
       ]
-    ]
+    ],
+    "file_hash": "929df9c00f39bd01aea2278b624bfddac03b7dd5aa06ee1e97f9811cc2f6abc5"
   },
   "next": 42
 }
@@ -109,7 +105,7 @@ HTTP/1.1 200 OK
 
 #### Response fields
 
-The keys in the returned object are the SHA-256 hashes of the immutable data in the DDF bundles (hash over DDFB section).
+The keys in the returned object are the SHA-256 hashes of the immutable data in the DDF bundles (hash over DDFB section). The `file_hash` is the SHA-256 hash of the complete DDF bundle file.
 
 The **next** key is returned for any but the last response, and if present needs to be specified for the following request to gather the next records.
 
