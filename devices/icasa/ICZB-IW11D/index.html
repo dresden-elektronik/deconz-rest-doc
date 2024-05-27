@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>MS-104BZ Wired Switch 2 gangs - deCONZ REST-API</title>
+    <title>AC Dimmer - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "MS-104BZ Wired Switch 2 gangs";
-        var mkdocs_page_input_path = "devices/moes/Moes_MS-104BZ_wired_switch_2_gangs.md";
+        var mkdocs_page_name = "AC Dimmer";
+        var mkdocs_page_input_path = "devices/icasa/ICZB-IW11D.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -108,9 +108,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>MS-104BZ Wired Switch 2 gangs</li>
+      <li>AC Dimmer</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/moes/Moes_MS-104BZ_wired_switch_2_gangs.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/icasa/ICZB-IW11D.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -118,8 +118,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="ms-104bz-wired-switch-2-gangs">MS-104BZ Wired Switch 2 gangs<a class="headerlink" href="#ms-104bz-wired-switch-2-gangs" title="Permanent link">&para;</a></h1>
-<p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/moes/Moes_MS-104BZ_wired_switch_2_gangs.json">Moes_MS-104BZ_wired_switch_2_gangs.json</a>
+                <h1 id="ac-dimmer">AC Dimmer<a class="headerlink" href="#ac-dimmer" title="Permanent link">&para;</a></h1>
+<p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/icasa/ICZB-IW11D.json">ICZB-IW11D.json</a>
 </p>
 <table>
   <thead>
@@ -132,23 +132,21 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>MS-104BZ Wired Switch 2 gangs</td>
+      <td>AC Dimmer</td>
     </tr>
     <tr>
       <td>modelid</td>
-      <td>TS011F<br/>
-TS011F</td>
+      <td>ICZB-IW11D</td>
     </tr>
     <tr>
       <td>manufacturername</td>
-      <td>_TZ3000_pmz6mjyu<br/>
-_TZ3000_zmy1waw6</td>
+      <td>icasa</td>
     </tr>
   </tbody>
 </table>
 
 <hr/>
-<h2 id="1-onoff-light">1. On/Off light<a class="headerlink" href="#1-onoff-light" title="Permanent link">&para;</a></h2>
+<h2 id="1-dimmable-light">1. Dimmable light<a class="headerlink" href="#1-dimmable-light" title="Permanent link">&para;</a></h2>
 <p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
 </p>
 <h3 id="top-level-attributes">Top level attributes<a class="headerlink" href="#top-level-attributes" title="Permanent link">&para;</a></h3>
@@ -178,15 +176,13 @@ _TZ3000_zmy1waw6</td>
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"_TZ3000_pmz6mjyu"<br/>
-"_TZ3000_zmy1waw6"</td>
+      <td>"icasa"</td>
       <td>R</td>
     </tr>
     <tr>
       <td>modelid</td>
       <td>String</td>
-      <td>"TS011F"<br/>
-"TS011F"</td>
+      <td>"ICZB-IW11D"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -204,7 +200,7 @@ _TZ3000_zmy1waw6</td>
     <tr>
       <td>type</td>
       <td>String</td>
-      <td>"On/Off light"</td>
+      <td>"Dimmable light"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -213,23 +209,49 @@ _TZ3000_zmy1waw6</td>
       <td>Unique identifier of the resource.</td>
       <td>R</td>
     </tr>
+  </tbody>
+</table>
+
+<h3 id="config-attributes">Config attributes<a class="headerlink" href="#config-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>swversion</td>
-      <td>String</td>
-      <td>Firmware version of the device.</td>
-      <td>R</td>
+      <td>bri/execute_if_off</td>
+      <td>Bool</td>
+      <td>Execute brightness changes when the device is off.<p>  Default: true</p>
+</td>
+      <td>RW</td>
     </tr>
     <tr>
-      <td>type</td>
-      <td>String</td>
-      <td>"On/Off light"</td>
-      <td>R</td>
+      <td>bri/on_level</td>
+      <td>UInt8</td>
+      <td>Brightness when device is turned on.<p>  Default: 255</p>
+</td>
+      <td>RW</td>
     </tr>
     <tr>
-      <td>uniqueid</td>
-      <td>String</td>
-      <td>Unique identifier of the resource.</td>
-      <td>R</td>
+      <td>bri/onoff_transitiontime</td>
+      <td>UInt16</td>
+      <td>Transition time in 1/10 seconds for turning the device on or off.<p>  Default: 4</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>bri/startup</td>
+      <td>UInt8</td>
+      <td>Brightness on device startup (power on).<p>  Default: 255</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>on/startup</td>
+      <td>UInt8</td>
+      <td>On/Off state on device startup (power on).<p>  Default: 255</p>
+</td>
+      <td>RW</td>
     </tr>
   </tbody>
 </table>
@@ -241,117 +263,27 @@ _TZ3000_zmy1waw6</td>
   </thead>
   <tbody>
     <tr>
+      <td>alert</td>
+      <td>String</td>
+      <td>The currently active alert effect.<p>  Default: none</p>
+<ul class="value-list">
+<li>"none" &mdash; light is not performing an alert</li>
+<li>"select" &mdash; light is blinking a short time</li>
+<li>"lselect" &mdash; light is blinking a longer time</li>
+</ul>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>on</td>
       <td>Bool</td>
       <td>True when device is on; false when off.</td>
       <td>RW</td>
     </tr>
     <tr>
-      <td>reachable</td>
-      <td>Bool</td>
-      <td>When true the device is assumed to be operational.</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr/>
-<h2 id="2-onoff-light">2. On/Off light<a class="headerlink" href="#2-onoff-light" title="Permanent link">&para;</a></h2>
-<p> Endpoint: <a href="../../../endpoints/lights">/lights</a>
-</p>
-<h3 id="top-level-attributes_1">Top level attributes<a class="headerlink" href="#top-level-attributes_1" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>String</td>
-      <td>Identifier of the resource, unique within an endpoint.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>lastannounced</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp of the last power-cyle or rejoin.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>lastseen</td>
-      <td>ISO 8601 timestamp</td>
-      <td>Timestamp of the last communication.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>manufacturername</td>
-      <td>String</td>
-      <td>"_TZ3000_pmz6mjyu"<br/>
-"_TZ3000_zmy1waw6"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>modelid</td>
-      <td>String</td>
-      <td>"TS011F"<br/>
-"TS011F"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>String</td>
-      <td>Name of the resource.</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>swversion</td>
-      <td>String</td>
-      <td>Firmware version of the device.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>type</td>
-      <td>String</td>
-      <td>"On/Off light"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>uniqueid</td>
-      <td>String</td>
-      <td>Unique identifier of the resource.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>swversion</td>
-      <td>String</td>
-      <td>Firmware version of the device.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>type</td>
-      <td>String</td>
-      <td>"On/Off light"</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>uniqueid</td>
-      <td>String</td>
-      <td>Unique identifier of the resource.</td>
-      <td>R</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="state-attributes_1">State attributes<a class="headerlink" href="#state-attributes_1" title="Permanent link">&para;</a></h3>
-<table>
-  <thead>
-    <tr><th>Attribute</th><th>Datatype</th><th>Description</th><th>Access</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>on</td>
-      <td>Bool</td>
-      <td>True when device is on; false when off.</td>
+      <td>bri</td>
+      <td>UInt8</td>
+      <td>The current brightness.</td>
       <td>RW</td>
     </tr>
     <tr>
