@@ -65,6 +65,50 @@ raw_json             | For development like before bundles existed just use raw 
 
 ------------------------------------------------------
 
+## Create a DDF bundle <a name="createaddfbundle">&nbsp;</a>
+
+There is no dedicated endpoint for creating a DDF bundle, as these are generated from remote sources and signed by the DDF store.
+
+Currently, the DDF store is under development, with plans to introduce a web interface where users can upload and share their bundles. The DDF store already host official DDF bundles.
+
+#### Automatically with the GitHub action
+
+When you submit a pull request that includes a new (or edited) raw DDF JSON file in the `devices` directory,  a GitHub action will automatically generate a temporary DDF bundle. You can view an [example here](https://github.com/dresden-elektronik/deconz-rest-plugin/pull/7900#issuecomment-2307814668). This is helpful for testing the bundle before it is uploaded to the DDF store.
+
+Once the pull request is merged, the new DDF bundle will be uploaded to the bundle store. You can view an [example here](https://deconz-community.github.io/ddf-tools/#/store/bundle/035806b180fcbaf51b143fe2dcd78f2494329000bd02397398a99865bc0127ea).
+
+#### With the Node.js based bundler
+
+You can also create a DDF bundle manually using the [CLI DDF Tool](https://github.com/deconz-community/ddf-tools/tree/main/packages/cli), which allows you to generate a DDF bundle from a DDF JSON file.
+
+To install the tool, run:
+```bash
+npm install -g @deconz-community/cli
+```
+
+The bundler command generates bundles from the provided DDF JSON source file. Before bundling, ensure the DDFs are valid. Additionally, you'll need to have the [generic directory](https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/generic), similar to the one found in the `devices` directory of the deCONZ REST plugin repository.
+
+```bash
+ddf-tools bundler --help
+ddf-tools bundler -o ./output/ devices/ikea/starkvind_air_purifier.json
+```
+
+For more details, refer to the [cli tool documentation](https://github.com/deconz-community/ddf-tools/tree/main/packages/cli).
+
+#### With the Community Deconz Toolbox
+
+<mark>In Development</mark>
+
+The [Community Deconz Toolbox](https://deconz-community.github.io/ddf-tools/#/) offers a web interface for creating DDF bundles.
+
+Currently, the toolbox is still under development, with future plans to manage your gateway's DDF bundles and generate new ones.
+
+You can access the bundler by enabling Developer mode in the Settings page.
+
+While the bundler is not yet very user-friendly, it provides an early look at how DDF bundles are created.
+
+------------------------------------------------------
+
 ## Get all DDF bundle descriptors<a name="getallddfbundledescriptors">&nbsp;</a>
 
     GET /api/<apikey>/ddf/descriptors[?next=<token>]
