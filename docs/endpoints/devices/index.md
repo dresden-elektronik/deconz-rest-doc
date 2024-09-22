@@ -762,10 +762,18 @@ HTTP/1.1 200 OK
 </pre>
 <pre class="highlight">
 <code>
-  [
-    { "success": { "/devices/00:17:88:01:02:00:21:f4/ddf/policy": "pin" } },
-    { "success": {"/devices/00:17:88:01:02:00:21:f4/ddf/hash": "042fa35e2038292f639a9eb24910b702b514c6680adc10aedf00f4644ecf7515" } }
-  ]
+[
+  {
+    "success": {
+      "/devices/00:17:88:01:02:00:21:f4/ddf/policy": "pin"
+    }
+  },
+  {
+    "success": {
+      "/devices/00:17:88:01:02:00:21:f4/ddf/hash": "042fa35e2038292f639a9eb24910b702b514c6680adc10aedf00f4644ecf7515"
+    }
+  }
+]
 </code>
 </pre>
 

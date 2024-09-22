@@ -42,16 +42,13 @@ From a users perspective there won't be all or nothing updates dependend on a de
 > Currently installed version: **v1.2.1** </br>
 > Update to version **v1.2.5**? (yes/no/all)
 
-!!! Todo
-    Currently this page only describes how to query bundle information and upload bundles.
-    To actually assign/pin DDF bundles to a device `uniqueid`, the `/devices`
-    endpoint needs to be extended.
+#### Assignment policies
 
-## DDF bundle pinning
+- **Initial behavior** when a device is joined it is automatically be assigned to a suitable bundle, with priority on the newest bundle that is signed with a "stable" signature and if not found the latest "beta" or unsigned bundle. And if no bundle is found the device will use the raw DDF JSON files or the C++ code as a fallback.
 
-- **Initial behaviour** when a device is joined it is automatically be assigned to a suitable bundle, with priority on the newest bundle that is signed with a "stable" signature and if not found the latest "beta" or unsigned bundle.
 - **Manual update** Once a device is pinned to a bundle, updating to a new DDF bundle version needs to be done explicitly.
-  Like `PUT /api/<apikey>/devices/<uniqueid>/usebundle/<sha256>`, where the bundle with SHA-256 hash itself was [Uploaded](#uploadddfbundle) before.
+  See [Set DDF policy](../devices#put_ddf_policy) page.
+
 - **Auto updates** are enabled for `latest_prefer_stable` and `latest` policies. Each deCONZ release does contain the latest official beta and stable signed DDF bundles. These can also be updated by loading fresh ones from the DDF store which doesn't depend on a deCONZ release.
 
 Bundles are assigned according to a policy which is given as a per device `attr/ddf_policy` item.
