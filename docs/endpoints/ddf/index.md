@@ -84,24 +84,23 @@ HTTP/1.1 200 OK
 <pre class="highlight">
 <code>
 {
-   "4273d6eefacefe55ee2e2bc13678206f8237b5e71246ce3cdcaec7a684e3b836":{
-      "uuid": "8ecd84ad-4015-4b9e-bee2-311e750ee974",
-      "product": "TRÅDFRI bulb E14 WS opal 400lm",
-      "version_deconz": ">2.27.0",
-      "last_modified": "2024-05-13T10:13:33.000Z",
-      "device_identifiers": [
-         [
-            "IKEA of Sweden",
-            "TRADFRI bulb E14 WS opal 400lm"
-         ]
-      ],
-      "file_hash": "fc2ba60cf10d30b4b58fcb70d2eeb5694dda233d07929e1fe5c996b0099e093b"
-   },
-   "next": 42
+  "4273d6eefacefe55ee2e2bc13678206f8237b5e71246ce3cdcaec7a684e3b836":{
+    "uuid": "8ecd84ad-4015-4b9e-bee2-311e750ee974",
+    "product": "TRÅDFRI bulb E14 WS opal 400lm",
+    "version_deconz": ">2.27.0",
+    "last_modified": "2024-05-13T10:13:33.000Z",
+    "device_identifiers": [
+      [
+        "IKEA of Sweden",
+        "TRADFRI bulb E14 WS opal 400lm"
+      ]
+    ],
+    "file_hash": "fc2ba60cf10d30b4b58fcb70d2eeb5694dda233d07929e1fe5c996b0099e093b"
+  },
+  "next": 42
 }
 </code>
 </pre>
-
 
 #### Response fields
 
