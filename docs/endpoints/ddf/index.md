@@ -4,11 +4,8 @@ title: Device Description Files (DDF)
 
 # Device Description Files (DDF)
 
-<mark>Work in progress</mark>
-
 !!! Important
-    This page serves as a Request For Comments (RFC). This API is not yet available in a release.
-
+    This API is still in development and may change in the future.
 
 The **/ddf** endpoint provides query and management calls for DDF bundles.
 
