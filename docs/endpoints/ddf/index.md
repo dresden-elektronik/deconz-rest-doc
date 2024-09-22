@@ -250,6 +250,9 @@ The full DDF bundle as *&lt;sha25-hash&gt;.ddf* file.
 
 Uploads a DDF bundle so it can be used by DDF system.
 
+!!! Info
+    This endpoint support only one bundle per request but you can use the Phoscon App to upload multiple bundles at once from a zip file.
+
 ### Parameters
 
 The DDF bundle is uploaded as `multipart/form-data`, which is used by HTML form input elements with `type="file"` (see: [MSDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition)).
@@ -262,7 +265,7 @@ POST /api/12345/ddf/bundles HTTP/1.1
 Content-Type: multipart/form-data;boundary="abcdef"
 
 --abcdef
-Content-Disposition: form-data; name="ddfbundle"; filename="example.ddf"
+Content-Disposition: form-data; name="ddfbundle"; filename="example.ddb"
 
     ....... DDF bundle data .....
 --abcdef--
@@ -276,7 +279,13 @@ HTTP/1.1 200 OK
 </pre>
 <pre class="highlight">
 <code>
-[ { "success": { "id": "12f39fa2bc4db1990715318e749d6270139609c68fb651a70c59339a91207450" } } ]
+[
+  {
+    "success": {
+      "id": "12f39fa2bc4db1990715318e749d6270139609c68fb651a70c59339a91207450"
+    }
+  }
+]
 </code>
 </pre>
 
