@@ -114,7 +114,7 @@ Returns the descriptors of all available DDF bundles.
 
 ### Parameters
 
-**next** &mdash; The token returned from the last request to query the next descriptors. The first and the last request doesn't specify the token. The response uses pagination and only returns max. N records since in future many thousands of bundles may exist.
+**next** &mdash; The token returned from the last request to query the next descriptors page. The last page requested doesn't specify the next token. The response uses pagination and only returns max N records since in future many thousands of bundles may exist.
 
 ### Response
 <pre class="headers">
@@ -125,97 +125,37 @@ HTTP/1.1 200 OK
 <pre class="highlight">
 <code>
 {
-
-  "12f39fa2bc4db1990715318e749d6270139609c68fb651a70c59339a91207450": {
-    "uuid": "0737c706-541f-4abb-9c8b-e242b4eeff3a",
-    "version_deconz": ">2.19.3",
-    "last_modified": "2023-04-13T11:54:25Z",
-    "product": "STARKVIND Air purifier",
+  "4273d6eefacefe55ee2e2bc13678206f8237b5e71246ce3cdcaec7a684e3b836":{
+    "uuid": "8ecd84ad-4015-4b9e-bee2-311e750ee974",
+    "product": "TRÅDFRI bulb E14 WS opal 400lm",
+    "version_deconz": ">2.27.0",
+    "last_modified": "2024-05-13T10:13:33.000Z",
     "device_identifiers": [
       [
         "IKEA of Sweden",
-        "STARKVIND Air purifier"
-      ],
-      [
-        "IKEA of Sweden",
-        "STARKVIND Air purifier table"
+        "TRADFRI bulb E14 WS opal 400lm"
       ]
-    ]
+    ],
+    "file_hash": "fc2ba60cf10d30b4b58fcb70d2eeb5694dda233d07929e1fe5c996b0099e093b"
   },
   "next": 42
 }
 </code>
 </pre>
 
-
 #### Response fields
 
 The keys in the returned object are the SHA-256 hashes of the immutable data in the DDF bundles (hash over DDFB section).
+
+!!! TODO
+    It might be useful to also return the bundle signatures, so a UI can show: official, stable, beta and user labels.
+    Since the signatures are made over the SHA-256 hash it's easy to verify them without loading the full bundle.
 
 The **next** key is returned for any but the last response, and if present needs to be specified for the following request to gather the next records.
 
 !!! Note
     The **next** key is an opaque value and likely NOT be incrementally plus 1.
     Thus the first response may return `"next": 24` and the second `"next": 63`.
-
-
-
-See <a href="#getddfbundledescriptor">Get DDF bundle descriptor</a> for a full description of the attributes.
-
-
-### Possible errors
-
-[403 Forbidden](../../misc/errors#403)
-
-------------------------------------------------------
-
-## Get DDF bundle descriptor<a name="getddfbundledescriptor">&nbsp;</a>
-
-    GET /api/<apikey>/ddf/descriptors/<sha256-hash>
-
-Returns the descriptor of a DDF bundle.
-
-!!! Note
-    This request is useful to retreive the active DDF bundle descriptor of a
-    device which can be retreived with the ``/devices/<uniqueid>` endpoint (wip).
-    The idea here is to **pin** a bundle via it's sha256-hash to a device identified by its
-    MAC address.
-
-
-### Parameters
-
-None
-
-### Response
-<pre class="headers">
-<code class="no-highlight">
-HTTP/1.1 200 OK
-</code>
-</pre>
-<pre class="highlight">
-<code>
-{
-    "uuid": "0737c706-541f-4abb-9c8b-e242b4eeff3a",
-    "version_deconz": ">2.19.3",
-    "last_modified": "2023-04-13T11:54:25Z",
-    "product": "STARKVIND Air purifier",
-    "device_identifiers": [
-      [
-        "IKEA of Sweden",
-        "STARKVIND Air purifier"
-      ],
-      [
-        "IKEA of Sweden",
-        "STARKVIND Air purifier table"
-      ]
-    ]
-}
-</code>
-</pre>
-
-!!! TODO
-    It might be useful to also return the bundle signatures, so a UI can show: offical, stable, beta and user labels.
-    Since the signatures are made over the SHA-256 hash it's easy to verify them without loading the full bundle.
 
 #### Response fields
 
@@ -225,9 +165,15 @@ HTTP/1.1 200 OK
   </thead>
   <tbody>
     <tr>
-      <td>version</td>
+      <td>uuid</td>
       <td>String</td>
-      <td>The semantic version of a bundle.</td>
+      <td>UUID of the source DDF. It's used to find other version of the DDF on the bundle store.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>product</td>
+      <td>String</td>
+      <td>Human readable product name.</td>
       <td>R</td>
     </tr>
     <tr>
@@ -239,19 +185,19 @@ HTTP/1.1 200 OK
     <tr>
       <td>last_modified</td>
       <td>ISO 8601 timestamp</td>
-      <td>Timestamp when the bundle was last modified.</td>
-      <td>R</td>
-    </tr>
-    <tr>
-      <td>product</td>
-      <td>String</td>
-      <td>Human readable product name.</td>
+      <td>Timestamp when the bundle sources was last modified.</td>
       <td>R</td>
     </tr>
     <tr>
       <td>device_identifiers</td>
       <td>Array</td>
-      <td>Pairs of Zigbee manufacturer name and model id</br>from the Basic cluster.</td>
+      <td>Pairs of ZigBee manufacturer name and model id</br>from the Basic cluster.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>file_hash</td>
+      <td>String</td>
+      <td>SHA256 hash of the file since version 2.27.1</td>
       <td>R</td>
     </tr>
   </tbody>
@@ -260,8 +206,6 @@ HTTP/1.1 200 OK
 ### Possible errors
 
 [403 Forbidden](../../misc/errors#403)
-
-[404 Not Found](../../misc/errors#404)
 
 ------------------------------------------------------
 
