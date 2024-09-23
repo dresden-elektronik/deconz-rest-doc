@@ -275,7 +275,7 @@ None
 
 ### Response
 
-The full DDF bundle as *&lt;sha25-hash&gt;.ddf* file.
+The full DDF bundle as *&lt;sha25-hash&gt;.ddb* file.
 
 ### Possible errors
 
