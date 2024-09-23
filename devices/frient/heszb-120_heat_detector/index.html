@@ -5,25 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>HESZB-120 heat sensor - deCONZ REST-API</title>
+    <title>Intelligent heat alarm (HESZB-120) - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "HESZB-120 heat sensor";
+        var mkdocs_page_name = "Intelligent heat alarm (HESZB-120)";
         var mkdocs_page_input_path = "devices/frient/heszb-120_heat_detector.md";
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -107,8 +106,8 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>HESZB-120 heat sensor</li>
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Intelligent heat alarm (HESZB-120)</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/devices/frient/heszb-120_heat_detector.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -118,7 +117,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="heszb-120-heat-sensor">HESZB-120 heat sensor<a class="headerlink" href="#heszb-120-heat-sensor" title="Permanent link">&para;</a></h1>
+                <h1 id="intelligent-heat-alarm-heszb-120">Intelligent heat alarm (HESZB-120)<a class="headerlink" href="#intelligent-heat-alarm-heszb-120" title="Permanent link">&para;</a></h1>
 <p> This documentation was generated from: <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/frient/heszb-120_heat_detector.json">heszb-120_heat_detector.json</a>
 </p>
 <table>
@@ -132,7 +131,7 @@
     </tr>
     <tr>
       <td>product</td>
-      <td>HESZB-120 heat sensor</td>
+      <td>Intelligent heat alarm (HESZB-120)</td>
     </tr>
     <tr>
       <td>modelid</td>
@@ -536,7 +535,7 @@
     <tr>
       <td>alert</td>
       <td>String</td>
-      <td>The currently active alert effect.<p>  Default: none</p>
+      <td>Start warning command payload has 5 Bytes. Byte 1: Options. 0x17 = Warning mode 1 (burglar), Strobe, Very high sound. Byte 2-3: Duration, Byte 4: Strobe duty cycle, Byte 5: Strobe level<p>  Default: none</p>
 <ul class="value-list">
 <li>"none" &mdash; light is not performing an alert</li>
 <li>"select" &mdash; light is blinking a short time</li>
@@ -584,14 +583,15 @@
     
   </span>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme_extra.js" defer></script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

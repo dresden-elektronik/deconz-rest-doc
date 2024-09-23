@@ -8,7 +8,7 @@
     <title>Device Description Files (DDF) - deCONZ REST-API</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../css/extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -56,7 +55,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Device Description Files (DDF)</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Device Description Files (DDF)</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#ddf-bundles">DDF bundles</a>
         <ul>
@@ -64,9 +63,19 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#what-ddf-bundles-solve">What DDF bundles solve</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assignment-policies">Assignment policies</a>
+    </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ddf-bundle-pinning">DDF bundle pinning</a>
+    <li class="toctree-l2"><a class="reference internal" href="#create-a-ddf-bundle">Create a DDF bundle &nbsp;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#automatically-with-the-github-action">Automatically with the GitHub action</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#with-the-nodejs-based-bundler">With the Node.js based bundler</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#with-the-community-deconz-toolbox">With the Community Deconz Toolbox</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#get-all-ddf-bundle-descriptors">Get all DDF bundle descriptors&nbsp;</a>
         <ul>
@@ -75,6 +84,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#response">Response</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#response-fields">Response fields</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#response-fields_1">Response fields</a>
     </li>
         </ul>
     </li>
@@ -155,9 +166,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-          <li>API Endpoints &raquo;</li>
-      <li>Device Description Files (DDF)</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">API Endpoints</li>
+      <li class="breadcrumb-item active">Device Description Files (DDF)</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/dresden-elektronik/deconz-rest-doc/edit/master/docs/endpoints/ddf/index.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -168,10 +179,9 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="device-description-files-ddf">Device Description Files (DDF)<a class="headerlink" href="#device-description-files-ddf" title="Permanent link">&para;</a></h1>
-<p><mark>Work in progress</mark></p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>This page serves as a Request For Comments (RFC). This API is not yet available in a release.</p>
+<p>This API is still in development and may change in the future.</p>
 </div>
 <p>The <strong>/ddf</strong> endpoint provides query and management calls for DDF bundles.</p>
 <h3 id="ddf-bundles">DDF bundles<a class="headerlink" href="#ddf-bundles" title="Permanent link">&para;</a></h3>
@@ -200,18 +210,18 @@
 Currently installed version: <strong>v1.2.1</strong> </br>
 Update to version <strong>v1.2.5</strong>? (yes/no/all)</p>
 </blockquote>
-<div class="admonition todo">
-<p class="admonition-title">Todo</p>
-<p>Currently this page only describes how to query bundle information and upload bundles.
-To actually assign/pin DDF bundles to a device <code>uniqueid</code>, the <code>/devices</code>
-endpoint needs to be extended.</p>
-</div>
-<h2 id="ddf-bundle-pinning">DDF bundle pinning<a class="headerlink" href="#ddf-bundle-pinning" title="Permanent link">&para;</a></h2>
+<h4 id="assignment-policies">Assignment policies<a class="headerlink" href="#assignment-policies" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Initial behaviour</strong> when a device is joined it is automatically be assigned to a suitable bundle, with priority on the newest bundle that is signed with a &ldquo;stable&rdquo; signature and if not found the latest &ldquo;beta&rdquo; or unsigned bundle.</li>
-<li><strong>Manual update</strong> Once a device is pinned to a bundle, updating to a new DDF bundle version needs to be done explicitly.
-  Like <code>PUT /api/&lt;apikey&gt;/devices/&lt;uniqueid&gt;/usebundle/&lt;sha256&gt;</code>, where the bundle with SHA-256 hash itself was <a href="#uploadddfbundle">Uploaded</a> before.</li>
-<li><strong>Auto updates</strong> are enabled for <code>latest_prefer_stable</code> and <code>latest</code> policies. Each deCONZ release does contain the latest official beta and stable signed DDF bundles. These can also be updated by loading fresh ones from the DDF store which doesn&rsquo;t depend on a deCONZ release.</li>
+<li>
+<p><strong>Initial behavior</strong> when a device is joined it is automatically be assigned to a suitable bundle, with priority on the newest bundle that is signed with a &ldquo;stable&rdquo; signature and if not found the latest &ldquo;beta&rdquo; or unsigned bundle. And if no bundle is found the device will use the raw DDF JSON files or the C++ code as a fallback.</p>
+</li>
+<li>
+<p><strong>Manual update</strong> Once a device is pinned to a bundle, updating to a new DDF bundle version needs to be done explicitly.
+  See <a href="../devices#put_ddf_policy">Set DDF policy</a> page.</p>
+</li>
+<li>
+<p><strong>Auto updates</strong> are enabled for <code>latest_prefer_stable</code> and <code>latest</code> policies. Each deCONZ release does contain the latest official beta and stable signed DDF bundles. These can also be updated by loading fresh ones from the DDF store which doesn&rsquo;t depend on a deCONZ release.</p>
+</li>
 </ul>
 <p>Bundles are assigned according to a policy which is given as a per device <code>attr/ddf_policy</code> item.</p>
 <table>
@@ -241,12 +251,35 @@ endpoint needs to be extended.</p>
 </tbody>
 </table>
 <hr />
+<h2 id="create-a-ddf-bundle">Create a DDF bundle <a name="createaddfbundle">&nbsp;</a><a class="headerlink" href="#create-a-ddf-bundle" title="Permanent link">&para;</a></h2>
+<p>There is no dedicated endpoint for creating a DDF bundle, as these are generated from remote sources and signed by the DDF store.</p>
+<p>Currently, the DDF store is under development, with plans to introduce a web interface where users can upload and share their bundles. The DDF store already host official DDF bundles.</p>
+<h4 id="automatically-with-the-github-action">Automatically with the GitHub action<a class="headerlink" href="#automatically-with-the-github-action" title="Permanent link">&para;</a></h4>
+<p>When you submit a pull request that includes a new (or edited) raw DDF JSON file in the <code>devices</code> directory,  a GitHub action will automatically generate a temporary DDF bundle. You can view an <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/pull/7900#issuecomment-2307814668">example here</a>. This is helpful for testing the bundle before it is uploaded to the DDF store.</p>
+<p>Once the pull request is merged, the new DDF bundle will be uploaded to the bundle store. You can view an <a href="https://deconz-community.github.io/ddf-tools/#/store/bundle/035806b180fcbaf51b143fe2dcd78f2494329000bd02397398a99865bc0127ea">example here</a>.</p>
+<h4 id="with-the-nodejs-based-bundler">With the Node.js based bundler<a class="headerlink" href="#with-the-nodejs-based-bundler" title="Permanent link">&para;</a></h4>
+<p>You can also create a DDF bundle manually using the <a href="https://github.com/deconz-community/ddf-tools/tree/main/packages/cli">CLI DDF Tool</a>, which allows you to generate a DDF bundle from a DDF JSON file.</p>
+<p>To install the tool, run:</p>
+<pre><code class="language-bash">npm install -g @deconz-community/cli
+</code></pre>
+<p>The bundler command generates bundles from the provided DDF JSON source file. Before bundling, ensure the DDFs are valid. Additionally, you&rsquo;ll need to have the <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/tree/master/devices/generic">generic directory</a>, similar to the one found in the <code>devices</code> directory of the deCONZ REST plugin repository.</p>
+<pre><code class="language-bash">ddf-tools bundler --help
+ddf-tools bundler -o ./output/ devices/ikea/starkvind_air_purifier.json
+</code></pre>
+<p>For more details, refer to the <a href="https://github.com/deconz-community/ddf-tools/tree/main/packages/cli">cli tool documentation</a>.</p>
+<h4 id="with-the-community-deconz-toolbox">With the Community Deconz Toolbox<a class="headerlink" href="#with-the-community-deconz-toolbox" title="Permanent link">&para;</a></h4>
+<p><mark>In Development</mark></p>
+<p>The <a href="https://deconz-community.github.io/ddf-tools/#/">Community Deconz Toolbox</a> offers a web interface for creating DDF bundles.</p>
+<p>Currently, the toolbox is still under development, with future plans to manage your gateway&rsquo;s DDF bundles and generate new ones.</p>
+<p>You can access the bundler by enabling Developer mode in the Settings page.</p>
+<p>While the bundler is not yet very user-friendly, it provides an early look at how DDF bundles are created.</p>
+<hr />
 <h2 id="get-all-ddf-bundle-descriptors">Get all DDF bundle descriptors<a name="getallddfbundledescriptors">&nbsp;</a><a class="headerlink" href="#get-all-ddf-bundle-descriptors" title="Permanent link">&para;</a></h2>
 <pre><code>GET /api/&lt;apikey&gt;/ddf/descriptors[?next=&lt;token&gt;]
 </code></pre>
 <p>Returns the descriptors of all available DDF bundles.</p>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
-<p><strong>next</strong> &mdash; The token returned from the last request to query the next descriptors. The first and the last request doesn&rsquo;t specify the token. The response uses pagination and only returns max. N records since in future many thousands of bundles may exist.</p>
+<p><strong>next</strong> &mdash; The token returned from the last request to query the next descriptors page. The last page requested doesn&rsquo;t specify the next token. The response uses pagination and only returns max N records since in future many thousands of bundles may exist.</p>
 <h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
 <pre class="headers">
 <code class="no-highlight">
@@ -256,18 +289,18 @@ HTTP/1.1 200 OK
 <pre class="highlight">
 <code>
 {
-  "377955a530cb7b35917021a47aca7f7ee13fc4d89ecf969da29098f77ad75c1a": {
-    "uuid": "b5b20dff-da08-45f9-b9b6-4f430ccd9ed4",
-    "product": "Aqara Vibration Sensor DJT11LM",
+  "4273d6eefacefe55ee2e2bc13678206f8237b5e71246ce3cdcaec7a684e3b836":{
+    "uuid": "8ecd84ad-4015-4b9e-bee2-311e750ee974",
+    "product": "TRÅDFRI bulb E14 WS opal 400lm",
     "version_deconz": ">2.27.0",
-    "last_modified": "2023-02-02T13:35:59.000Z",
+    "last_modified": "2024-05-13T10:13:33.000Z",
     "device_identifiers": [
       [
-        "LUMI",
-        "lumi.vibration.aq1"
+        "IKEA of Sweden",
+        "TRADFRI bulb E14 WS opal 400lm"
       ]
     ],
-    "file_hash": "929df9c00f39bd01aea2278b624bfddac03b7dd5aa06ee1e97f9811cc2f6abc5"
+    "file_hash": "fc2ba60cf10d30b4b58fcb70d2eeb5694dda233d07929e1fe5c996b0099e093b"
   },
   "next": 42
 }
@@ -275,14 +308,63 @@ HTTP/1.1 200 OK
 </pre>
 
 <h4 id="response-fields">Response fields<a class="headerlink" href="#response-fields" title="Permanent link">&para;</a></h4>
-<p>The keys in the returned object are the SHA-256 hashes of the immutable data in the DDF bundles (hash over DDFB section). The <code>file_hash</code> is the SHA-256 hash of the complete DDF bundle file.</p>
+<p>The keys in the returned object are the SHA-256 hashes of the immutable data in the DDF bundles (hash over DDFB section).</p>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>It might be useful to also return the bundle signatures, so a UI can show: official, stable, beta and user labels.
+Since the signatures are made over the SHA-256 hash it&rsquo;s easy to verify them without loading the full bundle.</p>
+</div>
 <p>The <strong>next</strong> key is returned for any but the last response, and if present needs to be specified for the following request to gather the next records.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <strong>next</strong> key is an opaque value and likely NOT be incrementally plus 1.
 Thus the first response may return <code>"next": 24</code> and the second <code>"next": 63</code>.</p>
 </div>
-<p>See <a href="#getddfbundledescriptor">Get DDF bundle descriptor</a> for a full description of the attributes.</p>
+<h4 id="response-fields_1">Response fields<a class="headerlink" href="#response-fields_1" title="Permanent link">&para;</a></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Field</th><th>Type</th><th>Description</th><th></th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>uuid</td>
+      <td>String</td>
+      <td>UUID of the source DDF. It's used to find other version of the DDF on the bundle store.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>product</td>
+      <td>String</td>
+      <td>Human readable product name.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>version_deconz</td>
+      <td>String</td>
+      <td>deCONZ versions requirements to run the bundle.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>last_modified</td>
+      <td>ISO 8601 timestamp</td>
+      <td>Timestamp when the bundle sources was last modified.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>device_identifiers</td>
+      <td>Array</td>
+      <td>Pairs of ZigBee manufacturer name and model id</br>from the Basic cluster.</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>file_hash</td>
+      <td>String</td>
+      <td>SHA256 hash of the file since version 2.27.1</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="possible-errors">Possible errors<a class="headerlink" href="#possible-errors" title="Permanent link">&para;</a></h3>
 <p><a href="../../misc/errors#403">403 Forbidden</a></p>
 <hr />
@@ -292,7 +374,7 @@ Thus the first response may return <code>"next": 24</code> and the second <code>
 <h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
 <p>None</p>
 <h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
-<p>The full DDF bundle as <em>&lt;sha25-hash&gt;.ddf</em> file.</p>
+<p>The full DDF bundle as <em>&lt;sha25-hash&gt;.ddb</em> file.</p>
 <h3 id="possible-errors_1">Possible errors<a class="headerlink" href="#possible-errors_1" title="Permanent link">&para;</a></h3>
 <p><a href="../../misc/errors#403">403 Forbidden</a></p>
 <p><a href="../../misc/errors#404">404 Not Found</a></p>
@@ -301,6 +383,10 @@ Thus the first response may return <code>"next": 24</code> and the second <code>
 <pre><code>POST /api/&lt;apikey&gt;/ddf/bundles
 </code></pre>
 <p>Uploads a DDF bundle so it can be used by DDF system.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This endpoint support only one bundle per request but you can use the Phoscon App to upload multiple bundles at once from a zip file.</p>
+</div>
 <h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
 <p>The DDF bundle is uploaded as <code>multipart/form-data</code>, which is used by HTML form input elements with <code>type="file"</code> (see: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition">MSDN</a>).</p>
 <h3 id="example-request-data">Example request data<a class="headerlink" href="#example-request-data" title="Permanent link">&para;</a></h3>
@@ -309,7 +395,7 @@ Thus the first response may return <code>"next": 24</code> and the second <code>
 Content-Type: multipart/form-data;boundary=&quot;abcdef&quot;
 
 --abcdef
-Content-Disposition: form-data; name=&quot;ddfbundle&quot;; filename=&quot;example.ddf&quot;
+Content-Disposition: form-data; name=&quot;ddfbundle&quot;; filename=&quot;example.ddb&quot;
 
     ....... DDF bundle data .....
 --abcdef--
@@ -322,7 +408,13 @@ HTTP/1.1 200 OK
 </pre>
 <pre class="highlight">
 <code>
-[ { "success": { "id": "12f39fa2bc4db1990715318e749d6270139609c68fb651a70c59339a91207450" } } ]
+[
+  {
+    "success": {
+      "id": "12f39fa2bc4db1990715318e749d6270139609c68fb651a70c59339a91207450"
+    }
+  }
+]
 </code>
 </pre>
 
@@ -370,14 +462,15 @@ HTTP/1.1 200 OK
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
