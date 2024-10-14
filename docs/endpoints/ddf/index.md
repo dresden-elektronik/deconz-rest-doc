@@ -71,6 +71,12 @@ When you submit a pull request that includes a new (or edited) raw DDF JSON file
 
 Once the pull request is merged, the new DDF bundle will be uploaded to the bundle store. You can view an [example here](https://deconz-community.github.io/ddf-tools/#/store/bundle/035806b180fcbaf51b143fe2dcd78f2494329000bd02397398a99865bc0127ea).
 
+#### Semi-automatically with the Web-based Auto Bundler
+
+We have introduced a new web-based page to generate DDF bundles. This tool simplifies the bundling process by automating most of the steps. You can access the web-based auto bundler [here](https://deconz-community.github.io/ddf-tools/#/auto-bundler).
+
+Most of the time, the bundler will work seamlessly. However, in some cases, it may prompt you to provide additional files if necessary to complete the bundling process. Follow the on-screen instructions to ensure all required files are included.
+
 #### With the Node.js based bundler
 
 You can also create a DDF bundle manually using the [CLI DDF Tool](https://github.com/deconz-community/ddf-tools/tree/main/packages/cli), which allows you to generate a DDF bundle from a DDF JSON file.
