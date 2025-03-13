@@ -139,7 +139,7 @@
     </tr>
     <tr>
       <td>manufacturername</td>
-      <td>BOSCH</td>
+      <td>Bosch</td>
     </tr>
   </tbody>
 </table>
@@ -155,12 +155,6 @@
   </thead>
   <tbody>
     <tr>
-      <td>id</td>
-      <td>String</td>
-      <td>Identifier of the resource, unique within an endpoint.</td>
-      <td>R</td>
-    </tr>
-    <tr>
       <td>lastannounced</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp of the last power-cyle or rejoin.</td>
@@ -175,7 +169,7 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"BOSCH"</td>
+      <td>"Bosch"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -243,6 +237,13 @@
       <td>R</td>
     </tr>
     <tr>
+      <td>coolsetpoint</td>
+      <td>Int16</td>
+      <td>Target cooling temperature of a thermostat.<p>  Default: 0</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>externalwindowopen</td>
       <td>Bool</td>
       <td>The window state detected by an external sensor.<p>  Default: false</p>
@@ -281,6 +282,13 @@
       <td>on</td>
       <td>Bool</td>
       <td>When true the sensor is enabled in rules.<p>  Default: true</p>
+</td>
+      <td>RW</td>
+    </tr>
+    <tr>
+      <td>preset</td>
+      <td>String</td>
+      <td>Sets the operating mode for Tuya thermostats.<p>  Default: manual</p>
 </td>
       <td>RW</td>
     </tr>
@@ -325,6 +333,12 @@
       <td>R</td>
     </tr>
     <tr>
+      <td>on</td>
+      <td>Bool</td>
+      <td>True when device is on; false when off.</td>
+      <td>RW</td>
+    </tr>
+    <tr>
       <td>temperature</td>
       <td>Int16</td>
       <td>The current temperature in °C &times; 100.<p>  Default: 0</p>
@@ -345,12 +359,6 @@
   </thead>
   <tbody>
     <tr>
-      <td>id</td>
-      <td>String</td>
-      <td>Identifier of the resource, unique within an endpoint.</td>
-      <td>R</td>
-    </tr>
-    <tr>
       <td>lastannounced</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp of the last power-cyle or rejoin.</td>
@@ -365,7 +373,7 @@
     <tr>
       <td>manufacturername</td>
       <td>String</td>
-      <td>"BOSCH"</td>
+      <td>"Bosch"</td>
       <td>R</td>
     </tr>
     <tr>
@@ -464,7 +472,7 @@
     <tr>
       <td>humidity</td>
       <td>UInt16</td>
-      <td>The current relative humidity in percent.<p>  Default: 0</p>
+      <td>The current relative humidity in 0.01 percent.<p>  Default: 0</p>
 </td>
       <td>R</td>
     </tr>

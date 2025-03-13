@@ -139,6 +139,7 @@
 LTA009<br/>
 LTE002<br/>
 LTG002<br/>
+LTG005<br/>
 LTU001<br/>
 LTV001<br/>
 LTV002<br/>
@@ -148,6 +149,7 @@ LTA001<br/>
 LTA009<br/>
 LTE002<br/>
 LTG002<br/>
+LTG005<br/>
 LTU001<br/>
 LTV001<br/>
 LTV002<br/>
@@ -165,6 +167,8 @@ Philips<br/>
 Philips<br/>
 Philips<br/>
 Philips<br/>
+Philips<br/>
+Signify Netherlands B.V.<br/>
 Signify Netherlands B.V.<br/>
 Signify Netherlands B.V.<br/>
 Signify Netherlands B.V.<br/>
@@ -189,12 +193,6 @@ Signify Netherlands B.V.</td>
   </thead>
   <tbody>
     <tr>
-      <td>id</td>
-      <td>String</td>
-      <td>Identifier of the resource, unique within an endpoint.</td>
-      <td>R</td>
-    </tr>
-    <tr>
       <td>lastannounced</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp of the last power-cyle or rejoin.</td>
@@ -218,6 +216,8 @@ Signify Netherlands B.V.</td>
 "Philips"<br/>
 "Philips"<br/>
 "Philips"<br/>
+"Philips"<br/>
+"Signify Netherlands B.V."<br/>
 "Signify Netherlands B.V."<br/>
 "Signify Netherlands B.V."<br/>
 "Signify Netherlands B.V."<br/>
@@ -236,6 +236,7 @@ Signify Netherlands B.V.</td>
 "LTA009"<br/>
 "LTE002"<br/>
 "LTG002"<br/>
+"LTG005"<br/>
 "LTU001"<br/>
 "LTV001"<br/>
 "LTV002"<br/>
@@ -245,6 +246,7 @@ Signify Netherlands B.V.</td>
 "LTA009"<br/>
 "LTE002"<br/>
 "LTG002"<br/>
+"LTG005"<br/>
 "LTU001"<br/>
 "LTV001"<br/>
 "LTV002"<br/>
@@ -288,6 +290,8 @@ Signify Netherlands B.V.</td>
 "Philips"<br/>
 "Philips"<br/>
 "Philips"<br/>
+"Philips"<br/>
+"Signify Netherlands B.V."<br/>
 "Signify Netherlands B.V."<br/>
 "Signify Netherlands B.V."<br/>
 "Signify Netherlands B.V."<br/>
@@ -306,6 +310,7 @@ Signify Netherlands B.V.</td>
 "LTA009"<br/>
 "LTE002"<br/>
 "LTG002"<br/>
+"LTG005"<br/>
 "LTU001"<br/>
 "LTV001"<br/>
 "LTV002"<br/>
@@ -315,6 +320,7 @@ Signify Netherlands B.V.</td>
 "LTA009"<br/>
 "LTE002"<br/>
 "LTG002"<br/>
+"LTG005"<br/>
 "LTU001"<br/>
 "LTV001"<br/>
 "LTV002"<br/>
@@ -384,13 +390,6 @@ Signify Netherlands B.V.</td>
       <td>bri/execute_if_off</td>
       <td>Bool</td>
       <td>Execute brightness changes when the device is off.<p>  Default: true</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
-      <td>bri/options</td>
-      <td>UInt8</td>
-      <td>Options.<p>  Default: 0</p>
 </td>
       <td>RW</td>
     </tr>
@@ -477,7 +476,7 @@ Signify Netherlands B.V.</td>
       <td>The currently active effect.<p>  Default: none</p>
 <ul class="value-list">
 <li>"none" &mdash; no effect is active</li>
-<li>"candle" &mdash; candlelight dynamic effect</li>
+<li>"colorloop" &mdash; colorloop through hue values</li>
 </ul>
 </td>
       <td>RW</td>

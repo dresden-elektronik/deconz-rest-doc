@@ -155,12 +155,6 @@
   </thead>
   <tbody>
     <tr>
-      <td>id</td>
-      <td>String</td>
-      <td>Identifier of the resource, unique within an endpoint.</td>
-      <td>R</td>
-    </tr>
-    <tr>
       <td>lastannounced</td>
       <td>ISO 8601 timestamp</td>
       <td>Timestamp of the last power-cyle or rejoin.</td>
@@ -263,13 +257,6 @@
       <td>RW</td>
     </tr>
     <tr>
-      <td>bri/options</td>
-      <td>UInt8</td>
-      <td>Options.<p>  Default: 0</p>
-</td>
-      <td>RW</td>
-    </tr>
-    <tr>
       <td>bri/onoff_transitiontime</td>
       <td>UInt16</td>
       <td>Transition time in 1/10 seconds for turning the device on or off.<p>  Default: 4</p>
@@ -335,6 +322,8 @@
       <td>String</td>
       <td>The currently active color mode.<p>  Default: ct</p>
 <ul class="value-list">
+<li>"hs" &mdash; hue and saturation</li>
+<li>"xy" &mdash; CIE xy color space coordinates</li>
 <li>"ct" &mdash; color temperature</li>
 </ul>
 </td>
